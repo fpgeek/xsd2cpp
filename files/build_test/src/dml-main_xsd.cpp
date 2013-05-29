@@ -10348,7 +10348,7 @@ void CT_FillStyleList::toXmlElem(const std::string& _elemName, const std::string
 
     {
         const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
+        assert(3 <= childSize);
     }
 
     {
@@ -10886,6 +10886,11 @@ void CT_LineStyleList::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_ln));
+        assert(3 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -10983,6 +10988,11 @@ void CT_EffectStyleList::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_effectStyle));
+        assert(3 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -11125,7 +11135,7 @@ void CT_BackgroundFillStyleList::toXmlElem(const std::string& _elemName, const s
 
     {
         const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
+        assert(3 <= childSize);
     }
 
     {
@@ -13382,11 +13392,6 @@ void CT_ScRgbColor::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -21475,11 +21480,6 @@ void CT_SRgbColor::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -29560,11 +29560,6 @@ void CT_HslColor::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -37671,11 +37666,6 @@ void CT_SystemColor::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -45742,11 +45732,6 @@ void CT_SchemeColor::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -53791,11 +53776,6 @@ void CT_PresetColor::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -63576,11 +63556,6 @@ void CT_ColorMRU::toXmlElem(const std::string& _elemName, const std::string& _xm
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -69182,7 +69157,7 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -69224,7 +69199,7 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -69409,7 +69384,7 @@ void CT_WholeE2oFormatting::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -73954,7 +73929,7 @@ void CT_AlphaInverseEffect::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -75196,7 +75171,7 @@ void CT_DuotoneEffect::toXmlElem(const std::string& _elemName, const std::string
 
     {
         const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 2);
+        assert(2 <= childSize && childSize <= 2);
     }
 
     {
@@ -80503,7 +80478,7 @@ void CT_SolidColorFillProperties::toXmlElem(const std::string& _elemName, const 
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -81413,6 +81388,11 @@ void CT_GradientStopList::toXmlElem(const std::string& _elemName, const std::str
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_gs));
+        assert(2 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -81691,7 +81671,7 @@ void CT_GradientFillProperties::toXmlElem(const std::string& _elemName, const st
     {
         bool elemHasValueList[2] = {m_has_lin, m_has_path};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -85678,7 +85658,7 @@ void CT_BlipFillProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_tile, m_has_stretch};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -87735,6 +87715,246 @@ CT_EffectContainer::~CT_EffectContainer()
 {
     clear();
 }
+CT_EffectContainer* CT_EffectContainer::add_cont()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_EffectContainer* pNewChild = pChildGroup->mutable_cont();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_EffectReference* CT_EffectContainer::add_effect()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_EffectReference* pNewChild = pChildGroup->mutable_effect();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaBiLevelEffect* CT_EffectContainer::add_alphaBiLevel()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaBiLevelEffect* pNewChild = pChildGroup->mutable_alphaBiLevel();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaCeilingEffect* CT_EffectContainer::add_alphaCeiling()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaCeilingEffect* pNewChild = pChildGroup->mutable_alphaCeiling();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaFloorEffect* CT_EffectContainer::add_alphaFloor()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaFloorEffect* pNewChild = pChildGroup->mutable_alphaFloor();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaInverseEffect* CT_EffectContainer::add_alphaInv()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaInverseEffect* pNewChild = pChildGroup->mutable_alphaInv();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaModulateEffect* CT_EffectContainer::add_alphaMod()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaModulateEffect* pNewChild = pChildGroup->mutable_alphaMod();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaModulateFixedEffect* CT_EffectContainer::add_alphaModFix()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaModulateFixedEffect* pNewChild = pChildGroup->mutable_alphaModFix();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaOutsetEffect* CT_EffectContainer::add_alphaOutset()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaOutsetEffect* pNewChild = pChildGroup->mutable_alphaOutset();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_AlphaReplaceEffect* CT_EffectContainer::add_alphaRepl()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_AlphaReplaceEffect* pNewChild = pChildGroup->mutable_alphaRepl();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_BiLevelEffect* CT_EffectContainer::add_biLevel()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_BiLevelEffect* pNewChild = pChildGroup->mutable_biLevel();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_BlendEffect* CT_EffectContainer::add_blend()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_BlendEffect* pNewChild = pChildGroup->mutable_blend();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_BlurEffect* CT_EffectContainer::add_blur()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_BlurEffect* pNewChild = pChildGroup->mutable_blur();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_ColorChangeEffect* CT_EffectContainer::add_clrChange()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_ColorChangeEffect* pNewChild = pChildGroup->mutable_clrChange();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_ColorReplaceEffect* CT_EffectContainer::add_clrRepl()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_ColorReplaceEffect* pNewChild = pChildGroup->mutable_clrRepl();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_DuotoneEffect* CT_EffectContainer::add_duotone()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_DuotoneEffect* pNewChild = pChildGroup->mutable_duotone();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_FillEffect* CT_EffectContainer::add_fill()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_FillEffect* pNewChild = pChildGroup->mutable_fill();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_FillOverlayEffect* CT_EffectContainer::add_fillOverlay()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_FillOverlayEffect* pNewChild = pChildGroup->mutable_fillOverlay();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_GlowEffect* CT_EffectContainer::add_glow()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_GlowEffect* pNewChild = pChildGroup->mutable_glow();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_GrayscaleEffect* CT_EffectContainer::add_grayscl()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_GrayscaleEffect* pNewChild = pChildGroup->mutable_grayscl();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_HSLEffect* CT_EffectContainer::add_hsl()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_HSLEffect* pNewChild = pChildGroup->mutable_hsl();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_InnerShadowEffect* CT_EffectContainer::add_innerShdw()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_InnerShadowEffect* pNewChild = pChildGroup->mutable_innerShdw();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_LuminanceEffect* CT_EffectContainer::add_lum()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_LuminanceEffect* pNewChild = pChildGroup->mutable_lum();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_OuterShadowEffect* CT_EffectContainer::add_outerShdw()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_OuterShadowEffect* pNewChild = pChildGroup->mutable_outerShdw();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_PresetShadowEffect* CT_EffectContainer::add_prstShdw()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_PresetShadowEffect* pNewChild = pChildGroup->mutable_prstShdw();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_ReflectionEffect* CT_EffectContainer::add_reflection()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_ReflectionEffect* pNewChild = pChildGroup->mutable_reflection();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_RelativeOffsetEffect* CT_EffectContainer::add_relOff()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_RelativeOffsetEffect* pNewChild = pChildGroup->mutable_relOff();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_SoftEdgesEffect* CT_EffectContainer::add_softEdge()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_SoftEdgesEffect* pNewChild = pChildGroup->mutable_softEdge();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_TintEffect* CT_EffectContainer::add_tint()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_TintEffect* pNewChild = pChildGroup->mutable_tint();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+CT_TransformEffect* CT_EffectContainer::add_xfrm()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    CT_TransformEffect* pNewChild = pChildGroup->mutable_xfrm();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
 void CT_EffectContainer::clear()
 {
     m_has_type_attr = false;
@@ -87748,6 +87968,15 @@ void CT_EffectContainer::clear()
 
     m_has_name_attr = false;
     m_name_attr.clear();
+
+    {
+        vector<ChildGroup_1*>::iterator iter;
+        for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_1.clear();
+    }
 }
 
 void CT_EffectContainer::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -87773,6 +88002,198 @@ void CT_EffectContainer::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_1*>::const_iterator iter;
+        for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
+        {
+            if ((*iter)->has_cont())
+            {
+                (*iter)->get_cont().toXmlElem("a:cont", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_effect())
+            {
+                (*iter)->get_effect().toXmlElem("a:effect", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaBiLevel())
+            {
+                (*iter)->get_alphaBiLevel().toXmlElem("a:alphaBiLevel", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaCeiling())
+            {
+                (*iter)->get_alphaCeiling().toXmlElem("a:alphaCeiling", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaFloor())
+            {
+                (*iter)->get_alphaFloor().toXmlElem("a:alphaFloor", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaInv())
+            {
+                (*iter)->get_alphaInv().toXmlElem("a:alphaInv", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaMod())
+            {
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaModFix())
+            {
+                (*iter)->get_alphaModFix().toXmlElem("a:alphaModFix", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaOutset())
+            {
+                (*iter)->get_alphaOutset().toXmlElem("a:alphaOutset", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_alphaRepl())
+            {
+                (*iter)->get_alphaRepl().toXmlElem("a:alphaRepl", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_biLevel())
+            {
+                (*iter)->get_biLevel().toXmlElem("a:biLevel", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_blend())
+            {
+                (*iter)->get_blend().toXmlElem("a:blend", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_blur())
+            {
+                (*iter)->get_blur().toXmlElem("a:blur", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_clrChange())
+            {
+                (*iter)->get_clrChange().toXmlElem("a:clrChange", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_clrRepl())
+            {
+                (*iter)->get_clrRepl().toXmlElem("a:clrRepl", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_duotone())
+            {
+                (*iter)->get_duotone().toXmlElem("a:duotone", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_fill())
+            {
+                (*iter)->get_fill().toXmlElem("a:fill", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_fillOverlay())
+            {
+                (*iter)->get_fillOverlay().toXmlElem("a:fillOverlay", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_glow())
+            {
+                (*iter)->get_glow().toXmlElem("a:glow", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_grayscl())
+            {
+                (*iter)->get_grayscl().toXmlElem("a:grayscl", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_hsl())
+            {
+                (*iter)->get_hsl().toXmlElem("a:hsl", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_innerShdw())
+            {
+                (*iter)->get_innerShdw().toXmlElem("a:innerShdw", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_lum())
+            {
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_outerShdw())
+            {
+                (*iter)->get_outerShdw().toXmlElem("a:outerShdw", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_prstShdw())
+            {
+                (*iter)->get_prstShdw().toXmlElem("a:prstShdw", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_reflection())
+            {
+                (*iter)->get_reflection().toXmlElem("a:reflection", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_relOff())
+            {
+                (*iter)->get_relOff().toXmlElem("a:relOff", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_softEdge())
+            {
+                (*iter)->get_softEdge().toXmlElem("a:softEdge", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_tint())
+            {
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_xfrm())
+            {
+                (*iter)->get_xfrm().toXmlElem("a:xfrm", "", _outStream);
+            }
+
+
+        }
+    }
 
     _outStream << "</" << _elemName << ">";
 }
@@ -87820,6 +88241,8651 @@ void CT_EffectContainer::set_name_attr(const XSD::token_& _name_attr)
 const XSD::token_& CT_EffectContainer::get_name_attr() const
 {
     return m_name_attr;
+}
+
+
+// CT_EffectContainer::ChildGroup_1
+CT_EffectContainer::ChildGroup_1::ChildGroup_1()
+    :m_has_cont(false),
+     m_cont(NULL),
+     m_has_effect(false),
+     m_effect(NULL),
+     m_has_alphaBiLevel(false),
+     m_alphaBiLevel(NULL),
+     m_has_alphaCeiling(false),
+     m_alphaCeiling(NULL),
+     m_has_alphaFloor(false),
+     m_alphaFloor(NULL),
+     m_has_alphaInv(false),
+     m_alphaInv(NULL),
+     m_has_alphaMod(false),
+     m_alphaMod(NULL),
+     m_has_alphaModFix(false),
+     m_alphaModFix(NULL),
+     m_has_alphaOutset(false),
+     m_alphaOutset(NULL),
+     m_has_alphaRepl(false),
+     m_alphaRepl(NULL),
+     m_has_biLevel(false),
+     m_biLevel(NULL),
+     m_has_blend(false),
+     m_blend(NULL),
+     m_has_blur(false),
+     m_blur(NULL),
+     m_has_clrChange(false),
+     m_clrChange(NULL),
+     m_has_clrRepl(false),
+     m_clrRepl(NULL),
+     m_has_duotone(false),
+     m_duotone(NULL),
+     m_has_fill(false),
+     m_fill(NULL),
+     m_has_fillOverlay(false),
+     m_fillOverlay(NULL),
+     m_has_glow(false),
+     m_glow(NULL),
+     m_has_grayscl(false),
+     m_grayscl(NULL),
+     m_has_hsl(false),
+     m_hsl(NULL),
+     m_has_innerShdw(false),
+     m_innerShdw(NULL),
+     m_has_lum(false),
+     m_lum(NULL),
+     m_has_outerShdw(false),
+     m_outerShdw(NULL),
+     m_has_prstShdw(false),
+     m_prstShdw(NULL),
+     m_has_reflection(false),
+     m_reflection(NULL),
+     m_has_relOff(false),
+     m_relOff(NULL),
+     m_has_softEdge(false),
+     m_softEdge(NULL),
+     m_has_tint(false),
+     m_tint(NULL),
+     m_has_xfrm(false),
+     m_xfrm(NULL)
+{
+}
+bool CT_EffectContainer::ChildGroup_1::has_cont() const
+{
+    return m_has_cont;
+}
+
+CT_EffectContainer* CT_EffectContainer::ChildGroup_1::mutable_cont()
+{
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_cont = true;
+    if (!m_cont)
+    {
+        m_cont = new CT_EffectContainer();
+    }
+    return m_cont;
+}
+
+const CT_EffectContainer& CT_EffectContainer::ChildGroup_1::get_cont() const
+{
+    if (m_cont)
+    {
+        return *m_cont;
+    }
+    return CT_EffectContainer::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_effect() const
+{
+    return m_has_effect;
+}
+
+CT_EffectReference* CT_EffectContainer::ChildGroup_1::mutable_effect()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_effect = true;
+    if (!m_effect)
+    {
+        m_effect = new CT_EffectReference();
+    }
+    return m_effect;
+}
+
+const CT_EffectReference& CT_EffectContainer::ChildGroup_1::get_effect() const
+{
+    if (m_effect)
+    {
+        return *m_effect;
+    }
+    return CT_EffectReference::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaBiLevel() const
+{
+    return m_has_alphaBiLevel;
+}
+
+CT_AlphaBiLevelEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaBiLevel()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = true;
+    if (!m_alphaBiLevel)
+    {
+        m_alphaBiLevel = new CT_AlphaBiLevelEffect();
+    }
+    return m_alphaBiLevel;
+}
+
+const CT_AlphaBiLevelEffect& CT_EffectContainer::ChildGroup_1::get_alphaBiLevel() const
+{
+    if (m_alphaBiLevel)
+    {
+        return *m_alphaBiLevel;
+    }
+    return CT_AlphaBiLevelEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaCeiling() const
+{
+    return m_has_alphaCeiling;
+}
+
+CT_AlphaCeilingEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaCeiling()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = true;
+    if (!m_alphaCeiling)
+    {
+        m_alphaCeiling = new CT_AlphaCeilingEffect();
+    }
+    return m_alphaCeiling;
+}
+
+const CT_AlphaCeilingEffect& CT_EffectContainer::ChildGroup_1::get_alphaCeiling() const
+{
+    if (m_alphaCeiling)
+    {
+        return *m_alphaCeiling;
+    }
+    return CT_AlphaCeilingEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaFloor() const
+{
+    return m_has_alphaFloor;
+}
+
+CT_AlphaFloorEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaFloor()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = true;
+    if (!m_alphaFloor)
+    {
+        m_alphaFloor = new CT_AlphaFloorEffect();
+    }
+    return m_alphaFloor;
+}
+
+const CT_AlphaFloorEffect& CT_EffectContainer::ChildGroup_1::get_alphaFloor() const
+{
+    if (m_alphaFloor)
+    {
+        return *m_alphaFloor;
+    }
+    return CT_AlphaFloorEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaInv() const
+{
+    return m_has_alphaInv;
+}
+
+CT_AlphaInverseEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaInv()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaInv = true;
+    if (!m_alphaInv)
+    {
+        m_alphaInv = new CT_AlphaInverseEffect();
+    }
+    return m_alphaInv;
+}
+
+const CT_AlphaInverseEffect& CT_EffectContainer::ChildGroup_1::get_alphaInv() const
+{
+    if (m_alphaInv)
+    {
+        return *m_alphaInv;
+    }
+    return CT_AlphaInverseEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaMod() const
+{
+    return m_has_alphaMod;
+}
+
+CT_AlphaModulateEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaMod()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaMod = true;
+    if (!m_alphaMod)
+    {
+        m_alphaMod = new CT_AlphaModulateEffect();
+    }
+    return m_alphaMod;
+}
+
+const CT_AlphaModulateEffect& CT_EffectContainer::ChildGroup_1::get_alphaMod() const
+{
+    if (m_alphaMod)
+    {
+        return *m_alphaMod;
+    }
+    return CT_AlphaModulateEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaModFix() const
+{
+    return m_has_alphaModFix;
+}
+
+CT_AlphaModulateFixedEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaModFix()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = true;
+    if (!m_alphaModFix)
+    {
+        m_alphaModFix = new CT_AlphaModulateFixedEffect();
+    }
+    return m_alphaModFix;
+}
+
+const CT_AlphaModulateFixedEffect& CT_EffectContainer::ChildGroup_1::get_alphaModFix() const
+{
+    if (m_alphaModFix)
+    {
+        return *m_alphaModFix;
+    }
+    return CT_AlphaModulateFixedEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaOutset() const
+{
+    return m_has_alphaOutset;
+}
+
+CT_AlphaOutsetEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaOutset()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = true;
+    if (!m_alphaOutset)
+    {
+        m_alphaOutset = new CT_AlphaOutsetEffect();
+    }
+    return m_alphaOutset;
+}
+
+const CT_AlphaOutsetEffect& CT_EffectContainer::ChildGroup_1::get_alphaOutset() const
+{
+    if (m_alphaOutset)
+    {
+        return *m_alphaOutset;
+    }
+    return CT_AlphaOutsetEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_alphaRepl() const
+{
+    return m_has_alphaRepl;
+}
+
+CT_AlphaReplaceEffect* CT_EffectContainer::ChildGroup_1::mutable_alphaRepl()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = true;
+    if (!m_alphaRepl)
+    {
+        m_alphaRepl = new CT_AlphaReplaceEffect();
+    }
+    return m_alphaRepl;
+}
+
+const CT_AlphaReplaceEffect& CT_EffectContainer::ChildGroup_1::get_alphaRepl() const
+{
+    if (m_alphaRepl)
+    {
+        return *m_alphaRepl;
+    }
+    return CT_AlphaReplaceEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_biLevel() const
+{
+    return m_has_biLevel;
+}
+
+CT_BiLevelEffect* CT_EffectContainer::ChildGroup_1::mutable_biLevel()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_biLevel = true;
+    if (!m_biLevel)
+    {
+        m_biLevel = new CT_BiLevelEffect();
+    }
+    return m_biLevel;
+}
+
+const CT_BiLevelEffect& CT_EffectContainer::ChildGroup_1::get_biLevel() const
+{
+    if (m_biLevel)
+    {
+        return *m_biLevel;
+    }
+    return CT_BiLevelEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_blend() const
+{
+    return m_has_blend;
+}
+
+CT_BlendEffect* CT_EffectContainer::ChildGroup_1::mutable_blend()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_blend = true;
+    if (!m_blend)
+    {
+        m_blend = new CT_BlendEffect();
+    }
+    return m_blend;
+}
+
+const CT_BlendEffect& CT_EffectContainer::ChildGroup_1::get_blend() const
+{
+    if (m_blend)
+    {
+        return *m_blend;
+    }
+    return CT_BlendEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_blur() const
+{
+    return m_has_blur;
+}
+
+CT_BlurEffect* CT_EffectContainer::ChildGroup_1::mutable_blur()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_blur = true;
+    if (!m_blur)
+    {
+        m_blur = new CT_BlurEffect();
+    }
+    return m_blur;
+}
+
+const CT_BlurEffect& CT_EffectContainer::ChildGroup_1::get_blur() const
+{
+    if (m_blur)
+    {
+        return *m_blur;
+    }
+    return CT_BlurEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_clrChange() const
+{
+    return m_has_clrChange;
+}
+
+CT_ColorChangeEffect* CT_EffectContainer::ChildGroup_1::mutable_clrChange()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_clrChange = true;
+    if (!m_clrChange)
+    {
+        m_clrChange = new CT_ColorChangeEffect();
+    }
+    return m_clrChange;
+}
+
+const CT_ColorChangeEffect& CT_EffectContainer::ChildGroup_1::get_clrChange() const
+{
+    if (m_clrChange)
+    {
+        return *m_clrChange;
+    }
+    return CT_ColorChangeEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_clrRepl() const
+{
+    return m_has_clrRepl;
+}
+
+CT_ColorReplaceEffect* CT_EffectContainer::ChildGroup_1::mutable_clrRepl()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_clrRepl = true;
+    if (!m_clrRepl)
+    {
+        m_clrRepl = new CT_ColorReplaceEffect();
+    }
+    return m_clrRepl;
+}
+
+const CT_ColorReplaceEffect& CT_EffectContainer::ChildGroup_1::get_clrRepl() const
+{
+    if (m_clrRepl)
+    {
+        return *m_clrRepl;
+    }
+    return CT_ColorReplaceEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_duotone() const
+{
+    return m_has_duotone;
+}
+
+CT_DuotoneEffect* CT_EffectContainer::ChildGroup_1::mutable_duotone()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_duotone = true;
+    if (!m_duotone)
+    {
+        m_duotone = new CT_DuotoneEffect();
+    }
+    return m_duotone;
+}
+
+const CT_DuotoneEffect& CT_EffectContainer::ChildGroup_1::get_duotone() const
+{
+    if (m_duotone)
+    {
+        return *m_duotone;
+    }
+    return CT_DuotoneEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_fill() const
+{
+    return m_has_fill;
+}
+
+CT_FillEffect* CT_EffectContainer::ChildGroup_1::mutable_fill()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_fill = true;
+    if (!m_fill)
+    {
+        m_fill = new CT_FillEffect();
+    }
+    return m_fill;
+}
+
+const CT_FillEffect& CT_EffectContainer::ChildGroup_1::get_fill() const
+{
+    if (m_fill)
+    {
+        return *m_fill;
+    }
+    return CT_FillEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_fillOverlay() const
+{
+    return m_has_fillOverlay;
+}
+
+CT_FillOverlayEffect* CT_EffectContainer::ChildGroup_1::mutable_fillOverlay()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = true;
+    if (!m_fillOverlay)
+    {
+        m_fillOverlay = new CT_FillOverlayEffect();
+    }
+    return m_fillOverlay;
+}
+
+const CT_FillOverlayEffect& CT_EffectContainer::ChildGroup_1::get_fillOverlay() const
+{
+    if (m_fillOverlay)
+    {
+        return *m_fillOverlay;
+    }
+    return CT_FillOverlayEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_glow() const
+{
+    return m_has_glow;
+}
+
+CT_GlowEffect* CT_EffectContainer::ChildGroup_1::mutable_glow()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_glow = true;
+    if (!m_glow)
+    {
+        m_glow = new CT_GlowEffect();
+    }
+    return m_glow;
+}
+
+const CT_GlowEffect& CT_EffectContainer::ChildGroup_1::get_glow() const
+{
+    if (m_glow)
+    {
+        return *m_glow;
+    }
+    return CT_GlowEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_grayscl() const
+{
+    return m_has_grayscl;
+}
+
+CT_GrayscaleEffect* CT_EffectContainer::ChildGroup_1::mutable_grayscl()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_grayscl = true;
+    if (!m_grayscl)
+    {
+        m_grayscl = new CT_GrayscaleEffect();
+    }
+    return m_grayscl;
+}
+
+const CT_GrayscaleEffect& CT_EffectContainer::ChildGroup_1::get_grayscl() const
+{
+    if (m_grayscl)
+    {
+        return *m_grayscl;
+    }
+    return CT_GrayscaleEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_hsl() const
+{
+    return m_has_hsl;
+}
+
+CT_HSLEffect* CT_EffectContainer::ChildGroup_1::mutable_hsl()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_hsl = true;
+    if (!m_hsl)
+    {
+        m_hsl = new CT_HSLEffect();
+    }
+    return m_hsl;
+}
+
+const CT_HSLEffect& CT_EffectContainer::ChildGroup_1::get_hsl() const
+{
+    if (m_hsl)
+    {
+        return *m_hsl;
+    }
+    return CT_HSLEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_innerShdw() const
+{
+    return m_has_innerShdw;
+}
+
+CT_InnerShadowEffect* CT_EffectContainer::ChildGroup_1::mutable_innerShdw()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_innerShdw = true;
+    if (!m_innerShdw)
+    {
+        m_innerShdw = new CT_InnerShadowEffect();
+    }
+    return m_innerShdw;
+}
+
+const CT_InnerShadowEffect& CT_EffectContainer::ChildGroup_1::get_innerShdw() const
+{
+    if (m_innerShdw)
+    {
+        return *m_innerShdw;
+    }
+    return CT_InnerShadowEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_lum() const
+{
+    return m_has_lum;
+}
+
+CT_LuminanceEffect* CT_EffectContainer::ChildGroup_1::mutable_lum()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_lum = true;
+    if (!m_lum)
+    {
+        m_lum = new CT_LuminanceEffect();
+    }
+    return m_lum;
+}
+
+const CT_LuminanceEffect& CT_EffectContainer::ChildGroup_1::get_lum() const
+{
+    if (m_lum)
+    {
+        return *m_lum;
+    }
+    return CT_LuminanceEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_outerShdw() const
+{
+    return m_has_outerShdw;
+}
+
+CT_OuterShadowEffect* CT_EffectContainer::ChildGroup_1::mutable_outerShdw()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_outerShdw = true;
+    if (!m_outerShdw)
+    {
+        m_outerShdw = new CT_OuterShadowEffect();
+    }
+    return m_outerShdw;
+}
+
+const CT_OuterShadowEffect& CT_EffectContainer::ChildGroup_1::get_outerShdw() const
+{
+    if (m_outerShdw)
+    {
+        return *m_outerShdw;
+    }
+    return CT_OuterShadowEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_prstShdw() const
+{
+    return m_has_prstShdw;
+}
+
+CT_PresetShadowEffect* CT_EffectContainer::ChildGroup_1::mutable_prstShdw()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_prstShdw = true;
+    if (!m_prstShdw)
+    {
+        m_prstShdw = new CT_PresetShadowEffect();
+    }
+    return m_prstShdw;
+}
+
+const CT_PresetShadowEffect& CT_EffectContainer::ChildGroup_1::get_prstShdw() const
+{
+    if (m_prstShdw)
+    {
+        return *m_prstShdw;
+    }
+    return CT_PresetShadowEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_reflection() const
+{
+    return m_has_reflection;
+}
+
+CT_ReflectionEffect* CT_EffectContainer::ChildGroup_1::mutable_reflection()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_reflection = true;
+    if (!m_reflection)
+    {
+        m_reflection = new CT_ReflectionEffect();
+    }
+    return m_reflection;
+}
+
+const CT_ReflectionEffect& CT_EffectContainer::ChildGroup_1::get_reflection() const
+{
+    if (m_reflection)
+    {
+        return *m_reflection;
+    }
+    return CT_ReflectionEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_relOff() const
+{
+    return m_has_relOff;
+}
+
+CT_RelativeOffsetEffect* CT_EffectContainer::ChildGroup_1::mutable_relOff()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_relOff = true;
+    if (!m_relOff)
+    {
+        m_relOff = new CT_RelativeOffsetEffect();
+    }
+    return m_relOff;
+}
+
+const CT_RelativeOffsetEffect& CT_EffectContainer::ChildGroup_1::get_relOff() const
+{
+    if (m_relOff)
+    {
+        return *m_relOff;
+    }
+    return CT_RelativeOffsetEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_softEdge() const
+{
+    return m_has_softEdge;
+}
+
+CT_SoftEdgesEffect* CT_EffectContainer::ChildGroup_1::mutable_softEdge()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_softEdge = true;
+    if (!m_softEdge)
+    {
+        m_softEdge = new CT_SoftEdgesEffect();
+    }
+    return m_softEdge;
+}
+
+const CT_SoftEdgesEffect& CT_EffectContainer::ChildGroup_1::get_softEdge() const
+{
+    if (m_softEdge)
+    {
+        return *m_softEdge;
+    }
+    return CT_SoftEdgesEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_tint() const
+{
+    return m_has_tint;
+}
+
+CT_TintEffect* CT_EffectContainer::ChildGroup_1::mutable_tint()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_xfrm = false;
+
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    ;
+
+    m_has_tint = true;
+    if (!m_tint)
+    {
+        m_tint = new CT_TintEffect();
+    }
+    return m_tint;
+}
+
+const CT_TintEffect& CT_EffectContainer::ChildGroup_1::get_tint() const
+{
+    if (m_tint)
+    {
+        return *m_tint;
+    }
+    return CT_TintEffect::default_instance();
+}
+
+bool CT_EffectContainer::ChildGroup_1::has_xfrm() const
+{
+    return m_has_xfrm;
+}
+
+CT_TransformEffect* CT_EffectContainer::ChildGroup_1::mutable_xfrm()
+{
+
+    m_has_cont = false;
+
+    if (m_cont)
+    {
+        delete m_cont;
+        m_cont = NULL;
+    }
+    ;
+
+    m_has_effect = false;
+
+    if (m_effect)
+    {
+        delete m_effect;
+        m_effect = NULL;
+    }
+    ;
+
+    m_has_alphaBiLevel = false;
+
+    if (m_alphaBiLevel)
+    {
+        delete m_alphaBiLevel;
+        m_alphaBiLevel = NULL;
+    }
+    ;
+
+    m_has_alphaCeiling = false;
+
+    if (m_alphaCeiling)
+    {
+        delete m_alphaCeiling;
+        m_alphaCeiling = NULL;
+    }
+    ;
+
+    m_has_alphaFloor = false;
+
+    if (m_alphaFloor)
+    {
+        delete m_alphaFloor;
+        m_alphaFloor = NULL;
+    }
+    ;
+
+    m_has_alphaInv = false;
+
+    if (m_alphaInv)
+    {
+        delete m_alphaInv;
+        m_alphaInv = NULL;
+    }
+    ;
+
+    m_has_alphaMod = false;
+
+    if (m_alphaMod)
+    {
+        delete m_alphaMod;
+        m_alphaMod = NULL;
+    }
+    ;
+
+    m_has_alphaModFix = false;
+
+    if (m_alphaModFix)
+    {
+        delete m_alphaModFix;
+        m_alphaModFix = NULL;
+    }
+    ;
+
+    m_has_alphaOutset = false;
+
+    if (m_alphaOutset)
+    {
+        delete m_alphaOutset;
+        m_alphaOutset = NULL;
+    }
+    ;
+
+    m_has_alphaRepl = false;
+
+    if (m_alphaRepl)
+    {
+        delete m_alphaRepl;
+        m_alphaRepl = NULL;
+    }
+    ;
+
+    m_has_biLevel = false;
+
+    if (m_biLevel)
+    {
+        delete m_biLevel;
+        m_biLevel = NULL;
+    }
+    ;
+
+    m_has_blend = false;
+
+    if (m_blend)
+    {
+        delete m_blend;
+        m_blend = NULL;
+    }
+    ;
+
+    m_has_blur = false;
+
+    if (m_blur)
+    {
+        delete m_blur;
+        m_blur = NULL;
+    }
+    ;
+
+    m_has_clrChange = false;
+
+    if (m_clrChange)
+    {
+        delete m_clrChange;
+        m_clrChange = NULL;
+    }
+    ;
+
+    m_has_clrRepl = false;
+
+    if (m_clrRepl)
+    {
+        delete m_clrRepl;
+        m_clrRepl = NULL;
+    }
+    ;
+
+    m_has_duotone = false;
+
+    if (m_duotone)
+    {
+        delete m_duotone;
+        m_duotone = NULL;
+    }
+    ;
+
+    m_has_fill = false;
+
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    ;
+
+    m_has_fillOverlay = false;
+
+    if (m_fillOverlay)
+    {
+        delete m_fillOverlay;
+        m_fillOverlay = NULL;
+    }
+    ;
+
+    m_has_glow = false;
+
+    if (m_glow)
+    {
+        delete m_glow;
+        m_glow = NULL;
+    }
+    ;
+
+    m_has_grayscl = false;
+
+    if (m_grayscl)
+    {
+        delete m_grayscl;
+        m_grayscl = NULL;
+    }
+    ;
+
+    m_has_hsl = false;
+
+    if (m_hsl)
+    {
+        delete m_hsl;
+        m_hsl = NULL;
+    }
+    ;
+
+    m_has_innerShdw = false;
+
+    if (m_innerShdw)
+    {
+        delete m_innerShdw;
+        m_innerShdw = NULL;
+    }
+    ;
+
+    m_has_lum = false;
+
+    if (m_lum)
+    {
+        delete m_lum;
+        m_lum = NULL;
+    }
+    ;
+
+    m_has_outerShdw = false;
+
+    if (m_outerShdw)
+    {
+        delete m_outerShdw;
+        m_outerShdw = NULL;
+    }
+    ;
+
+    m_has_prstShdw = false;
+
+    if (m_prstShdw)
+    {
+        delete m_prstShdw;
+        m_prstShdw = NULL;
+    }
+    ;
+
+    m_has_reflection = false;
+
+    if (m_reflection)
+    {
+        delete m_reflection;
+        m_reflection = NULL;
+    }
+    ;
+
+    m_has_relOff = false;
+
+    if (m_relOff)
+    {
+        delete m_relOff;
+        m_relOff = NULL;
+    }
+    ;
+
+    m_has_softEdge = false;
+
+    if (m_softEdge)
+    {
+        delete m_softEdge;
+        m_softEdge = NULL;
+    }
+    ;
+
+    m_has_tint = false;
+
+    if (m_tint)
+    {
+        delete m_tint;
+        m_tint = NULL;
+    }
+    ;
+
+    m_has_xfrm = true;
+    if (!m_xfrm)
+    {
+        m_xfrm = new CT_TransformEffect();
+    }
+    return m_xfrm;
+}
+
+const CT_TransformEffect& CT_EffectContainer::ChildGroup_1::get_xfrm() const
+{
+    if (m_xfrm)
+    {
+        return *m_xfrm;
+    }
+    return CT_TransformEffect::default_instance();
 }
 
 CT_EffectContainer* CT_EffectContainer::default_instance_ = NULL;
@@ -90507,6 +99573,11 @@ void CT_Path2DQuadBezierTo::toXmlElem(const std::string& _elemName, const std::s
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pt));
+        assert(2 <= childSize && childSize <= 2);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -90604,6 +99675,11 @@ void CT_Path2DCubicBezierTo::toXmlElem(const std::string& _elemName, const std::
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pt));
+        assert(3 <= childSize && childSize <= 3);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -93338,7 +102414,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[4] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_pattFill};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -93368,7 +102444,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[2] = {m_has_prstDash, m_has_custDash};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -93386,7 +102462,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[3] = {m_has_round, m_has_bevel, m_has_miter};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -94408,7 +103484,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[2] = {m_has_custGeom, m_has_prstGeom};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -94426,7 +103502,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -94474,7 +103550,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -95270,7 +104346,7 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -95312,7 +104388,7 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -95901,7 +104977,7 @@ void CT_StyleMatrixReference::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -96502,7 +105578,7 @@ void CT_FontReference::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -99724,7 +108800,7 @@ void CT_TableCellProperties::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -99983,6 +109059,11 @@ void CT_Headers::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_header));
+        assert(1 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -101603,7 +110684,7 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -101645,7 +110726,7 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[4] = {m_has_effectLst, m_has_effectDag, m_has_tableStyle, m_has_tableStyleId};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -102999,7 +112080,7 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[2] = {m_has_font, m_has_fontRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103017,7 +112098,7 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103726,7 +112807,7 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103744,7 +112825,7 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effect, m_has_effectRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103964,7 +113045,7 @@ void CT_TableStyleCellStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -105097,11 +114178,6 @@ void CT_TextParagraph::toXmlElem(const std::string& _elemName, const std::string
     if (m_has_pPr)
     {
         m_pPr->toXmlElem("a:pPr", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
     }
 
     {
@@ -106648,7 +115724,7 @@ void CT_TextBodyProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[3] = {m_has_noAutofit, m_has_normAutofit, m_has_spAutoFit};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -106678,7 +115754,7 @@ void CT_TextBodyProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_sp3d, m_has_flatTx};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -107186,6 +116262,11 @@ void CT_TextBody::toXmlElem(const std::string& _elemName, const std::string& _xm
     if (m_has_lstStyle)
     {
         m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_p));
+        assert(1 <= childSize);
     }
 
     {
@@ -108047,15 +117128,500 @@ CT_TextUnderlineFillFollowText* CT_TextUnderlineFillFollowText::default_instance
 
 // CT_TextUnderlineFillGroupWrapper
 CT_TextUnderlineFillGroupWrapper::CT_TextUnderlineFillGroupWrapper()
-
+    :m_has_noFill(false),
+     m_noFill(NULL),
+     m_has_solidFill(false),
+     m_solidFill(NULL),
+     m_has_gradFill(false),
+     m_gradFill(NULL),
+     m_has_blipFill(false),
+     m_blipFill(NULL),
+     m_has_pattFill(false),
+     m_pattFill(NULL),
+     m_has_grpFill(false),
+     m_grpFill(NULL)
 {
 }
 CT_TextUnderlineFillGroupWrapper::~CT_TextUnderlineFillGroupWrapper()
 {
     clear();
 }
+bool CT_TextUnderlineFillGroupWrapper::has_noFill() const
+{
+    return m_has_noFill;
+}
+
+CT_NoFillProperties* CT_TextUnderlineFillGroupWrapper::mutable_noFill()
+{
+
+    m_has_solidFill = false;
+
+    if (m_solidFill)
+    {
+        delete m_solidFill;
+        m_solidFill = NULL;
+    }
+    ;
+
+    m_has_gradFill = false;
+
+    if (m_gradFill)
+    {
+        delete m_gradFill;
+        m_gradFill = NULL;
+    }
+    ;
+
+    m_has_blipFill = false;
+
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    ;
+
+    m_has_pattFill = false;
+
+    if (m_pattFill)
+    {
+        delete m_pattFill;
+        m_pattFill = NULL;
+    }
+    ;
+
+    m_has_grpFill = false;
+
+    if (m_grpFill)
+    {
+        delete m_grpFill;
+        m_grpFill = NULL;
+    }
+    ;
+
+    m_has_noFill = true;
+    if (!m_noFill)
+    {
+        m_noFill = new CT_NoFillProperties();
+    }
+    return m_noFill;
+}
+
+const CT_NoFillProperties& CT_TextUnderlineFillGroupWrapper::get_noFill() const
+{
+    if (m_noFill)
+    {
+        return *m_noFill;
+    }
+    return CT_NoFillProperties::default_instance();
+}
+
+bool CT_TextUnderlineFillGroupWrapper::has_solidFill() const
+{
+    return m_has_solidFill;
+}
+
+CT_SolidColorFillProperties* CT_TextUnderlineFillGroupWrapper::mutable_solidFill()
+{
+
+    m_has_noFill = false;
+
+    if (m_noFill)
+    {
+        delete m_noFill;
+        m_noFill = NULL;
+    }
+    ;
+
+    m_has_gradFill = false;
+
+    if (m_gradFill)
+    {
+        delete m_gradFill;
+        m_gradFill = NULL;
+    }
+    ;
+
+    m_has_blipFill = false;
+
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    ;
+
+    m_has_pattFill = false;
+
+    if (m_pattFill)
+    {
+        delete m_pattFill;
+        m_pattFill = NULL;
+    }
+    ;
+
+    m_has_grpFill = false;
+
+    if (m_grpFill)
+    {
+        delete m_grpFill;
+        m_grpFill = NULL;
+    }
+    ;
+
+    m_has_solidFill = true;
+    if (!m_solidFill)
+    {
+        m_solidFill = new CT_SolidColorFillProperties();
+    }
+    return m_solidFill;
+}
+
+const CT_SolidColorFillProperties& CT_TextUnderlineFillGroupWrapper::get_solidFill() const
+{
+    if (m_solidFill)
+    {
+        return *m_solidFill;
+    }
+    return CT_SolidColorFillProperties::default_instance();
+}
+
+bool CT_TextUnderlineFillGroupWrapper::has_gradFill() const
+{
+    return m_has_gradFill;
+}
+
+CT_GradientFillProperties* CT_TextUnderlineFillGroupWrapper::mutable_gradFill()
+{
+
+    m_has_noFill = false;
+
+    if (m_noFill)
+    {
+        delete m_noFill;
+        m_noFill = NULL;
+    }
+    ;
+
+    m_has_solidFill = false;
+
+    if (m_solidFill)
+    {
+        delete m_solidFill;
+        m_solidFill = NULL;
+    }
+    ;
+
+    m_has_blipFill = false;
+
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    ;
+
+    m_has_pattFill = false;
+
+    if (m_pattFill)
+    {
+        delete m_pattFill;
+        m_pattFill = NULL;
+    }
+    ;
+
+    m_has_grpFill = false;
+
+    if (m_grpFill)
+    {
+        delete m_grpFill;
+        m_grpFill = NULL;
+    }
+    ;
+
+    m_has_gradFill = true;
+    if (!m_gradFill)
+    {
+        m_gradFill = new CT_GradientFillProperties();
+    }
+    return m_gradFill;
+}
+
+const CT_GradientFillProperties& CT_TextUnderlineFillGroupWrapper::get_gradFill() const
+{
+    if (m_gradFill)
+    {
+        return *m_gradFill;
+    }
+    return CT_GradientFillProperties::default_instance();
+}
+
+bool CT_TextUnderlineFillGroupWrapper::has_blipFill() const
+{
+    return m_has_blipFill;
+}
+
+CT_BlipFillProperties* CT_TextUnderlineFillGroupWrapper::mutable_blipFill()
+{
+
+    m_has_noFill = false;
+
+    if (m_noFill)
+    {
+        delete m_noFill;
+        m_noFill = NULL;
+    }
+    ;
+
+    m_has_solidFill = false;
+
+    if (m_solidFill)
+    {
+        delete m_solidFill;
+        m_solidFill = NULL;
+    }
+    ;
+
+    m_has_gradFill = false;
+
+    if (m_gradFill)
+    {
+        delete m_gradFill;
+        m_gradFill = NULL;
+    }
+    ;
+
+    m_has_pattFill = false;
+
+    if (m_pattFill)
+    {
+        delete m_pattFill;
+        m_pattFill = NULL;
+    }
+    ;
+
+    m_has_grpFill = false;
+
+    if (m_grpFill)
+    {
+        delete m_grpFill;
+        m_grpFill = NULL;
+    }
+    ;
+
+    m_has_blipFill = true;
+    if (!m_blipFill)
+    {
+        m_blipFill = new CT_BlipFillProperties();
+    }
+    return m_blipFill;
+}
+
+const CT_BlipFillProperties& CT_TextUnderlineFillGroupWrapper::get_blipFill() const
+{
+    if (m_blipFill)
+    {
+        return *m_blipFill;
+    }
+    return CT_BlipFillProperties::default_instance();
+}
+
+bool CT_TextUnderlineFillGroupWrapper::has_pattFill() const
+{
+    return m_has_pattFill;
+}
+
+CT_PatternFillProperties* CT_TextUnderlineFillGroupWrapper::mutable_pattFill()
+{
+
+    m_has_noFill = false;
+
+    if (m_noFill)
+    {
+        delete m_noFill;
+        m_noFill = NULL;
+    }
+    ;
+
+    m_has_solidFill = false;
+
+    if (m_solidFill)
+    {
+        delete m_solidFill;
+        m_solidFill = NULL;
+    }
+    ;
+
+    m_has_gradFill = false;
+
+    if (m_gradFill)
+    {
+        delete m_gradFill;
+        m_gradFill = NULL;
+    }
+    ;
+
+    m_has_blipFill = false;
+
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    ;
+
+    m_has_grpFill = false;
+
+    if (m_grpFill)
+    {
+        delete m_grpFill;
+        m_grpFill = NULL;
+    }
+    ;
+
+    m_has_pattFill = true;
+    if (!m_pattFill)
+    {
+        m_pattFill = new CT_PatternFillProperties();
+    }
+    return m_pattFill;
+}
+
+const CT_PatternFillProperties& CT_TextUnderlineFillGroupWrapper::get_pattFill() const
+{
+    if (m_pattFill)
+    {
+        return *m_pattFill;
+    }
+    return CT_PatternFillProperties::default_instance();
+}
+
+bool CT_TextUnderlineFillGroupWrapper::has_grpFill() const
+{
+    return m_has_grpFill;
+}
+
+CT_GroupFillProperties* CT_TextUnderlineFillGroupWrapper::mutable_grpFill()
+{
+
+    m_has_noFill = false;
+
+    if (m_noFill)
+    {
+        delete m_noFill;
+        m_noFill = NULL;
+    }
+    ;
+
+    m_has_solidFill = false;
+
+    if (m_solidFill)
+    {
+        delete m_solidFill;
+        m_solidFill = NULL;
+    }
+    ;
+
+    m_has_gradFill = false;
+
+    if (m_gradFill)
+    {
+        delete m_gradFill;
+        m_gradFill = NULL;
+    }
+    ;
+
+    m_has_blipFill = false;
+
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    ;
+
+    m_has_pattFill = false;
+
+    if (m_pattFill)
+    {
+        delete m_pattFill;
+        m_pattFill = NULL;
+    }
+    ;
+
+    m_has_grpFill = true;
+    if (!m_grpFill)
+    {
+        m_grpFill = new CT_GroupFillProperties();
+    }
+    return m_grpFill;
+}
+
+const CT_GroupFillProperties& CT_TextUnderlineFillGroupWrapper::get_grpFill() const
+{
+    if (m_grpFill)
+    {
+        return *m_grpFill;
+    }
+    return CT_GroupFillProperties::default_instance();
+}
+
 void CT_TextUnderlineFillGroupWrapper::clear()
-{    }
+{
+    m_has_noFill = false;
+
+    if (m_noFill)
+    {
+        delete m_noFill;
+        m_noFill = NULL;
+    }
+
+
+    m_has_solidFill = false;
+
+    if (m_solidFill)
+    {
+        delete m_solidFill;
+        m_solidFill = NULL;
+    }
+
+
+    m_has_gradFill = false;
+
+    if (m_gradFill)
+    {
+        delete m_gradFill;
+        m_gradFill = NULL;
+    }
+
+
+    m_has_blipFill = false;
+
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+
+
+    m_has_pattFill = false;
+
+    if (m_pattFill)
+    {
+        delete m_pattFill;
+        m_pattFill = NULL;
+    }
+
+
+    m_has_grpFill = false;
+
+    if (m_grpFill)
+    {
+        delete m_grpFill;
+        m_grpFill = NULL;
+    }
+
+}
 
 void CT_TextUnderlineFillGroupWrapper::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
 {
@@ -108067,6 +117633,48 @@ void CT_TextUnderlineFillGroupWrapper::toXmlElem(const std::string& _elemName, c
     }
 
     _outStream << ">";
+
+    {
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+
+
+    if (m_has_noFill)
+    {
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
+    }
+
+
+    if (m_has_solidFill)
+    {
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
+    }
+
+
+    if (m_has_gradFill)
+    {
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
+    }
+
+
+    if (m_has_blipFill)
+    {
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
+    }
+
+
+    if (m_has_pattFill)
+    {
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
+    }
+
+
+    if (m_has_grpFill)
+    {
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
+    }
 
     _outStream << "</" << _elemName << ">";
 }
@@ -109500,7 +119108,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -109542,7 +119150,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -109566,7 +119174,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_uLnTx, m_has_uLn};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -109584,7 +119192,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_uFillTx, m_has_uFill};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -110370,6 +119978,11 @@ void CT_TextTabStopList::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tab));
+        assert(0 <= childSize && childSize <= 32);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -111671,7 +121284,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_buClrTx, m_has_buClr};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -111689,7 +121302,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[3] = {m_has_buSzTx, m_has_buSzPct, m_has_buSzPts};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -111713,7 +121326,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_buFontTx, m_has_buFont};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -111731,7 +121344,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[4] = {m_has_buNone, m_has_buAutoNum, m_has_buChar, m_has_buBlip};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -112911,7 +122524,7 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -112953,7 +122566,7 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 

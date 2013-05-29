@@ -7505,9 +7505,9 @@ CT_Filter* CT_Filters::add_filter()
 
 CT_DateGroupItem* CT_Filters::add_dateGroupItem()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_DateGroupItem* pNewChild = pChildGroup->mutable_dateGroupItem();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -7532,6 +7532,15 @@ void CT_Filters::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -7569,7 +7578,14 @@ void CT_Filters::toXmlElem(const std::string& _elemName, const std::string& _xml
             }
 
 
-            else if ((*iter)->has_dateGroupItem())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_dateGroupItem())
             {
                 (*iter)->get_dateGroupItem().toXmlElem("x:dateGroupItem", "", _outStream);
             }
@@ -7630,9 +7646,7 @@ const ns_s::ST_CalendarType& CT_Filters::get_calendarType_attr() const
 // CT_Filters::ChildGroup_1
 CT_Filters::ChildGroup_1::ChildGroup_1()
     :m_has_filter(false),
-     m_filter(NULL),
-     m_has_dateGroupItem(false),
-     m_dateGroupItem(NULL)
+     m_filter(NULL)
 {
 }
 bool CT_Filters::ChildGroup_1::has_filter() const
@@ -7642,15 +7656,6 @@ bool CT_Filters::ChildGroup_1::has_filter() const
 
 CT_Filter* CT_Filters::ChildGroup_1::mutable_filter()
 {
-
-    m_has_dateGroupItem = false;
-
-    if (m_dateGroupItem)
-    {
-        delete m_dateGroupItem;
-        m_dateGroupItem = NULL;
-    }
-    ;
 
     m_has_filter = true;
     if (!m_filter)
@@ -7669,22 +7674,20 @@ const CT_Filter& CT_Filters::ChildGroup_1::get_filter() const
     return CT_Filter::default_instance();
 }
 
-bool CT_Filters::ChildGroup_1::has_dateGroupItem() const
+
+// CT_Filters::ChildGroup_2
+CT_Filters::ChildGroup_2::ChildGroup_2()
+    :m_has_dateGroupItem(false),
+     m_dateGroupItem(NULL)
+{
+}
+bool CT_Filters::ChildGroup_2::has_dateGroupItem() const
 {
     return m_has_dateGroupItem;
 }
 
-CT_DateGroupItem* CT_Filters::ChildGroup_1::mutable_dateGroupItem()
+CT_DateGroupItem* CT_Filters::ChildGroup_2::mutable_dateGroupItem()
 {
-
-    m_has_filter = false;
-
-    if (m_filter)
-    {
-        delete m_filter;
-        m_filter = NULL;
-    }
-    ;
 
     m_has_dateGroupItem = true;
     if (!m_dateGroupItem)
@@ -7694,7 +7697,7 @@ CT_DateGroupItem* CT_Filters::ChildGroup_1::mutable_dateGroupItem()
     return m_dateGroupItem;
 }
 
-const CT_DateGroupItem& CT_Filters::ChildGroup_1::get_dateGroupItem() const
+const CT_DateGroupItem& CT_Filters::ChildGroup_2::get_dateGroupItem() const
 {
     if (m_dateGroupItem)
     {
@@ -7827,6 +7830,11 @@ void CT_CustomFilters::toXmlElem(const std::string& _elemName, const std::string
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customFilter));
+        assert(1 <= childSize && childSize <= 2);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -8680,6 +8688,11 @@ void CT_SortState::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sortCondition));
+        assert(0 <= childSize && childSize <= 64);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -9836,6 +9849,11 @@ void CT_CalcChain::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_c));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -11230,9 +11248,9 @@ CT_Schema* CT_MapInfo::add_Schema()
 
 CT_Map* CT_MapInfo::add_Map()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Map* pNewChild = pChildGroup->mutable_Map();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -11248,6 +11266,15 @@ void CT_MapInfo::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -11269,6 +11296,11 @@ void CT_MapInfo::toXmlElem(const std::string& _elemName, const std::string& _xml
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Schema));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -11278,7 +11310,19 @@ void CT_MapInfo::toXmlElem(const std::string& _elemName, const std::string& _xml
             }
 
 
-            else if ((*iter)->has_Map())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_Map));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_Map())
             {
                 (*iter)->get_Map().toXmlElem("x:Map", "", _outStream);
             }
@@ -11319,9 +11363,7 @@ const XSD::string_& CT_MapInfo::get_SelectionNamespaces_attr() const
 // CT_MapInfo::ChildGroup_1
 CT_MapInfo::ChildGroup_1::ChildGroup_1()
     :m_has_Schema(false),
-     m_Schema(NULL),
-     m_has_Map(false),
-     m_Map(NULL)
+     m_Schema(NULL)
 {
 }
 bool CT_MapInfo::ChildGroup_1::has_Schema() const
@@ -11331,15 +11373,6 @@ bool CT_MapInfo::ChildGroup_1::has_Schema() const
 
 CT_Schema* CT_MapInfo::ChildGroup_1::mutable_Schema()
 {
-
-    m_has_Map = false;
-
-    if (m_Map)
-    {
-        delete m_Map;
-        m_Map = NULL;
-    }
-    ;
 
     m_has_Schema = true;
     if (!m_Schema)
@@ -11358,22 +11391,20 @@ const CT_Schema& CT_MapInfo::ChildGroup_1::get_Schema() const
     return CT_Schema::default_instance();
 }
 
-bool CT_MapInfo::ChildGroup_1::has_Map() const
+
+// CT_MapInfo::ChildGroup_2
+CT_MapInfo::ChildGroup_2::ChildGroup_2()
+    :m_has_Map(false),
+     m_Map(NULL)
+{
+}
+bool CT_MapInfo::ChildGroup_2::has_Map() const
 {
     return m_has_Map;
 }
 
-CT_Map* CT_MapInfo::ChildGroup_1::mutable_Map()
+CT_Map* CT_MapInfo::ChildGroup_2::mutable_Map()
 {
-
-    m_has_Schema = false;
-
-    if (m_Schema)
-    {
-        delete m_Schema;
-        m_Schema = NULL;
-    }
-    ;
 
     m_has_Map = true;
     if (!m_Map)
@@ -11383,7 +11414,7 @@ CT_Map* CT_MapInfo::ChildGroup_1::mutable_Map()
     return m_Map;
 }
 
-const CT_Map& CT_MapInfo::ChildGroup_1::get_Map() const
+const CT_Map& CT_MapInfo::ChildGroup_2::get_Map() const
 {
     if (m_Map)
     {
@@ -12103,6 +12134,11 @@ void CT_Connections::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_connection));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -14069,6 +14105,11 @@ void CT_Parameters::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_parameter));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -15444,6 +15485,11 @@ void CT_TextFields::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_textField));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -18095,6 +18141,11 @@ void CT_Pages::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_page));
+        assert(1 <= childSize && childSize <= 4);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -18416,6 +18467,11 @@ void CT_RangeSets::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rangeSet));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -19795,9 +19851,9 @@ CT_Tuples* CT_Missing::add_tpls()
 
 CT_X* CT_Missing::add_x()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_X* pNewChild = pChildGroup->mutable_x();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -19861,6 +19917,15 @@ void CT_Missing::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -19961,7 +20026,14 @@ void CT_Missing::toXmlElem(const std::string& _elemName, const std::string& _xml
             }
 
 
-            else if ((*iter)->has_x())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_x())
             {
                 (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
@@ -20174,9 +20246,7 @@ const XSD::boolean_& CT_Missing::get_b_attr() const
 // CT_Missing::ChildGroup_1
 CT_Missing::ChildGroup_1::ChildGroup_1()
     :m_has_tpls(false),
-     m_tpls(NULL),
-     m_has_x(false),
-     m_x(NULL)
+     m_tpls(NULL)
 {
 }
 bool CT_Missing::ChildGroup_1::has_tpls() const
@@ -20186,15 +20256,6 @@ bool CT_Missing::ChildGroup_1::has_tpls() const
 
 CT_Tuples* CT_Missing::ChildGroup_1::mutable_tpls()
 {
-
-    m_has_x = false;
-
-    if (m_x)
-    {
-        delete m_x;
-        m_x = NULL;
-    }
-    ;
 
     m_has_tpls = true;
     if (!m_tpls)
@@ -20213,22 +20274,20 @@ const CT_Tuples& CT_Missing::ChildGroup_1::get_tpls() const
     return CT_Tuples::default_instance();
 }
 
-bool CT_Missing::ChildGroup_1::has_x() const
+
+// CT_Missing::ChildGroup_2
+CT_Missing::ChildGroup_2::ChildGroup_2()
+    :m_has_x(false),
+     m_x(NULL)
+{
+}
+bool CT_Missing::ChildGroup_2::has_x() const
 {
     return m_has_x;
 }
 
-CT_X* CT_Missing::ChildGroup_1::mutable_x()
+CT_X* CT_Missing::ChildGroup_2::mutable_x()
 {
-
-    m_has_tpls = false;
-
-    if (m_tpls)
-    {
-        delete m_tpls;
-        m_tpls = NULL;
-    }
-    ;
 
     m_has_x = true;
     if (!m_x)
@@ -20238,7 +20297,7 @@ CT_X* CT_Missing::ChildGroup_1::mutable_x()
     return m_x;
 }
 
-const CT_X& CT_Missing::ChildGroup_1::get_x() const
+const CT_X& CT_Missing::ChildGroup_2::get_x() const
 {
     if (m_x)
     {
@@ -20291,9 +20350,9 @@ CT_Tuples* CT_Number::add_tpls()
 
 CT_X* CT_Number::add_x()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_X* pNewChild = pChildGroup->mutable_x();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -20360,6 +20419,15 @@ void CT_Number::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -20467,7 +20535,14 @@ void CT_Number::toXmlElem(const std::string& _elemName, const std::string& _xmlN
             }
 
 
-            else if ((*iter)->has_x())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_x())
             {
                 (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
@@ -20696,9 +20771,7 @@ const XSD::boolean_& CT_Number::get_b_attr() const
 // CT_Number::ChildGroup_1
 CT_Number::ChildGroup_1::ChildGroup_1()
     :m_has_tpls(false),
-     m_tpls(NULL),
-     m_has_x(false),
-     m_x(NULL)
+     m_tpls(NULL)
 {
 }
 bool CT_Number::ChildGroup_1::has_tpls() const
@@ -20708,15 +20781,6 @@ bool CT_Number::ChildGroup_1::has_tpls() const
 
 CT_Tuples* CT_Number::ChildGroup_1::mutable_tpls()
 {
-
-    m_has_x = false;
-
-    if (m_x)
-    {
-        delete m_x;
-        m_x = NULL;
-    }
-    ;
 
     m_has_tpls = true;
     if (!m_tpls)
@@ -20735,22 +20799,20 @@ const CT_Tuples& CT_Number::ChildGroup_1::get_tpls() const
     return CT_Tuples::default_instance();
 }
 
-bool CT_Number::ChildGroup_1::has_x() const
+
+// CT_Number::ChildGroup_2
+CT_Number::ChildGroup_2::ChildGroup_2()
+    :m_has_x(false),
+     m_x(NULL)
+{
+}
+bool CT_Number::ChildGroup_2::has_x() const
 {
     return m_has_x;
 }
 
-CT_X* CT_Number::ChildGroup_1::mutable_x()
+CT_X* CT_Number::ChildGroup_2::mutable_x()
 {
-
-    m_has_tpls = false;
-
-    if (m_tpls)
-    {
-        delete m_tpls;
-        m_tpls = NULL;
-    }
-    ;
 
     m_has_x = true;
     if (!m_x)
@@ -20760,7 +20822,7 @@ CT_X* CT_Number::ChildGroup_1::mutable_x()
     return m_x;
 }
 
-const CT_X& CT_Number::ChildGroup_1::get_x() const
+const CT_X& CT_Number::ChildGroup_2::get_x() const
 {
     if (m_x)
     {
@@ -21574,9 +21636,9 @@ CT_Tuples* CT_String::add_tpls()
 
 CT_X* CT_String::add_x()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_X* pNewChild = pChildGroup->mutable_x();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -21649,6 +21711,15 @@ void CT_String::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -21756,7 +21827,14 @@ void CT_String::toXmlElem(const std::string& _elemName, const std::string& _xmlN
             }
 
 
-            else if ((*iter)->has_x())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_x())
             {
                 (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
@@ -21989,9 +22067,7 @@ const XSD::boolean_& CT_String::get_b_attr() const
 // CT_String::ChildGroup_1
 CT_String::ChildGroup_1::ChildGroup_1()
     :m_has_tpls(false),
-     m_tpls(NULL),
-     m_has_x(false),
-     m_x(NULL)
+     m_tpls(NULL)
 {
 }
 bool CT_String::ChildGroup_1::has_tpls() const
@@ -22001,15 +22077,6 @@ bool CT_String::ChildGroup_1::has_tpls() const
 
 CT_Tuples* CT_String::ChildGroup_1::mutable_tpls()
 {
-
-    m_has_x = false;
-
-    if (m_x)
-    {
-        delete m_x;
-        m_x = NULL;
-    }
-    ;
 
     m_has_tpls = true;
     if (!m_tpls)
@@ -22028,22 +22095,20 @@ const CT_Tuples& CT_String::ChildGroup_1::get_tpls() const
     return CT_Tuples::default_instance();
 }
 
-bool CT_String::ChildGroup_1::has_x() const
+
+// CT_String::ChildGroup_2
+CT_String::ChildGroup_2::ChildGroup_2()
+    :m_has_x(false),
+     m_x(NULL)
+{
+}
+bool CT_String::ChildGroup_2::has_x() const
 {
     return m_has_x;
 }
 
-CT_X* CT_String::ChildGroup_1::mutable_x()
+CT_X* CT_String::ChildGroup_2::mutable_x()
 {
-
-    m_has_tpls = false;
-
-    if (m_tpls)
-    {
-        delete m_tpls;
-        m_tpls = NULL;
-    }
-    ;
 
     m_has_x = true;
     if (!m_x)
@@ -22053,7 +22118,7 @@ CT_X* CT_String::ChildGroup_1::mutable_x()
     return m_x;
 }
 
-const CT_X& CT_String::ChildGroup_1::get_x() const
+const CT_X& CT_String::ChildGroup_2::get_x() const
 {
     if (m_x)
     {
@@ -22843,6 +22908,11 @@ void CT_DiscretePr::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_x));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -26214,6 +26284,11 @@ void CT_GroupLevels::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_groupLevel));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26586,6 +26661,11 @@ void CT_Groups::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_group));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -26969,6 +27049,11 @@ void CT_GroupMembers::toXmlElem(const std::string& _elemName, const std::string&
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_groupMember));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -28035,6 +28120,11 @@ void CT_Tuples::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tpl));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -28277,6 +28367,11 @@ void CT_Sets::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_set));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -28702,6 +28797,11 @@ void CT_QueryCache::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_query));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -28939,6 +29039,11 @@ void CT_CalculatedItems::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_calculatedItem));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -29249,6 +29354,11 @@ void CT_CalculatedMembers::toXmlElem(const std::string& _elemName, const std::st
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_calculatedMember));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -32659,6 +32769,11 @@ void CT_PivotFields::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pivotField));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -34425,6 +34540,11 @@ void CT_Items::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_item));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -34913,6 +35033,11 @@ void CT_PageFields::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pageField));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -35272,6 +35397,11 @@ void CT_DataFields::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_dataField));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -35711,6 +35841,11 @@ void CT_rowItems::toXmlElem(const std::string& _elemName, const std::string& _xm
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_i));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -35834,6 +35969,11 @@ void CT_colItems::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_i));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -36215,6 +36355,11 @@ void CT_RowFields::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_field));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -36338,6 +36483,11 @@ void CT_ColFields::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_field));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -36526,6 +36676,11 @@ void CT_Formats::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_format));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -36846,6 +37001,11 @@ void CT_ConditionalFormats::toXmlElem(const std::string& _elemName, const std::s
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_conditionalFormat));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -37321,6 +37481,11 @@ void CT_ChartFormats::toXmlElem(const std::string& _elemName, const std::string&
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_chartFormat));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -37606,6 +37771,11 @@ void CT_PivotHierarchies::toXmlElem(const std::string& _elemName, const std::str
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pivotHierarchy));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -38230,6 +38400,11 @@ void CT_RowHierarchiesUsage::toXmlElem(const std::string& _elemName, const std::
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rowHierarchyUsage));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -38353,6 +38528,11 @@ void CT_ColHierarchiesUsage::toXmlElem(const std::string& _elemName, const std::
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_colHierarchyUsage));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -38541,6 +38721,11 @@ void CT_MemberProperties::toXmlElem(const std::string& _elemName, const std::str
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mp));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -38975,6 +39160,11 @@ void CT_Members::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_member));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -41233,6 +41423,11 @@ void CT_PivotAreaReferences::toXmlElem(const std::string& _elemName, const std::
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_reference));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -43183,6 +43378,11 @@ void CT_QueryTableDeletedFields::toXmlElem(const std::string& _elemName, const s
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_deletedField));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -46801,9 +47001,9 @@ CT_RElt* CT_Rst::add_r()
 
 CT_PhoneticRun* CT_Rst::add_rPh()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_PhoneticRun* pNewChild = pChildGroup->mutable_rPh();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -46851,6 +47051,15 @@ void CT_Rst::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_phoneticPr = false;
 
     if (m_phoneticPr)
@@ -46888,7 +47097,14 @@ void CT_Rst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
             }
 
 
-            else if ((*iter)->has_rPh())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_rPh())
             {
                 (*iter)->get_rPh().toXmlElem("x:rPh", "", _outStream);
             }
@@ -46919,9 +47135,7 @@ const CT_Rst& CT_Rst::default_instance()
 // CT_Rst::ChildGroup_1
 CT_Rst::ChildGroup_1::ChildGroup_1()
     :m_has_r(false),
-     m_r(NULL),
-     m_has_rPh(false),
-     m_rPh(NULL)
+     m_r(NULL)
 {
 }
 bool CT_Rst::ChildGroup_1::has_r() const
@@ -46931,15 +47145,6 @@ bool CT_Rst::ChildGroup_1::has_r() const
 
 CT_RElt* CT_Rst::ChildGroup_1::mutable_r()
 {
-
-    m_has_rPh = false;
-
-    if (m_rPh)
-    {
-        delete m_rPh;
-        m_rPh = NULL;
-    }
-    ;
 
     m_has_r = true;
     if (!m_r)
@@ -46958,22 +47163,20 @@ const CT_RElt& CT_Rst::ChildGroup_1::get_r() const
     return CT_RElt::default_instance();
 }
 
-bool CT_Rst::ChildGroup_1::has_rPh() const
+
+// CT_Rst::ChildGroup_2
+CT_Rst::ChildGroup_2::ChildGroup_2()
+    :m_has_rPh(false),
+     m_rPh(NULL)
+{
+}
+bool CT_Rst::ChildGroup_2::has_rPh() const
 {
     return m_has_rPh;
 }
 
-CT_PhoneticRun* CT_Rst::ChildGroup_1::mutable_rPh()
+CT_PhoneticRun* CT_Rst::ChildGroup_2::mutable_rPh()
 {
-
-    m_has_r = false;
-
-    if (m_r)
-    {
-        delete m_r;
-        m_r = NULL;
-    }
-    ;
 
     m_has_rPh = true;
     if (!m_rPh)
@@ -46983,7 +47186,7 @@ CT_PhoneticRun* CT_Rst::ChildGroup_1::mutable_rPh()
     return m_rPh;
 }
 
-const CT_PhoneticRun& CT_Rst::ChildGroup_1::get_rPh() const
+const CT_PhoneticRun& CT_Rst::ChildGroup_2::get_rPh() const
 {
     if (m_rPh)
     {
@@ -47336,6 +47539,11 @@ void CT_RevisionHeaders::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_header));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -49776,6 +49984,11 @@ void CT_SheetIdMap::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetId));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -49962,6 +50175,11 @@ void CT_ReviewedRevisions::toXmlElem(const std::string& _elemName, const std::st
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_reviewed));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -54884,6 +55102,11 @@ void CT_Users::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_userInfo));
+        assert(0 <= childSize && childSize <= 256);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -59214,6 +59437,11 @@ void CT_Cols::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_col));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -61026,6 +61254,11 @@ void CT_SheetViews::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetView));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -61174,9 +61407,9 @@ CT_Selection* CT_SheetView::add_selection()
 
 CT_PivotSelection* CT_SheetView::add_pivotSelection()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_PivotSelection* pNewChild = pChildGroup->mutable_pivotSelection();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -61291,6 +61524,15 @@ void CT_SheetView::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 
     m_has_extLst = false;
@@ -61453,6 +61695,11 @@ void CT_SheetView::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_selection));
+        assert(0 <= childSize && childSize <= 4);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -61462,7 +61709,19 @@ void CT_SheetView::toXmlElem(const std::string& _elemName, const std::string& _x
             }
 
 
-            else if ((*iter)->has_pivotSelection())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_pivotSelection));
+        assert(0 <= childSize && childSize <= 4);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_pivotSelection())
             {
                 (*iter)->get_pivotSelection().toXmlElem("x:pivotSelection", "", _outStream);
             }
@@ -61805,9 +62064,7 @@ const XSD::unsignedInt_& CT_SheetView::get_workbookViewId_attr() const
 // CT_SheetView::ChildGroup_1
 CT_SheetView::ChildGroup_1::ChildGroup_1()
     :m_has_selection(false),
-     m_selection(NULL),
-     m_has_pivotSelection(false),
-     m_pivotSelection(NULL)
+     m_selection(NULL)
 {
 }
 bool CT_SheetView::ChildGroup_1::has_selection() const
@@ -61817,15 +62074,6 @@ bool CT_SheetView::ChildGroup_1::has_selection() const
 
 CT_Selection* CT_SheetView::ChildGroup_1::mutable_selection()
 {
-
-    m_has_pivotSelection = false;
-
-    if (m_pivotSelection)
-    {
-        delete m_pivotSelection;
-        m_pivotSelection = NULL;
-    }
-    ;
 
     m_has_selection = true;
     if (!m_selection)
@@ -61844,22 +62092,20 @@ const CT_Selection& CT_SheetView::ChildGroup_1::get_selection() const
     return CT_Selection::default_instance();
 }
 
-bool CT_SheetView::ChildGroup_1::has_pivotSelection() const
+
+// CT_SheetView::ChildGroup_2
+CT_SheetView::ChildGroup_2::ChildGroup_2()
+    :m_has_pivotSelection(false),
+     m_pivotSelection(NULL)
+{
+}
+bool CT_SheetView::ChildGroup_2::has_pivotSelection() const
 {
     return m_has_pivotSelection;
 }
 
-CT_PivotSelection* CT_SheetView::ChildGroup_1::mutable_pivotSelection()
+CT_PivotSelection* CT_SheetView::ChildGroup_2::mutable_pivotSelection()
 {
-
-    m_has_selection = false;
-
-    if (m_selection)
-    {
-        delete m_selection;
-        m_selection = NULL;
-    }
-    ;
 
     m_has_pivotSelection = true;
     if (!m_pivotSelection)
@@ -61869,7 +62115,7 @@ CT_PivotSelection* CT_SheetView::ChildGroup_1::mutable_pivotSelection()
     return m_pivotSelection;
 }
 
-const CT_PivotSelection& CT_SheetView::ChildGroup_1::get_pivotSelection() const
+const CT_PivotSelection& CT_SheetView::ChildGroup_2::get_pivotSelection() const
 {
     if (m_pivotSelection)
     {
@@ -64001,6 +64247,11 @@ void CT_MergeCells::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mergeCell));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -64189,6 +64440,11 @@ void CT_SmartTags::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellSmartTags));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -64302,6 +64558,11 @@ void CT_CellSmartTags::toXmlElem(const std::string& _elemName, const std::string
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellSmartTag));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -65436,6 +65697,11 @@ void CT_CustomSheetViews::toXmlElem(const std::string& _elemName, const std::str
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customSheetView));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -66628,6 +66894,11 @@ void CT_DataValidations::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_dataValidation));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -67425,6 +67696,11 @@ void CT_ConditionalFormatting::toXmlElem(const std::string& _elemName, const std
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfRule));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -67884,6 +68160,11 @@ void CT_CfRule::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_formula));
+        assert(0 <= childSize && childSize <= 3);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -68229,6 +68510,11 @@ void CT_Hyperlinks::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_hyperlink));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -68945,9 +69231,9 @@ CT_Cfvo* CT_ColorScale::add_cfvo()
 
 CT_Color* CT_ColorScale::add_color()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Color* pNewChild = pChildGroup->mutable_color();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -68960,6 +69246,15 @@ void CT_ColorScale::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -68975,6 +69270,11 @@ void CT_ColorScale::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfvo));
+        assert(2 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -68984,7 +69284,19 @@ void CT_ColorScale::toXmlElem(const std::string& _elemName, const std::string& _
             }
 
 
-            else if ((*iter)->has_color())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_color));
+        assert(2 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_color())
             {
                 (*iter)->get_color().toXmlElem("x:color", "", _outStream);
             }
@@ -69009,9 +69321,7 @@ const CT_ColorScale& CT_ColorScale::default_instance()
 // CT_ColorScale::ChildGroup_1
 CT_ColorScale::ChildGroup_1::ChildGroup_1()
     :m_has_cfvo(false),
-     m_cfvo(NULL),
-     m_has_color(false),
-     m_color(NULL)
+     m_cfvo(NULL)
 {
 }
 bool CT_ColorScale::ChildGroup_1::has_cfvo() const
@@ -69021,15 +69331,6 @@ bool CT_ColorScale::ChildGroup_1::has_cfvo() const
 
 CT_Cfvo* CT_ColorScale::ChildGroup_1::mutable_cfvo()
 {
-
-    m_has_color = false;
-
-    if (m_color)
-    {
-        delete m_color;
-        m_color = NULL;
-    }
-    ;
 
     m_has_cfvo = true;
     if (!m_cfvo)
@@ -69048,22 +69349,20 @@ const CT_Cfvo& CT_ColorScale::ChildGroup_1::get_cfvo() const
     return CT_Cfvo::default_instance();
 }
 
-bool CT_ColorScale::ChildGroup_1::has_color() const
+
+// CT_ColorScale::ChildGroup_2
+CT_ColorScale::ChildGroup_2::ChildGroup_2()
+    :m_has_color(false),
+     m_color(NULL)
+{
+}
+bool CT_ColorScale::ChildGroup_2::has_color() const
 {
     return m_has_color;
 }
 
-CT_Color* CT_ColorScale::ChildGroup_1::mutable_color()
+CT_Color* CT_ColorScale::ChildGroup_2::mutable_color()
 {
-
-    m_has_cfvo = false;
-
-    if (m_cfvo)
-    {
-        delete m_cfvo;
-        m_cfvo = NULL;
-    }
-    ;
 
     m_has_color = true;
     if (!m_color)
@@ -69073,7 +69372,7 @@ CT_Color* CT_ColorScale::ChildGroup_1::mutable_color()
     return m_color;
 }
 
-const CT_Color& CT_ColorScale::ChildGroup_1::get_color() const
+const CT_Color& CT_ColorScale::ChildGroup_2::get_color() const
 {
     if (m_color)
     {
@@ -69192,6 +69491,11 @@ void CT_DataBar::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfvo));
+        assert(2 <= childSize && childSize <= 2);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -69399,6 +69703,11 @@ void CT_IconSet::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfvo));
+        assert(2 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -71196,6 +71505,11 @@ void CT_Scenarios::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_scenario));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -71990,6 +72304,11 @@ void CT_ProtectedRanges::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_protectedRange));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -72529,6 +72848,11 @@ void CT_Scenario::toXmlElem(const std::string& _elemName, const std::string& _xm
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_inputCells));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -72939,6 +73263,11 @@ void CT_CellWatches::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellWatch));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -73892,6 +74221,11 @@ void CT_ChartsheetViews::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetView));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -75266,6 +75600,11 @@ void CT_CustomProperties::toXmlElem(const std::string& _elemName, const std::str
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customPr));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -75474,6 +75813,11 @@ void CT_OleObjects::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_oleObject));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -76341,6 +76685,11 @@ void CT_WebPublishItems::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_webPublishItem));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -76773,6 +77122,11 @@ void CT_Controls::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_control));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -77634,6 +77988,11 @@ void CT_IgnoredErrors::toXmlElem(const std::string& _elemName, const std::string
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_ignoredError));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -78618,6 +78977,11 @@ void CT_MetadataTypes::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_metadataType));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -79572,6 +79936,11 @@ void CT_MetadataBlocks::toXmlElem(const std::string& _elemName, const std::strin
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_bk));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -79685,6 +80054,11 @@ void CT_MetadataBlock::toXmlElem(const std::string& _elemName, const std::string
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rc));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -80166,6 +80540,11 @@ void CT_MdxMetadata::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mdx));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -81585,6 +81964,11 @@ void CT_MetadataStrings::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_s));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -81698,6 +82082,11 @@ void CT_SingleXmlCells::toXmlElem(const std::string& _elemName, const std::strin
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_singleXmlCell));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -85350,6 +85739,11 @@ void CT_CellStyleXfs::toXmlElem(const std::string& _elemName, const std::string&
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_xf));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -85473,6 +85867,11 @@ void CT_CellXfs::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_xf));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -86170,6 +86569,11 @@ void CT_CellStyles::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellStyle));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -87117,6 +87521,11 @@ void CT_IndexedColors::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rgbColor));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -87214,6 +87623,11 @@ void CT_MRUColors::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_color));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -91498,6 +91912,11 @@ void CT_ExternalSheetNames::toXmlElem(const std::string& _elemName, const std::s
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetName));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -91906,6 +92325,11 @@ void CT_ExternalSheetDataSet::toXmlElem(const std::string& _elemName, const std:
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetData));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -92934,6 +93358,11 @@ void CT_DdeValues::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_value));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -94784,6 +95213,11 @@ void CT_TableColumns::toXmlElem(const std::string& _elemName, const std::string&
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tableColumn));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -95840,6 +96274,11 @@ void CT_VolTypes::toXmlElem(const std::string& _elemName, const std::string& _xm
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_volType));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -95959,6 +96398,11 @@ void CT_VolType::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_main));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -96096,6 +96540,11 @@ void CT_VolMain::toXmlElem(const std::string& _elemName, const std::string& _xml
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tp));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -96220,9 +96669,9 @@ ns_s::ST_Xstring* CT_VolTopic::add_stp()
 
 CT_VolTopicRef* CT_VolTopic::add_tr()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_VolTopicRef* pNewChild = pChildGroup->mutable_tr();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -96253,6 +96702,15 @@ void CT_VolTopic::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -96291,7 +96749,19 @@ void CT_VolTopic::toXmlElem(const std::string& _elemName, const std::string& _xm
             }
 
 
-            else if ((*iter)->has_tr())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_tr));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_tr())
             {
                 (*iter)->get_tr().toXmlElem("x:tr", "", _outStream);
             }
@@ -96336,9 +96806,7 @@ const ST_VolValueType& CT_VolTopic::get_t_attr() const
 // CT_VolTopic::ChildGroup_1
 CT_VolTopic::ChildGroup_1::ChildGroup_1()
     :m_has_stp(false),
-     m_stp(NULL),
-     m_has_tr(false),
-     m_tr(NULL)
+     m_stp(NULL)
 {
 }
 bool CT_VolTopic::ChildGroup_1::has_stp() const
@@ -96348,15 +96816,6 @@ bool CT_VolTopic::ChildGroup_1::has_stp() const
 
 ns_s::ST_Xstring* CT_VolTopic::ChildGroup_1::mutable_stp()
 {
-
-    m_has_tr = false;
-
-    if (m_tr)
-    {
-        delete m_tr;
-        m_tr = NULL;
-    }
-    ;
 
     m_has_stp = true;
     if (!m_stp)
@@ -96375,22 +96834,20 @@ const ns_s::ST_Xstring& CT_VolTopic::ChildGroup_1::get_stp() const
     return ns_s::ST_Xstring::default_instance();
 }
 
-bool CT_VolTopic::ChildGroup_1::has_tr() const
+
+// CT_VolTopic::ChildGroup_2
+CT_VolTopic::ChildGroup_2::ChildGroup_2()
+    :m_has_tr(false),
+     m_tr(NULL)
+{
+}
+bool CT_VolTopic::ChildGroup_2::has_tr() const
 {
     return m_has_tr;
 }
 
-CT_VolTopicRef* CT_VolTopic::ChildGroup_1::mutable_tr()
+CT_VolTopicRef* CT_VolTopic::ChildGroup_2::mutable_tr()
 {
-
-    m_has_stp = false;
-
-    if (m_stp)
-    {
-        delete m_stp;
-        m_stp = NULL;
-    }
-    ;
 
     m_has_tr = true;
     if (!m_tr)
@@ -96400,7 +96857,7 @@ CT_VolTopicRef* CT_VolTopic::ChildGroup_1::mutable_tr()
     return m_tr;
 }
 
-const CT_VolTopicRef& CT_VolTopic::ChildGroup_1::get_tr() const
+const CT_VolTopicRef& CT_VolTopic::ChildGroup_2::get_tr() const
 {
     if (m_tr)
     {
@@ -97613,6 +98070,11 @@ void CT_BookViews::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_workbookView));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -98160,6 +98622,11 @@ void CT_CustomWorkbookViews::toXmlElem(const std::string& _elemName, const std::
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customWorkbookView));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -99047,6 +99514,11 @@ void CT_Sheets::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheet));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -101424,6 +101896,11 @@ void CT_ExternalReferences::toXmlElem(const std::string& _elemName, const std::s
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_externalReference));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -101667,6 +102144,11 @@ void CT_PivotCaches::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pivotCache));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -103005,6 +103487,11 @@ void CT_FunctionGroups::toXmlElem(const std::string& _elemName, const std::strin
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_functionGroup));
+        assert(0 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -103201,6 +103688,11 @@ void CT_WebPublishObjects::toXmlElem(const std::string& _elemName, const std::st
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_webPublishObject));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -103595,6 +104087,11 @@ void calcChain_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_c));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -103843,9 +104340,9 @@ CT_Schema* MapInfo_element::add_Schema()
 
 CT_Map* MapInfo_element::add_Map()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Map* pNewChild = pChildGroup->mutable_Map();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -103861,6 +104358,15 @@ void MapInfo_element::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -103882,6 +104388,11 @@ void MapInfo_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Schema));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -103891,7 +104402,19 @@ void MapInfo_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_Map())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_Map));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_Map())
             {
                 (*iter)->get_Map().toXmlElem("x:Map", "", _outStream);
             }
@@ -103932,9 +104455,7 @@ const XSD::string_& MapInfo_element::get_SelectionNamespaces_attr() const
 // MapInfo_element::ChildGroup_1
 MapInfo_element::ChildGroup_1::ChildGroup_1()
     :m_has_Schema(false),
-     m_Schema(NULL),
-     m_has_Map(false),
-     m_Map(NULL)
+     m_Schema(NULL)
 {
 }
 bool MapInfo_element::ChildGroup_1::has_Schema() const
@@ -103944,15 +104465,6 @@ bool MapInfo_element::ChildGroup_1::has_Schema() const
 
 CT_Schema* MapInfo_element::ChildGroup_1::mutable_Schema()
 {
-
-    m_has_Map = false;
-
-    if (m_Map)
-    {
-        delete m_Map;
-        m_Map = NULL;
-    }
-    ;
 
     m_has_Schema = true;
     if (!m_Schema)
@@ -103971,22 +104483,20 @@ const CT_Schema& MapInfo_element::ChildGroup_1::get_Schema() const
     return CT_Schema::default_instance();
 }
 
-bool MapInfo_element::ChildGroup_1::has_Map() const
+
+// MapInfo_element::ChildGroup_2
+MapInfo_element::ChildGroup_2::ChildGroup_2()
+    :m_has_Map(false),
+     m_Map(NULL)
+{
+}
+bool MapInfo_element::ChildGroup_2::has_Map() const
 {
     return m_has_Map;
 }
 
-CT_Map* MapInfo_element::ChildGroup_1::mutable_Map()
+CT_Map* MapInfo_element::ChildGroup_2::mutable_Map()
 {
-
-    m_has_Schema = false;
-
-    if (m_Schema)
-    {
-        delete m_Schema;
-        m_Schema = NULL;
-    }
-    ;
 
     m_has_Map = true;
     if (!m_Map)
@@ -103996,7 +104506,7 @@ CT_Map* MapInfo_element::ChildGroup_1::mutable_Map()
     return m_Map;
 }
 
-const CT_Map& MapInfo_element::ChildGroup_1::get_Map() const
+const CT_Map& MapInfo_element::ChildGroup_2::get_Map() const
 {
     if (m_Map)
     {
@@ -104046,6 +104556,11 @@ void connections_element::toXml(std::ostream& _outStream) const
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_connection));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -109205,6 +109720,11 @@ void headers_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_header));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -111255,6 +111775,11 @@ void users_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_userInfo));
+        assert(0 <= childSize && childSize <= 256);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -114702,6 +115227,11 @@ void singleXmlCells_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_singleXmlCell));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -116581,6 +117111,11 @@ void volTypes_element::toXml(std::ostream& _outStream) const
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_volType));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;

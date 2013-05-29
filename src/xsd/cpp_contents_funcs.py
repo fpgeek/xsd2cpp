@@ -2028,7 +2028,29 @@ def getToXmlMethodBodyStrFromElemCont(pbSchema, pbElemCont, cppFile):
             return 'assert(%(min_cnt)s <= childSize && childSize <= %(max_cnt)s)' % {'min_cnt':pbMinOccurs, 'max_cnt':pbMaxOccurs.count}
 
 
-    def makeAssertCodeFromOccursReqeated(pbElemList, idx, pbElemCont):
+    def makeAssertCodeFromOccursRepeatedSequence(pbElemList, idx, pbElemCont):
+        vector_name = 'm_childGroupList_%d' % idx
+        childGroupType = 'ChildGroup_%d' % idx
+
+        codeList = []
+        for pbElem in pbElemList:
+            if not (pbElem.min_occurs == 0 and pbElem.max_occurs.kind == PB.MaxOccurs.Unbounded):
+            # if (not (pbElem.min_occurs == 0 and pbElem.max_occurs.kind == PB.MaxOccurs.Unbounded)) \
+            #     and (not (pbElemCont.max_occurs.kind == PB.MaxOccurs.Unbounded)):
+
+                codeList.append("""
+{
+    int childSize = count_if(%(vector_name)s.begin(), %(vector_name)s.end(), %(has_func_name)s);
+    %(assert_code)s;
+}
+""" % {'vector_name':vector_name,
+       'assert_code': getElemCountAssertCode(pbElem.min_occurs, pbElem.max_occurs),
+       'has_func_name':'mem_fun(&%s::%s)' % (childGroupType, 'has_%s' % _getCppVarNameFromElem(pbElem))})
+
+        return '\n'.join(codeList)
+
+
+    def makeAssertCodeFromOccursReqeatedChoice(pbElemList, idx, pbElemCont):
         if pbElemCont.min_occurs == 0 and pbElemCont.max_occurs.kind == PB.MaxOccurs.Unbounded:
             return ''
 
@@ -2046,22 +2068,6 @@ def getToXmlMethodBodyStrFromElemCont(pbSchema, pbElemCont, cppFile):
     'assertCode': getElemCountAssertCode(pbElemCont.min_occurs, pbElemCont.max_occurs)
 }
 
-#         codeList = []
-#         for pbElem in pbElemList:
-#             if (not (pbElem.min_occurs == 0 and pbElem.max_occurs.kind == PB.MaxOccurs.Unbounded)) \
-#                 and (not (pbElemCont.max_occurs.kind == PB.MaxOccurs.Unbounded)):
-#
-#                 codeList.append("""
-# {
-#     int elemCnt = count_if(%(vector_name)s.begin(), %(vector_name)s.end(), %(has_func_name)s);
-#     %(assert_code)s;
-# }
-# """ % {'vector_name':vector_name,
-#        'assert_code': getElemCountAssertCode(pbElem.min_occurs, pbElem.max_occurs),
-#        'has_func_name':'mem_fun(&%s::%s)' % (childGroupType, 'has_%s' % _getCppVarNameFromElem(pbElem))})
-#
-#         return '\n'.join(codeList)
-
 
     toXmlMethodBodyStrList = []
     repeatedIdx = 1
@@ -2071,12 +2077,12 @@ def getToXmlMethodBodyStrFromElemCont(pbSchema, pbElemCont, cppFile):
         elif elemCont.kind == PB.ElementContainer.Choice:
             toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.choice, elemCont.min_occurs, makeAssertCodeFromOccursChoice))
         elif elemCont.kind == PB.ElementContainer.RepeatedSequence:
-            # makeAssertCodeFromOccursReqeatedFunc = functools.partial(makeAssertCodeFromOccursReqeated, pbElemCont=elemCont)
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_sequence, repeatedIdx, None))
+            makeAssertCodeFromOccursReqeatedFunc = functools.partial(makeAssertCodeFromOccursRepeatedSequence, pbElemCont=elemCont)
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_sequence, repeatedIdx, makeAssertCodeFromOccursReqeatedFunc))
             repeatedIdx += 1
 
         elif elemCont.kind == PB.ElementContainer.RepeatedChoice:
-            makeAssertCodeFromOccursReqeatedFunc = functools.partial(makeAssertCodeFromOccursReqeated, pbElemCont=elemCont)
+            makeAssertCodeFromOccursReqeatedFunc = functools.partial(makeAssertCodeFromOccursReqeatedChoice, pbElemCont=elemCont)
             toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_choice, repeatedIdx, makeAssertCodeFromOccursReqeatedFunc))
             repeatedIdx += 1
 

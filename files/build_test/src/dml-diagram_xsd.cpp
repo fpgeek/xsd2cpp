@@ -8823,11 +8823,6 @@ void CT_Colors::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -9737,9 +9732,9 @@ CT_CTName* CT_ColorTransform::add_title()
 
 CT_CTDescription* CT_ColorTransform::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_CTDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -9769,9 +9764,9 @@ const CT_CTCategories& CT_ColorTransform::get_catLst() const
 
 CT_CTStyleLabel* CT_ColorTransform::add_styleLbl()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_CTStyleLabel* pNewChild = pChildGroup->mutable_styleLbl();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -9816,6 +9811,15 @@ void CT_ColorTransform::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -9826,12 +9830,12 @@ void CT_ColorTransform::clear()
 
 
     {
-        vector<ChildGroup_2*>::iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             delete *iter;
         }
-        m_childGroupList_2.clear();
+        m_childGroupList_3.clear();
     }
 
     m_has_extLst = false;
@@ -9878,7 +9882,14 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -9894,8 +9905,8 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
     }
 
     {
-        vector<ChildGroup_2*>::const_iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             if ((*iter)->has_styleLbl())
             {
@@ -9960,9 +9971,7 @@ const XSD::string_& CT_ColorTransform::get_minVer_attr() const
 // CT_ColorTransform::ChildGroup_1
 CT_ColorTransform::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool CT_ColorTransform::ChildGroup_1::has_title() const
@@ -9972,15 +9981,6 @@ bool CT_ColorTransform::ChildGroup_1::has_title() const
 
 CT_CTName* CT_ColorTransform::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -9999,22 +9999,20 @@ const CT_CTName& CT_ColorTransform::ChildGroup_1::get_title() const
     return CT_CTName::default_instance();
 }
 
-bool CT_ColorTransform::ChildGroup_1::has_desc() const
+
+// CT_ColorTransform::ChildGroup_2
+CT_ColorTransform::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool CT_ColorTransform::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_CTDescription* CT_ColorTransform::ChildGroup_1::mutable_desc()
+CT_CTDescription* CT_ColorTransform::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -10024,7 +10022,7 @@ CT_CTDescription* CT_ColorTransform::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_CTDescription& CT_ColorTransform::ChildGroup_1::get_desc() const
+const CT_CTDescription& CT_ColorTransform::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -10034,18 +10032,18 @@ const CT_CTDescription& CT_ColorTransform::ChildGroup_1::get_desc() const
 }
 
 
-// CT_ColorTransform::ChildGroup_2
-CT_ColorTransform::ChildGroup_2::ChildGroup_2()
+// CT_ColorTransform::ChildGroup_3
+CT_ColorTransform::ChildGroup_3::ChildGroup_3()
     :m_has_styleLbl(false),
      m_styleLbl(NULL)
 {
 }
-bool CT_ColorTransform::ChildGroup_2::has_styleLbl() const
+bool CT_ColorTransform::ChildGroup_3::has_styleLbl() const
 {
     return m_has_styleLbl;
 }
 
-CT_CTStyleLabel* CT_ColorTransform::ChildGroup_2::mutable_styleLbl()
+CT_CTStyleLabel* CT_ColorTransform::ChildGroup_3::mutable_styleLbl()
 {
 
     m_has_styleLbl = true;
@@ -10056,7 +10054,7 @@ CT_CTStyleLabel* CT_ColorTransform::ChildGroup_2::mutable_styleLbl()
     return m_styleLbl;
 }
 
-const CT_CTStyleLabel& CT_ColorTransform::ChildGroup_2::get_styleLbl() const
+const CT_CTStyleLabel& CT_ColorTransform::ChildGroup_3::get_styleLbl() const
 {
     if (m_styleLbl)
     {
@@ -10095,9 +10093,9 @@ CT_CTName* CT_ColorTransformHeader::add_title()
 
 CT_CTDescription* CT_ColorTransformHeader::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_CTDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -10169,6 +10167,15 @@ void CT_ColorTransformHeader::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -10220,6 +10227,11 @@ void CT_ColorTransformHeader::toXmlElem(const std::string& _elemName, const std:
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_title));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -10229,7 +10241,19 @@ void CT_ColorTransformHeader::toXmlElem(const std::string& _elemName, const std:
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_desc));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -10314,9 +10338,7 @@ const XSD::int_& CT_ColorTransformHeader::get_resId_attr() const
 // CT_ColorTransformHeader::ChildGroup_1
 CT_ColorTransformHeader::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool CT_ColorTransformHeader::ChildGroup_1::has_title() const
@@ -10326,15 +10348,6 @@ bool CT_ColorTransformHeader::ChildGroup_1::has_title() const
 
 CT_CTName* CT_ColorTransformHeader::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -10353,22 +10366,20 @@ const CT_CTName& CT_ColorTransformHeader::ChildGroup_1::get_title() const
     return CT_CTName::default_instance();
 }
 
-bool CT_ColorTransformHeader::ChildGroup_1::has_desc() const
+
+// CT_ColorTransformHeader::ChildGroup_2
+CT_ColorTransformHeader::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool CT_ColorTransformHeader::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_CTDescription* CT_ColorTransformHeader::ChildGroup_1::mutable_desc()
+CT_CTDescription* CT_ColorTransformHeader::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -10378,7 +10389,7 @@ CT_CTDescription* CT_ColorTransformHeader::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_CTDescription& CT_ColorTransformHeader::ChildGroup_1::get_desc() const
+const CT_CTDescription& CT_ColorTransformHeader::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -19159,6 +19170,11 @@ void CT_Choose::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_if));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -19751,9 +19767,9 @@ CT_Name* CT_DiagramDefinition::add_title()
 
 CT_Description* CT_DiagramDefinition::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Description* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -19921,6 +19937,15 @@ void CT_DiagramDefinition::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -20017,7 +20042,14 @@ void CT_DiagramDefinition::toXmlElem(const std::string& _elemName, const std::st
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -20128,9 +20160,7 @@ const XSD::string_& CT_DiagramDefinition::get_defStyle_attr() const
 // CT_DiagramDefinition::ChildGroup_1
 CT_DiagramDefinition::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool CT_DiagramDefinition::ChildGroup_1::has_title() const
@@ -20140,15 +20170,6 @@ bool CT_DiagramDefinition::ChildGroup_1::has_title() const
 
 CT_Name* CT_DiagramDefinition::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -20167,22 +20188,20 @@ const CT_Name& CT_DiagramDefinition::ChildGroup_1::get_title() const
     return CT_Name::default_instance();
 }
 
-bool CT_DiagramDefinition::ChildGroup_1::has_desc() const
+
+// CT_DiagramDefinition::ChildGroup_2
+CT_DiagramDefinition::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool CT_DiagramDefinition::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_Description* CT_DiagramDefinition::ChildGroup_1::mutable_desc()
+CT_Description* CT_DiagramDefinition::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -20192,7 +20211,7 @@ CT_Description* CT_DiagramDefinition::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_Description& CT_DiagramDefinition::ChildGroup_1::get_desc() const
+const CT_Description& CT_DiagramDefinition::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -20233,9 +20252,9 @@ CT_Name* CT_DiagramDefinitionHeader::add_title()
 
 CT_Description* CT_DiagramDefinitionHeader::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Description* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -20310,6 +20329,15 @@ void CT_DiagramDefinitionHeader::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -20368,6 +20396,11 @@ void CT_DiagramDefinitionHeader::toXmlElem(const std::string& _elemName, const s
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_title));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -20377,7 +20410,19 @@ void CT_DiagramDefinitionHeader::toXmlElem(const std::string& _elemName, const s
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_desc));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -20478,9 +20523,7 @@ const XSD::int_& CT_DiagramDefinitionHeader::get_resId_attr() const
 // CT_DiagramDefinitionHeader::ChildGroup_1
 CT_DiagramDefinitionHeader::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool CT_DiagramDefinitionHeader::ChildGroup_1::has_title() const
@@ -20490,15 +20533,6 @@ bool CT_DiagramDefinitionHeader::ChildGroup_1::has_title() const
 
 CT_Name* CT_DiagramDefinitionHeader::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -20517,22 +20551,20 @@ const CT_Name& CT_DiagramDefinitionHeader::ChildGroup_1::get_title() const
     return CT_Name::default_instance();
 }
 
-bool CT_DiagramDefinitionHeader::ChildGroup_1::has_desc() const
+
+// CT_DiagramDefinitionHeader::ChildGroup_2
+CT_DiagramDefinitionHeader::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool CT_DiagramDefinitionHeader::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_Description* CT_DiagramDefinitionHeader::ChildGroup_1::mutable_desc()
+CT_Description* CT_DiagramDefinitionHeader::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -20542,7 +20574,7 @@ CT_Description* CT_DiagramDefinitionHeader::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_Description& CT_DiagramDefinitionHeader::ChildGroup_1::get_desc() const
+const CT_Description& CT_DiagramDefinitionHeader::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -23359,7 +23391,7 @@ void CT_TextProps::toXmlElem(const std::string& _elemName, const std::string& _x
     {
         bool elemHasValueList[2] = {m_has_a_sp3d, m_has_a_flatTx};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -23684,9 +23716,9 @@ CT_SDName* CT_StyleDefinition::add_title()
 
 CT_SDDescription* CT_StyleDefinition::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_SDDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -23740,9 +23772,9 @@ const ns_a::CT_Scene3D& CT_StyleDefinition::get_scene3d() const
 
 CT_StyleLabel* CT_StyleDefinition::add_styleLbl()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_StyleLabel* pNewChild = pChildGroup->mutable_styleLbl();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -23787,6 +23819,15 @@ void CT_StyleDefinition::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -23806,12 +23847,12 @@ void CT_StyleDefinition::clear()
 
 
     {
-        vector<ChildGroup_2*>::iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             delete *iter;
         }
-        m_childGroupList_2.clear();
+        m_childGroupList_3.clear();
     }
 
     m_has_extLst = false;
@@ -23858,7 +23899,14 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -23880,8 +23928,13 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     {
-        vector<ChildGroup_2*>::const_iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        int childSize = count_if(m_childGroupList_3.begin(), m_childGroupList_3.end(), mem_fun(&ChildGroup_3::has_styleLbl));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             if ((*iter)->has_styleLbl())
             {
@@ -23946,9 +23999,7 @@ const XSD::string_& CT_StyleDefinition::get_minVer_attr() const
 // CT_StyleDefinition::ChildGroup_1
 CT_StyleDefinition::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool CT_StyleDefinition::ChildGroup_1::has_title() const
@@ -23958,15 +24009,6 @@ bool CT_StyleDefinition::ChildGroup_1::has_title() const
 
 CT_SDName* CT_StyleDefinition::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -23985,22 +24027,20 @@ const CT_SDName& CT_StyleDefinition::ChildGroup_1::get_title() const
     return CT_SDName::default_instance();
 }
 
-bool CT_StyleDefinition::ChildGroup_1::has_desc() const
+
+// CT_StyleDefinition::ChildGroup_2
+CT_StyleDefinition::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool CT_StyleDefinition::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_SDDescription* CT_StyleDefinition::ChildGroup_1::mutable_desc()
+CT_SDDescription* CT_StyleDefinition::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -24010,7 +24050,7 @@ CT_SDDescription* CT_StyleDefinition::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_SDDescription& CT_StyleDefinition::ChildGroup_1::get_desc() const
+const CT_SDDescription& CT_StyleDefinition::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -24020,18 +24060,18 @@ const CT_SDDescription& CT_StyleDefinition::ChildGroup_1::get_desc() const
 }
 
 
-// CT_StyleDefinition::ChildGroup_2
-CT_StyleDefinition::ChildGroup_2::ChildGroup_2()
+// CT_StyleDefinition::ChildGroup_3
+CT_StyleDefinition::ChildGroup_3::ChildGroup_3()
     :m_has_styleLbl(false),
      m_styleLbl(NULL)
 {
 }
-bool CT_StyleDefinition::ChildGroup_2::has_styleLbl() const
+bool CT_StyleDefinition::ChildGroup_3::has_styleLbl() const
 {
     return m_has_styleLbl;
 }
 
-CT_StyleLabel* CT_StyleDefinition::ChildGroup_2::mutable_styleLbl()
+CT_StyleLabel* CT_StyleDefinition::ChildGroup_3::mutable_styleLbl()
 {
 
     m_has_styleLbl = true;
@@ -24042,7 +24082,7 @@ CT_StyleLabel* CT_StyleDefinition::ChildGroup_2::mutable_styleLbl()
     return m_styleLbl;
 }
 
-const CT_StyleLabel& CT_StyleDefinition::ChildGroup_2::get_styleLbl() const
+const CT_StyleLabel& CT_StyleDefinition::ChildGroup_3::get_styleLbl() const
 {
     if (m_styleLbl)
     {
@@ -24081,9 +24121,9 @@ CT_SDName* CT_StyleDefinitionHeader::add_title()
 
 CT_SDDescription* CT_StyleDefinitionHeader::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_SDDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -24155,6 +24195,15 @@ void CT_StyleDefinitionHeader::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -24206,6 +24255,11 @@ void CT_StyleDefinitionHeader::toXmlElem(const std::string& _elemName, const std
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_title));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -24215,7 +24269,19 @@ void CT_StyleDefinitionHeader::toXmlElem(const std::string& _elemName, const std
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_desc));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -24300,9 +24366,7 @@ const XSD::int_& CT_StyleDefinitionHeader::get_resId_attr() const
 // CT_StyleDefinitionHeader::ChildGroup_1
 CT_StyleDefinitionHeader::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool CT_StyleDefinitionHeader::ChildGroup_1::has_title() const
@@ -24312,15 +24376,6 @@ bool CT_StyleDefinitionHeader::ChildGroup_1::has_title() const
 
 CT_SDName* CT_StyleDefinitionHeader::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -24339,22 +24394,20 @@ const CT_SDName& CT_StyleDefinitionHeader::ChildGroup_1::get_title() const
     return CT_SDName::default_instance();
 }
 
-bool CT_StyleDefinitionHeader::ChildGroup_1::has_desc() const
+
+// CT_StyleDefinitionHeader::ChildGroup_2
+CT_StyleDefinitionHeader::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool CT_StyleDefinitionHeader::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_SDDescription* CT_StyleDefinitionHeader::ChildGroup_1::mutable_desc()
+CT_SDDescription* CT_StyleDefinitionHeader::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -24364,7 +24417,7 @@ CT_SDDescription* CT_StyleDefinitionHeader::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_SDDescription& CT_StyleDefinitionHeader::ChildGroup_1::get_desc() const
+const CT_SDDescription& CT_StyleDefinitionHeader::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -24500,9 +24553,9 @@ CT_CTName* colorsDef_element::add_title()
 
 CT_CTDescription* colorsDef_element::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_CTDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -24532,9 +24585,9 @@ const CT_CTCategories& colorsDef_element::get_catLst() const
 
 CT_CTStyleLabel* colorsDef_element::add_styleLbl()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_CTStyleLabel* pNewChild = pChildGroup->mutable_styleLbl();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -24579,6 +24632,15 @@ void colorsDef_element::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -24589,12 +24651,12 @@ void colorsDef_element::clear()
 
 
     {
-        vector<ChildGroup_2*>::iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             delete *iter;
         }
-        m_childGroupList_2.clear();
+        m_childGroupList_3.clear();
     }
 
     m_has_extLst = false;
@@ -24641,7 +24703,14 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -24657,8 +24726,8 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
     }
 
     {
-        vector<ChildGroup_2*>::const_iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             if ((*iter)->has_styleLbl())
             {
@@ -24723,9 +24792,7 @@ const XSD::string_& colorsDef_element::get_minVer_attr() const
 // colorsDef_element::ChildGroup_1
 colorsDef_element::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool colorsDef_element::ChildGroup_1::has_title() const
@@ -24735,15 +24802,6 @@ bool colorsDef_element::ChildGroup_1::has_title() const
 
 CT_CTName* colorsDef_element::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -24762,22 +24820,20 @@ const CT_CTName& colorsDef_element::ChildGroup_1::get_title() const
     return CT_CTName::default_instance();
 }
 
-bool colorsDef_element::ChildGroup_1::has_desc() const
+
+// colorsDef_element::ChildGroup_2
+colorsDef_element::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool colorsDef_element::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_CTDescription* colorsDef_element::ChildGroup_1::mutable_desc()
+CT_CTDescription* colorsDef_element::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -24787,7 +24843,7 @@ CT_CTDescription* colorsDef_element::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_CTDescription& colorsDef_element::ChildGroup_1::get_desc() const
+const CT_CTDescription& colorsDef_element::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -24797,18 +24853,18 @@ const CT_CTDescription& colorsDef_element::ChildGroup_1::get_desc() const
 }
 
 
-// colorsDef_element::ChildGroup_2
-colorsDef_element::ChildGroup_2::ChildGroup_2()
+// colorsDef_element::ChildGroup_3
+colorsDef_element::ChildGroup_3::ChildGroup_3()
     :m_has_styleLbl(false),
      m_styleLbl(NULL)
 {
 }
-bool colorsDef_element::ChildGroup_2::has_styleLbl() const
+bool colorsDef_element::ChildGroup_3::has_styleLbl() const
 {
     return m_has_styleLbl;
 }
 
-CT_CTStyleLabel* colorsDef_element::ChildGroup_2::mutable_styleLbl()
+CT_CTStyleLabel* colorsDef_element::ChildGroup_3::mutable_styleLbl()
 {
 
     m_has_styleLbl = true;
@@ -24819,7 +24875,7 @@ CT_CTStyleLabel* colorsDef_element::ChildGroup_2::mutable_styleLbl()
     return m_styleLbl;
 }
 
-const CT_CTStyleLabel& colorsDef_element::ChildGroup_2::get_styleLbl() const
+const CT_CTStyleLabel& colorsDef_element::ChildGroup_3::get_styleLbl() const
 {
     if (m_styleLbl)
     {
@@ -24858,9 +24914,9 @@ CT_CTName* colorsDefHdr_element::add_title()
 
 CT_CTDescription* colorsDefHdr_element::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_CTDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -24932,6 +24988,15 @@ void colorsDefHdr_element::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -24983,6 +25048,11 @@ void colorsDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_title));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -24992,7 +25062,19 @@ void colorsDefHdr_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_desc));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -25077,9 +25159,7 @@ const XSD::int_& colorsDefHdr_element::get_resId_attr() const
 // colorsDefHdr_element::ChildGroup_1
 colorsDefHdr_element::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool colorsDefHdr_element::ChildGroup_1::has_title() const
@@ -25089,15 +25169,6 @@ bool colorsDefHdr_element::ChildGroup_1::has_title() const
 
 CT_CTName* colorsDefHdr_element::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -25116,22 +25187,20 @@ const CT_CTName& colorsDefHdr_element::ChildGroup_1::get_title() const
     return CT_CTName::default_instance();
 }
 
-bool colorsDefHdr_element::ChildGroup_1::has_desc() const
+
+// colorsDefHdr_element::ChildGroup_2
+colorsDefHdr_element::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool colorsDefHdr_element::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_CTDescription* colorsDefHdr_element::ChildGroup_1::mutable_desc()
+CT_CTDescription* colorsDefHdr_element::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -25141,7 +25210,7 @@ CT_CTDescription* colorsDefHdr_element::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_CTDescription& colorsDefHdr_element::ChildGroup_1::get_desc() const
+const CT_CTDescription& colorsDefHdr_element::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -25530,9 +25599,9 @@ CT_Name* layoutDef_element::add_title()
 
 CT_Description* layoutDef_element::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Description* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -25700,6 +25769,15 @@ void layoutDef_element::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -25796,7 +25874,14 @@ void layoutDef_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -25907,9 +25992,7 @@ const XSD::string_& layoutDef_element::get_defStyle_attr() const
 // layoutDef_element::ChildGroup_1
 layoutDef_element::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool layoutDef_element::ChildGroup_1::has_title() const
@@ -25919,15 +26002,6 @@ bool layoutDef_element::ChildGroup_1::has_title() const
 
 CT_Name* layoutDef_element::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -25946,22 +26020,20 @@ const CT_Name& layoutDef_element::ChildGroup_1::get_title() const
     return CT_Name::default_instance();
 }
 
-bool layoutDef_element::ChildGroup_1::has_desc() const
+
+// layoutDef_element::ChildGroup_2
+layoutDef_element::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool layoutDef_element::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_Description* layoutDef_element::ChildGroup_1::mutable_desc()
+CT_Description* layoutDef_element::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -25971,7 +26043,7 @@ CT_Description* layoutDef_element::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_Description& layoutDef_element::ChildGroup_1::get_desc() const
+const CT_Description& layoutDef_element::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -26012,9 +26084,9 @@ CT_Name* layoutDefHdr_element::add_title()
 
 CT_Description* layoutDefHdr_element::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Description* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -26089,6 +26161,15 @@ void layoutDefHdr_element::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -26147,6 +26228,11 @@ void layoutDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_title));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26156,7 +26242,19 @@ void layoutDefHdr_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_desc));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -26257,9 +26355,7 @@ const XSD::int_& layoutDefHdr_element::get_resId_attr() const
 // layoutDefHdr_element::ChildGroup_1
 layoutDefHdr_element::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool layoutDefHdr_element::ChildGroup_1::has_title() const
@@ -26269,15 +26365,6 @@ bool layoutDefHdr_element::ChildGroup_1::has_title() const
 
 CT_Name* layoutDefHdr_element::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -26296,22 +26383,20 @@ const CT_Name& layoutDefHdr_element::ChildGroup_1::get_title() const
     return CT_Name::default_instance();
 }
 
-bool layoutDefHdr_element::ChildGroup_1::has_desc() const
+
+// layoutDefHdr_element::ChildGroup_2
+layoutDefHdr_element::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool layoutDefHdr_element::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_Description* layoutDefHdr_element::ChildGroup_1::mutable_desc()
+CT_Description* layoutDefHdr_element::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -26321,7 +26406,7 @@ CT_Description* layoutDefHdr_element::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_Description& layoutDefHdr_element::ChildGroup_1::get_desc() const
+const CT_Description& layoutDefHdr_element::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -26646,9 +26731,9 @@ CT_SDName* styleDef_element::add_title()
 
 CT_SDDescription* styleDef_element::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_SDDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -26702,9 +26787,9 @@ const ns_a::CT_Scene3D& styleDef_element::get_scene3d() const
 
 CT_StyleLabel* styleDef_element::add_styleLbl()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_StyleLabel* pNewChild = pChildGroup->mutable_styleLbl();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -26749,6 +26834,15 @@ void styleDef_element::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -26768,12 +26862,12 @@ void styleDef_element::clear()
 
 
     {
-        vector<ChildGroup_2*>::iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             delete *iter;
         }
-        m_childGroupList_2.clear();
+        m_childGroupList_3.clear();
     }
 
     m_has_extLst = false;
@@ -26820,7 +26914,14 @@ void styleDef_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -26842,8 +26943,13 @@ void styleDef_element::toXml(std::ostream& _outStream) const
     }
 
     {
-        vector<ChildGroup_2*>::const_iterator iter;
-        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        int childSize = count_if(m_childGroupList_3.begin(), m_childGroupList_3.end(), mem_fun(&ChildGroup_3::has_styleLbl));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
         {
             if ((*iter)->has_styleLbl())
             {
@@ -26908,9 +27014,7 @@ const XSD::string_& styleDef_element::get_minVer_attr() const
 // styleDef_element::ChildGroup_1
 styleDef_element::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool styleDef_element::ChildGroup_1::has_title() const
@@ -26920,15 +27024,6 @@ bool styleDef_element::ChildGroup_1::has_title() const
 
 CT_SDName* styleDef_element::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -26947,22 +27042,20 @@ const CT_SDName& styleDef_element::ChildGroup_1::get_title() const
     return CT_SDName::default_instance();
 }
 
-bool styleDef_element::ChildGroup_1::has_desc() const
+
+// styleDef_element::ChildGroup_2
+styleDef_element::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool styleDef_element::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_SDDescription* styleDef_element::ChildGroup_1::mutable_desc()
+CT_SDDescription* styleDef_element::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -26972,7 +27065,7 @@ CT_SDDescription* styleDef_element::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_SDDescription& styleDef_element::ChildGroup_1::get_desc() const
+const CT_SDDescription& styleDef_element::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {
@@ -26982,18 +27075,18 @@ const CT_SDDescription& styleDef_element::ChildGroup_1::get_desc() const
 }
 
 
-// styleDef_element::ChildGroup_2
-styleDef_element::ChildGroup_2::ChildGroup_2()
+// styleDef_element::ChildGroup_3
+styleDef_element::ChildGroup_3::ChildGroup_3()
     :m_has_styleLbl(false),
      m_styleLbl(NULL)
 {
 }
-bool styleDef_element::ChildGroup_2::has_styleLbl() const
+bool styleDef_element::ChildGroup_3::has_styleLbl() const
 {
     return m_has_styleLbl;
 }
 
-CT_StyleLabel* styleDef_element::ChildGroup_2::mutable_styleLbl()
+CT_StyleLabel* styleDef_element::ChildGroup_3::mutable_styleLbl()
 {
 
     m_has_styleLbl = true;
@@ -27004,7 +27097,7 @@ CT_StyleLabel* styleDef_element::ChildGroup_2::mutable_styleLbl()
     return m_styleLbl;
 }
 
-const CT_StyleLabel& styleDef_element::ChildGroup_2::get_styleLbl() const
+const CT_StyleLabel& styleDef_element::ChildGroup_3::get_styleLbl() const
 {
     if (m_styleLbl)
     {
@@ -27043,9 +27136,9 @@ CT_SDName* styleDefHdr_element::add_title()
 
 CT_SDDescription* styleDefHdr_element::add_desc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_SDDescription* pNewChild = pChildGroup->mutable_desc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -27117,6 +27210,15 @@ void styleDefHdr_element::clear()
         m_childGroupList_1.clear();
     }
 
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
     m_has_catLst = false;
 
     if (m_catLst)
@@ -27168,6 +27270,11 @@ void styleDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_title));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -27177,7 +27284,19 @@ void styleDefHdr_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_desc())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_desc));
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_desc())
             {
                 (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
@@ -27262,9 +27381,7 @@ const XSD::int_& styleDefHdr_element::get_resId_attr() const
 // styleDefHdr_element::ChildGroup_1
 styleDefHdr_element::ChildGroup_1::ChildGroup_1()
     :m_has_title(false),
-     m_title(NULL),
-     m_has_desc(false),
-     m_desc(NULL)
+     m_title(NULL)
 {
 }
 bool styleDefHdr_element::ChildGroup_1::has_title() const
@@ -27274,15 +27391,6 @@ bool styleDefHdr_element::ChildGroup_1::has_title() const
 
 CT_SDName* styleDefHdr_element::ChildGroup_1::mutable_title()
 {
-
-    m_has_desc = false;
-
-    if (m_desc)
-    {
-        delete m_desc;
-        m_desc = NULL;
-    }
-    ;
 
     m_has_title = true;
     if (!m_title)
@@ -27301,22 +27409,20 @@ const CT_SDName& styleDefHdr_element::ChildGroup_1::get_title() const
     return CT_SDName::default_instance();
 }
 
-bool styleDefHdr_element::ChildGroup_1::has_desc() const
+
+// styleDefHdr_element::ChildGroup_2
+styleDefHdr_element::ChildGroup_2::ChildGroup_2()
+    :m_has_desc(false),
+     m_desc(NULL)
+{
+}
+bool styleDefHdr_element::ChildGroup_2::has_desc() const
 {
     return m_has_desc;
 }
 
-CT_SDDescription* styleDefHdr_element::ChildGroup_1::mutable_desc()
+CT_SDDescription* styleDefHdr_element::ChildGroup_2::mutable_desc()
 {
-
-    m_has_title = false;
-
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    ;
 
     m_has_desc = true;
     if (!m_desc)
@@ -27326,7 +27432,7 @@ CT_SDDescription* styleDefHdr_element::ChildGroup_1::mutable_desc()
     return m_desc;
 }
 
-const CT_SDDescription& styleDefHdr_element::ChildGroup_1::get_desc() const
+const CT_SDDescription& styleDefHdr_element::ChildGroup_2::get_desc() const
 {
     if (m_desc)
     {

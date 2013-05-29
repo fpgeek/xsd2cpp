@@ -1164,6 +1164,11 @@ void CT_WrapPath::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_lineTo));
+        assert(2 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -3571,8 +3576,257 @@ CT_TxbxContent::~CT_TxbxContent()
 {
     clear();
 }
+ns_w::CT_CustomXmlBlock* CT_TxbxContent::add_w_customXml()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_CustomXmlBlock* pNewChild = pChildGroup->mutable_w_customXml();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_SdtBlock* CT_TxbxContent::add_w_sdt()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_SdtBlock* pNewChild = pChildGroup->mutable_w_sdt();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_P* CT_TxbxContent::add_w_p()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_P* pNewChild = pChildGroup->mutable_w_p();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_Tbl* CT_TxbxContent::add_w_tbl()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_Tbl* pNewChild = pChildGroup->mutable_w_tbl();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_ProofErr* CT_TxbxContent::add_w_proofErr()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_ProofErr* pNewChild = pChildGroup->mutable_w_proofErr();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_PermStart* CT_TxbxContent::add_w_permStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_PermStart* pNewChild = pChildGroup->mutable_w_permStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_Perm* CT_TxbxContent::add_w_permEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_Perm* pNewChild = pChildGroup->mutable_w_permEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_Bookmark* CT_TxbxContent::add_w_bookmarkStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_Bookmark* pNewChild = pChildGroup->mutable_w_bookmarkStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::add_w_bookmarkEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_bookmarkEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_MoveBookmark* CT_TxbxContent::add_w_moveFromRangeStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_MoveBookmark* pNewChild = pChildGroup->mutable_w_moveFromRangeStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::add_w_moveFromRangeEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_moveFromRangeEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_MoveBookmark* CT_TxbxContent::add_w_moveToRangeStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_MoveBookmark* pNewChild = pChildGroup->mutable_w_moveToRangeStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::add_w_moveToRangeEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_moveToRangeEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::add_w_commentRangeStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_commentRangeStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::add_w_commentRangeEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_commentRangeEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlInsRangeStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlInsRangeStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlInsRangeEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlInsRangeEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlDelRangeStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlDelRangeStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlDelRangeEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlDelRangeEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlMoveFromRangeStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlMoveFromRangeStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlMoveFromRangeEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlMoveFromRangeEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlMoveToRangeStart()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlMoveToRangeStart();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlMoveToRangeEnd()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlMoveToRangeEnd();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_ins()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_ins();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_del()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_del();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_moveFrom()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_moveFrom();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_moveTo()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_moveTo();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_m::CT_OMathPara* CT_TxbxContent::add_m_oMathPara()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_m::CT_OMathPara* pNewChild = pChildGroup->mutable_m_oMathPara();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_m::CT_OMath* CT_TxbxContent::add_m_oMath()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_m::CT_OMath* pNewChild = pChildGroup->mutable_m_oMath();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
+ns_w::CT_AltChunk* CT_TxbxContent::add_w_altChunk()
+{
+    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ns_w::CT_AltChunk* pNewChild = pChildGroup->mutable_w_altChunk();
+    m_childGroupList_1.push_back(pChildGroup);
+    return pNewChild;
+}
+
 void CT_TxbxContent::clear()
-{    }
+{
+    {
+        vector<ChildGroup_1*>::iterator iter;
+        for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_1.clear();
+    }
+}
 
 void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
 {
@@ -3585,6 +3839,193 @@ void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& 
 
     _outStream << ">";
 
+    {
+        vector<ChildGroup_1*>::const_iterator iter;
+        for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
+        {
+            if ((*iter)->has_w_customXml())
+            {
+                (*iter)->get_w_customXml().toXmlElem("w:customXml", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_sdt())
+            {
+                (*iter)->get_w_sdt().toXmlElem("w:sdt", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_p())
+            {
+                (*iter)->get_w_p().toXmlElem("w:p", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_tbl())
+            {
+                (*iter)->get_w_tbl().toXmlElem("w:tbl", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_proofErr())
+            {
+                (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_permStart())
+            {
+                (*iter)->get_w_permStart().toXmlElem("w:permStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_permEnd())
+            {
+                (*iter)->get_w_permEnd().toXmlElem("w:permEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_bookmarkStart())
+            {
+                (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_bookmarkEnd())
+            {
+                (*iter)->get_w_bookmarkEnd().toXmlElem("w:bookmarkEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_moveFromRangeStart())
+            {
+                (*iter)->get_w_moveFromRangeStart().toXmlElem("w:moveFromRangeStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_moveFromRangeEnd())
+            {
+                (*iter)->get_w_moveFromRangeEnd().toXmlElem("w:moveFromRangeEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_moveToRangeStart())
+            {
+                (*iter)->get_w_moveToRangeStart().toXmlElem("w:moveToRangeStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_moveToRangeEnd())
+            {
+                (*iter)->get_w_moveToRangeEnd().toXmlElem("w:moveToRangeEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_commentRangeStart())
+            {
+                (*iter)->get_w_commentRangeStart().toXmlElem("w:commentRangeStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_commentRangeEnd())
+            {
+                (*iter)->get_w_commentRangeEnd().toXmlElem("w:commentRangeEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlInsRangeStart())
+            {
+                (*iter)->get_w_customXmlInsRangeStart().toXmlElem("w:customXmlInsRangeStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlInsRangeEnd())
+            {
+                (*iter)->get_w_customXmlInsRangeEnd().toXmlElem("w:customXmlInsRangeEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlDelRangeStart())
+            {
+                (*iter)->get_w_customXmlDelRangeStart().toXmlElem("w:customXmlDelRangeStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlDelRangeEnd())
+            {
+                (*iter)->get_w_customXmlDelRangeEnd().toXmlElem("w:customXmlDelRangeEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlMoveFromRangeStart())
+            {
+                (*iter)->get_w_customXmlMoveFromRangeStart().toXmlElem("w:customXmlMoveFromRangeStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlMoveFromRangeEnd())
+            {
+                (*iter)->get_w_customXmlMoveFromRangeEnd().toXmlElem("w:customXmlMoveFromRangeEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlMoveToRangeStart())
+            {
+                (*iter)->get_w_customXmlMoveToRangeStart().toXmlElem("w:customXmlMoveToRangeStart", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_customXmlMoveToRangeEnd())
+            {
+                (*iter)->get_w_customXmlMoveToRangeEnd().toXmlElem("w:customXmlMoveToRangeEnd", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_ins())
+            {
+                (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_del())
+            {
+                (*iter)->get_w_del().toXmlElem("w:del", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_moveFrom())
+            {
+                (*iter)->get_w_moveFrom().toXmlElem("w:moveFrom", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_moveTo())
+            {
+                (*iter)->get_w_moveTo().toXmlElem("w:moveTo", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_m_oMathPara())
+            {
+                (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_m_oMath())
+            {
+                (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
+            }
+
+
+            else if ((*iter)->has_w_altChunk())
+            {
+                (*iter)->get_w_altChunk().toXmlElem("w:altChunk", "", _outStream);
+            }
+
+
+        }
+    }
+
     _outStream << "</" << _elemName << ">";
 }
 
@@ -3595,6 +4036,8651 @@ const CT_TxbxContent& CT_TxbxContent::default_instance()
         CT_TxbxContent::default_instance_ = new CT_TxbxContent();
     }
     return *CT_TxbxContent::default_instance_;
+}
+
+
+// CT_TxbxContent::ChildGroup_1
+CT_TxbxContent::ChildGroup_1::ChildGroup_1()
+    :m_has_w_customXml(false),
+     m_w_customXml(NULL),
+     m_has_w_sdt(false),
+     m_w_sdt(NULL),
+     m_has_w_p(false),
+     m_w_p(NULL),
+     m_has_w_tbl(false),
+     m_w_tbl(NULL),
+     m_has_w_proofErr(false),
+     m_w_proofErr(NULL),
+     m_has_w_permStart(false),
+     m_w_permStart(NULL),
+     m_has_w_permEnd(false),
+     m_w_permEnd(NULL),
+     m_has_w_bookmarkStart(false),
+     m_w_bookmarkStart(NULL),
+     m_has_w_bookmarkEnd(false),
+     m_w_bookmarkEnd(NULL),
+     m_has_w_moveFromRangeStart(false),
+     m_w_moveFromRangeStart(NULL),
+     m_has_w_moveFromRangeEnd(false),
+     m_w_moveFromRangeEnd(NULL),
+     m_has_w_moveToRangeStart(false),
+     m_w_moveToRangeStart(NULL),
+     m_has_w_moveToRangeEnd(false),
+     m_w_moveToRangeEnd(NULL),
+     m_has_w_commentRangeStart(false),
+     m_w_commentRangeStart(NULL),
+     m_has_w_commentRangeEnd(false),
+     m_w_commentRangeEnd(NULL),
+     m_has_w_customXmlInsRangeStart(false),
+     m_w_customXmlInsRangeStart(NULL),
+     m_has_w_customXmlInsRangeEnd(false),
+     m_w_customXmlInsRangeEnd(NULL),
+     m_has_w_customXmlDelRangeStart(false),
+     m_w_customXmlDelRangeStart(NULL),
+     m_has_w_customXmlDelRangeEnd(false),
+     m_w_customXmlDelRangeEnd(NULL),
+     m_has_w_customXmlMoveFromRangeStart(false),
+     m_w_customXmlMoveFromRangeStart(NULL),
+     m_has_w_customXmlMoveFromRangeEnd(false),
+     m_w_customXmlMoveFromRangeEnd(NULL),
+     m_has_w_customXmlMoveToRangeStart(false),
+     m_w_customXmlMoveToRangeStart(NULL),
+     m_has_w_customXmlMoveToRangeEnd(false),
+     m_w_customXmlMoveToRangeEnd(NULL),
+     m_has_w_ins(false),
+     m_w_ins(NULL),
+     m_has_w_del(false),
+     m_w_del(NULL),
+     m_has_w_moveFrom(false),
+     m_w_moveFrom(NULL),
+     m_has_w_moveTo(false),
+     m_w_moveTo(NULL),
+     m_has_m_oMathPara(false),
+     m_m_oMathPara(NULL),
+     m_has_m_oMath(false),
+     m_m_oMath(NULL),
+     m_has_w_altChunk(false),
+     m_w_altChunk(NULL)
+{
+}
+bool CT_TxbxContent::ChildGroup_1::has_w_customXml() const
+{
+    return m_has_w_customXml;
+}
+
+ns_w::CT_CustomXmlBlock* CT_TxbxContent::ChildGroup_1::mutable_w_customXml()
+{
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXml = true;
+    if (!m_w_customXml)
+    {
+        m_w_customXml = new ns_w::CT_CustomXmlBlock();
+    }
+    return m_w_customXml;
+}
+
+const ns_w::CT_CustomXmlBlock& CT_TxbxContent::ChildGroup_1::get_w_customXml() const
+{
+    if (m_w_customXml)
+    {
+        return *m_w_customXml;
+    }
+    return ns_w::CT_CustomXmlBlock::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_sdt() const
+{
+    return m_has_w_sdt;
+}
+
+ns_w::CT_SdtBlock* CT_TxbxContent::ChildGroup_1::mutable_w_sdt()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_sdt = true;
+    if (!m_w_sdt)
+    {
+        m_w_sdt = new ns_w::CT_SdtBlock();
+    }
+    return m_w_sdt;
+}
+
+const ns_w::CT_SdtBlock& CT_TxbxContent::ChildGroup_1::get_w_sdt() const
+{
+    if (m_w_sdt)
+    {
+        return *m_w_sdt;
+    }
+    return ns_w::CT_SdtBlock::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_p() const
+{
+    return m_has_w_p;
+}
+
+ns_w::CT_P* CT_TxbxContent::ChildGroup_1::mutable_w_p()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_p = true;
+    if (!m_w_p)
+    {
+        m_w_p = new ns_w::CT_P();
+    }
+    return m_w_p;
+}
+
+const ns_w::CT_P& CT_TxbxContent::ChildGroup_1::get_w_p() const
+{
+    if (m_w_p)
+    {
+        return *m_w_p;
+    }
+    return ns_w::CT_P::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_tbl() const
+{
+    return m_has_w_tbl;
+}
+
+ns_w::CT_Tbl* CT_TxbxContent::ChildGroup_1::mutable_w_tbl()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_tbl = true;
+    if (!m_w_tbl)
+    {
+        m_w_tbl = new ns_w::CT_Tbl();
+    }
+    return m_w_tbl;
+}
+
+const ns_w::CT_Tbl& CT_TxbxContent::ChildGroup_1::get_w_tbl() const
+{
+    if (m_w_tbl)
+    {
+        return *m_w_tbl;
+    }
+    return ns_w::CT_Tbl::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_proofErr() const
+{
+    return m_has_w_proofErr;
+}
+
+ns_w::CT_ProofErr* CT_TxbxContent::ChildGroup_1::mutable_w_proofErr()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = true;
+    if (!m_w_proofErr)
+    {
+        m_w_proofErr = new ns_w::CT_ProofErr();
+    }
+    return m_w_proofErr;
+}
+
+const ns_w::CT_ProofErr& CT_TxbxContent::ChildGroup_1::get_w_proofErr() const
+{
+    if (m_w_proofErr)
+    {
+        return *m_w_proofErr;
+    }
+    return ns_w::CT_ProofErr::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_permStart() const
+{
+    return m_has_w_permStart;
+}
+
+ns_w::CT_PermStart* CT_TxbxContent::ChildGroup_1::mutable_w_permStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_permStart = true;
+    if (!m_w_permStart)
+    {
+        m_w_permStart = new ns_w::CT_PermStart();
+    }
+    return m_w_permStart;
+}
+
+const ns_w::CT_PermStart& CT_TxbxContent::ChildGroup_1::get_w_permStart() const
+{
+    if (m_w_permStart)
+    {
+        return *m_w_permStart;
+    }
+    return ns_w::CT_PermStart::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_permEnd() const
+{
+    return m_has_w_permEnd;
+}
+
+ns_w::CT_Perm* CT_TxbxContent::ChildGroup_1::mutable_w_permEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = true;
+    if (!m_w_permEnd)
+    {
+        m_w_permEnd = new ns_w::CT_Perm();
+    }
+    return m_w_permEnd;
+}
+
+const ns_w::CT_Perm& CT_TxbxContent::ChildGroup_1::get_w_permEnd() const
+{
+    if (m_w_permEnd)
+    {
+        return *m_w_permEnd;
+    }
+    return ns_w::CT_Perm::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_bookmarkStart() const
+{
+    return m_has_w_bookmarkStart;
+}
+
+ns_w::CT_Bookmark* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = true;
+    if (!m_w_bookmarkStart)
+    {
+        m_w_bookmarkStart = new ns_w::CT_Bookmark();
+    }
+    return m_w_bookmarkStart;
+}
+
+const ns_w::CT_Bookmark& CT_TxbxContent::ChildGroup_1::get_w_bookmarkStart() const
+{
+    if (m_w_bookmarkStart)
+    {
+        return *m_w_bookmarkStart;
+    }
+    return ns_w::CT_Bookmark::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_bookmarkEnd() const
+{
+    return m_has_w_bookmarkEnd;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = true;
+    if (!m_w_bookmarkEnd)
+    {
+        m_w_bookmarkEnd = new ns_w::CT_MarkupRange();
+    }
+    return m_w_bookmarkEnd;
+}
+
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_bookmarkEnd() const
+{
+    if (m_w_bookmarkEnd)
+    {
+        return *m_w_bookmarkEnd;
+    }
+    return ns_w::CT_MarkupRange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_moveFromRangeStart() const
+{
+    return m_has_w_moveFromRangeStart;
+}
+
+ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = true;
+    if (!m_w_moveFromRangeStart)
+    {
+        m_w_moveFromRangeStart = new ns_w::CT_MoveBookmark();
+    }
+    return m_w_moveFromRangeStart;
+}
+
+const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_1::get_w_moveFromRangeStart() const
+{
+    if (m_w_moveFromRangeStart)
+    {
+        return *m_w_moveFromRangeStart;
+    }
+    return ns_w::CT_MoveBookmark::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_moveFromRangeEnd() const
+{
+    return m_has_w_moveFromRangeEnd;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = true;
+    if (!m_w_moveFromRangeEnd)
+    {
+        m_w_moveFromRangeEnd = new ns_w::CT_MarkupRange();
+    }
+    return m_w_moveFromRangeEnd;
+}
+
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_moveFromRangeEnd() const
+{
+    if (m_w_moveFromRangeEnd)
+    {
+        return *m_w_moveFromRangeEnd;
+    }
+    return ns_w::CT_MarkupRange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_moveToRangeStart() const
+{
+    return m_has_w_moveToRangeStart;
+}
+
+ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = true;
+    if (!m_w_moveToRangeStart)
+    {
+        m_w_moveToRangeStart = new ns_w::CT_MoveBookmark();
+    }
+    return m_w_moveToRangeStart;
+}
+
+const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_1::get_w_moveToRangeStart() const
+{
+    if (m_w_moveToRangeStart)
+    {
+        return *m_w_moveToRangeStart;
+    }
+    return ns_w::CT_MoveBookmark::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_moveToRangeEnd() const
+{
+    return m_has_w_moveToRangeEnd;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = true;
+    if (!m_w_moveToRangeEnd)
+    {
+        m_w_moveToRangeEnd = new ns_w::CT_MarkupRange();
+    }
+    return m_w_moveToRangeEnd;
+}
+
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_moveToRangeEnd() const
+{
+    if (m_w_moveToRangeEnd)
+    {
+        return *m_w_moveToRangeEnd;
+    }
+    return ns_w::CT_MarkupRange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_commentRangeStart() const
+{
+    return m_has_w_commentRangeStart;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = true;
+    if (!m_w_commentRangeStart)
+    {
+        m_w_commentRangeStart = new ns_w::CT_MarkupRange();
+    }
+    return m_w_commentRangeStart;
+}
+
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_commentRangeStart() const
+{
+    if (m_w_commentRangeStart)
+    {
+        return *m_w_commentRangeStart;
+    }
+    return ns_w::CT_MarkupRange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_commentRangeEnd() const
+{
+    return m_has_w_commentRangeEnd;
+}
+
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = true;
+    if (!m_w_commentRangeEnd)
+    {
+        m_w_commentRangeEnd = new ns_w::CT_MarkupRange();
+    }
+    return m_w_commentRangeEnd;
+}
+
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_commentRangeEnd() const
+{
+    if (m_w_commentRangeEnd)
+    {
+        return *m_w_commentRangeEnd;
+    }
+    return ns_w::CT_MarkupRange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlInsRangeStart() const
+{
+    return m_has_w_customXmlInsRangeStart;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = true;
+    if (!m_w_customXmlInsRangeStart)
+    {
+        m_w_customXmlInsRangeStart = new ns_w::CT_TrackChange();
+    }
+    return m_w_customXmlInsRangeStart;
+}
+
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlInsRangeStart() const
+{
+    if (m_w_customXmlInsRangeStart)
+    {
+        return *m_w_customXmlInsRangeStart;
+    }
+    return ns_w::CT_TrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlInsRangeEnd() const
+{
+    return m_has_w_customXmlInsRangeEnd;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = true;
+    if (!m_w_customXmlInsRangeEnd)
+    {
+        m_w_customXmlInsRangeEnd = new ns_w::CT_Markup();
+    }
+    return m_w_customXmlInsRangeEnd;
+}
+
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlInsRangeEnd() const
+{
+    if (m_w_customXmlInsRangeEnd)
+    {
+        return *m_w_customXmlInsRangeEnd;
+    }
+    return ns_w::CT_Markup::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlDelRangeStart() const
+{
+    return m_has_w_customXmlDelRangeStart;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = true;
+    if (!m_w_customXmlDelRangeStart)
+    {
+        m_w_customXmlDelRangeStart = new ns_w::CT_TrackChange();
+    }
+    return m_w_customXmlDelRangeStart;
+}
+
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlDelRangeStart() const
+{
+    if (m_w_customXmlDelRangeStart)
+    {
+        return *m_w_customXmlDelRangeStart;
+    }
+    return ns_w::CT_TrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlDelRangeEnd() const
+{
+    return m_has_w_customXmlDelRangeEnd;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = true;
+    if (!m_w_customXmlDelRangeEnd)
+    {
+        m_w_customXmlDelRangeEnd = new ns_w::CT_Markup();
+    }
+    return m_w_customXmlDelRangeEnd;
+}
+
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlDelRangeEnd() const
+{
+    if (m_w_customXmlDelRangeEnd)
+    {
+        return *m_w_customXmlDelRangeEnd;
+    }
+    return ns_w::CT_Markup::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveFromRangeStart() const
+{
+    return m_has_w_customXmlMoveFromRangeStart;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromRangeStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = true;
+    if (!m_w_customXmlMoveFromRangeStart)
+    {
+        m_w_customXmlMoveFromRangeStart = new ns_w::CT_TrackChange();
+    }
+    return m_w_customXmlMoveFromRangeStart;
+}
+
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveFromRangeStart() const
+{
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        return *m_w_customXmlMoveFromRangeStart;
+    }
+    return ns_w::CT_TrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveFromRangeEnd() const
+{
+    return m_has_w_customXmlMoveFromRangeEnd;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromRangeEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = true;
+    if (!m_w_customXmlMoveFromRangeEnd)
+    {
+        m_w_customXmlMoveFromRangeEnd = new ns_w::CT_Markup();
+    }
+    return m_w_customXmlMoveFromRangeEnd;
+}
+
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveFromRangeEnd() const
+{
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        return *m_w_customXmlMoveFromRangeEnd;
+    }
+    return ns_w::CT_Markup::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveToRangeStart() const
+{
+    return m_has_w_customXmlMoveToRangeStart;
+}
+
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRangeStart()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = true;
+    if (!m_w_customXmlMoveToRangeStart)
+    {
+        m_w_customXmlMoveToRangeStart = new ns_w::CT_TrackChange();
+    }
+    return m_w_customXmlMoveToRangeStart;
+}
+
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveToRangeStart() const
+{
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        return *m_w_customXmlMoveToRangeStart;
+    }
+    return ns_w::CT_TrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveToRangeEnd() const
+{
+    return m_has_w_customXmlMoveToRangeEnd;
+}
+
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRangeEnd()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = true;
+    if (!m_w_customXmlMoveToRangeEnd)
+    {
+        m_w_customXmlMoveToRangeEnd = new ns_w::CT_Markup();
+    }
+    return m_w_customXmlMoveToRangeEnd;
+}
+
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveToRangeEnd() const
+{
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        return *m_w_customXmlMoveToRangeEnd;
+    }
+    return ns_w::CT_Markup::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_ins() const
+{
+    return m_has_w_ins;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_ins()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_ins = true;
+    if (!m_w_ins)
+    {
+        m_w_ins = new ns_w::CT_RunTrackChange();
+    }
+    return m_w_ins;
+}
+
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_ins() const
+{
+    if (m_w_ins)
+    {
+        return *m_w_ins;
+    }
+    return ns_w::CT_RunTrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_del() const
+{
+    return m_has_w_del;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_del()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_del = true;
+    if (!m_w_del)
+    {
+        m_w_del = new ns_w::CT_RunTrackChange();
+    }
+    return m_w_del;
+}
+
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_del() const
+{
+    if (m_w_del)
+    {
+        return *m_w_del;
+    }
+    return ns_w::CT_RunTrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_moveFrom() const
+{
+    return m_has_w_moveFrom;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFrom()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = true;
+    if (!m_w_moveFrom)
+    {
+        m_w_moveFrom = new ns_w::CT_RunTrackChange();
+    }
+    return m_w_moveFrom;
+}
+
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_moveFrom() const
+{
+    if (m_w_moveFrom)
+    {
+        return *m_w_moveFrom;
+    }
+    return ns_w::CT_RunTrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_moveTo() const
+{
+    return m_has_w_moveTo;
+}
+
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveTo()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = true;
+    if (!m_w_moveTo)
+    {
+        m_w_moveTo = new ns_w::CT_RunTrackChange();
+    }
+    return m_w_moveTo;
+}
+
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_moveTo() const
+{
+    if (m_w_moveTo)
+    {
+        return *m_w_moveTo;
+    }
+    return ns_w::CT_RunTrackChange::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_m_oMathPara() const
+{
+    return m_has_m_oMathPara;
+}
+
+ns_m::CT_OMathPara* CT_TxbxContent::ChildGroup_1::mutable_m_oMathPara()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = true;
+    if (!m_m_oMathPara)
+    {
+        m_m_oMathPara = new ns_m::CT_OMathPara();
+    }
+    return m_m_oMathPara;
+}
+
+const ns_m::CT_OMathPara& CT_TxbxContent::ChildGroup_1::get_m_oMathPara() const
+{
+    if (m_m_oMathPara)
+    {
+        return *m_m_oMathPara;
+    }
+    return ns_m::CT_OMathPara::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_m_oMath() const
+{
+    return m_has_m_oMath;
+}
+
+ns_m::CT_OMath* CT_TxbxContent::ChildGroup_1::mutable_m_oMath()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = false;
+
+    if (m_w_altChunk)
+    {
+        delete m_w_altChunk;
+        m_w_altChunk = NULL;
+    }
+    ;
+
+    m_has_m_oMath = true;
+    if (!m_m_oMath)
+    {
+        m_m_oMath = new ns_m::CT_OMath();
+    }
+    return m_m_oMath;
+}
+
+const ns_m::CT_OMath& CT_TxbxContent::ChildGroup_1::get_m_oMath() const
+{
+    if (m_m_oMath)
+    {
+        return *m_m_oMath;
+    }
+    return ns_m::CT_OMath::default_instance();
+}
+
+bool CT_TxbxContent::ChildGroup_1::has_w_altChunk() const
+{
+    return m_has_w_altChunk;
+}
+
+ns_w::CT_AltChunk* CT_TxbxContent::ChildGroup_1::mutable_w_altChunk()
+{
+
+    m_has_w_customXml = false;
+
+    if (m_w_customXml)
+    {
+        delete m_w_customXml;
+        m_w_customXml = NULL;
+    }
+    ;
+
+    m_has_w_sdt = false;
+
+    if (m_w_sdt)
+    {
+        delete m_w_sdt;
+        m_w_sdt = NULL;
+    }
+    ;
+
+    m_has_w_p = false;
+
+    if (m_w_p)
+    {
+        delete m_w_p;
+        m_w_p = NULL;
+    }
+    ;
+
+    m_has_w_tbl = false;
+
+    if (m_w_tbl)
+    {
+        delete m_w_tbl;
+        m_w_tbl = NULL;
+    }
+    ;
+
+    m_has_w_proofErr = false;
+
+    if (m_w_proofErr)
+    {
+        delete m_w_proofErr;
+        m_w_proofErr = NULL;
+    }
+    ;
+
+    m_has_w_permStart = false;
+
+    if (m_w_permStart)
+    {
+        delete m_w_permStart;
+        m_w_permStart = NULL;
+    }
+    ;
+
+    m_has_w_permEnd = false;
+
+    if (m_w_permEnd)
+    {
+        delete m_w_permEnd;
+        m_w_permEnd = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkStart = false;
+
+    if (m_w_bookmarkStart)
+    {
+        delete m_w_bookmarkStart;
+        m_w_bookmarkStart = NULL;
+    }
+    ;
+
+    m_has_w_bookmarkEnd = false;
+
+    if (m_w_bookmarkEnd)
+    {
+        delete m_w_bookmarkEnd;
+        m_w_bookmarkEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeStart = false;
+
+    if (m_w_moveFromRangeStart)
+    {
+        delete m_w_moveFromRangeStart;
+        m_w_moveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveFromRangeEnd = false;
+
+    if (m_w_moveFromRangeEnd)
+    {
+        delete m_w_moveFromRangeEnd;
+        m_w_moveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeStart = false;
+
+    if (m_w_moveToRangeStart)
+    {
+        delete m_w_moveToRangeStart;
+        m_w_moveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_moveToRangeEnd = false;
+
+    if (m_w_moveToRangeEnd)
+    {
+        delete m_w_moveToRangeEnd;
+        m_w_moveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeStart = false;
+
+    if (m_w_commentRangeStart)
+    {
+        delete m_w_commentRangeStart;
+        m_w_commentRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_commentRangeEnd = false;
+
+    if (m_w_commentRangeEnd)
+    {
+        delete m_w_commentRangeEnd;
+        m_w_commentRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeStart = false;
+
+    if (m_w_customXmlInsRangeStart)
+    {
+        delete m_w_customXmlInsRangeStart;
+        m_w_customXmlInsRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlInsRangeEnd = false;
+
+    if (m_w_customXmlInsRangeEnd)
+    {
+        delete m_w_customXmlInsRangeEnd;
+        m_w_customXmlInsRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeStart = false;
+
+    if (m_w_customXmlDelRangeStart)
+    {
+        delete m_w_customXmlDelRangeStart;
+        m_w_customXmlDelRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlDelRangeEnd = false;
+
+    if (m_w_customXmlDelRangeEnd)
+    {
+        delete m_w_customXmlDelRangeEnd;
+        m_w_customXmlDelRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeStart = false;
+
+    if (m_w_customXmlMoveFromRangeStart)
+    {
+        delete m_w_customXmlMoveFromRangeStart;
+        m_w_customXmlMoveFromRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveFromRangeEnd = false;
+
+    if (m_w_customXmlMoveFromRangeEnd)
+    {
+        delete m_w_customXmlMoveFromRangeEnd;
+        m_w_customXmlMoveFromRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeStart = false;
+
+    if (m_w_customXmlMoveToRangeStart)
+    {
+        delete m_w_customXmlMoveToRangeStart;
+        m_w_customXmlMoveToRangeStart = NULL;
+    }
+    ;
+
+    m_has_w_customXmlMoveToRangeEnd = false;
+
+    if (m_w_customXmlMoveToRangeEnd)
+    {
+        delete m_w_customXmlMoveToRangeEnd;
+        m_w_customXmlMoveToRangeEnd = NULL;
+    }
+    ;
+
+    m_has_w_ins = false;
+
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+
+    m_has_w_del = false;
+
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+
+    m_has_w_moveFrom = false;
+
+    if (m_w_moveFrom)
+    {
+        delete m_w_moveFrom;
+        m_w_moveFrom = NULL;
+    }
+    ;
+
+    m_has_w_moveTo = false;
+
+    if (m_w_moveTo)
+    {
+        delete m_w_moveTo;
+        m_w_moveTo = NULL;
+    }
+    ;
+
+    m_has_m_oMathPara = false;
+
+    if (m_m_oMathPara)
+    {
+        delete m_m_oMathPara;
+        m_m_oMathPara = NULL;
+    }
+    ;
+
+    m_has_m_oMath = false;
+
+    if (m_m_oMath)
+    {
+        delete m_m_oMath;
+        m_m_oMath = NULL;
+    }
+    ;
+
+    m_has_w_altChunk = true;
+    if (!m_w_altChunk)
+    {
+        m_w_altChunk = new ns_w::CT_AltChunk();
+    }
+    return m_w_altChunk;
+}
+
+const ns_w::CT_AltChunk& CT_TxbxContent::ChildGroup_1::get_w_altChunk() const
+{
+    if (m_w_altChunk)
+    {
+        return *m_w_altChunk;
+    }
+    return ns_w::CT_AltChunk::default_instance();
 }
 
 CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;

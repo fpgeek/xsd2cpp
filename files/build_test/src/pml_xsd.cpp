@@ -11770,6 +11770,11 @@ void CT_TLTimeConditionList::toXmlElem(const std::string& _elemName, const std::
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cond));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -15343,6 +15348,11 @@ void CT_TLBehaviorAttributeNameList::toXmlElem(const std::string& _elemName, con
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_attrName));
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -19767,6 +19777,11 @@ void CT_TLTemplateList::toXmlElem(const std::string& _elemName, const std::strin
     }
 
     _outStream << ">";
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tmpl));
+        assert(0 <= childSize && childSize <= 9);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -29213,7 +29228,7 @@ void CT_ShowProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[3] = {m_has_present, m_has_browse, m_has_kiosk};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -29237,7 +29252,7 @@ void CT_ShowProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[3] = {m_has_sldAll, m_has_sldRg, m_has_custShow};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -30583,7 +30598,7 @@ void CT_ApplicationNonVisualDrawingProps::toXmlElem(const std::string& _elemName
     {
         bool elemHasValueList[5] = {m_has_a_audioCd, m_has_a_wavAudioFile, m_has_a_audioFile, m_has_a_videoFile, m_has_a_quickTimeFile};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -33944,7 +33959,7 @@ void CT_BackgroundProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_a_effectLst, m_has_a_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 

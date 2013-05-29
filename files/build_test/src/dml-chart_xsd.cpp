@@ -19138,9 +19138,9 @@ CT_Trendline* CT_ScatterSer::add_trendline()
 
 CT_ErrBars* CT_ScatterSer::add_errBars()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_ErrBars* pNewChild = pChildGroup->mutable_errBars();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -19314,6 +19314,15 @@ void CT_ScatterSer::clear()
         m_childGroupList_2.clear();
     }
 
+    {
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_3.clear();
+    }
+
     m_has_xVal = false;
 
     if (m_xVal)
@@ -19426,7 +19435,19 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
             }
 
 
-            else if ((*iter)->has_errBars())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_3.begin(), m_childGroupList_3.end(), mem_fun(&ChildGroup_3::has_errBars));
+        assert(0 <= childSize && childSize <= 2);
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            if ((*iter)->has_errBars())
             {
                 (*iter)->get_errBars().toXmlElem("c:errBars", "", _outStream);
             }
@@ -19507,9 +19528,7 @@ const CT_DPt& CT_ScatterSer::ChildGroup_1::get_dPt() const
 // CT_ScatterSer::ChildGroup_2
 CT_ScatterSer::ChildGroup_2::ChildGroup_2()
     :m_has_trendline(false),
-     m_trendline(NULL),
-     m_has_errBars(false),
-     m_errBars(NULL)
+     m_trendline(NULL)
 {
 }
 bool CT_ScatterSer::ChildGroup_2::has_trendline() const
@@ -19519,15 +19538,6 @@ bool CT_ScatterSer::ChildGroup_2::has_trendline() const
 
 CT_Trendline* CT_ScatterSer::ChildGroup_2::mutable_trendline()
 {
-
-    m_has_errBars = false;
-
-    if (m_errBars)
-    {
-        delete m_errBars;
-        m_errBars = NULL;
-    }
-    ;
 
     m_has_trendline = true;
     if (!m_trendline)
@@ -19546,22 +19556,20 @@ const CT_Trendline& CT_ScatterSer::ChildGroup_2::get_trendline() const
     return CT_Trendline::default_instance();
 }
 
-bool CT_ScatterSer::ChildGroup_2::has_errBars() const
+
+// CT_ScatterSer::ChildGroup_3
+CT_ScatterSer::ChildGroup_3::ChildGroup_3()
+    :m_has_errBars(false),
+     m_errBars(NULL)
+{
+}
+bool CT_ScatterSer::ChildGroup_3::has_errBars() const
 {
     return m_has_errBars;
 }
 
-CT_ErrBars* CT_ScatterSer::ChildGroup_2::mutable_errBars()
+CT_ErrBars* CT_ScatterSer::ChildGroup_3::mutable_errBars()
 {
-
-    m_has_trendline = false;
-
-    if (m_trendline)
-    {
-        delete m_trendline;
-        m_trendline = NULL;
-    }
-    ;
 
     m_has_errBars = true;
     if (!m_errBars)
@@ -19571,7 +19579,7 @@ CT_ErrBars* CT_ScatterSer::ChildGroup_2::mutable_errBars()
     return m_errBars;
 }
 
-const CT_ErrBars& CT_ScatterSer::ChildGroup_2::get_errBars() const
+const CT_ErrBars& CT_ScatterSer::ChildGroup_3::get_errBars() const
 {
     if (m_errBars)
     {
@@ -20899,9 +20907,9 @@ CT_Trendline* CT_AreaSer::add_trendline()
 
 CT_ErrBars* CT_AreaSer::add_errBars()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_ErrBars* pNewChild = pChildGroup->mutable_errBars();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -21051,6 +21059,15 @@ void CT_AreaSer::clear()
         m_childGroupList_2.clear();
     }
 
+    {
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_3.clear();
+    }
+
     m_has_cat = false;
 
     if (m_cat)
@@ -21154,7 +21171,19 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
             }
 
 
-            else if ((*iter)->has_errBars())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_3.begin(), m_childGroupList_3.end(), mem_fun(&ChildGroup_3::has_errBars));
+        assert(0 <= childSize && childSize <= 2);
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            if ((*iter)->has_errBars())
             {
                 (*iter)->get_errBars().toXmlElem("c:errBars", "", _outStream);
             }
@@ -21229,9 +21258,7 @@ const CT_DPt& CT_AreaSer::ChildGroup_1::get_dPt() const
 // CT_AreaSer::ChildGroup_2
 CT_AreaSer::ChildGroup_2::ChildGroup_2()
     :m_has_trendline(false),
-     m_trendline(NULL),
-     m_has_errBars(false),
-     m_errBars(NULL)
+     m_trendline(NULL)
 {
 }
 bool CT_AreaSer::ChildGroup_2::has_trendline() const
@@ -21241,15 +21268,6 @@ bool CT_AreaSer::ChildGroup_2::has_trendline() const
 
 CT_Trendline* CT_AreaSer::ChildGroup_2::mutable_trendline()
 {
-
-    m_has_errBars = false;
-
-    if (m_errBars)
-    {
-        delete m_errBars;
-        m_errBars = NULL;
-    }
-    ;
 
     m_has_trendline = true;
     if (!m_trendline)
@@ -21268,22 +21286,20 @@ const CT_Trendline& CT_AreaSer::ChildGroup_2::get_trendline() const
     return CT_Trendline::default_instance();
 }
 
-bool CT_AreaSer::ChildGroup_2::has_errBars() const
+
+// CT_AreaSer::ChildGroup_3
+CT_AreaSer::ChildGroup_3::ChildGroup_3()
+    :m_has_errBars(false),
+     m_errBars(NULL)
+{
+}
+bool CT_AreaSer::ChildGroup_3::has_errBars() const
 {
     return m_has_errBars;
 }
 
-CT_ErrBars* CT_AreaSer::ChildGroup_2::mutable_errBars()
+CT_ErrBars* CT_AreaSer::ChildGroup_3::mutable_errBars()
 {
-
-    m_has_trendline = false;
-
-    if (m_trendline)
-    {
-        delete m_trendline;
-        m_trendline = NULL;
-    }
-    ;
 
     m_has_errBars = true;
     if (!m_errBars)
@@ -21293,7 +21309,7 @@ CT_ErrBars* CT_AreaSer::ChildGroup_2::mutable_errBars()
     return m_errBars;
 }
 
-const CT_ErrBars& CT_AreaSer::ChildGroup_2::get_errBars() const
+const CT_ErrBars& CT_AreaSer::ChildGroup_3::get_errBars() const
 {
     if (m_errBars)
     {
@@ -21968,9 +21984,9 @@ CT_Trendline* CT_BubbleSer::add_trendline()
 
 CT_ErrBars* CT_BubbleSer::add_errBars()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_ErrBars* pNewChild = pChildGroup->mutable_errBars();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -22168,6 +22184,15 @@ void CT_BubbleSer::clear()
         m_childGroupList_2.clear();
     }
 
+    {
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_3.clear();
+    }
+
     m_has_xVal = false;
 
     if (m_xVal)
@@ -22289,7 +22314,19 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
             }
 
 
-            else if ((*iter)->has_errBars())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_3.begin(), m_childGroupList_3.end(), mem_fun(&ChildGroup_3::has_errBars));
+        assert(0 <= childSize && childSize <= 2);
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            if ((*iter)->has_errBars())
             {
                 (*iter)->get_errBars().toXmlElem("c:errBars", "", _outStream);
             }
@@ -22376,9 +22413,7 @@ const CT_DPt& CT_BubbleSer::ChildGroup_1::get_dPt() const
 // CT_BubbleSer::ChildGroup_2
 CT_BubbleSer::ChildGroup_2::ChildGroup_2()
     :m_has_trendline(false),
-     m_trendline(NULL),
-     m_has_errBars(false),
-     m_errBars(NULL)
+     m_trendline(NULL)
 {
 }
 bool CT_BubbleSer::ChildGroup_2::has_trendline() const
@@ -22388,15 +22423,6 @@ bool CT_BubbleSer::ChildGroup_2::has_trendline() const
 
 CT_Trendline* CT_BubbleSer::ChildGroup_2::mutable_trendline()
 {
-
-    m_has_errBars = false;
-
-    if (m_errBars)
-    {
-        delete m_errBars;
-        m_errBars = NULL;
-    }
-    ;
 
     m_has_trendline = true;
     if (!m_trendline)
@@ -22415,22 +22441,20 @@ const CT_Trendline& CT_BubbleSer::ChildGroup_2::get_trendline() const
     return CT_Trendline::default_instance();
 }
 
-bool CT_BubbleSer::ChildGroup_2::has_errBars() const
+
+// CT_BubbleSer::ChildGroup_3
+CT_BubbleSer::ChildGroup_3::ChildGroup_3()
+    :m_has_errBars(false),
+     m_errBars(NULL)
+{
+}
+bool CT_BubbleSer::ChildGroup_3::has_errBars() const
 {
     return m_has_errBars;
 }
 
-CT_ErrBars* CT_BubbleSer::ChildGroup_2::mutable_errBars()
+CT_ErrBars* CT_BubbleSer::ChildGroup_3::mutable_errBars()
 {
-
-    m_has_trendline = false;
-
-    if (m_trendline)
-    {
-        delete m_trendline;
-        m_trendline = NULL;
-    }
-    ;
 
     m_has_errBars = true;
     if (!m_errBars)
@@ -22440,7 +22464,7 @@ CT_ErrBars* CT_BubbleSer::ChildGroup_2::mutable_errBars()
     return m_errBars;
 }
 
-const CT_ErrBars& CT_BubbleSer::ChildGroup_2::get_errBars() const
+const CT_ErrBars& CT_BubbleSer::ChildGroup_3::get_errBars() const
 {
     if (m_errBars)
     {
@@ -23364,6 +23388,11 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 2);
+    }
+
+    {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
@@ -23772,6 +23801,11 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(3 <= childSize && childSize <= 3);
+    }
+
+    {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
@@ -24100,6 +24134,11 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_ser));
+        assert(3 <= childSize && childSize <= 4);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -24134,6 +24173,11 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
     if (m_has_upDownBars)
     {
         m_upDownBars->toXmlElem("c:upDownBars", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 2);
     }
 
     {
@@ -24536,6 +24580,11 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
     }
 
     {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 2);
+    }
+
+    {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
@@ -24932,6 +24981,11 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 2);
     }
 
     {
@@ -25434,9 +25488,9 @@ CT_ChartLines* CT_BarChart::add_serLines()
 
 CT_UnsignedInt* CT_BarChart::add_axId()
 {
-    ChildGroup_2 *pChildGroup = new ChildGroup_2();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     CT_UnsignedInt* pNewChild = pChildGroup->mutable_axId();
-    m_childGroupList_2.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -25538,6 +25592,15 @@ void CT_BarChart::clear()
         m_childGroupList_2.clear();
     }
 
+    {
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_3.clear();
+    }
+
     m_has_extLst = false;
 
     if (m_extLst)
@@ -25620,7 +25683,19 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
             }
 
 
-            else if ((*iter)->has_axId())
+        }
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_3.begin(), m_childGroupList_3.end(), mem_fun(&ChildGroup_3::has_axId));
+        assert(2 <= childSize && childSize <= 2);
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            if ((*iter)->has_axId())
             {
                 (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
@@ -25683,9 +25758,7 @@ const CT_BarSer& CT_BarChart::ChildGroup_1::get_ser() const
 // CT_BarChart::ChildGroup_2
 CT_BarChart::ChildGroup_2::ChildGroup_2()
     :m_has_serLines(false),
-     m_serLines(NULL),
-     m_has_axId(false),
-     m_axId(NULL)
+     m_serLines(NULL)
 {
 }
 bool CT_BarChart::ChildGroup_2::has_serLines() const
@@ -25695,15 +25768,6 @@ bool CT_BarChart::ChildGroup_2::has_serLines() const
 
 CT_ChartLines* CT_BarChart::ChildGroup_2::mutable_serLines()
 {
-
-    m_has_axId = false;
-
-    if (m_axId)
-    {
-        delete m_axId;
-        m_axId = NULL;
-    }
-    ;
 
     m_has_serLines = true;
     if (!m_serLines)
@@ -25722,22 +25786,20 @@ const CT_ChartLines& CT_BarChart::ChildGroup_2::get_serLines() const
     return CT_ChartLines::default_instance();
 }
 
-bool CT_BarChart::ChildGroup_2::has_axId() const
+
+// CT_BarChart::ChildGroup_3
+CT_BarChart::ChildGroup_3::ChildGroup_3()
+    :m_has_axId(false),
+     m_axId(NULL)
+{
+}
+bool CT_BarChart::ChildGroup_3::has_axId() const
 {
     return m_has_axId;
 }
 
-CT_UnsignedInt* CT_BarChart::ChildGroup_2::mutable_axId()
+CT_UnsignedInt* CT_BarChart::ChildGroup_3::mutable_axId()
 {
-
-    m_has_serLines = false;
-
-    if (m_serLines)
-    {
-        delete m_serLines;
-        m_serLines = NULL;
-    }
-    ;
 
     m_has_axId = true;
     if (!m_axId)
@@ -25747,7 +25809,7 @@ CT_UnsignedInt* CT_BarChart::ChildGroup_2::mutable_axId()
     return m_axId;
 }
 
-const CT_UnsignedInt& CT_BarChart::ChildGroup_2::get_axId() const
+const CT_UnsignedInt& CT_BarChart::ChildGroup_3::get_axId() const
 {
     if (m_axId)
     {
@@ -26152,6 +26214,11 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 3);
+    }
+
+    {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
@@ -26514,6 +26581,11 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
     if (m_has_dropLines)
     {
         m_dropLines->toXmlElem("c:dropLines", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 2);
     }
 
     {
@@ -26920,6 +26992,11 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
     if (m_has_gapDepth)
     {
         m_gapDepth->toXmlElem("c:gapDepth", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 3);
     }
 
     {
@@ -28760,6 +28837,11 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 2);
+    }
+
+    {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
@@ -29262,6 +29344,11 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
     }
 
     {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(2 <= childSize && childSize <= 3);
+    }
+
+    {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
@@ -29542,6 +29629,11 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
     if (m_has_bandFmts)
     {
         m_bandFmts->toXmlElem("c:bandFmts", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
+        assert(3 <= childSize && childSize <= 3);
     }
 
     {
@@ -35765,11 +35857,6 @@ void CT_PlotArea::toXmlElem(const std::string& _elemName, const std::string& _xm
     if (m_has_layout)
     {
         m_layout->toXmlElem("c:layout", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
     }
 
     {

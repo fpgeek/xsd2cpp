@@ -77,6 +77,11 @@ void CT_NameListType::toXmlElem(const std::string& _elemName, const std::string&
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Person));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -154,17 +159,17 @@ ns_s::ST_String* CT_PersonType::add_Last()
 
 ns_s::ST_String* CT_PersonType::add_First()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_s::ST_String* pNewChild = pChildGroup->mutable_First();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_s::ST_String* CT_PersonType::add_Middle()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_s::ST_String* pNewChild = pChildGroup->mutable_Middle();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -177,6 +182,24 @@ void CT_PersonType::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
+    {
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_3.clear();
     }
 }
 
@@ -201,13 +224,27 @@ void CT_PersonType::toXmlElem(const std::string& _elemName, const std::string& _
             }
 
 
-            else if ((*iter)->has_First())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_First())
             {
                 _outStream << "<b:First>" << (*iter)->get_First().toString() << "</b:First>";
             }
 
 
-            else if ((*iter)->has_Middle())
+        }
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            if ((*iter)->has_Middle())
             {
                 _outStream << "<b:Middle>" << (*iter)->get_Middle().toString() << "</b:Middle>";
             }
@@ -232,11 +269,7 @@ const CT_PersonType& CT_PersonType::default_instance()
 // CT_PersonType::ChildGroup_1
 CT_PersonType::ChildGroup_1::ChildGroup_1()
     :m_has_Last(false),
-     m_Last(NULL),
-     m_has_First(false),
-     m_First(NULL),
-     m_has_Middle(false),
-     m_Middle(NULL)
+     m_Last(NULL)
 {
 }
 bool CT_PersonType::ChildGroup_1::has_Last() const
@@ -246,24 +279,6 @@ bool CT_PersonType::ChildGroup_1::has_Last() const
 
 ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_Last()
 {
-
-    m_has_First = false;
-
-    if (m_First)
-    {
-        delete m_First;
-        m_First = NULL;
-    }
-    ;
-
-    m_has_Middle = false;
-
-    if (m_Middle)
-    {
-        delete m_Middle;
-        m_Middle = NULL;
-    }
-    ;
 
     m_has_Last = true;
     if (!m_Last)
@@ -282,31 +297,20 @@ const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_Last() const
     return ns_s::ST_String::default_instance();
 }
 
-bool CT_PersonType::ChildGroup_1::has_First() const
+
+// CT_PersonType::ChildGroup_2
+CT_PersonType::ChildGroup_2::ChildGroup_2()
+    :m_has_First(false),
+     m_First(NULL)
+{
+}
+bool CT_PersonType::ChildGroup_2::has_First() const
 {
     return m_has_First;
 }
 
-ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_First()
+ns_s::ST_String* CT_PersonType::ChildGroup_2::mutable_First()
 {
-
-    m_has_Last = false;
-
-    if (m_Last)
-    {
-        delete m_Last;
-        m_Last = NULL;
-    }
-    ;
-
-    m_has_Middle = false;
-
-    if (m_Middle)
-    {
-        delete m_Middle;
-        m_Middle = NULL;
-    }
-    ;
 
     m_has_First = true;
     if (!m_First)
@@ -316,7 +320,7 @@ ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_First()
     return m_First;
 }
 
-const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_First() const
+const ns_s::ST_String& CT_PersonType::ChildGroup_2::get_First() const
 {
     if (m_First)
     {
@@ -325,31 +329,20 @@ const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_First() const
     return ns_s::ST_String::default_instance();
 }
 
-bool CT_PersonType::ChildGroup_1::has_Middle() const
+
+// CT_PersonType::ChildGroup_3
+CT_PersonType::ChildGroup_3::ChildGroup_3()
+    :m_has_Middle(false),
+     m_Middle(NULL)
+{
+}
+bool CT_PersonType::ChildGroup_3::has_Middle() const
 {
     return m_has_Middle;
 }
 
-ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_Middle()
+ns_s::ST_String* CT_PersonType::ChildGroup_3::mutable_Middle()
 {
-
-    m_has_Last = false;
-
-    if (m_Last)
-    {
-        delete m_Last;
-        m_Last = NULL;
-    }
-    ;
-
-    m_has_First = false;
-
-    if (m_First)
-    {
-        delete m_First;
-        m_First = NULL;
-    }
-    ;
 
     m_has_Middle = true;
     if (!m_Middle)
@@ -359,7 +352,7 @@ ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_Middle()
     return m_Middle;
 }
 
-const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_Middle() const
+const ns_s::ST_String& CT_PersonType::ChildGroup_3::get_Middle() const
 {
     if (m_Middle)
     {

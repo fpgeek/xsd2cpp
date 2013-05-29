@@ -212,9 +212,9 @@ CT_Default* CT_Types::add_Default()
 
 CT_Override* CT_Types::add_Override()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Override* pNewChild = pChildGroup->mutable_Override();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -227,6 +227,15 @@ void CT_Types::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -251,7 +260,14 @@ void CT_Types::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
             }
 
 
-            else if ((*iter)->has_Override())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_Override())
             {
                 (*iter)->get_Override().toXmlElem("ct:Override", "", _outStream);
             }
@@ -276,9 +292,7 @@ const CT_Types& CT_Types::default_instance()
 // CT_Types::ChildGroup_1
 CT_Types::ChildGroup_1::ChildGroup_1()
     :m_has_Default(false),
-     m_Default(NULL),
-     m_has_Override(false),
-     m_Override(NULL)
+     m_Default(NULL)
 {
 }
 bool CT_Types::ChildGroup_1::has_Default() const
@@ -288,15 +302,6 @@ bool CT_Types::ChildGroup_1::has_Default() const
 
 CT_Default* CT_Types::ChildGroup_1::mutable_Default()
 {
-
-    m_has_Override = false;
-
-    if (m_Override)
-    {
-        delete m_Override;
-        m_Override = NULL;
-    }
-    ;
 
     m_has_Default = true;
     if (!m_Default)
@@ -315,22 +320,20 @@ const CT_Default& CT_Types::ChildGroup_1::get_Default() const
     return CT_Default::default_instance();
 }
 
-bool CT_Types::ChildGroup_1::has_Override() const
+
+// CT_Types::ChildGroup_2
+CT_Types::ChildGroup_2::ChildGroup_2()
+    :m_has_Override(false),
+     m_Override(NULL)
+{
+}
+bool CT_Types::ChildGroup_2::has_Override() const
 {
     return m_has_Override;
 }
 
-CT_Override* CT_Types::ChildGroup_1::mutable_Override()
+CT_Override* CT_Types::ChildGroup_2::mutable_Override()
 {
-
-    m_has_Default = false;
-
-    if (m_Default)
-    {
-        delete m_Default;
-        m_Default = NULL;
-    }
-    ;
 
     m_has_Override = true;
     if (!m_Override)
@@ -340,7 +343,7 @@ CT_Override* CT_Types::ChildGroup_1::mutable_Override()
     return m_Override;
 }
 
-const CT_Override& CT_Types::ChildGroup_1::get_Override() const
+const CT_Override& CT_Types::ChildGroup_2::get_Override() const
 {
     if (m_Override)
     {
@@ -370,9 +373,9 @@ CT_Default* Types_element::add_Default()
 
 CT_Override* Types_element::add_Override()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Override* pNewChild = pChildGroup->mutable_Override();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -385,6 +388,15 @@ void Types_element::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -406,7 +418,14 @@ void Types_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_Override())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_Override())
             {
                 (*iter)->get_Override().toXmlElem("ct:Override", "", _outStream);
             }
@@ -431,9 +450,7 @@ const Types_element& Types_element::default_instance()
 // Types_element::ChildGroup_1
 Types_element::ChildGroup_1::ChildGroup_1()
     :m_has_Default(false),
-     m_Default(NULL),
-     m_has_Override(false),
-     m_Override(NULL)
+     m_Default(NULL)
 {
 }
 bool Types_element::ChildGroup_1::has_Default() const
@@ -443,15 +460,6 @@ bool Types_element::ChildGroup_1::has_Default() const
 
 CT_Default* Types_element::ChildGroup_1::mutable_Default()
 {
-
-    m_has_Override = false;
-
-    if (m_Override)
-    {
-        delete m_Override;
-        m_Override = NULL;
-    }
-    ;
 
     m_has_Default = true;
     if (!m_Default)
@@ -470,22 +478,20 @@ const CT_Default& Types_element::ChildGroup_1::get_Default() const
     return CT_Default::default_instance();
 }
 
-bool Types_element::ChildGroup_1::has_Override() const
+
+// Types_element::ChildGroup_2
+Types_element::ChildGroup_2::ChildGroup_2()
+    :m_has_Override(false),
+     m_Override(NULL)
+{
+}
+bool Types_element::ChildGroup_2::has_Override() const
 {
     return m_has_Override;
 }
 
-CT_Override* Types_element::ChildGroup_1::mutable_Override()
+CT_Override* Types_element::ChildGroup_2::mutable_Override()
 {
-
-    m_has_Default = false;
-
-    if (m_Default)
-    {
-        delete m_Default;
-        m_Default = NULL;
-    }
-    ;
 
     m_has_Override = true;
     if (!m_Override)
@@ -495,7 +501,7 @@ CT_Override* Types_element::ChildGroup_1::mutable_Override()
     return m_Override;
 }
 
-const CT_Override& Types_element::ChildGroup_1::get_Override() const
+const CT_Override& Types_element::ChildGroup_2::get_Override() const
 {
     if (m_Override)
     {

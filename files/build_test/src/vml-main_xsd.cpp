@@ -8216,11 +8216,6 @@ void CT_Shapetype::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -31637,11 +31632,6 @@ void CT_Arc::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -37273,11 +37263,6 @@ void CT_Curve::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -43029,11 +43014,6 @@ void CT_Image::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -48777,11 +48757,6 @@ void CT_Line::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -59947,11 +59922,6 @@ void CT_PolyLine::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -84312,11 +84282,6 @@ void shapetype_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -107401,11 +107366,6 @@ void arc_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -113041,11 +113001,6 @@ void curve_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -118801,11 +118756,6 @@ void image_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -124553,11 +124503,6 @@ void line_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -135731,11 +135676,6 @@ void polyline_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;

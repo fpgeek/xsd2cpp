@@ -94,17 +94,25 @@ private:
         bool has_Default() const;
         CT_Default* mutable_Default();
         const CT_Default& get_Default() const;
+    protected:
+    private:
+        bool m_has_Default;
+        CT_Default* m_Default;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_Override() const;
         CT_Override* mutable_Override();
         const CT_Override& get_Override() const;
     protected:
     private:
-        bool m_has_Default;
-        CT_Default* m_Default;
         bool m_has_Override;
         CT_Override* m_Override;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_Types* default_instance_;
 };
 
@@ -127,17 +135,25 @@ private:
         bool has_Default() const;
         CT_Default* mutable_Default();
         const CT_Default& get_Default() const;
+    protected:
+    private:
+        bool m_has_Default;
+        CT_Default* m_Default;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_Override() const;
         CT_Override* mutable_Override();
         const CT_Override& get_Override() const;
     protected:
     private:
-        bool m_has_Default;
-        CT_Default* m_Default;
         bool m_has_Override;
         CT_Override* m_Override;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static Types_element* default_instance_;
 };
 

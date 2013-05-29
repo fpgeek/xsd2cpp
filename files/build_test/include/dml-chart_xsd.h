@@ -3863,13 +3863,20 @@ private:
         bool has_trendline() const;
         CT_Trendline* mutable_trendline();
         const CT_Trendline& get_trendline() const;
+    protected:
+    private:
+        bool m_has_trendline;
+        CT_Trendline* m_trendline;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_errBars() const;
         CT_ErrBars* mutable_errBars();
         const CT_ErrBars& get_errBars() const;
     protected:
     private:
-        bool m_has_trendline;
-        CT_Trendline* m_trendline;
         bool m_has_errBars;
         CT_ErrBars* m_errBars;
     };
@@ -3887,6 +3894,7 @@ private:
     bool m_has_dLbls;
     CT_DLbls* m_dLbls;
     vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_xVal;
     CT_AxDataSource* m_xVal;
     bool m_has_yVal;
@@ -4130,13 +4138,20 @@ private:
         bool has_trendline() const;
         CT_Trendline* mutable_trendline();
         const CT_Trendline& get_trendline() const;
+    protected:
+    private:
+        bool m_has_trendline;
+        CT_Trendline* m_trendline;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_errBars() const;
         CT_ErrBars* mutable_errBars();
         const CT_ErrBars& get_errBars() const;
     protected:
     private:
-        bool m_has_trendline;
-        CT_Trendline* m_trendline;
         bool m_has_errBars;
         CT_ErrBars* m_errBars;
     };
@@ -4154,6 +4169,7 @@ private:
     bool m_has_dLbls;
     CT_DLbls* m_dLbls;
     vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_cat;
     CT_AxDataSource* m_cat;
     bool m_has_val;
@@ -4300,13 +4316,20 @@ private:
         bool has_trendline() const;
         CT_Trendline* mutable_trendline();
         const CT_Trendline& get_trendline() const;
+    protected:
+    private:
+        bool m_has_trendline;
+        CT_Trendline* m_trendline;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_errBars() const;
         CT_ErrBars* mutable_errBars();
         const CT_ErrBars& get_errBars() const;
     protected:
     private:
-        bool m_has_trendline;
-        CT_Trendline* m_trendline;
         bool m_has_errBars;
         CT_ErrBars* m_errBars;
     };
@@ -4324,6 +4347,7 @@ private:
     bool m_has_dLbls;
     CT_DLbls* m_dLbls;
     vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_xVal;
     CT_AxDataSource* m_xVal;
     bool m_has_yVal;
@@ -4909,13 +4933,20 @@ private:
         bool has_serLines() const;
         CT_ChartLines* mutable_serLines();
         const CT_ChartLines& get_serLines() const;
+    protected:
+    private:
+        bool m_has_serLines;
+        CT_ChartLines* m_serLines;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_axId() const;
         CT_UnsignedInt* mutable_axId();
         const CT_UnsignedInt& get_axId() const;
     protected:
     private:
-        bool m_has_serLines;
-        CT_ChartLines* m_serLines;
         bool m_has_axId;
         CT_UnsignedInt* m_axId;
     };
@@ -4933,6 +4964,7 @@ private:
     bool m_has_overlap;
     CT_Overlap* m_overlap;
     vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_extLst;
     CT_ExtensionList* m_extLst;
     static CT_BarChart* default_instance_;

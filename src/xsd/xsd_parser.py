@@ -142,20 +142,30 @@ def copyElemCont(source, dest):
 
 
 def groupByElemCont(pbComplexType):
-    prevKind = None
     newElemContList = []
+    prevElemCont = None
     curElemCont = None
+
     for elemCont in pbComplexType.element_container:
-        if prevKind is not None and prevKind == elemCont.kind:
+        if prevElemCont is not None and \
+                (prevElemCont.kind == elemCont.kind and elemCont.kind != PB.ElementContainer.RepeatedSequence):
             copyElemCont(elemCont, curElemCont)
         else:
             curElemCont = PB.ElementContainer()
             curElemCont.kind = elemCont.kind
-            curElemCont.min_occurs = elemCont.min_occurs
-            curElemCont.max_occurs.CopyFrom(elemCont.max_occurs)
+
             copyElemCont(elemCont, curElemCont)
             newElemContList.append(curElemCont)
-        prevKind = elemCont.kind
+
+        curElemCont.min_occurs = elemCont.min_occurs
+        if prevElemCont is not None:
+            updateElemContMinOccurs(curElemCont, prevElemCont.min_occurs)
+
+        curElemCont.max_occurs.CopyFrom(elemCont.max_occurs)
+        if prevElemCont is not None:
+            updatePbMaxOccurs(curElemCont.max_occurs, prevElemCont.max_occurs)
+
+        prevElemCont = elemCont
 
     del pbComplexType.element_container[:]
     for elemCont in newElemContList:
@@ -247,8 +257,6 @@ class ALL_SCHEMA:
     def _parseComplexType(self, xmlSchema, complexTypeElem, pbComplexType, pbContType, pbElemCont=None):
         name = complexTypeElem.attrib.get('name')
         if name:
-            if name == 'CT_TextParagraphProperties':
-                print 'CT_TextParagraphProperties'
             pbComplexType.name = name
 
         for childElem in complexTypeElem:
@@ -260,6 +268,8 @@ class ALL_SCHEMA:
                 self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont)
             elif childElem.tag == '{%s}choice' % XSD_URI:
                 self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont)
+            elif childElem.tag == '{%s}group' % XSD_URI:
+                self._parseGroup(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont)
             elif childElem.tag == '{%s}attribute' % XSD_URI:
                 pbAttribute = pbComplexType.attribute.add()
                 self._parseAttribute(xmlSchema, childElem, pbAttribute)
@@ -309,6 +319,17 @@ class ALL_SCHEMA:
                 self._parseAttribute(xmlSchema, childElem, pbAttribute)
 
 
+    def _createPbElemCont(self, pbComplexType, pbContType, pbMaxOccurs, minOccurs, isManyMaxOcc):
+        pbElemCont = pbComplexType.element_container.add()
+        updateElemContMinOccurs(pbElemCont, minOccurs)
+        if pbMaxOccurs: pbElemCont.max_occurs.CopyFrom(pbMaxOccurs)
+
+        pbContType = _elemContKindFromIsManyMaxOccurs(pbContType, isManyMaxOcc)
+        pbElemCont.kind = pbContType
+
+        return pbElemCont
+
+
     def _parseSequence(self, xmlSchema, sequnceElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs=None, nsPrefix=None):
         minOccurs = parseMinOccurs(sequnceElem)
         maxOccurs = parseMaxOccurs(sequnceElem)
@@ -333,6 +354,7 @@ class ALL_SCHEMA:
         for tag, childElems in childElemGroups:
             pbContType = orgContType
             if tag == '{%s}element' % XSD_URI:
+
                 def elemGroupByKeyFunc(elem):
                     maxOccurs = parseMaxOccurs(elem)
                     return isManyMaxOccurs(maxOccurs)
@@ -341,14 +363,16 @@ class ALL_SCHEMA:
                 for isManyMaxOcc, childElems in childElemGroups:
                     pbContType = orgContType
 
-                    pbElemCont = pbComplexType.element_container.add()
-                    updateElemContMinOccurs(pbElemCont, minOccurs)
-                    if pbMaxOccurs: pbElemCont.max_occurs.CopyFrom(pbMaxOccurs)
-
-                    pbContType = _elemContKindFromIsManyMaxOccurs(pbContType, isManyMaxOcc)
-                    pbElemCont.kind = pbContType
-                    for childElem in childElems:
-                        self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
+                    if isManyMaxOcc:
+                        for childElem in childElems:
+                            pbElemCont = self._createPbElemCont(pbComplexType, pbContType, pbMaxOccurs, minOccurs, isManyMaxOcc)
+                            pbContType = pbElemCont.kind
+                            self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
+                    else:
+                        pbElemCont = self._createPbElemCont(pbComplexType, pbContType, pbMaxOccurs, minOccurs, isManyMaxOcc)
+                        for childElem in childElems:
+                            pbContType = pbElemCont.kind
+                            self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
 
             else:
 
@@ -555,7 +579,7 @@ class ALL_SCHEMA:
 
         return pbElem
 
-    def _parseGroup(self, xmlSchema, groupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix=None, parentElement=None):
+    def _parseGroup(self, xmlSchema, groupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs=None, nsPrefix=None, parentElement=None, groupMinOccurs=None):
         minOccurs = parseMinOccurs(groupElem)
         maxOccurs = parseMaxOccurs(groupElem)
         if pbMaxOccurs is None:
@@ -581,14 +605,18 @@ class ALL_SCHEMA:
             otherGroupElem, otherSchema = self._findGroup(xmlSchema, ref)
             if hasNsPrefix(ref):
                 nsPrefix = getNsPrefix(ref)
-            # pbElemCont = pbComplexType.element_container.add()
-            # pbElemCont.min_occurs = minOccurs
-            self._parseGroup(otherSchema, otherGroupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, parentElement)
+
+            self._parseGroup(otherSchema, otherGroupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, parentElement, minOccurs)
 
         for childElem in groupElem:
             if parentElement and parentElement == ELEMENT_SEQUENCE and childElem.tag == ELEMENT_CHOICE:
                 pbElemCont = pbComplexType.element_container.add()
-                pbElemCont.min_occurs = minOccurs
+
+            if pbElemCont is not None:
+                if groupMinOccurs is not None:
+                    pbElemCont.min_occurs = groupMinOccurs
+                else:
+                    pbElemCont.min_occurs = minOccurs
                 pbElemCont.max_occurs.CopyFrom(maxOccurs)
 
             if childElem.tag == '{%s}sequence' % XSD_URI:

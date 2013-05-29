@@ -94,22 +94,38 @@ private:
         bool has_Last() const;
         ns_s::ST_String* mutable_Last();
         const ns_s::ST_String& get_Last() const;
+    protected:
+    private:
+        bool m_has_Last;
+        ns_s::ST_String* m_Last;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_First() const;
         ns_s::ST_String* mutable_First();
         const ns_s::ST_String& get_First() const;
+    protected:
+    private:
+        bool m_has_First;
+        ns_s::ST_String* m_First;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_Middle() const;
         ns_s::ST_String* mutable_Middle();
         const ns_s::ST_String& get_Middle() const;
     protected:
     private:
-        bool m_has_Last;
-        ns_s::ST_String* m_Last;
-        bool m_has_First;
-        ns_s::ST_String* m_First;
         bool m_has_Middle;
         ns_s::ST_String* m_Middle;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     static CT_PersonType* default_instance_;
 };
 

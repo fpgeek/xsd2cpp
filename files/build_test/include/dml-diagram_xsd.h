@@ -2534,20 +2534,27 @@ private:
         bool has_title() const;
         CT_CTName* mutable_title();
         const CT_CTName& get_title() const;
-        bool has_desc() const;
-        CT_CTDescription* mutable_desc();
-        const CT_CTDescription& get_desc() const;
     protected:
     private:
         bool m_has_title;
         CT_CTName* m_title;
-        bool m_has_desc;
-        CT_CTDescription* m_desc;
     };
     class ChildGroup_2
     {
     public:
         ChildGroup_2();
+        bool has_desc() const;
+        CT_CTDescription* mutable_desc();
+        const CT_CTDescription& get_desc() const;
+    protected:
+    private:
+        bool m_has_desc;
+        CT_CTDescription* m_desc;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_styleLbl() const;
         CT_CTStyleLabel* mutable_styleLbl();
         const CT_CTStyleLabel& get_styleLbl() const;
@@ -2557,9 +2564,10 @@ private:
         CT_CTStyleLabel* m_styleLbl;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_CTCategories* m_catLst;
-    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_extLst;
     ns_a::CT_OfficeArtExtensionList* m_extLst;
     static CT_ColorTransform* default_instance_;
@@ -2603,17 +2611,25 @@ private:
         bool has_title() const;
         CT_CTName* mutable_title();
         const CT_CTName& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_CTName* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_CTDescription* mutable_desc();
         const CT_CTDescription& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_CTName* m_title;
         bool m_has_desc;
         CT_CTDescription* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_CTCategories* m_catLst;
     bool m_has_extLst;
@@ -3886,17 +3902,25 @@ private:
         bool has_title() const;
         CT_Name* mutable_title();
         const CT_Name& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_Name* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_Description* mutable_desc();
         const CT_Description& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_Name* m_title;
         bool m_has_desc;
         CT_Description* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_Categories* m_catLst;
     bool m_has_sampData;
@@ -3955,17 +3979,25 @@ private:
         bool has_title() const;
         CT_Name* mutable_title();
         const CT_Name& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_Name* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_Description* mutable_desc();
         const CT_Description& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_Name* m_title;
         bool m_has_desc;
         CT_Description* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_Categories* m_catLst;
     bool m_has_extLst;
@@ -4621,20 +4653,27 @@ private:
         bool has_title() const;
         CT_SDName* mutable_title();
         const CT_SDName& get_title() const;
-        bool has_desc() const;
-        CT_SDDescription* mutable_desc();
-        const CT_SDDescription& get_desc() const;
     protected:
     private:
         bool m_has_title;
         CT_SDName* m_title;
-        bool m_has_desc;
-        CT_SDDescription* m_desc;
     };
     class ChildGroup_2
     {
     public:
         ChildGroup_2();
+        bool has_desc() const;
+        CT_SDDescription* mutable_desc();
+        const CT_SDDescription& get_desc() const;
+    protected:
+    private:
+        bool m_has_desc;
+        CT_SDDescription* m_desc;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_styleLbl() const;
         CT_StyleLabel* mutable_styleLbl();
         const CT_StyleLabel& get_styleLbl() const;
@@ -4644,11 +4683,12 @@ private:
         CT_StyleLabel* m_styleLbl;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_SDCategories* m_catLst;
     bool m_has_scene3d;
     ns_a::CT_Scene3D* m_scene3d;
-    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_extLst;
     ns_a::CT_OfficeArtExtensionList* m_extLst;
     static CT_StyleDefinition* default_instance_;
@@ -4692,17 +4732,25 @@ private:
         bool has_title() const;
         CT_SDName* mutable_title();
         const CT_SDName& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_SDName* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_SDDescription* mutable_desc();
         const CT_SDDescription& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_SDName* m_title;
         bool m_has_desc;
         CT_SDDescription* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_SDCategories* m_catLst;
     bool m_has_extLst;
@@ -4775,20 +4823,27 @@ private:
         bool has_title() const;
         CT_CTName* mutable_title();
         const CT_CTName& get_title() const;
-        bool has_desc() const;
-        CT_CTDescription* mutable_desc();
-        const CT_CTDescription& get_desc() const;
     protected:
     private:
         bool m_has_title;
         CT_CTName* m_title;
-        bool m_has_desc;
-        CT_CTDescription* m_desc;
     };
     class ChildGroup_2
     {
     public:
         ChildGroup_2();
+        bool has_desc() const;
+        CT_CTDescription* mutable_desc();
+        const CT_CTDescription& get_desc() const;
+    protected:
+    private:
+        bool m_has_desc;
+        CT_CTDescription* m_desc;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_styleLbl() const;
         CT_CTStyleLabel* mutable_styleLbl();
         const CT_CTStyleLabel& get_styleLbl() const;
@@ -4798,9 +4853,10 @@ private:
         CT_CTStyleLabel* m_styleLbl;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_CTCategories* m_catLst;
-    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_extLst;
     ns_a::CT_OfficeArtExtensionList* m_extLst;
     static colorsDef_element* default_instance_;
@@ -4844,17 +4900,25 @@ private:
         bool has_title() const;
         CT_CTName* mutable_title();
         const CT_CTName& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_CTName* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_CTDescription* mutable_desc();
         const CT_CTDescription& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_CTName* m_title;
         bool m_has_desc;
         CT_CTDescription* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_CTCategories* m_catLst;
     bool m_has_extLst;
@@ -4979,17 +5043,25 @@ private:
         bool has_title() const;
         CT_Name* mutable_title();
         const CT_Name& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_Name* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_Description* mutable_desc();
         const CT_Description& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_Name* m_title;
         bool m_has_desc;
         CT_Description* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_Categories* m_catLst;
     bool m_has_sampData;
@@ -5048,17 +5120,25 @@ private:
         bool has_title() const;
         CT_Name* mutable_title();
         const CT_Name& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_Name* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_Description* mutable_desc();
         const CT_Description& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_Name* m_title;
         bool m_has_desc;
         CT_Description* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_Categories* m_catLst;
     bool m_has_extLst;
@@ -5169,20 +5249,27 @@ private:
         bool has_title() const;
         CT_SDName* mutable_title();
         const CT_SDName& get_title() const;
-        bool has_desc() const;
-        CT_SDDescription* mutable_desc();
-        const CT_SDDescription& get_desc() const;
     protected:
     private:
         bool m_has_title;
         CT_SDName* m_title;
-        bool m_has_desc;
-        CT_SDDescription* m_desc;
     };
     class ChildGroup_2
     {
     public:
         ChildGroup_2();
+        bool has_desc() const;
+        CT_SDDescription* mutable_desc();
+        const CT_SDDescription& get_desc() const;
+    protected:
+    private:
+        bool m_has_desc;
+        CT_SDDescription* m_desc;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_styleLbl() const;
         CT_StyleLabel* mutable_styleLbl();
         const CT_StyleLabel& get_styleLbl() const;
@@ -5192,11 +5279,12 @@ private:
         CT_StyleLabel* m_styleLbl;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_SDCategories* m_catLst;
     bool m_has_scene3d;
     ns_a::CT_Scene3D* m_scene3d;
-    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
     bool m_has_extLst;
     ns_a::CT_OfficeArtExtensionList* m_extLst;
     static styleDef_element* default_instance_;
@@ -5240,17 +5328,25 @@ private:
         bool has_title() const;
         CT_SDName* mutable_title();
         const CT_SDName& get_title() const;
+    protected:
+    private:
+        bool m_has_title;
+        CT_SDName* m_title;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_desc() const;
         CT_SDDescription* mutable_desc();
         const CT_SDDescription& get_desc() const;
     protected:
     private:
-        bool m_has_title;
-        CT_SDName* m_title;
         bool m_has_desc;
         CT_SDDescription* m_desc;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_catLst;
     CT_SDCategories* m_catLst;
     bool m_has_extLst;

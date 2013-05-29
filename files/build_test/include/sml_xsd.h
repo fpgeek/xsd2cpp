@@ -3401,17 +3401,25 @@ private:
         bool has_filter() const;
         CT_Filter* mutable_filter();
         const CT_Filter& get_filter() const;
+    protected:
+    private:
+        bool m_has_filter;
+        CT_Filter* m_filter;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_dateGroupItem() const;
         CT_DateGroupItem* mutable_dateGroupItem();
         const CT_DateGroupItem& get_dateGroupItem() const;
     protected:
     private:
-        bool m_has_filter;
-        CT_Filter* m_filter;
         bool m_has_dateGroupItem;
         CT_DateGroupItem* m_dateGroupItem;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_Filters* default_instance_;
     bool m_has_blank_attr;
     XSD::boolean_ m_blank_attr;
@@ -4160,17 +4168,25 @@ private:
         bool has_Schema() const;
         CT_Schema* mutable_Schema();
         const CT_Schema& get_Schema() const;
+    protected:
+    private:
+        bool m_has_Schema;
+        CT_Schema* m_Schema;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_Map() const;
         CT_Map* mutable_Map();
         const CT_Map& get_Map() const;
     protected:
     private:
-        bool m_has_Schema;
-        CT_Schema* m_Schema;
         bool m_has_Map;
         CT_Map* m_Map;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_MapInfo* default_instance_;
     bool m_has_SelectionNamespaces_attr;
     XSD::string_ m_SelectionNamespaces_attr;
@@ -5710,17 +5726,25 @@ private:
         bool has_tpls() const;
         CT_Tuples* mutable_tpls();
         const CT_Tuples& get_tpls() const;
+    protected:
+    private:
+        bool m_has_tpls;
+        CT_Tuples* m_tpls;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_x() const;
         CT_X* mutable_x();
         const CT_X& get_x() const;
     protected:
     private:
-        bool m_has_tpls;
-        CT_Tuples* m_tpls;
         bool m_has_x;
         CT_X* m_x;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_Missing* default_instance_;
     bool m_has_u_attr;
     XSD::boolean_ m_u_attr;
@@ -5801,17 +5825,25 @@ private:
         bool has_tpls() const;
         CT_Tuples* mutable_tpls();
         const CT_Tuples& get_tpls() const;
+    protected:
+    private:
+        bool m_has_tpls;
+        CT_Tuples* m_tpls;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_x() const;
         CT_X* mutable_x();
         const CT_X& get_x() const;
     protected:
     private:
-        bool m_has_tpls;
-        CT_Tuples* m_tpls;
         bool m_has_x;
         CT_X* m_x;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_Number* default_instance_;
     bool m_has_v_attr;
     XSD::double_ m_v_attr;
@@ -6038,17 +6070,25 @@ private:
         bool has_tpls() const;
         CT_Tuples* mutable_tpls();
         const CT_Tuples& get_tpls() const;
+    protected:
+    private:
+        bool m_has_tpls;
+        CT_Tuples* m_tpls;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_x() const;
         CT_X* mutable_x();
         const CT_X& get_x() const;
     protected:
     private:
-        bool m_has_tpls;
-        CT_Tuples* m_tpls;
         bool m_has_x;
         CT_X* m_x;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_String* default_instance_;
     bool m_has_v_attr;
     ns_s::ST_Xstring* m_v_attr;
@@ -10426,19 +10466,27 @@ private:
         bool has_r() const;
         CT_RElt* mutable_r();
         const CT_RElt& get_r() const;
+    protected:
+    private:
+        bool m_has_r;
+        CT_RElt* m_r;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_rPh() const;
         CT_PhoneticRun* mutable_rPh();
         const CT_PhoneticRun& get_rPh() const;
     protected:
     private:
-        bool m_has_r;
-        CT_RElt* m_r;
         bool m_has_rPh;
         CT_PhoneticRun* m_rPh;
     };
     bool m_has_t;
     ns_s::ST_Xstring* m_t;
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_phoneticPr;
     CT_PhoneticPr* m_phoneticPr;
     static CT_Rst* default_instance_;
@@ -12754,19 +12802,27 @@ private:
         bool has_selection() const;
         CT_Selection* mutable_selection();
         const CT_Selection& get_selection() const;
+    protected:
+    private:
+        bool m_has_selection;
+        CT_Selection* m_selection;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_pivotSelection() const;
         CT_PivotSelection* mutable_pivotSelection();
         const CT_PivotSelection& get_pivotSelection() const;
     protected:
     private:
-        bool m_has_selection;
-        CT_Selection* m_selection;
         bool m_has_pivotSelection;
         CT_PivotSelection* m_pivotSelection;
     };
     bool m_has_pane;
     CT_Pane* m_pane;
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_extLst;
     CT_ExtensionList* m_extLst;
     static CT_SheetView* default_instance_;
@@ -14177,17 +14233,25 @@ private:
         bool has_cfvo() const;
         CT_Cfvo* mutable_cfvo();
         const CT_Cfvo& get_cfvo() const;
+    protected:
+    private:
+        bool m_has_cfvo;
+        CT_Cfvo* m_cfvo;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_color() const;
         CT_Color* mutable_color();
         const CT_Color& get_color() const;
     protected:
     private:
-        bool m_has_cfvo;
-        CT_Cfvo* m_cfvo;
         bool m_has_color;
         CT_Color* m_color;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_ColorScale* default_instance_;
 };
 
@@ -19125,19 +19189,27 @@ private:
         bool has_stp() const;
         ns_s::ST_Xstring* mutable_stp();
         const ns_s::ST_Xstring& get_stp() const;
+    protected:
+    private:
+        bool m_has_stp;
+        ns_s::ST_Xstring* m_stp;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_tr() const;
         CT_VolTopicRef* mutable_tr();
         const CT_VolTopicRef& get_tr() const;
     protected:
     private:
-        bool m_has_stp;
-        ns_s::ST_Xstring* m_stp;
         bool m_has_tr;
         CT_VolTopicRef* m_tr;
     };
     bool m_has_v;
     ns_s::ST_Xstring* m_v;
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_VolTopic* default_instance_;
     bool m_has_t_attr;
     ST_VolValueType* m_t_attr;
@@ -20600,17 +20672,25 @@ private:
         bool has_Schema() const;
         CT_Schema* mutable_Schema();
         const CT_Schema& get_Schema() const;
+    protected:
+    private:
+        bool m_has_Schema;
+        CT_Schema* m_Schema;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_Map() const;
         CT_Map* mutable_Map();
         const CT_Map& get_Map() const;
     protected:
     private:
-        bool m_has_Schema;
-        CT_Schema* m_Schema;
         bool m_has_Map;
         CT_Map* m_Map;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static MapInfo_element* default_instance_;
     bool m_has_SelectionNamespaces_attr;
     XSD::string_ m_SelectionNamespaces_attr;

@@ -16139,6 +16139,11 @@ void CT_D::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr,
     }
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_e));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -16557,6 +16562,11 @@ void CT_EqArr::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     if (m_has_eqArrPr)
     {
         m_eqArrPr->toXmlElem("m:eqArrPr", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_e));
+        assert(1 <= childSize);
     }
 
     {
@@ -18179,6 +18189,11 @@ void CT_MCS::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mc));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -18683,6 +18698,11 @@ void CT_MR::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr
     _outStream << ">";
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_e));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -18819,6 +18839,11 @@ void CT_M::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr,
     if (m_has_mPr)
     {
         m_mPr->toXmlElem("m:mPr", "", _outStream);
+    }
+
+    {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mr));
+        assert(1 <= childSize);
     }
 
     {
@@ -21729,11 +21754,6 @@ void CT_OMathArg::toXmlElem(const std::string& _elemName, const std::string& _xm
     if (m_has_argPr)
     {
         m_argPr->toXmlElem("m:argPr", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
     }
 
     {
@@ -46636,6 +46656,11 @@ void CT_OMathPara::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_oMath));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -47125,11 +47150,6 @@ void CT_OMath::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -71654,6 +71674,11 @@ void oMathPara_element::toXml(std::ostream& _outStream) const
     }
 
     {
+        int childSize = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_oMath));
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -72142,11 +72167,6 @@ void oMath_element::toXml(std::ostream& _outStream) const
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
