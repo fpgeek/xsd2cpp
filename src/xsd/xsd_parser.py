@@ -23,9 +23,7 @@ def updatePbMaxOccurs(pbMaxOccurs, maxOccurs):
                 pbMaxOccurs.count = maxOccurs.count
 
 def updateElemContMinOccurs(pbElemCont, minOccurs):
-    if not pbElemCont.HasField('min_occurs'):
-        pbElemCont.min_occurs = minOccurs
-    elif pbElemCont.min_occurs > minOccurs:
+    if pbElemCont.min_occurs > minOccurs:
         pbElemCont.min_occurs = minOccurs
 
 class SCHEMA:
@@ -246,6 +244,8 @@ class ALL_SCHEMA:
     def _parseComplexType(self, xmlSchema, complexTypeElem, pbComplexType, pbContType, pbElemCont=None):
         name = complexTypeElem.attrib.get('name')
         if name:
+            if name == "CT_FldChar":
+                print 'CT_FldChar'
             pbComplexType.name = name
 
         for childElem in complexTypeElem:

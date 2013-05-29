@@ -4918,7 +4918,7 @@ void CT_TransitionSoundAction::toXmlElem(const std::string& _elemName, const std
     {
         bool elemHasValueList[2] = {m_has_stSnd, m_has_endSnd};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -10116,7 +10116,7 @@ void CT_TLIterateData::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[2] = {m_has_tmAbs, m_has_tmPct};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -11245,7 +11245,7 @@ void CT_TLTimeTargetElement::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[4] = {m_has_sldTgt, m_has_sndTgt, m_has_spTgt, m_has_inkTgt};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -16464,7 +16464,7 @@ void CT_TLAnimVariant::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[5] = {m_has_boolVal, m_has_intVal, m_has_fltVal, m_has_strVal, m_has_clrVal};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -17444,7 +17444,7 @@ void CT_TLByAnimateColorTransform::toXmlElem(const std::string& _elemName, const
     {
         bool elemHasValueList[2] = {m_has_rgb, m_has_hsl};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -20713,7 +20713,7 @@ void CT_TLGraphicalObjectBuild::toXmlElem(const std::string& _elemName, const st
     {
         bool elemHasValueList[2] = {m_has_bldAsOne, m_has_bldSub};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -23398,7 +23398,7 @@ void CT_OleObject::toXmlElem(const std::string& _elemName, const std::string& _x
     {
         bool elemHasValueList[2] = {m_has_embed, m_has_link};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -27923,7 +27923,7 @@ void CT_HtmlPublishProperties::toXmlElem(const std::string& _elemName, const std
     {
         bool elemHasValueList[3] = {m_has_sldAll, m_has_sldRg, m_has_custShow};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -29218,7 +29218,7 @@ void CT_ShowProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[3] = {m_has_present, m_has_browse, m_has_kiosk};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -29242,7 +29242,7 @@ void CT_ShowProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[3] = {m_has_sldAll, m_has_sldRg, m_has_custShow};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -30588,7 +30588,7 @@ void CT_ApplicationNonVisualDrawingProps::toXmlElem(const std::string& _elemName
     {
         bool elemHasValueList[5] = {m_has_a_audioCd, m_has_a_wavAudioFile, m_has_a_audioFile, m_has_a_videoFile, m_has_a_quickTimeFile};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -33907,7 +33907,7 @@ void CT_BackgroundProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_a_noFill, m_has_a_solidFill, m_has_a_gradFill, m_has_a_blipFill, m_has_a_pattFill, m_has_a_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -33949,7 +33949,7 @@ void CT_BackgroundProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_a_effectLst, m_has_a_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -34132,7 +34132,7 @@ void CT_Background::toXmlElem(const std::string& _elemName, const std::string& _
     {
         bool elemHasValueList[2] = {m_has_bgPr, m_has_bgRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -39841,7 +39841,7 @@ void oleObj_element::toXml(std::ostream& _outStream) const
     {
         bool elemHasValueList[2] = {m_has_embed, m_has_link};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
