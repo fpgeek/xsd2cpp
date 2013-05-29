@@ -30957,7 +30957,7 @@ void CT_Textbox::toXmlElem(const std::string& _elemName, const std::string& _xml
     {
         bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -105015,7 +105015,7 @@ void textbox_element::toXml(std::ostream& _outStream) const
     {
         bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 

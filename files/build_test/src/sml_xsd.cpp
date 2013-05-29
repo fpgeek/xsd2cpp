@@ -80876,7 +80876,7 @@ void CT_Mdx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
     {
         bool elemHasValueList[4] = {m_has_t, m_has_ms, m_has_p, m_has_k};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -84651,7 +84651,7 @@ void CT_Fill::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     {
         bool elemHasValueList[2] = {m_has_patternFill, m_has_gradientFill};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -91578,7 +91578,7 @@ void CT_ExternalLink::toXmlElem(const std::string& _elemName, const std::string&
     {
         bool elemHasValueList[3] = {m_has_externalBook, m_has_ddeLink, m_has_oleLink};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -115928,7 +115928,7 @@ void externalLink_element::toXml(std::ostream& _outStream) const
     {
         bool elemHasValueList[3] = {m_has_externalBook, m_has_ddeLink, m_has_oleLink};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 

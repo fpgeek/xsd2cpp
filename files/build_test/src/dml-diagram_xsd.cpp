@@ -23381,7 +23381,7 @@ void CT_TextProps::toXmlElem(const std::string& _elemName, const std::string& _x
     {
         bool elemHasValueList[2] = {m_has_a_sp3d, m_has_a_flatTx};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 

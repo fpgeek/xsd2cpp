@@ -3397,7 +3397,7 @@ void CT_TwoCellAnchor::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[6] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic, m_has_contentPart};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -4111,7 +4111,7 @@ void CT_OneCellAnchor::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[6] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic, m_has_contentPart};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -4805,7 +4805,7 @@ void CT_AbsoluteAnchor::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[6] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic, m_has_contentPart};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
