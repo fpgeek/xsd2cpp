@@ -6271,7 +6271,7 @@ void CT_NumDataSource::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[2] = {m_has_numRef, m_has_numLit};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -6848,7 +6848,7 @@ void CT_Tx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr
     {
         bool elemHasValueList[2] = {m_has_strRef, m_has_rich};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -7761,7 +7761,7 @@ void CT_AxDataSource::toXmlElem(const std::string& _elemName, const std::string&
     {
         bool elemHasValueList[5] = {m_has_multiLvlStrRef, m_has_numRef, m_has_numLit, m_has_strRef, m_has_strLit};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -7923,7 +7923,7 @@ void CT_SerTx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     {
         bool elemHasValueList[2] = {m_has_strRef, m_has_v};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -12699,7 +12699,7 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     {
         bool elemHasValueList[1] = {m_has_delete};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -12711,7 +12711,7 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     {
         bool elemHasValueList[2] = {m_has_layout, m_has_tx};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -12729,7 +12729,7 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     {
         bool elemHasValueList[11] = {m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator};
         int cnt = count(elemHasValueList, elemHasValueList + 11, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -14730,7 +14730,7 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     {
         bool elemHasValueList[1] = {m_has_delete};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -14742,7 +14742,7 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     {
         bool elemHasValueList[13] = {m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator, m_has_showLeaderLines, m_has_leaderLines};
         int cnt = count(elemHasValueList, elemHasValueList + 13, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -30258,7 +30258,7 @@ void CT_DispUnits::toXmlElem(const std::string& _elemName, const std::string& _x
     {
         bool elemHasValueList[2] = {m_has_custUnit, m_has_builtInUnit};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -39710,7 +39710,7 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
     {
         bool elemHasValueList[1] = {m_has_delete};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -39722,7 +39722,7 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
     {
         bool elemHasValueList[1] = {m_has_txPr};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 

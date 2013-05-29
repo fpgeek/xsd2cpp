@@ -23,7 +23,7 @@ def updatePbMaxOccurs(pbMaxOccurs, maxOccurs):
                 pbMaxOccurs.count = maxOccurs.count
 
 def updateElemContMinOccurs(pbElemCont, minOccurs):
-    if pbElemCont.min_occurs < minOccurs:
+    if pbElemCont.min_occurs > minOccurs:
         pbElemCont.min_occurs = minOccurs
 
 class SCHEMA:
@@ -539,7 +539,7 @@ class ALL_SCHEMA:
         return pbElem
 
     def _parseGroup(self, xmlSchema, groupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix=None):
-
+        minOccurs = parseMinOccurs(groupElem)
         maxOccurs = parseMaxOccurs(groupElem)
         if pbMaxOccurs is None:
             pbMaxOccurs = maxOccurs
@@ -565,6 +565,7 @@ class ALL_SCHEMA:
             if hasNsPrefix(ref):
                 nsPrefix = getNsPrefix(ref)
             pbElemCont = pbComplexType.element_container.add()
+            pbElemCont.min_occurs = minOccurs
             self._parseGroup(otherSchema, otherGroupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix)
 
         for childElem in groupElem:

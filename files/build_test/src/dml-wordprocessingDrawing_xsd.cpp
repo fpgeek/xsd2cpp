@@ -2214,7 +2214,7 @@ void CT_PosH::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     {
         bool elemHasValueList[2] = {m_has_align, m_has_posOffset};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -2395,7 +2395,7 @@ void CT_PosV::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     {
         bool elemHasValueList[2] = {m_has_align, m_has_posOffset};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -3305,7 +3305,7 @@ void CT_Anchor::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     {
         bool elemHasValueList[5] = {m_has_wrapNone, m_has_wrapSquare, m_has_wrapTight, m_has_wrapThrough, m_has_wrapTopAndBottom};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -4280,7 +4280,7 @@ void CT_WordprocessingShape::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[2] = {m_has_cNvSpPr, m_has_cNvCnPr};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -7727,7 +7727,7 @@ void wsp_element::toXml(std::ostream& _outStream) const
     {
         bool elemHasValueList[2] = {m_has_cNvSpPr, m_has_cNvCnPr};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -9081,7 +9081,7 @@ void anchor_element::toXml(std::ostream& _outStream) const
     {
         bool elemHasValueList[5] = {m_has_wrapNone, m_has_wrapSquare, m_has_wrapTight, m_has_wrapThrough, m_has_wrapTopAndBottom};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 

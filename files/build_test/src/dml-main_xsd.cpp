@@ -9310,7 +9310,7 @@ void CT_CustomColor::toXmlElem(const std::string& _elemName, const std::string& 
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -10034,7 +10034,7 @@ void CT_EffectStyleItem::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -63412,7 +63412,7 @@ void CT_Color::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -68171,7 +68171,7 @@ void CT_AnimationElementChoice::toXmlElem(const std::string& _elemName, const st
     {
         bool elemHasValueList[2] = {m_has_dgm, m_has_chart};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -68517,7 +68517,7 @@ void CT_AnimationGraphicalObjectBuildProperties::toXmlElem(const std::string& _e
     {
         bool elemHasValueList[2] = {m_has_bldDgm, m_has_bldChart};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -69147,7 +69147,7 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -69189,7 +69189,7 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -69374,7 +69374,7 @@ void CT_WholeE2oFormatting::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -69633,7 +69633,7 @@ void CT_GvmlTextShape::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[2] = {m_has_useSpRect, m_has_xfrm};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -73919,7 +73919,7 @@ void CT_AlphaInverseEffect::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -75026,7 +75026,7 @@ void CT_ColorReplaceEffect::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -76216,7 +76216,7 @@ void CT_GlowEffect::toXmlElem(const std::string& _elemName, const std::string& _
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -77039,7 +77039,7 @@ void CT_InnerShadowEffect::toXmlElem(const std::string& _elemName, const std::st
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -77929,7 +77929,7 @@ void CT_OuterShadowEffect::toXmlElem(const std::string& _elemName, const std::st
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -78722,7 +78722,7 @@ void CT_PresetShadowEffect::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -80498,7 +80498,7 @@ void CT_SolidColorFillProperties::toXmlElem(const std::string& _elemName, const 
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -81294,7 +81294,7 @@ void CT_GradientStop::toXmlElem(const std::string& _elemName, const std::string&
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -81691,7 +81691,7 @@ void CT_GradientFillProperties::toXmlElem(const std::string& _elemName, const st
     {
         bool elemHasValueList[2] = {m_has_lin, m_has_path};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -85678,7 +85678,7 @@ void CT_BlipFillProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_tile, m_has_stretch};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -86442,7 +86442,7 @@ void CT_FillProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -87006,7 +87006,7 @@ void CT_FillEffect::toXmlElem(const std::string& _elemName, const std::string& _
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -87587,7 +87587,7 @@ void CT_FillOverlayEffect::toXmlElem(const std::string& _elemName, const std::st
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -88498,7 +88498,7 @@ void CT_EffectProperties::toXmlElem(const std::string& _elemName, const std::str
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -93348,7 +93348,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[4] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_pattFill};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -93378,7 +93378,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[2] = {m_has_prstDash, m_has_custDash};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -93396,7 +93396,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[3] = {m_has_round, m_has_bevel, m_has_miter};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -94418,7 +94418,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[2] = {m_has_custGeom, m_has_prstGeom};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -94436,7 +94436,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -94484,7 +94484,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -95280,7 +95280,7 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -95322,7 +95322,7 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -95911,7 +95911,7 @@ void CT_StyleMatrixReference::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -96512,7 +96512,7 @@ void CT_FontReference::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -97929,7 +97929,7 @@ void CT_ColorMappingOverride::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_masterClrMapping, m_has_overrideClrMapping};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -99734,7 +99734,7 @@ void CT_TableCellProperties::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -101613,7 +101613,7 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -101655,7 +101655,7 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[4] = {m_has_effectLst, m_has_effectDag, m_has_tableStyle, m_has_tableStyleId};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -102309,7 +102309,7 @@ void CT_ThemeableLineStyle::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_ln, m_has_lnRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103009,7 +103009,7 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[2] = {m_has_font, m_has_fontRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103027,7 +103027,7 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103736,7 +103736,7 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103754,7 +103754,7 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effect, m_has_effectRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -103974,7 +103974,7 @@ void CT_TableStyleCellStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -106653,7 +106653,7 @@ void CT_TextBodyProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[3] = {m_has_noAutofit, m_has_normAutofit, m_has_spAutoFit};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -106683,7 +106683,7 @@ void CT_TextBodyProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_sp3d, m_has_flatTx};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -109510,7 +109510,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -109552,7 +109552,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -109576,7 +109576,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_uLnTx, m_has_uLn};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -109594,7 +109594,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_uFillTx, m_has_uFill};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -110637,7 +110637,7 @@ void CT_TextSpacing::toXmlElem(const std::string& _elemName, const std::string& 
     {
         bool elemHasValueList[2] = {m_has_spcPct, m_has_spcPts};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -111686,7 +111686,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_buClrTx, m_has_buClr};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -111704,7 +111704,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[3] = {m_has_buSzTx, m_has_buSzPct, m_has_buSzPts};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -111728,7 +111728,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_buFontTx, m_has_buFont};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -111746,7 +111746,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[4] = {m_has_buNone, m_has_buAutoNum, m_has_buChar, m_has_buBlip};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -112926,7 +112926,7 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -112968,7 +112968,7 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 

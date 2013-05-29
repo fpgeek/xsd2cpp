@@ -2837,7 +2837,7 @@ void CT_RelSizeAnchor::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[5] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
@@ -3356,7 +3356,7 @@ void CT_AbsSizeAnchor::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[5] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic};
         int cnt = count(elemHasValueList, elemHasValueList + 5, true);
-        assert(cnt == 1);
+        assert(cnt == 0 || cnt == 1);
     }
 
 
