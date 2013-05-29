@@ -16139,11 +16139,6 @@ void CT_D::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr,
     }
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -16562,11 +16557,6 @@ void CT_EqArr::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     if (m_has_eqArrPr)
     {
         m_eqArrPr->toXmlElem("m:eqArrPr", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -18189,11 +18179,6 @@ void CT_MCS::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -18698,11 +18683,6 @@ void CT_MR::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -18839,11 +18819,6 @@ void CT_M::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr,
     if (m_has_mPr)
     {
         m_mPr->toXmlElem("m:mPr", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -46661,11 +46636,6 @@ void CT_OMathPara::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -71681,11 +71651,6 @@ void oMathPara_element::toXml(std::ostream& _outStream) const
     if (m_has_oMathParaPr)
     {
         m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
     }
 
     {

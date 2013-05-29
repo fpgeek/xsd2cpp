@@ -9869,11 +9869,6 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -9896,11 +9891,6 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
     if (m_has_catLst)
     {
         m_catLst->toXmlElem("dgm:catLst", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_2.size();
-        assert(1 <= childSize);
     }
 
     {
@@ -10230,11 +10220,6 @@ void CT_ColorTransformHeader::toXmlElem(const std::string& _elemName, const std:
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -10443,11 +10428,6 @@ void CT_ColorTransformHeaderLst::toXmlElem(const std::string& _elemName, const s
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -10860,11 +10840,6 @@ void CT_PtList::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -11352,11 +11327,6 @@ void CT_CxnList::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -12155,11 +12125,6 @@ void CT_Constraints::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -12559,11 +12524,6 @@ void CT_Rules::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -13068,11 +13028,6 @@ void CT_AdjLst::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -13679,11 +13634,6 @@ void CT_Algorithm::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -19209,11 +19159,6 @@ void CT_Choose::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -19528,11 +19473,6 @@ void CT_Categories::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -20068,11 +20008,6 @@ void CT_DiagramDefinition::toXmlElem(const std::string& _elemName, const std::st
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -20433,11 +20368,6 @@ void CT_DiagramDefinitionHeader::toXmlElem(const std::string& _elemName, const s
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -20662,11 +20592,6 @@ void CT_DiagramDefinitionHeaderLst::toXmlElem(const std::string& _elemName, cons
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -23924,11 +23849,6 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -23957,11 +23877,6 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
     if (m_has_scene3d)
     {
         m_scene3d->toXmlElem("dgm:scene3d", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_2.size();
-        assert(1 <= childSize);
     }
 
     {
@@ -24291,11 +24206,6 @@ void CT_StyleDefinitionHeader::toXmlElem(const std::string& _elemName, const std
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -24504,11 +24414,6 @@ void CT_StyleDefinitionHeaderLst::toXmlElem(const std::string& _elemName, const 
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -24727,11 +24632,6 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -24754,11 +24654,6 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
     if (m_has_catLst)
     {
         m_catLst->toXmlElem("dgm:catLst", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_2.size();
-        assert(1 <= childSize);
     }
 
     {
@@ -25088,11 +24983,6 @@ void colorsDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -25301,11 +25191,6 @@ void colorsDefHdrLst_element::toXml(std::ostream& _outStream) const
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -25902,11 +25787,6 @@ void layoutDef_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26267,11 +26147,6 @@ void layoutDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26496,11 +26371,6 @@ void layoutDefHdrLst_element::toXml(std::ostream& _outStream) const
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -26941,11 +26811,6 @@ void styleDef_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26974,11 +26839,6 @@ void styleDef_element::toXml(std::ostream& _outStream) const
     if (m_has_scene3d)
     {
         m_scene3d->toXmlElem("dgm:scene3d", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_2.size();
-        assert(1 <= childSize);
     }
 
     {
@@ -27308,11 +27168,6 @@ void styleDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -27521,11 +27376,6 @@ void styleDefHdrLst_element::toXml(std::ostream& _outStream) const
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;

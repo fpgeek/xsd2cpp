@@ -9521,11 +9521,6 @@ void CT_CustomColorList::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -9787,11 +9782,6 @@ void CT_FontCollection::toXmlElem(const std::string& _elemName, const std::strin
     if (m_has_cs)
     {
         m_cs->toXmlElem("a:cs", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -10896,11 +10886,6 @@ void CT_LineStyleList::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -10998,11 +10983,6 @@ void CT_EffectStyleList::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -61632,11 +61612,6 @@ void CT_OfficeArtExtensionList::toXmlElem(const std::string& _elemName, const st
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -81438,11 +81413,6 @@ void CT_GradientStopList::toXmlElem(const std::string& _elemName, const std::str
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -88709,11 +88679,6 @@ void CT_GeomGuideList::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -89997,11 +89962,6 @@ void CT_ConnectionSiteList::toXmlElem(const std::string& _elemName, const std::s
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -90547,11 +90507,6 @@ void CT_Path2DQuadBezierTo::toXmlElem(const std::string& _elemName, const std::s
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -90649,11 +90604,6 @@ void CT_Path2DCubicBezierTo::toXmlElem(const std::string& _elemName, const std::
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -91532,11 +91482,6 @@ void CT_Path2DList::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -92628,11 +92573,6 @@ void CT_DashStopList::toXmlElem(const std::string& _elemName, const std::string&
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -98169,11 +98109,6 @@ void CT_ColorSchemeList::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -100255,11 +100190,6 @@ void CT_TableGrid::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -100706,11 +100636,6 @@ void CT_TableRow::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -102000,11 +101925,6 @@ void CT_Table::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     if (m_has_tblGrid)
     {
         m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -104970,11 +104890,6 @@ void CT_TableStyleList::toXmlElem(const std::string& _elemName, const std::strin
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -107271,11 +107186,6 @@ void CT_TextBody::toXmlElem(const std::string& _elemName, const std::string& _xm
     if (m_has_lstStyle)
     {
         m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);
-    }
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -110460,11 +110370,6 @@ void CT_TextTabStopList::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -117237,11 +117142,6 @@ void tbl_element::toXml(std::ostream& _outStream) const
     }
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -117354,11 +117254,6 @@ void tblStyleLst_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;

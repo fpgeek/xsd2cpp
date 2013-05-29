@@ -1489,7 +1489,9 @@ def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx, makeAssertCode
 
     mBodyList = _getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc)
 
-    toXmlMethodBody = makeAssertCodeFromOccursReqeatedFunc(pbElemList, idx)
+    toXmlMethodBody = ''
+    if makeAssertCodeFromOccursReqeatedFunc:
+        toXmlMethodBody += makeAssertCodeFromOccursReqeatedFunc(pbElemList, idx)
     toXmlMethodBody += \
 """
 {
@@ -2069,9 +2071,10 @@ def getToXmlMethodBodyStrFromElemCont(pbSchema, pbElemCont, cppFile):
         elif elemCont.kind == PB.ElementContainer.Choice:
             toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.choice, elemCont.min_occurs, makeAssertCodeFromOccursChoice))
         elif elemCont.kind == PB.ElementContainer.RepeatedSequence:
-            makeAssertCodeFromOccursReqeatedFunc = functools.partial(makeAssertCodeFromOccursReqeated, pbElemCont=elemCont)
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_sequence, repeatedIdx, makeAssertCodeFromOccursReqeatedFunc))
+            # makeAssertCodeFromOccursReqeatedFunc = functools.partial(makeAssertCodeFromOccursReqeated, pbElemCont=elemCont)
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_sequence, repeatedIdx, None))
             repeatedIdx += 1
+
         elif elemCont.kind == PB.ElementContainer.RepeatedChoice:
             makeAssertCodeFromOccursReqeatedFunc = functools.partial(makeAssertCodeFromOccursReqeated, pbElemCont=elemCont)
             toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_choice, repeatedIdx, makeAssertCodeFromOccursReqeatedFunc))

@@ -27314,11 +27314,6 @@ void CT_Formulas::toXmlElem(const std::string& _elemName, const std::string& _xm
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -27479,11 +27474,6 @@ void CT_Handles::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -103436,11 +103426,6 @@ void formulas_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
-
-    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -103542,11 +103527,6 @@ void handles_element::toXml(std::ostream& _outStream) const
     _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
-
-    {
-        const size_t childSize = m_childGroupList_1.size();
-        assert(1 <= childSize && childSize <= 1);
-    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
