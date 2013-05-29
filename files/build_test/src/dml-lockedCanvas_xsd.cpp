@@ -6,11 +6,11 @@
 #include <assert.h>
 #include "dml-main_xsd.h"
 namespace ns_lc {
- using namespace std;
+using namespace std;
 
-    // Element
+// Element
 
-    // Attribute
+// Attribute
 
-    // lockedCanvas_element
+// lockedCanvas_element
 }
