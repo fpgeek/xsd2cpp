@@ -23,7 +23,9 @@ def updatePbMaxOccurs(pbMaxOccurs, maxOccurs):
                 pbMaxOccurs.count = maxOccurs.count
 
 def updateElemContMinOccurs(pbElemCont, minOccurs):
-    if pbElemCont.min_occurs > minOccurs:
+    if not pbElemCont.HasField('min_occurs'):
+        pbElemCont.min_occurs = minOccurs
+    elif pbElemCont.min_occurs > minOccurs:
         pbElemCont.min_occurs = minOccurs
 
 class SCHEMA:

@@ -45807,7 +45807,7 @@ void CT_FldChar::toXmlElem(const std::string& _elemName, const std::string& _xml
     {
         bool elemHasValueList[3] = {m_has_fldData, m_has_ffData, m_has_numberingChange};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -48310,7 +48310,7 @@ void CT_FFCheckBox::toXmlElem(const std::string& _elemName, const std::string& _
     {
         bool elemHasValueList[2] = {m_has_size, m_has_sizeAuto};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -167641,7 +167641,7 @@ void CT_TcPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     {
         bool elemHasValueList[3] = {m_has_cellIns, m_has_cellDel, m_has_cellMerge};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -168443,7 +168443,7 @@ void CT_TcPrInner::toXmlElem(const std::string& _elemName, const std::string& _x
     {
         bool elemHasValueList[3] = {m_has_cellIns, m_has_cellDel, m_has_cellMerge};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -211744,7 +211744,7 @@ void CT_NumPicBullet::toXmlElem(const std::string& _elemName, const std::string&
     {
         bool elemHasValueList[2] = {m_has_pict, m_has_drawing};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -223675,7 +223675,7 @@ void CT_DocPartBehaviors::toXmlElem(const std::string& _elemName, const std::str
     {
         bool elemHasValueList[1] = {m_has_behavior};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -223849,7 +223849,7 @@ void CT_DocPartTypes::toXmlElem(const std::string& _elemName, const std::string&
     {
         bool elemHasValueList[1] = {m_has_type};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -224703,7 +224703,7 @@ void CT_DocParts::toXmlElem(const std::string& _elemName, const std::string& _xm
     {
         bool elemHasValueList[1] = {m_has_docPart};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 

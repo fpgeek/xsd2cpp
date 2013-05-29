@@ -5732,7 +5732,7 @@ void CT_Property::toXmlElem(const std::string& _elemName, const std::string& _xm
     {
         bool elemHasValueList[33] = {m_has_vt_vector, m_has_vt_array, m_has_vt_blob, m_has_vt_oblob, m_has_vt_empty, m_has_vt_null, m_has_vt_i1, m_has_vt_i2, m_has_vt_i4, m_has_vt_i8, m_has_vt_int, m_has_vt_ui1, m_has_vt_ui2, m_has_vt_ui4, m_has_vt_ui8, m_has_vt_uint, m_has_vt_r4, m_has_vt_r8, m_has_vt_decimal, m_has_vt_lpstr, m_has_vt_lpwstr, m_has_vt_bstr, m_has_vt_date, m_has_vt_filetime, m_has_vt_bool, m_has_vt_cy, m_has_vt_error, m_has_vt_stream, m_has_vt_ostream, m_has_vt_storage, m_has_vt_ostorage, m_has_vt_vstream, m_has_vt_clsid};
         int cnt = count(elemHasValueList, elemHasValueList + 33, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 

@@ -2358,7 +2358,7 @@ void CT_RPR::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
     {
         bool elemHasValueList[1] = {m_has_nor};
         int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -2370,7 +2370,7 @@ void CT_RPR::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
     {
         bool elemHasValueList[2] = {m_has_scr, m_has_sty};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -14303,7 +14303,7 @@ void CT_CtrlPr::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     {
         bool elemHasValueList[3] = {m_has_w_rPr, m_has_w_ins, m_has_w_del};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
