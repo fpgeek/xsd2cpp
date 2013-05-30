@@ -45,6 +45,7 @@ class anchor_element;
 #include "wml_xsd.h"
 #include "dml-picture_xsd.h"
 #include "shared-relationshipReference_xsd.h"
+#include "shared-math_xsd.h"
 namespace ns_wp {
 using namespace std;
 class Element: public XSD::Element
