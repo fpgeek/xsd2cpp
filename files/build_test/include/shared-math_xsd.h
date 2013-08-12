@@ -979,9 +979,6 @@ private:
         bool has_w_lastRenderedPageBreak() const;
         ns_w::CT_Empty* mutable_w_lastRenderedPageBreak();
         const ns_w::CT_Empty& get_w_lastRenderedPageBreak() const;
-        bool has_t() const;
-        CT_Text* mutable_t();
-        const CT_Text& get_t() const;
     protected:
     private:
         bool m_has_w_br;
@@ -1050,6 +1047,16 @@ private:
         ns_w::CT_PTab* m_w_ptab;
         bool m_has_w_lastRenderedPageBreak;
         ns_w::CT_Empty* m_w_lastRenderedPageBreak;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_t() const;
+        CT_Text* mutable_t();
+        const CT_Text& get_t() const;
+    protected:
+    private:
         bool m_has_t;
         CT_Text* m_t;
     };
@@ -1058,6 +1065,7 @@ private:
     bool m_has_w_rPr;
     ns_w::CT_RPr* m_w_rPr;
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_R* default_instance_;
 };
 
@@ -2448,6 +2456,53 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
+    protected:
+    private:
+        bool m_has_acc;
+        CT_Acc* m_acc;
+        bool m_has_bar;
+        CT_Bar* m_bar;
+        bool m_has_box;
+        CT_Box* m_box;
+        bool m_has_borderBox;
+        CT_BorderBox* m_borderBox;
+        bool m_has_d;
+        CT_D* m_d;
+        bool m_has_eqArr;
+        CT_EqArr* m_eqArr;
+        bool m_has_f;
+        CT_F* m_f;
+        bool m_has_func;
+        CT_Func* m_func;
+        bool m_has_groupChr;
+        CT_GroupChr* m_groupChr;
+        bool m_has_limLow;
+        CT_LimLow* m_limLow;
+        bool m_has_limUpp;
+        CT_LimUpp* m_limUpp;
+        bool m_has_m;
+        CT_M* m_m;
+        bool m_has_nary;
+        CT_Nary* m_nary;
+        bool m_has_phant;
+        CT_Phant* m_phant;
+        bool m_has_rad;
+        CT_Rad* m_rad;
+        bool m_has_sPre;
+        CT_SPre* m_sPre;
+        bool m_has_sSub;
+        CT_SSub* m_sSub;
+        bool m_has_sSubSup;
+        CT_SSubSup* m_sSubSup;
+        bool m_has_sSup;
+        CT_SSup* m_sSup;
+        bool m_has_r;
+        CT_R* m_r;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_w_customXml() const;
         ns_w::CT_CustomXmlRun* mutable_w_customXml();
         const ns_w::CT_CustomXmlRun& get_w_customXml() const;
@@ -2457,12 +2512,36 @@ private:
         bool has_w_hyperlink() const;
         ns_w::CT_Hyperlink* mutable_w_hyperlink();
         const ns_w::CT_Hyperlink& get_w_hyperlink() const;
+    protected:
+    private:
+        bool m_has_w_customXml;
+        ns_w::CT_CustomXmlRun* m_w_customXml;
+        bool m_has_w_fldSimple;
+        ns_w::CT_SimpleField* m_w_fldSimple;
+        bool m_has_w_hyperlink;
+        ns_w::CT_Hyperlink* m_w_hyperlink;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_w_smartTag() const;
         ns_w::CT_SmartTagRun* mutable_w_smartTag();
         const ns_w::CT_SmartTagRun& get_w_smartTag() const;
         bool has_w_sdt() const;
         ns_w::CT_SdtRun* mutable_w_sdt();
         const ns_w::CT_SdtRun& get_w_sdt() const;
+    protected:
+    private:
+        bool m_has_w_smartTag;
+        ns_w::CT_SmartTagRun* m_w_smartTag;
+        bool m_has_w_sdt;
+        ns_w::CT_SdtRun* m_w_sdt;
+    };
+    class ChildGroup_4
+    {
+    public:
+        ChildGroup_4();
         bool has_w_proofErr() const;
         ns_w::CT_ProofErr* mutable_w_proofErr();
         const ns_w::CT_ProofErr& get_w_proofErr() const;
@@ -2472,6 +2551,19 @@ private:
         bool has_w_permEnd() const;
         ns_w::CT_Perm* mutable_w_permEnd();
         const ns_w::CT_Perm& get_w_permEnd() const;
+    protected:
+    private:
+        bool m_has_w_proofErr;
+        ns_w::CT_ProofErr* m_w_proofErr;
+        bool m_has_w_permStart;
+        ns_w::CT_PermStart* m_w_permStart;
+        bool m_has_w_permEnd;
+        ns_w::CT_Perm* m_w_permEnd;
+    };
+    class ChildGroup_5
+    {
+    public:
+        ChildGroup_5();
         bool has_w_bookmarkStart() const;
         ns_w::CT_Bookmark* mutable_w_bookmarkStart();
         const ns_w::CT_Bookmark& get_w_bookmarkStart() const;
@@ -2520,82 +2612,8 @@ private:
         bool has_w_customXmlMoveToRangeEnd() const;
         ns_w::CT_Markup* mutable_w_customXmlMoveToRangeEnd();
         const ns_w::CT_Markup& get_w_customXmlMoveToRangeEnd() const;
-        bool has_w_ins() const;
-        ns_w::CT_RunTrackChange* mutable_w_ins();
-        const ns_w::CT_RunTrackChange& get_w_ins() const;
-        bool has_w_del() const;
-        ns_w::CT_RunTrackChange* mutable_w_del();
-        const ns_w::CT_RunTrackChange& get_w_del() const;
-        bool has_w_moveFrom() const;
-        ns_w::CT_RunTrackChange* mutable_w_moveFrom();
-        const ns_w::CT_RunTrackChange& get_w_moveFrom() const;
-        bool has_w_moveTo() const;
-        ns_w::CT_RunTrackChange* mutable_w_moveTo();
-        const ns_w::CT_RunTrackChange& get_w_moveTo() const;
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
-        bool m_has_acc;
-        CT_Acc* m_acc;
-        bool m_has_bar;
-        CT_Bar* m_bar;
-        bool m_has_box;
-        CT_Box* m_box;
-        bool m_has_borderBox;
-        CT_BorderBox* m_borderBox;
-        bool m_has_d;
-        CT_D* m_d;
-        bool m_has_eqArr;
-        CT_EqArr* m_eqArr;
-        bool m_has_f;
-        CT_F* m_f;
-        bool m_has_func;
-        CT_Func* m_func;
-        bool m_has_groupChr;
-        CT_GroupChr* m_groupChr;
-        bool m_has_limLow;
-        CT_LimLow* m_limLow;
-        bool m_has_limUpp;
-        CT_LimUpp* m_limUpp;
-        bool m_has_m;
-        CT_M* m_m;
-        bool m_has_nary;
-        CT_Nary* m_nary;
-        bool m_has_phant;
-        CT_Phant* m_phant;
-        bool m_has_rad;
-        CT_Rad* m_rad;
-        bool m_has_sPre;
-        CT_SPre* m_sPre;
-        bool m_has_sSub;
-        CT_SSub* m_sSub;
-        bool m_has_sSubSup;
-        CT_SSubSup* m_sSubSup;
-        bool m_has_sSup;
-        CT_SSup* m_sSup;
-        bool m_has_r;
-        CT_R* m_r;
-        bool m_has_w_customXml;
-        ns_w::CT_CustomXmlRun* m_w_customXml;
-        bool m_has_w_fldSimple;
-        ns_w::CT_SimpleField* m_w_fldSimple;
-        bool m_has_w_hyperlink;
-        ns_w::CT_Hyperlink* m_w_hyperlink;
-        bool m_has_w_smartTag;
-        ns_w::CT_SmartTagRun* m_w_smartTag;
-        bool m_has_w_sdt;
-        ns_w::CT_SdtRun* m_w_sdt;
-        bool m_has_w_proofErr;
-        ns_w::CT_ProofErr* m_w_proofErr;
-        bool m_has_w_permStart;
-        ns_w::CT_PermStart* m_w_permStart;
-        bool m_has_w_permEnd;
-        ns_w::CT_Perm* m_w_permEnd;
         bool m_has_w_bookmarkStart;
         ns_w::CT_Bookmark* m_w_bookmarkStart;
         bool m_has_w_bookmarkEnd;
@@ -2628,6 +2646,25 @@ private:
         ns_w::CT_TrackChange* m_w_customXmlMoveToRangeStart;
         bool m_has_w_customXmlMoveToRangeEnd;
         ns_w::CT_Markup* m_w_customXmlMoveToRangeEnd;
+    };
+    class ChildGroup_6
+    {
+    public:
+        ChildGroup_6();
+        bool has_w_ins() const;
+        ns_w::CT_RunTrackChange* mutable_w_ins();
+        const ns_w::CT_RunTrackChange& get_w_ins() const;
+        bool has_w_del() const;
+        ns_w::CT_RunTrackChange* mutable_w_del();
+        const ns_w::CT_RunTrackChange& get_w_del() const;
+        bool has_w_moveFrom() const;
+        ns_w::CT_RunTrackChange* mutable_w_moveFrom();
+        const ns_w::CT_RunTrackChange& get_w_moveFrom() const;
+        bool has_w_moveTo() const;
+        ns_w::CT_RunTrackChange* mutable_w_moveTo();
+        const ns_w::CT_RunTrackChange& get_w_moveTo() const;
+    protected:
+    private:
         bool m_has_w_ins;
         ns_w::CT_RunTrackChange* m_w_ins;
         bool m_has_w_del;
@@ -2636,6 +2673,19 @@ private:
         ns_w::CT_RunTrackChange* m_w_moveFrom;
         bool m_has_w_moveTo;
         ns_w::CT_RunTrackChange* m_w_moveTo;
+    };
+    class ChildGroup_7
+    {
+    public:
+        ChildGroup_7();
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+    protected:
+    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -2644,6 +2694,12 @@ private:
     bool m_has_argPr;
     CT_OMathArgPr* m_argPr;
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
+    vector<ChildGroup_4*> m_childGroupList_4;
+    vector<ChildGroup_5*> m_childGroupList_5;
+    vector<ChildGroup_6*> m_childGroupList_6;
+    vector<ChildGroup_7*> m_childGroupList_7;
     bool m_has_ctrlPr;
     CT_CtrlPr* m_ctrlPr;
     static CT_OMathArg* default_instance_;
@@ -2988,6 +3044,53 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
+    protected:
+    private:
+        bool m_has_acc;
+        CT_Acc* m_acc;
+        bool m_has_bar;
+        CT_Bar* m_bar;
+        bool m_has_box;
+        CT_Box* m_box;
+        bool m_has_borderBox;
+        CT_BorderBox* m_borderBox;
+        bool m_has_d;
+        CT_D* m_d;
+        bool m_has_eqArr;
+        CT_EqArr* m_eqArr;
+        bool m_has_f;
+        CT_F* m_f;
+        bool m_has_func;
+        CT_Func* m_func;
+        bool m_has_groupChr;
+        CT_GroupChr* m_groupChr;
+        bool m_has_limLow;
+        CT_LimLow* m_limLow;
+        bool m_has_limUpp;
+        CT_LimUpp* m_limUpp;
+        bool m_has_m;
+        CT_M* m_m;
+        bool m_has_nary;
+        CT_Nary* m_nary;
+        bool m_has_phant;
+        CT_Phant* m_phant;
+        bool m_has_rad;
+        CT_Rad* m_rad;
+        bool m_has_sPre;
+        CT_SPre* m_sPre;
+        bool m_has_sSub;
+        CT_SSub* m_sSub;
+        bool m_has_sSubSup;
+        CT_SSubSup* m_sSubSup;
+        bool m_has_sSup;
+        CT_SSup* m_sSup;
+        bool m_has_r;
+        CT_R* m_r;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_w_customXml() const;
         ns_w::CT_CustomXmlRun* mutable_w_customXml();
         const ns_w::CT_CustomXmlRun& get_w_customXml() const;
@@ -2997,12 +3100,36 @@ private:
         bool has_w_hyperlink() const;
         ns_w::CT_Hyperlink* mutable_w_hyperlink();
         const ns_w::CT_Hyperlink& get_w_hyperlink() const;
+    protected:
+    private:
+        bool m_has_w_customXml;
+        ns_w::CT_CustomXmlRun* m_w_customXml;
+        bool m_has_w_fldSimple;
+        ns_w::CT_SimpleField* m_w_fldSimple;
+        bool m_has_w_hyperlink;
+        ns_w::CT_Hyperlink* m_w_hyperlink;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_w_smartTag() const;
         ns_w::CT_SmartTagRun* mutable_w_smartTag();
         const ns_w::CT_SmartTagRun& get_w_smartTag() const;
         bool has_w_sdt() const;
         ns_w::CT_SdtRun* mutable_w_sdt();
         const ns_w::CT_SdtRun& get_w_sdt() const;
+    protected:
+    private:
+        bool m_has_w_smartTag;
+        ns_w::CT_SmartTagRun* m_w_smartTag;
+        bool m_has_w_sdt;
+        ns_w::CT_SdtRun* m_w_sdt;
+    };
+    class ChildGroup_4
+    {
+    public:
+        ChildGroup_4();
         bool has_w_proofErr() const;
         ns_w::CT_ProofErr* mutable_w_proofErr();
         const ns_w::CT_ProofErr& get_w_proofErr() const;
@@ -3012,6 +3139,19 @@ private:
         bool has_w_permEnd() const;
         ns_w::CT_Perm* mutable_w_permEnd();
         const ns_w::CT_Perm& get_w_permEnd() const;
+    protected:
+    private:
+        bool m_has_w_proofErr;
+        ns_w::CT_ProofErr* m_w_proofErr;
+        bool m_has_w_permStart;
+        ns_w::CT_PermStart* m_w_permStart;
+        bool m_has_w_permEnd;
+        ns_w::CT_Perm* m_w_permEnd;
+    };
+    class ChildGroup_5
+    {
+    public:
+        ChildGroup_5();
         bool has_w_bookmarkStart() const;
         ns_w::CT_Bookmark* mutable_w_bookmarkStart();
         const ns_w::CT_Bookmark& get_w_bookmarkStart() const;
@@ -3060,82 +3200,8 @@ private:
         bool has_w_customXmlMoveToRangeEnd() const;
         ns_w::CT_Markup* mutable_w_customXmlMoveToRangeEnd();
         const ns_w::CT_Markup& get_w_customXmlMoveToRangeEnd() const;
-        bool has_w_ins() const;
-        ns_w::CT_RunTrackChange* mutable_w_ins();
-        const ns_w::CT_RunTrackChange& get_w_ins() const;
-        bool has_w_del() const;
-        ns_w::CT_RunTrackChange* mutable_w_del();
-        const ns_w::CT_RunTrackChange& get_w_del() const;
-        bool has_w_moveFrom() const;
-        ns_w::CT_RunTrackChange* mutable_w_moveFrom();
-        const ns_w::CT_RunTrackChange& get_w_moveFrom() const;
-        bool has_w_moveTo() const;
-        ns_w::CT_RunTrackChange* mutable_w_moveTo();
-        const ns_w::CT_RunTrackChange& get_w_moveTo() const;
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
-        bool m_has_acc;
-        CT_Acc* m_acc;
-        bool m_has_bar;
-        CT_Bar* m_bar;
-        bool m_has_box;
-        CT_Box* m_box;
-        bool m_has_borderBox;
-        CT_BorderBox* m_borderBox;
-        bool m_has_d;
-        CT_D* m_d;
-        bool m_has_eqArr;
-        CT_EqArr* m_eqArr;
-        bool m_has_f;
-        CT_F* m_f;
-        bool m_has_func;
-        CT_Func* m_func;
-        bool m_has_groupChr;
-        CT_GroupChr* m_groupChr;
-        bool m_has_limLow;
-        CT_LimLow* m_limLow;
-        bool m_has_limUpp;
-        CT_LimUpp* m_limUpp;
-        bool m_has_m;
-        CT_M* m_m;
-        bool m_has_nary;
-        CT_Nary* m_nary;
-        bool m_has_phant;
-        CT_Phant* m_phant;
-        bool m_has_rad;
-        CT_Rad* m_rad;
-        bool m_has_sPre;
-        CT_SPre* m_sPre;
-        bool m_has_sSub;
-        CT_SSub* m_sSub;
-        bool m_has_sSubSup;
-        CT_SSubSup* m_sSubSup;
-        bool m_has_sSup;
-        CT_SSup* m_sSup;
-        bool m_has_r;
-        CT_R* m_r;
-        bool m_has_w_customXml;
-        ns_w::CT_CustomXmlRun* m_w_customXml;
-        bool m_has_w_fldSimple;
-        ns_w::CT_SimpleField* m_w_fldSimple;
-        bool m_has_w_hyperlink;
-        ns_w::CT_Hyperlink* m_w_hyperlink;
-        bool m_has_w_smartTag;
-        ns_w::CT_SmartTagRun* m_w_smartTag;
-        bool m_has_w_sdt;
-        ns_w::CT_SdtRun* m_w_sdt;
-        bool m_has_w_proofErr;
-        ns_w::CT_ProofErr* m_w_proofErr;
-        bool m_has_w_permStart;
-        ns_w::CT_PermStart* m_w_permStart;
-        bool m_has_w_permEnd;
-        ns_w::CT_Perm* m_w_permEnd;
         bool m_has_w_bookmarkStart;
         ns_w::CT_Bookmark* m_w_bookmarkStart;
         bool m_has_w_bookmarkEnd;
@@ -3168,6 +3234,25 @@ private:
         ns_w::CT_TrackChange* m_w_customXmlMoveToRangeStart;
         bool m_has_w_customXmlMoveToRangeEnd;
         ns_w::CT_Markup* m_w_customXmlMoveToRangeEnd;
+    };
+    class ChildGroup_6
+    {
+    public:
+        ChildGroup_6();
+        bool has_w_ins() const;
+        ns_w::CT_RunTrackChange* mutable_w_ins();
+        const ns_w::CT_RunTrackChange& get_w_ins() const;
+        bool has_w_del() const;
+        ns_w::CT_RunTrackChange* mutable_w_del();
+        const ns_w::CT_RunTrackChange& get_w_del() const;
+        bool has_w_moveFrom() const;
+        ns_w::CT_RunTrackChange* mutable_w_moveFrom();
+        const ns_w::CT_RunTrackChange& get_w_moveFrom() const;
+        bool has_w_moveTo() const;
+        ns_w::CT_RunTrackChange* mutable_w_moveTo();
+        const ns_w::CT_RunTrackChange& get_w_moveTo() const;
+    protected:
+    private:
         bool m_has_w_ins;
         ns_w::CT_RunTrackChange* m_w_ins;
         bool m_has_w_del;
@@ -3176,12 +3261,31 @@ private:
         ns_w::CT_RunTrackChange* m_w_moveFrom;
         bool m_has_w_moveTo;
         ns_w::CT_RunTrackChange* m_w_moveTo;
+    };
+    class ChildGroup_7
+    {
+    public:
+        ChildGroup_7();
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+    protected:
+    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
         ns_m::CT_OMath* m_m_oMath;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
+    vector<ChildGroup_4*> m_childGroupList_4;
+    vector<ChildGroup_5*> m_childGroupList_5;
+    vector<ChildGroup_6*> m_childGroupList_6;
+    vector<ChildGroup_7*> m_childGroupList_7;
     static CT_OMath* default_instance_;
 };
 
@@ -3434,6 +3538,53 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
+    protected:
+    private:
+        bool m_has_acc;
+        CT_Acc* m_acc;
+        bool m_has_bar;
+        CT_Bar* m_bar;
+        bool m_has_box;
+        CT_Box* m_box;
+        bool m_has_borderBox;
+        CT_BorderBox* m_borderBox;
+        bool m_has_d;
+        CT_D* m_d;
+        bool m_has_eqArr;
+        CT_EqArr* m_eqArr;
+        bool m_has_f;
+        CT_F* m_f;
+        bool m_has_func;
+        CT_Func* m_func;
+        bool m_has_groupChr;
+        CT_GroupChr* m_groupChr;
+        bool m_has_limLow;
+        CT_LimLow* m_limLow;
+        bool m_has_limUpp;
+        CT_LimUpp* m_limUpp;
+        bool m_has_m;
+        CT_M* m_m;
+        bool m_has_nary;
+        CT_Nary* m_nary;
+        bool m_has_phant;
+        CT_Phant* m_phant;
+        bool m_has_rad;
+        CT_Rad* m_rad;
+        bool m_has_sPre;
+        CT_SPre* m_sPre;
+        bool m_has_sSub;
+        CT_SSub* m_sSub;
+        bool m_has_sSubSup;
+        CT_SSubSup* m_sSubSup;
+        bool m_has_sSup;
+        CT_SSup* m_sSup;
+        bool m_has_r;
+        CT_R* m_r;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
         bool has_w_customXml() const;
         ns_w::CT_CustomXmlRun* mutable_w_customXml();
         const ns_w::CT_CustomXmlRun& get_w_customXml() const;
@@ -3443,12 +3594,36 @@ private:
         bool has_w_hyperlink() const;
         ns_w::CT_Hyperlink* mutable_w_hyperlink();
         const ns_w::CT_Hyperlink& get_w_hyperlink() const;
+    protected:
+    private:
+        bool m_has_w_customXml;
+        ns_w::CT_CustomXmlRun* m_w_customXml;
+        bool m_has_w_fldSimple;
+        ns_w::CT_SimpleField* m_w_fldSimple;
+        bool m_has_w_hyperlink;
+        ns_w::CT_Hyperlink* m_w_hyperlink;
+    };
+    class ChildGroup_3
+    {
+    public:
+        ChildGroup_3();
         bool has_w_smartTag() const;
         ns_w::CT_SmartTagRun* mutable_w_smartTag();
         const ns_w::CT_SmartTagRun& get_w_smartTag() const;
         bool has_w_sdt() const;
         ns_w::CT_SdtRun* mutable_w_sdt();
         const ns_w::CT_SdtRun& get_w_sdt() const;
+    protected:
+    private:
+        bool m_has_w_smartTag;
+        ns_w::CT_SmartTagRun* m_w_smartTag;
+        bool m_has_w_sdt;
+        ns_w::CT_SdtRun* m_w_sdt;
+    };
+    class ChildGroup_4
+    {
+    public:
+        ChildGroup_4();
         bool has_w_proofErr() const;
         ns_w::CT_ProofErr* mutable_w_proofErr();
         const ns_w::CT_ProofErr& get_w_proofErr() const;
@@ -3458,6 +3633,19 @@ private:
         bool has_w_permEnd() const;
         ns_w::CT_Perm* mutable_w_permEnd();
         const ns_w::CT_Perm& get_w_permEnd() const;
+    protected:
+    private:
+        bool m_has_w_proofErr;
+        ns_w::CT_ProofErr* m_w_proofErr;
+        bool m_has_w_permStart;
+        ns_w::CT_PermStart* m_w_permStart;
+        bool m_has_w_permEnd;
+        ns_w::CT_Perm* m_w_permEnd;
+    };
+    class ChildGroup_5
+    {
+    public:
+        ChildGroup_5();
         bool has_w_bookmarkStart() const;
         ns_w::CT_Bookmark* mutable_w_bookmarkStart();
         const ns_w::CT_Bookmark& get_w_bookmarkStart() const;
@@ -3506,82 +3694,8 @@ private:
         bool has_w_customXmlMoveToRangeEnd() const;
         ns_w::CT_Markup* mutable_w_customXmlMoveToRangeEnd();
         const ns_w::CT_Markup& get_w_customXmlMoveToRangeEnd() const;
-        bool has_w_ins() const;
-        ns_w::CT_RunTrackChange* mutable_w_ins();
-        const ns_w::CT_RunTrackChange& get_w_ins() const;
-        bool has_w_del() const;
-        ns_w::CT_RunTrackChange* mutable_w_del();
-        const ns_w::CT_RunTrackChange& get_w_del() const;
-        bool has_w_moveFrom() const;
-        ns_w::CT_RunTrackChange* mutable_w_moveFrom();
-        const ns_w::CT_RunTrackChange& get_w_moveFrom() const;
-        bool has_w_moveTo() const;
-        ns_w::CT_RunTrackChange* mutable_w_moveTo();
-        const ns_w::CT_RunTrackChange& get_w_moveTo() const;
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
-        bool m_has_acc;
-        CT_Acc* m_acc;
-        bool m_has_bar;
-        CT_Bar* m_bar;
-        bool m_has_box;
-        CT_Box* m_box;
-        bool m_has_borderBox;
-        CT_BorderBox* m_borderBox;
-        bool m_has_d;
-        CT_D* m_d;
-        bool m_has_eqArr;
-        CT_EqArr* m_eqArr;
-        bool m_has_f;
-        CT_F* m_f;
-        bool m_has_func;
-        CT_Func* m_func;
-        bool m_has_groupChr;
-        CT_GroupChr* m_groupChr;
-        bool m_has_limLow;
-        CT_LimLow* m_limLow;
-        bool m_has_limUpp;
-        CT_LimUpp* m_limUpp;
-        bool m_has_m;
-        CT_M* m_m;
-        bool m_has_nary;
-        CT_Nary* m_nary;
-        bool m_has_phant;
-        CT_Phant* m_phant;
-        bool m_has_rad;
-        CT_Rad* m_rad;
-        bool m_has_sPre;
-        CT_SPre* m_sPre;
-        bool m_has_sSub;
-        CT_SSub* m_sSub;
-        bool m_has_sSubSup;
-        CT_SSubSup* m_sSubSup;
-        bool m_has_sSup;
-        CT_SSup* m_sSup;
-        bool m_has_r;
-        CT_R* m_r;
-        bool m_has_w_customXml;
-        ns_w::CT_CustomXmlRun* m_w_customXml;
-        bool m_has_w_fldSimple;
-        ns_w::CT_SimpleField* m_w_fldSimple;
-        bool m_has_w_hyperlink;
-        ns_w::CT_Hyperlink* m_w_hyperlink;
-        bool m_has_w_smartTag;
-        ns_w::CT_SmartTagRun* m_w_smartTag;
-        bool m_has_w_sdt;
-        ns_w::CT_SdtRun* m_w_sdt;
-        bool m_has_w_proofErr;
-        ns_w::CT_ProofErr* m_w_proofErr;
-        bool m_has_w_permStart;
-        ns_w::CT_PermStart* m_w_permStart;
-        bool m_has_w_permEnd;
-        ns_w::CT_Perm* m_w_permEnd;
         bool m_has_w_bookmarkStart;
         ns_w::CT_Bookmark* m_w_bookmarkStart;
         bool m_has_w_bookmarkEnd;
@@ -3614,6 +3728,25 @@ private:
         ns_w::CT_TrackChange* m_w_customXmlMoveToRangeStart;
         bool m_has_w_customXmlMoveToRangeEnd;
         ns_w::CT_Markup* m_w_customXmlMoveToRangeEnd;
+    };
+    class ChildGroup_6
+    {
+    public:
+        ChildGroup_6();
+        bool has_w_ins() const;
+        ns_w::CT_RunTrackChange* mutable_w_ins();
+        const ns_w::CT_RunTrackChange& get_w_ins() const;
+        bool has_w_del() const;
+        ns_w::CT_RunTrackChange* mutable_w_del();
+        const ns_w::CT_RunTrackChange& get_w_del() const;
+        bool has_w_moveFrom() const;
+        ns_w::CT_RunTrackChange* mutable_w_moveFrom();
+        const ns_w::CT_RunTrackChange& get_w_moveFrom() const;
+        bool has_w_moveTo() const;
+        ns_w::CT_RunTrackChange* mutable_w_moveTo();
+        const ns_w::CT_RunTrackChange& get_w_moveTo() const;
+    protected:
+    private:
         bool m_has_w_ins;
         ns_w::CT_RunTrackChange* m_w_ins;
         bool m_has_w_del;
@@ -3622,12 +3755,31 @@ private:
         ns_w::CT_RunTrackChange* m_w_moveFrom;
         bool m_has_w_moveTo;
         ns_w::CT_RunTrackChange* m_w_moveTo;
+    };
+    class ChildGroup_7
+    {
+    public:
+        ChildGroup_7();
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+    protected:
+    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
         ns_m::CT_OMath* m_m_oMath;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
+    vector<ChildGroup_3*> m_childGroupList_3;
+    vector<ChildGroup_4*> m_childGroupList_4;
+    vector<ChildGroup_5*> m_childGroupList_5;
+    vector<ChildGroup_6*> m_childGroupList_6;
+    vector<ChildGroup_7*> m_childGroupList_7;
     static oMath_element* default_instance_;
 };
 

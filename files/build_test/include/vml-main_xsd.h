@@ -561,15 +561,6 @@ private:
         bool has_pvml_textdata() const;
         ns_pvml::CT_Rel* mutable_pvml_textdata();
         const ns_pvml::CT_Rel& get_pvml_textdata() const;
-        bool has_o_ink() const;
-        ns_o::CT_Ink* mutable_o_ink();
-        const ns_o::CT_Ink& get_o_ink() const;
-        bool has_pvml_iscomment() const;
-        ns_pvml::CT_Empty* mutable_pvml_iscomment();
-        const ns_pvml::CT_Empty& get_pvml_iscomment() const;
-        bool has_o_equationxml() const;
-        ns_o::CT_EquationXml* mutable_o_equationxml();
-        const ns_o::CT_EquationXml& get_o_equationxml() const;
     protected:
     private:
         bool m_has_path;
@@ -618,6 +609,22 @@ private:
         ns_x::CT_ClientData* m_x_ClientData;
         bool m_has_pvml_textdata;
         ns_pvml::CT_Rel* m_pvml_textdata;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_o_ink() const;
+        ns_o::CT_Ink* mutable_o_ink();
+        const ns_o::CT_Ink& get_o_ink() const;
+        bool has_pvml_iscomment() const;
+        ns_pvml::CT_Empty* mutable_pvml_iscomment();
+        const ns_pvml::CT_Empty& get_pvml_iscomment() const;
+        bool has_o_equationxml() const;
+        ns_o::CT_EquationXml* mutable_o_equationxml();
+        const ns_o::CT_EquationXml& get_o_equationxml() const;
+    protected:
+    private:
         bool m_has_o_ink;
         ns_o::CT_Ink* m_o_ink;
         bool m_has_pvml_iscomment;
@@ -626,6 +633,7 @@ private:
         ns_o::CT_EquationXml* m_o_equationxml;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_Shape* default_instance_;
     bool m_has_type_attr;
     XSD::string_ m_type_attr;
@@ -951,42 +959,6 @@ private:
         bool has_pvml_textdata() const;
         ns_pvml::CT_Rel* mutable_pvml_textdata();
         const ns_pvml::CT_Rel& get_pvml_textdata() const;
-        bool has_group() const;
-        CT_Group* mutable_group();
-        const CT_Group& get_group() const;
-        bool has_shape() const;
-        CT_Shape* mutable_shape();
-        const CT_Shape& get_shape() const;
-        bool has_shapetype() const;
-        CT_Shapetype* mutable_shapetype();
-        const CT_Shapetype& get_shapetype() const;
-        bool has_arc() const;
-        CT_Arc* mutable_arc();
-        const CT_Arc& get_arc() const;
-        bool has_curve() const;
-        CT_Curve* mutable_curve();
-        const CT_Curve& get_curve() const;
-        bool has_image() const;
-        CT_Image* mutable_image();
-        const CT_Image& get_image() const;
-        bool has_line() const;
-        CT_Line* mutable_line();
-        const CT_Line& get_line() const;
-        bool has_oval() const;
-        CT_Oval* mutable_oval();
-        const CT_Oval& get_oval() const;
-        bool has_polyline() const;
-        CT_PolyLine* mutable_polyline();
-        const CT_PolyLine& get_polyline() const;
-        bool has_rect() const;
-        CT_Rect* mutable_rect();
-        const CT_Rect& get_rect() const;
-        bool has_roundrect() const;
-        CT_RoundRect* mutable_roundrect();
-        const CT_RoundRect& get_roundrect() const;
-        bool has_o_diagram() const;
-        ns_o::CT_Diagram* mutable_o_diagram();
-        const ns_o::CT_Diagram& get_o_diagram() const;
     protected:
     private:
         bool m_has_path;
@@ -1035,6 +1007,49 @@ private:
         ns_x::CT_ClientData* m_x_ClientData;
         bool m_has_pvml_textdata;
         ns_pvml::CT_Rel* m_pvml_textdata;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_group() const;
+        CT_Group* mutable_group();
+        const CT_Group& get_group() const;
+        bool has_shape() const;
+        CT_Shape* mutable_shape();
+        const CT_Shape& get_shape() const;
+        bool has_shapetype() const;
+        CT_Shapetype* mutable_shapetype();
+        const CT_Shapetype& get_shapetype() const;
+        bool has_arc() const;
+        CT_Arc* mutable_arc();
+        const CT_Arc& get_arc() const;
+        bool has_curve() const;
+        CT_Curve* mutable_curve();
+        const CT_Curve& get_curve() const;
+        bool has_image() const;
+        CT_Image* mutable_image();
+        const CT_Image& get_image() const;
+        bool has_line() const;
+        CT_Line* mutable_line();
+        const CT_Line& get_line() const;
+        bool has_oval() const;
+        CT_Oval* mutable_oval();
+        const CT_Oval& get_oval() const;
+        bool has_polyline() const;
+        CT_PolyLine* mutable_polyline();
+        const CT_PolyLine& get_polyline() const;
+        bool has_rect() const;
+        CT_Rect* mutable_rect();
+        const CT_Rect& get_rect() const;
+        bool has_roundrect() const;
+        CT_RoundRect* mutable_roundrect();
+        const CT_RoundRect& get_roundrect() const;
+        bool has_o_diagram() const;
+        ns_o::CT_Diagram* mutable_o_diagram();
+        const ns_o::CT_Diagram& get_o_diagram() const;
+    protected:
+    private:
         bool m_has_group;
         CT_Group* m_group;
         bool m_has_shape;
@@ -1061,6 +1076,7 @@ private:
         ns_o::CT_Diagram* m_o_diagram;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_Group* default_instance_;
     bool m_has_filled_attr;
     ns_s::ST_TrueFalse* m_filled_attr;
@@ -2975,9 +2991,6 @@ private:
         bool has_pvml_textdata() const;
         ns_pvml::CT_Rel* mutable_pvml_textdata();
         const ns_pvml::CT_Rel& get_pvml_textdata() const;
-        bool has_o_ink() const;
-        ns_o::CT_Ink* mutable_o_ink();
-        const ns_o::CT_Ink& get_o_ink() const;
     protected:
     private:
         bool m_has_path;
@@ -3026,10 +3039,21 @@ private:
         ns_x::CT_ClientData* m_x_ClientData;
         bool m_has_pvml_textdata;
         ns_pvml::CT_Rel* m_pvml_textdata;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_o_ink() const;
+        ns_o::CT_Ink* mutable_o_ink();
+        const ns_o::CT_Ink& get_o_ink() const;
+    protected:
+    private:
         bool m_has_o_ink;
         ns_o::CT_Ink* m_o_ink;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static CT_PolyLine* default_instance_;
     bool m_has_points_attr;
     XSD::string_ m_points_attr;
@@ -3482,15 +3506,6 @@ private:
         bool has_pvml_textdata() const;
         ns_pvml::CT_Rel* mutable_pvml_textdata();
         const ns_pvml::CT_Rel& get_pvml_textdata() const;
-        bool has_o_ink() const;
-        ns_o::CT_Ink* mutable_o_ink();
-        const ns_o::CT_Ink& get_o_ink() const;
-        bool has_pvml_iscomment() const;
-        ns_pvml::CT_Empty* mutable_pvml_iscomment();
-        const ns_pvml::CT_Empty& get_pvml_iscomment() const;
-        bool has_o_equationxml() const;
-        ns_o::CT_EquationXml* mutable_o_equationxml();
-        const ns_o::CT_EquationXml& get_o_equationxml() const;
     protected:
     private:
         bool m_has_path;
@@ -3539,6 +3554,22 @@ private:
         ns_x::CT_ClientData* m_x_ClientData;
         bool m_has_pvml_textdata;
         ns_pvml::CT_Rel* m_pvml_textdata;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_o_ink() const;
+        ns_o::CT_Ink* mutable_o_ink();
+        const ns_o::CT_Ink& get_o_ink() const;
+        bool has_pvml_iscomment() const;
+        ns_pvml::CT_Empty* mutable_pvml_iscomment();
+        const ns_pvml::CT_Empty& get_pvml_iscomment() const;
+        bool has_o_equationxml() const;
+        ns_o::CT_EquationXml* mutable_o_equationxml();
+        const ns_o::CT_EquationXml& get_o_equationxml() const;
+    protected:
+    private:
         bool m_has_o_ink;
         ns_o::CT_Ink* m_o_ink;
         bool m_has_pvml_iscomment;
@@ -3547,6 +3578,7 @@ private:
         ns_o::CT_EquationXml* m_o_equationxml;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static shape_element* default_instance_;
     bool m_has_type_attr;
     XSD::string_ m_type_attr;
@@ -3872,42 +3904,6 @@ private:
         bool has_pvml_textdata() const;
         ns_pvml::CT_Rel* mutable_pvml_textdata();
         const ns_pvml::CT_Rel& get_pvml_textdata() const;
-        bool has_group() const;
-        CT_Group* mutable_group();
-        const CT_Group& get_group() const;
-        bool has_shape() const;
-        CT_Shape* mutable_shape();
-        const CT_Shape& get_shape() const;
-        bool has_shapetype() const;
-        CT_Shapetype* mutable_shapetype();
-        const CT_Shapetype& get_shapetype() const;
-        bool has_arc() const;
-        CT_Arc* mutable_arc();
-        const CT_Arc& get_arc() const;
-        bool has_curve() const;
-        CT_Curve* mutable_curve();
-        const CT_Curve& get_curve() const;
-        bool has_image() const;
-        CT_Image* mutable_image();
-        const CT_Image& get_image() const;
-        bool has_line() const;
-        CT_Line* mutable_line();
-        const CT_Line& get_line() const;
-        bool has_oval() const;
-        CT_Oval* mutable_oval();
-        const CT_Oval& get_oval() const;
-        bool has_polyline() const;
-        CT_PolyLine* mutable_polyline();
-        const CT_PolyLine& get_polyline() const;
-        bool has_rect() const;
-        CT_Rect* mutable_rect();
-        const CT_Rect& get_rect() const;
-        bool has_roundrect() const;
-        CT_RoundRect* mutable_roundrect();
-        const CT_RoundRect& get_roundrect() const;
-        bool has_o_diagram() const;
-        ns_o::CT_Diagram* mutable_o_diagram();
-        const ns_o::CT_Diagram& get_o_diagram() const;
     protected:
     private:
         bool m_has_path;
@@ -3956,6 +3952,49 @@ private:
         ns_x::CT_ClientData* m_x_ClientData;
         bool m_has_pvml_textdata;
         ns_pvml::CT_Rel* m_pvml_textdata;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_group() const;
+        CT_Group* mutable_group();
+        const CT_Group& get_group() const;
+        bool has_shape() const;
+        CT_Shape* mutable_shape();
+        const CT_Shape& get_shape() const;
+        bool has_shapetype() const;
+        CT_Shapetype* mutable_shapetype();
+        const CT_Shapetype& get_shapetype() const;
+        bool has_arc() const;
+        CT_Arc* mutable_arc();
+        const CT_Arc& get_arc() const;
+        bool has_curve() const;
+        CT_Curve* mutable_curve();
+        const CT_Curve& get_curve() const;
+        bool has_image() const;
+        CT_Image* mutable_image();
+        const CT_Image& get_image() const;
+        bool has_line() const;
+        CT_Line* mutable_line();
+        const CT_Line& get_line() const;
+        bool has_oval() const;
+        CT_Oval* mutable_oval();
+        const CT_Oval& get_oval() const;
+        bool has_polyline() const;
+        CT_PolyLine* mutable_polyline();
+        const CT_PolyLine& get_polyline() const;
+        bool has_rect() const;
+        CT_Rect* mutable_rect();
+        const CT_Rect& get_rect() const;
+        bool has_roundrect() const;
+        CT_RoundRect* mutable_roundrect();
+        const CT_RoundRect& get_roundrect() const;
+        bool has_o_diagram() const;
+        ns_o::CT_Diagram* mutable_o_diagram();
+        const ns_o::CT_Diagram& get_o_diagram() const;
+    protected:
+    private:
         bool m_has_group;
         CT_Group* m_group;
         bool m_has_shape;
@@ -3982,6 +4021,7 @@ private:
         ns_o::CT_Diagram* m_o_diagram;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static group_element* default_instance_;
     bool m_has_filled_attr;
     ns_s::ST_TrueFalse* m_filled_attr;
@@ -5820,9 +5860,6 @@ private:
         bool has_pvml_textdata() const;
         ns_pvml::CT_Rel* mutable_pvml_textdata();
         const ns_pvml::CT_Rel& get_pvml_textdata() const;
-        bool has_o_ink() const;
-        ns_o::CT_Ink* mutable_o_ink();
-        const ns_o::CT_Ink& get_o_ink() const;
     protected:
     private:
         bool m_has_path;
@@ -5871,10 +5908,21 @@ private:
         ns_x::CT_ClientData* m_x_ClientData;
         bool m_has_pvml_textdata;
         ns_pvml::CT_Rel* m_pvml_textdata;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_o_ink() const;
+        ns_o::CT_Ink* mutable_o_ink();
+        const ns_o::CT_Ink& get_o_ink() const;
+    protected:
+    private:
         bool m_has_o_ink;
         ns_o::CT_Ink* m_o_ink;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     static polyline_element* default_instance_;
     bool m_has_points_attr;
     XSD::string_ m_points_attr;

@@ -6650,18 +6650,6 @@ private:
         bool has_bubbleChart() const;
         CT_BubbleChart* mutable_bubbleChart();
         const CT_BubbleChart& get_bubbleChart() const;
-        bool has_valAx() const;
-        CT_ValAx* mutable_valAx();
-        const CT_ValAx& get_valAx() const;
-        bool has_catAx() const;
-        CT_CatAx* mutable_catAx();
-        const CT_CatAx& get_catAx() const;
-        bool has_dateAx() const;
-        CT_DateAx* mutable_dateAx();
-        const CT_DateAx& get_dateAx() const;
-        bool has_serAx() const;
-        CT_SerAx* mutable_serAx();
-        const CT_SerAx& get_serAx() const;
     protected:
     private:
         bool m_has_areaChart;
@@ -6696,6 +6684,25 @@ private:
         CT_Surface3DChart* m_surface3DChart;
         bool m_has_bubbleChart;
         CT_BubbleChart* m_bubbleChart;
+    };
+    class ChildGroup_2
+    {
+    public:
+        ChildGroup_2();
+        bool has_valAx() const;
+        CT_ValAx* mutable_valAx();
+        const CT_ValAx& get_valAx() const;
+        bool has_catAx() const;
+        CT_CatAx* mutable_catAx();
+        const CT_CatAx& get_catAx() const;
+        bool has_dateAx() const;
+        CT_DateAx* mutable_dateAx();
+        const CT_DateAx& get_dateAx() const;
+        bool has_serAx() const;
+        CT_SerAx* mutable_serAx();
+        const CT_SerAx& get_serAx() const;
+    protected:
+    private:
         bool m_has_valAx;
         CT_ValAx* m_valAx;
         bool m_has_catAx;
@@ -6708,6 +6715,7 @@ private:
     bool m_has_layout;
     CT_Layout* m_layout;
     vector<ChildGroup_1*> m_childGroupList_1;
+    vector<ChildGroup_2*> m_childGroupList_2;
     bool m_has_dTable;
     CT_DTable* m_dTable;
     bool m_has_spPr;

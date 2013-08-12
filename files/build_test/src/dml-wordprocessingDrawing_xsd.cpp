@@ -3623,209 +3623,209 @@ ns_w::CT_Tbl* CT_TxbxContent::add_w_tbl()
 
 ns_w::CT_ProofErr* CT_TxbxContent::add_w_proofErr()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_w::CT_ProofErr* pNewChild = pChildGroup->mutable_w_proofErr();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_PermStart* CT_TxbxContent::add_w_permStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_w::CT_PermStart* pNewChild = pChildGroup->mutable_w_permStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_Perm* CT_TxbxContent::add_w_permEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_w::CT_Perm* pNewChild = pChildGroup->mutable_w_permEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_Bookmark* CT_TxbxContent::add_w_bookmarkStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_Bookmark* pNewChild = pChildGroup->mutable_w_bookmarkStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_MarkupRange* CT_TxbxContent::add_w_bookmarkEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_bookmarkEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_MoveBookmark* CT_TxbxContent::add_w_moveFromRangeStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_MoveBookmark* pNewChild = pChildGroup->mutable_w_moveFromRangeStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_MarkupRange* CT_TxbxContent::add_w_moveFromRangeEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_moveFromRangeEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_MoveBookmark* CT_TxbxContent::add_w_moveToRangeStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_MoveBookmark* pNewChild = pChildGroup->mutable_w_moveToRangeStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_MarkupRange* CT_TxbxContent::add_w_moveToRangeEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_moveToRangeEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_MarkupRange* CT_TxbxContent::add_w_commentRangeStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_commentRangeStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_MarkupRange* CT_TxbxContent::add_w_commentRangeEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_MarkupRange* pNewChild = pChildGroup->mutable_w_commentRangeEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlInsRangeStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlInsRangeStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlInsRangeEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlInsRangeEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlDelRangeStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlDelRangeStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlDelRangeEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlDelRangeEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlMoveFromRangeStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlMoveFromRangeStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlMoveFromRangeEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlMoveFromRangeEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_TrackChange* CT_TxbxContent::add_w_customXmlMoveToRangeStart()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_TrackChange* pNewChild = pChildGroup->mutable_w_customXmlMoveToRangeStart();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_Markup* CT_TxbxContent::add_w_customXmlMoveToRangeEnd()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_3 *pChildGroup = new ChildGroup_3();
     ns_w::CT_Markup* pNewChild = pChildGroup->mutable_w_customXmlMoveToRangeEnd();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_3.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_ins()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_4 *pChildGroup = new ChildGroup_4();
     ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_ins();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_4.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_del()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_4 *pChildGroup = new ChildGroup_4();
     ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_del();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_4.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_moveFrom()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_4 *pChildGroup = new ChildGroup_4();
     ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_moveFrom();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_4.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_RunTrackChange* CT_TxbxContent::add_w_moveTo()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_4 *pChildGroup = new ChildGroup_4();
     ns_w::CT_RunTrackChange* pNewChild = pChildGroup->mutable_w_moveTo();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_4.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_m::CT_OMathPara* CT_TxbxContent::add_m_oMathPara()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_5 *pChildGroup = new ChildGroup_5();
     ns_m::CT_OMathPara* pNewChild = pChildGroup->mutable_m_oMathPara();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_5.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_m::CT_OMath* CT_TxbxContent::add_m_oMath()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_5 *pChildGroup = new ChildGroup_5();
     ns_m::CT_OMath* pNewChild = pChildGroup->mutable_m_oMath();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_5.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_w::CT_AltChunk* CT_TxbxContent::add_w_altChunk()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_6 *pChildGroup = new ChildGroup_6();
     ns_w::CT_AltChunk* pNewChild = pChildGroup->mutable_w_altChunk();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_6.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -3839,6 +3839,51 @@ void CT_TxbxContent::clear()
         }
         m_childGroupList_1.clear();
     }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+
+    {
+        vector<ChildGroup_3*>::iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_3.clear();
+    }
+
+    {
+        vector<ChildGroup_4*>::iterator iter;
+        for (iter = m_childGroupList_4.begin(); iter != m_childGroupList_4.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_4.clear();
+    }
+
+    {
+        vector<ChildGroup_5*>::iterator iter;
+        for (iter = m_childGroupList_5.begin(); iter != m_childGroupList_5.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_5.clear();
+    }
+
+    {
+        vector<ChildGroup_6*>::iterator iter;
+        for (iter = m_childGroupList_6.begin(); iter != m_childGroupList_6.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_6.clear();
+    }
 }
 
 void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3851,6 +3896,11 @@ void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(0 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -3880,7 +3930,19 @@ void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& 
             }
 
 
-            else if ((*iter)->has_w_proofErr())
+        }
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(0 <= childSize && childSize <= 1);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_w_proofErr())
             {
                 (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
             }
@@ -3898,7 +3960,14 @@ void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& 
             }
 
 
-            else if ((*iter)->has_w_bookmarkStart())
+        }
+    }
+
+    {
+        vector<ChildGroup_3*>::const_iterator iter;
+        for (iter = m_childGroupList_3.begin(); iter != m_childGroupList_3.end(); ++iter)
+        {
+            if ((*iter)->has_w_bookmarkStart())
             {
                 (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
             }
@@ -3994,7 +4063,14 @@ void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& 
             }
 
 
-            else if ((*iter)->has_w_ins())
+        }
+    }
+
+    {
+        vector<ChildGroup_4*>::const_iterator iter;
+        for (iter = m_childGroupList_4.begin(); iter != m_childGroupList_4.end(); ++iter)
+        {
+            if ((*iter)->has_w_ins())
             {
                 (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
             }
@@ -4018,7 +4094,14 @@ void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& 
             }
 
 
-            else if ((*iter)->has_m_oMathPara())
+        }
+    }
+
+    {
+        vector<ChildGroup_5*>::const_iterator iter;
+        for (iter = m_childGroupList_5.begin(); iter != m_childGroupList_5.end(); ++iter)
+        {
+            if ((*iter)->has_m_oMathPara())
             {
                 (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
             }
@@ -4030,7 +4113,14 @@ void CT_TxbxContent::toXmlElem(const std::string& _elemName, const std::string& 
             }
 
 
-            else if ((*iter)->has_w_altChunk())
+        }
+    }
+
+    {
+        vector<ChildGroup_6*>::const_iterator iter;
+        for (iter = m_childGroupList_6.begin(); iter != m_childGroupList_6.end(); ++iter)
+        {
+            if ((*iter)->has_w_altChunk())
             {
                 (*iter)->get_w_altChunk().toXmlElem("w:altChunk", "", _outStream);
             }
@@ -4061,59 +4151,7 @@ CT_TxbxContent::ChildGroup_1::ChildGroup_1()
      m_has_w_p(false),
      m_w_p(NULL),
      m_has_w_tbl(false),
-     m_w_tbl(NULL),
-     m_has_w_proofErr(false),
-     m_w_proofErr(NULL),
-     m_has_w_permStart(false),
-     m_w_permStart(NULL),
-     m_has_w_permEnd(false),
-     m_w_permEnd(NULL),
-     m_has_w_bookmarkStart(false),
-     m_w_bookmarkStart(NULL),
-     m_has_w_bookmarkEnd(false),
-     m_w_bookmarkEnd(NULL),
-     m_has_w_moveFromRangeStart(false),
-     m_w_moveFromRangeStart(NULL),
-     m_has_w_moveFromRangeEnd(false),
-     m_w_moveFromRangeEnd(NULL),
-     m_has_w_moveToRangeStart(false),
-     m_w_moveToRangeStart(NULL),
-     m_has_w_moveToRangeEnd(false),
-     m_w_moveToRangeEnd(NULL),
-     m_has_w_commentRangeStart(false),
-     m_w_commentRangeStart(NULL),
-     m_has_w_commentRangeEnd(false),
-     m_w_commentRangeEnd(NULL),
-     m_has_w_customXmlInsRangeStart(false),
-     m_w_customXmlInsRangeStart(NULL),
-     m_has_w_customXmlInsRangeEnd(false),
-     m_w_customXmlInsRangeEnd(NULL),
-     m_has_w_customXmlDelRangeStart(false),
-     m_w_customXmlDelRangeStart(NULL),
-     m_has_w_customXmlDelRangeEnd(false),
-     m_w_customXmlDelRangeEnd(NULL),
-     m_has_w_customXmlMoveFromRangeStart(false),
-     m_w_customXmlMoveFromRangeStart(NULL),
-     m_has_w_customXmlMoveFromRangeEnd(false),
-     m_w_customXmlMoveFromRangeEnd(NULL),
-     m_has_w_customXmlMoveToRangeStart(false),
-     m_w_customXmlMoveToRangeStart(NULL),
-     m_has_w_customXmlMoveToRangeEnd(false),
-     m_w_customXmlMoveToRangeEnd(NULL),
-     m_has_w_ins(false),
-     m_w_ins(NULL),
-     m_has_w_del(false),
-     m_w_del(NULL),
-     m_has_w_moveFrom(false),
-     m_w_moveFrom(NULL),
-     m_has_w_moveTo(false),
-     m_w_moveTo(NULL),
-     m_has_m_oMathPara(false),
-     m_m_oMathPara(NULL),
-     m_has_m_oMath(false),
-     m_m_oMath(NULL),
-     m_has_w_altChunk(false),
-     m_w_altChunk(NULL)
+     m_w_tbl(NULL)
 {
 }
 bool CT_TxbxContent::ChildGroup_1::has_w_customXml() const
@@ -4148,240 +4186,6 @@ ns_w::CT_CustomXmlBlock* CT_TxbxContent::ChildGroup_1::mutable_w_customXml()
     {
         delete m_w_tbl;
         m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -4437,240 +4241,6 @@ ns_w::CT_SdtBlock* CT_TxbxContent::ChildGroup_1::mutable_w_sdt()
     }
     ;
 
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
-    }
-    ;
-
     m_has_w_sdt = true;
     if (!m_w_sdt)
     {
@@ -4720,240 +4290,6 @@ ns_w::CT_P* CT_TxbxContent::ChildGroup_1::mutable_w_p()
     {
         delete m_w_tbl;
         m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -5009,240 +4345,6 @@ ns_w::CT_Tbl* CT_TxbxContent::ChildGroup_1::mutable_w_tbl()
     }
     ;
 
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
-    }
-    ;
-
     m_has_w_tbl = true;
     if (!m_w_tbl)
     {
@@ -5260,49 +4362,24 @@ const ns_w::CT_Tbl& CT_TxbxContent::ChildGroup_1::get_w_tbl() const
     return ns_w::CT_Tbl::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_proofErr() const
+
+// CT_TxbxContent::ChildGroup_2
+CT_TxbxContent::ChildGroup_2::ChildGroup_2()
+    :m_has_w_proofErr(false),
+     m_w_proofErr(NULL),
+     m_has_w_permStart(false),
+     m_w_permStart(NULL),
+     m_has_w_permEnd(false),
+     m_w_permEnd(NULL)
+{
+}
+bool CT_TxbxContent::ChildGroup_2::has_w_proofErr() const
 {
     return m_has_w_proofErr;
 }
 
-ns_w::CT_ProofErr* CT_TxbxContent::ChildGroup_1::mutable_w_proofErr()
+ns_w::CT_ProofErr* CT_TxbxContent::ChildGroup_2::mutable_w_proofErr()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
 
     m_has_w_permStart = false;
 
@@ -5319,213 +4396,6 @@ ns_w::CT_ProofErr* CT_TxbxContent::ChildGroup_1::mutable_w_proofErr()
     {
         delete m_w_permEnd;
         m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -5537,7 +4407,7 @@ ns_w::CT_ProofErr* CT_TxbxContent::ChildGroup_1::mutable_w_proofErr()
     return m_w_proofErr;
 }
 
-const ns_w::CT_ProofErr& CT_TxbxContent::ChildGroup_1::get_w_proofErr() const
+const ns_w::CT_ProofErr& CT_TxbxContent::ChildGroup_2::get_w_proofErr() const
 {
     if (m_w_proofErr)
     {
@@ -5546,49 +4416,13 @@ const ns_w::CT_ProofErr& CT_TxbxContent::ChildGroup_1::get_w_proofErr() const
     return ns_w::CT_ProofErr::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_permStart() const
+bool CT_TxbxContent::ChildGroup_2::has_w_permStart() const
 {
     return m_has_w_permStart;
 }
 
-ns_w::CT_PermStart* CT_TxbxContent::ChildGroup_1::mutable_w_permStart()
+ns_w::CT_PermStart* CT_TxbxContent::ChildGroup_2::mutable_w_permStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
 
     m_has_w_proofErr = false;
 
@@ -5605,213 +4439,6 @@ ns_w::CT_PermStart* CT_TxbxContent::ChildGroup_1::mutable_w_permStart()
     {
         delete m_w_permEnd;
         m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -5823,7 +4450,7 @@ ns_w::CT_PermStart* CT_TxbxContent::ChildGroup_1::mutable_w_permStart()
     return m_w_permStart;
 }
 
-const ns_w::CT_PermStart& CT_TxbxContent::ChildGroup_1::get_w_permStart() const
+const ns_w::CT_PermStart& CT_TxbxContent::ChildGroup_2::get_w_permStart() const
 {
     if (m_w_permStart)
     {
@@ -5832,49 +4459,13 @@ const ns_w::CT_PermStart& CT_TxbxContent::ChildGroup_1::get_w_permStart() const
     return ns_w::CT_PermStart::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_permEnd() const
+bool CT_TxbxContent::ChildGroup_2::has_w_permEnd() const
 {
     return m_has_w_permEnd;
 }
 
-ns_w::CT_Perm* CT_TxbxContent::ChildGroup_1::mutable_w_permEnd()
+ns_w::CT_Perm* CT_TxbxContent::ChildGroup_2::mutable_w_permEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
 
     m_has_w_proofErr = false;
 
@@ -5891,213 +4482,6 @@ ns_w::CT_Perm* CT_TxbxContent::ChildGroup_1::mutable_w_permEnd()
     {
         delete m_w_permStart;
         m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -6109,7 +4493,7 @@ ns_w::CT_Perm* CT_TxbxContent::ChildGroup_1::mutable_w_permEnd()
     return m_w_permEnd;
 }
 
-const ns_w::CT_Perm& CT_TxbxContent::ChildGroup_1::get_w_permEnd() const
+const ns_w::CT_Perm& CT_TxbxContent::ChildGroup_2::get_w_permEnd() const
 {
     if (m_w_permEnd)
     {
@@ -6118,76 +4502,50 @@ const ns_w::CT_Perm& CT_TxbxContent::ChildGroup_1::get_w_permEnd() const
     return ns_w::CT_Perm::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_bookmarkStart() const
+
+// CT_TxbxContent::ChildGroup_3
+CT_TxbxContent::ChildGroup_3::ChildGroup_3()
+    :m_has_w_bookmarkStart(false),
+     m_w_bookmarkStart(NULL),
+     m_has_w_bookmarkEnd(false),
+     m_w_bookmarkEnd(NULL),
+     m_has_w_moveFromRangeStart(false),
+     m_w_moveFromRangeStart(NULL),
+     m_has_w_moveFromRangeEnd(false),
+     m_w_moveFromRangeEnd(NULL),
+     m_has_w_moveToRangeStart(false),
+     m_w_moveToRangeStart(NULL),
+     m_has_w_moveToRangeEnd(false),
+     m_w_moveToRangeEnd(NULL),
+     m_has_w_commentRangeStart(false),
+     m_w_commentRangeStart(NULL),
+     m_has_w_commentRangeEnd(false),
+     m_w_commentRangeEnd(NULL),
+     m_has_w_customXmlInsRangeStart(false),
+     m_w_customXmlInsRangeStart(NULL),
+     m_has_w_customXmlInsRangeEnd(false),
+     m_w_customXmlInsRangeEnd(NULL),
+     m_has_w_customXmlDelRangeStart(false),
+     m_w_customXmlDelRangeStart(NULL),
+     m_has_w_customXmlDelRangeEnd(false),
+     m_w_customXmlDelRangeEnd(NULL),
+     m_has_w_customXmlMoveFromRangeStart(false),
+     m_w_customXmlMoveFromRangeStart(NULL),
+     m_has_w_customXmlMoveFromRangeEnd(false),
+     m_w_customXmlMoveFromRangeEnd(NULL),
+     m_has_w_customXmlMoveToRangeStart(false),
+     m_w_customXmlMoveToRangeStart(NULL),
+     m_has_w_customXmlMoveToRangeEnd(false),
+     m_w_customXmlMoveToRangeEnd(NULL)
+{
+}
+bool CT_TxbxContent::ChildGroup_3::has_w_bookmarkStart() const
 {
     return m_has_w_bookmarkStart;
 }
 
-ns_w::CT_Bookmark* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkStart()
+ns_w::CT_Bookmark* CT_TxbxContent::ChildGroup_3::mutable_w_bookmarkStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkEnd = false;
 
@@ -6321,69 +4679,6 @@ ns_w::CT_Bookmark* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkStart()
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -6395,7 +4690,7 @@ ns_w::CT_Bookmark* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkStart()
     return m_w_bookmarkStart;
 }
 
-const ns_w::CT_Bookmark& CT_TxbxContent::ChildGroup_1::get_w_bookmarkStart() const
+const ns_w::CT_Bookmark& CT_TxbxContent::ChildGroup_3::get_w_bookmarkStart() const
 {
     if (m_w_bookmarkStart)
     {
@@ -6404,76 +4699,13 @@ const ns_w::CT_Bookmark& CT_TxbxContent::ChildGroup_1::get_w_bookmarkStart() con
     return ns_w::CT_Bookmark::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_bookmarkEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_bookmarkEnd() const
 {
     return m_has_w_bookmarkEnd;
 }
 
-ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkEnd()
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_3::mutable_w_bookmarkEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -6607,69 +4839,6 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkEnd()
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -6681,7 +4850,7 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_bookmarkEnd()
     return m_w_bookmarkEnd;
 }
 
-const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_bookmarkEnd() const
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_3::get_w_bookmarkEnd() const
 {
     if (m_w_bookmarkEnd)
     {
@@ -6690,76 +4859,13 @@ const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_bookmarkEnd() co
     return ns_w::CT_MarkupRange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_moveFromRangeStart() const
+bool CT_TxbxContent::ChildGroup_3::has_w_moveFromRangeStart() const
 {
     return m_has_w_moveFromRangeStart;
 }
 
-ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeStart()
+ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_3::mutable_w_moveFromRangeStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -6893,69 +4999,6 @@ ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeStar
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -6967,7 +5010,7 @@ ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeStar
     return m_w_moveFromRangeStart;
 }
 
-const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_1::get_w_moveFromRangeStart() const
+const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_3::get_w_moveFromRangeStart() const
 {
     if (m_w_moveFromRangeStart)
     {
@@ -6976,76 +5019,13 @@ const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_1::get_w_moveFromRangeSt
     return ns_w::CT_MoveBookmark::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_moveFromRangeEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_moveFromRangeEnd() const
 {
     return m_has_w_moveFromRangeEnd;
 }
 
-ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeEnd()
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_3::mutable_w_moveFromRangeEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -7179,69 +5159,6 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeEnd()
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -7253,7 +5170,7 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFromRangeEnd()
     return m_w_moveFromRangeEnd;
 }
 
-const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_moveFromRangeEnd() const
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_3::get_w_moveFromRangeEnd() const
 {
     if (m_w_moveFromRangeEnd)
     {
@@ -7262,76 +5179,13 @@ const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_moveFromRangeEnd
     return ns_w::CT_MarkupRange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_moveToRangeStart() const
+bool CT_TxbxContent::ChildGroup_3::has_w_moveToRangeStart() const
 {
     return m_has_w_moveToRangeStart;
 }
 
-ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeStart()
+ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_3::mutable_w_moveToRangeStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -7465,69 +5319,6 @@ ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeStart(
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -7539,7 +5330,7 @@ ns_w::CT_MoveBookmark* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeStart(
     return m_w_moveToRangeStart;
 }
 
-const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_1::get_w_moveToRangeStart() const
+const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_3::get_w_moveToRangeStart() const
 {
     if (m_w_moveToRangeStart)
     {
@@ -7548,76 +5339,13 @@ const ns_w::CT_MoveBookmark& CT_TxbxContent::ChildGroup_1::get_w_moveToRangeStar
     return ns_w::CT_MoveBookmark::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_moveToRangeEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_moveToRangeEnd() const
 {
     return m_has_w_moveToRangeEnd;
 }
 
-ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeEnd()
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_3::mutable_w_moveToRangeEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -7751,69 +5479,6 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeEnd()
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -7825,7 +5490,7 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_moveToRangeEnd()
     return m_w_moveToRangeEnd;
 }
 
-const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_moveToRangeEnd() const
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_3::get_w_moveToRangeEnd() const
 {
     if (m_w_moveToRangeEnd)
     {
@@ -7834,76 +5499,13 @@ const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_moveToRangeEnd()
     return ns_w::CT_MarkupRange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_commentRangeStart() const
+bool CT_TxbxContent::ChildGroup_3::has_w_commentRangeStart() const
 {
     return m_has_w_commentRangeStart;
 }
 
-ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeStart()
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_3::mutable_w_commentRangeStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -8037,69 +5639,6 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeStart(
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -8111,7 +5650,7 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeStart(
     return m_w_commentRangeStart;
 }
 
-const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_commentRangeStart() const
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_3::get_w_commentRangeStart() const
 {
     if (m_w_commentRangeStart)
     {
@@ -8120,76 +5659,13 @@ const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_commentRangeStar
     return ns_w::CT_MarkupRange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_commentRangeEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_commentRangeEnd() const
 {
     return m_has_w_commentRangeEnd;
 }
 
-ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeEnd()
+ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_3::mutable_w_commentRangeEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -8323,69 +5799,6 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeEnd()
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -8397,7 +5810,7 @@ ns_w::CT_MarkupRange* CT_TxbxContent::ChildGroup_1::mutable_w_commentRangeEnd()
     return m_w_commentRangeEnd;
 }
 
-const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_commentRangeEnd() const
+const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_3::get_w_commentRangeEnd() const
 {
     if (m_w_commentRangeEnd)
     {
@@ -8406,76 +5819,13 @@ const ns_w::CT_MarkupRange& CT_TxbxContent::ChildGroup_1::get_w_commentRangeEnd(
     return ns_w::CT_MarkupRange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlInsRangeStart() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlInsRangeStart() const
 {
     return m_has_w_customXmlInsRangeStart;
 }
 
-ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeStart()
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlInsRangeStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -8609,69 +5959,6 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeS
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -8683,7 +5970,7 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeS
     return m_w_customXmlInsRangeStart;
 }
 
-const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlInsRangeStart() const
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_3::get_w_customXmlInsRangeStart() const
 {
     if (m_w_customXmlInsRangeStart)
     {
@@ -8692,76 +5979,13 @@ const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlInsRang
     return ns_w::CT_TrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlInsRangeEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlInsRangeEnd() const
 {
     return m_has_w_customXmlInsRangeEnd;
 }
 
-ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeEnd()
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlInsRangeEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -8895,69 +6119,6 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeEnd()
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -8969,7 +6130,7 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlInsRangeEnd()
     return m_w_customXmlInsRangeEnd;
 }
 
-const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlInsRangeEnd() const
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_3::get_w_customXmlInsRangeEnd() const
 {
     if (m_w_customXmlInsRangeEnd)
     {
@@ -8978,76 +6139,13 @@ const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlInsRangeEnd(
     return ns_w::CT_Markup::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlDelRangeStart() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlDelRangeStart() const
 {
     return m_has_w_customXmlDelRangeStart;
 }
 
-ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeStart()
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlDelRangeStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -9181,69 +6279,6 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeS
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -9255,7 +6290,7 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeS
     return m_w_customXmlDelRangeStart;
 }
 
-const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlDelRangeStart() const
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_3::get_w_customXmlDelRangeStart() const
 {
     if (m_w_customXmlDelRangeStart)
     {
@@ -9264,76 +6299,13 @@ const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlDelRang
     return ns_w::CT_TrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlDelRangeEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlDelRangeEnd() const
 {
     return m_has_w_customXmlDelRangeEnd;
 }
 
-ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeEnd()
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlDelRangeEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -9467,69 +6439,6 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeEnd()
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -9541,7 +6450,7 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlDelRangeEnd()
     return m_w_customXmlDelRangeEnd;
 }
 
-const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlDelRangeEnd() const
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_3::get_w_customXmlDelRangeEnd() const
 {
     if (m_w_customXmlDelRangeEnd)
     {
@@ -9550,76 +6459,13 @@ const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlDelRangeEnd(
     return ns_w::CT_Markup::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveFromRangeStart() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlMoveFromRangeStart() const
 {
     return m_has_w_customXmlMoveFromRangeStart;
 }
 
-ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromRangeStart()
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlMoveFromRangeStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -9753,69 +6599,6 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromR
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -9827,7 +6610,7 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromR
     return m_w_customXmlMoveFromRangeStart;
 }
 
-const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveFromRangeStart() const
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_3::get_w_customXmlMoveFromRangeStart() const
 {
     if (m_w_customXmlMoveFromRangeStart)
     {
@@ -9836,76 +6619,13 @@ const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveFro
     return ns_w::CT_TrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveFromRangeEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlMoveFromRangeEnd() const
 {
     return m_has_w_customXmlMoveFromRangeEnd;
 }
 
-ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromRangeEnd()
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlMoveFromRangeEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -10039,69 +6759,6 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromRangeE
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -10113,7 +6770,7 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveFromRangeE
     return m_w_customXmlMoveFromRangeEnd;
 }
 
-const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveFromRangeEnd() const
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_3::get_w_customXmlMoveFromRangeEnd() const
 {
     if (m_w_customXmlMoveFromRangeEnd)
     {
@@ -10122,76 +6779,13 @@ const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveFromRang
     return ns_w::CT_Markup::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveToRangeStart() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlMoveToRangeStart() const
 {
     return m_has_w_customXmlMoveToRangeStart;
 }
 
-ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRangeStart()
+ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlMoveToRangeStart()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -10325,69 +6919,6 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRan
     {
         delete m_w_customXmlMoveToRangeEnd;
         m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -10399,7 +6930,7 @@ ns_w::CT_TrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRan
     return m_w_customXmlMoveToRangeStart;
 }
 
-const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveToRangeStart() const
+const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_3::get_w_customXmlMoveToRangeStart() const
 {
     if (m_w_customXmlMoveToRangeStart)
     {
@@ -10408,76 +6939,13 @@ const ns_w::CT_TrackChange& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveToR
     return ns_w::CT_TrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_customXmlMoveToRangeEnd() const
+bool CT_TxbxContent::ChildGroup_3::has_w_customXmlMoveToRangeEnd() const
 {
     return m_has_w_customXmlMoveToRangeEnd;
 }
 
-ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRangeEnd()
+ns_w::CT_Markup* CT_TxbxContent::ChildGroup_3::mutable_w_customXmlMoveToRangeEnd()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
 
     m_has_w_bookmarkStart = false;
 
@@ -10611,69 +7079,6 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRangeEnd
     {
         delete m_w_customXmlMoveToRangeStart;
         m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -10685,7 +7090,7 @@ ns_w::CT_Markup* CT_TxbxContent::ChildGroup_1::mutable_w_customXmlMoveToRangeEnd
     return m_w_customXmlMoveToRangeEnd;
 }
 
-const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveToRangeEnd() const
+const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_3::get_w_customXmlMoveToRangeEnd() const
 {
     if (m_w_customXmlMoveToRangeEnd)
     {
@@ -10694,220 +7099,26 @@ const ns_w::CT_Markup& CT_TxbxContent::ChildGroup_1::get_w_customXmlMoveToRangeE
     return ns_w::CT_Markup::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_ins() const
+
+// CT_TxbxContent::ChildGroup_4
+CT_TxbxContent::ChildGroup_4::ChildGroup_4()
+    :m_has_w_ins(false),
+     m_w_ins(NULL),
+     m_has_w_del(false),
+     m_w_del(NULL),
+     m_has_w_moveFrom(false),
+     m_w_moveFrom(NULL),
+     m_has_w_moveTo(false),
+     m_w_moveTo(NULL)
+{
+}
+bool CT_TxbxContent::ChildGroup_4::has_w_ins() const
 {
     return m_has_w_ins;
 }
 
-ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_ins()
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_4::mutable_w_ins()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
 
     m_has_w_del = false;
 
@@ -10933,33 +7144,6 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_ins()
     {
         delete m_w_moveTo;
         m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -10971,7 +7155,7 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_ins()
     return m_w_ins;
 }
 
-const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_ins() const
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_4::get_w_ins() const
 {
     if (m_w_ins)
     {
@@ -10980,220 +7164,13 @@ const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_ins() const
     return ns_w::CT_RunTrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_del() const
+bool CT_TxbxContent::ChildGroup_4::has_w_del() const
 {
     return m_has_w_del;
 }
 
-ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_del()
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_4::mutable_w_del()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
 
     m_has_w_ins = false;
 
@@ -11219,33 +7196,6 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_del()
     {
         delete m_w_moveTo;
         m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -11257,7 +7207,7 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_del()
     return m_w_del;
 }
 
-const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_del() const
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_4::get_w_del() const
 {
     if (m_w_del)
     {
@@ -11266,220 +7216,13 @@ const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_del() const
     return ns_w::CT_RunTrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_moveFrom() const
+bool CT_TxbxContent::ChildGroup_4::has_w_moveFrom() const
 {
     return m_has_w_moveFrom;
 }
 
-ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFrom()
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_4::mutable_w_moveFrom()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
 
     m_has_w_ins = false;
 
@@ -11505,33 +7248,6 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFrom()
     {
         delete m_w_moveTo;
         m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -11543,7 +7259,7 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveFrom()
     return m_w_moveFrom;
 }
 
-const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_moveFrom() const
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_4::get_w_moveFrom() const
 {
     if (m_w_moveFrom)
     {
@@ -11552,220 +7268,13 @@ const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_moveFrom() co
     return ns_w::CT_RunTrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_moveTo() const
+bool CT_TxbxContent::ChildGroup_4::has_w_moveTo() const
 {
     return m_has_w_moveTo;
 }
 
-ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveTo()
+ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_4::mutable_w_moveTo()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
 
     m_has_w_ins = false;
 
@@ -11791,33 +7300,6 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveTo()
     {
         delete m_w_moveFrom;
         m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -11829,7 +7311,7 @@ ns_w::CT_RunTrackChange* CT_TxbxContent::ChildGroup_1::mutable_w_moveTo()
     return m_w_moveTo;
 }
 
-const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_moveTo() const
+const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_4::get_w_moveTo() const
 {
     if (m_w_moveTo)
     {
@@ -11838,256 +7320,22 @@ const ns_w::CT_RunTrackChange& CT_TxbxContent::ChildGroup_1::get_w_moveTo() cons
     return ns_w::CT_RunTrackChange::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_m_oMathPara() const
+
+// CT_TxbxContent::ChildGroup_5
+CT_TxbxContent::ChildGroup_5::ChildGroup_5()
+    :m_has_m_oMathPara(false),
+     m_m_oMathPara(NULL),
+     m_has_m_oMath(false),
+     m_m_oMath(NULL)
+{
+}
+bool CT_TxbxContent::ChildGroup_5::has_m_oMathPara() const
 {
     return m_has_m_oMathPara;
 }
 
-ns_m::CT_OMathPara* CT_TxbxContent::ChildGroup_1::mutable_m_oMathPara()
+ns_m::CT_OMathPara* CT_TxbxContent::ChildGroup_5::mutable_m_oMathPara()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
 
     m_has_m_oMath = false;
 
@@ -12095,15 +7343,6 @@ ns_m::CT_OMathPara* CT_TxbxContent::ChildGroup_1::mutable_m_oMathPara()
     {
         delete m_m_oMath;
         m_m_oMath = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -12115,7 +7354,7 @@ ns_m::CT_OMathPara* CT_TxbxContent::ChildGroup_1::mutable_m_oMathPara()
     return m_m_oMathPara;
 }
 
-const ns_m::CT_OMathPara& CT_TxbxContent::ChildGroup_1::get_m_oMathPara() const
+const ns_m::CT_OMathPara& CT_TxbxContent::ChildGroup_5::get_m_oMathPara() const
 {
     if (m_m_oMathPara)
     {
@@ -12124,256 +7363,13 @@ const ns_m::CT_OMathPara& CT_TxbxContent::ChildGroup_1::get_m_oMathPara() const
     return ns_m::CT_OMathPara::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_m_oMath() const
+bool CT_TxbxContent::ChildGroup_5::has_m_oMath() const
 {
     return m_has_m_oMath;
 }
 
-ns_m::CT_OMath* CT_TxbxContent::ChildGroup_1::mutable_m_oMath()
+ns_m::CT_OMath* CT_TxbxContent::ChildGroup_5::mutable_m_oMath()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
 
     m_has_m_oMathPara = false;
 
@@ -12381,15 +7377,6 @@ ns_m::CT_OMath* CT_TxbxContent::ChildGroup_1::mutable_m_oMath()
     {
         delete m_m_oMathPara;
         m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_w_altChunk = false;
-
-    if (m_w_altChunk)
-    {
-        delete m_w_altChunk;
-        m_w_altChunk = NULL;
     }
     ;
 
@@ -12401,7 +7388,7 @@ ns_m::CT_OMath* CT_TxbxContent::ChildGroup_1::mutable_m_oMath()
     return m_m_oMath;
 }
 
-const ns_m::CT_OMath& CT_TxbxContent::ChildGroup_1::get_m_oMath() const
+const ns_m::CT_OMath& CT_TxbxContent::ChildGroup_5::get_m_oMath() const
 {
     if (m_m_oMath)
     {
@@ -12410,274 +7397,20 @@ const ns_m::CT_OMath& CT_TxbxContent::ChildGroup_1::get_m_oMath() const
     return ns_m::CT_OMath::default_instance();
 }
 
-bool CT_TxbxContent::ChildGroup_1::has_w_altChunk() const
+
+// CT_TxbxContent::ChildGroup_6
+CT_TxbxContent::ChildGroup_6::ChildGroup_6()
+    :m_has_w_altChunk(false),
+     m_w_altChunk(NULL)
+{
+}
+bool CT_TxbxContent::ChildGroup_6::has_w_altChunk() const
 {
     return m_has_w_altChunk;
 }
 
-ns_w::CT_AltChunk* CT_TxbxContent::ChildGroup_1::mutable_w_altChunk()
+ns_w::CT_AltChunk* CT_TxbxContent::ChildGroup_6::mutable_w_altChunk()
 {
-
-    m_has_w_customXml = false;
-
-    if (m_w_customXml)
-    {
-        delete m_w_customXml;
-        m_w_customXml = NULL;
-    }
-    ;
-
-    m_has_w_sdt = false;
-
-    if (m_w_sdt)
-    {
-        delete m_w_sdt;
-        m_w_sdt = NULL;
-    }
-    ;
-
-    m_has_w_p = false;
-
-    if (m_w_p)
-    {
-        delete m_w_p;
-        m_w_p = NULL;
-    }
-    ;
-
-    m_has_w_tbl = false;
-
-    if (m_w_tbl)
-    {
-        delete m_w_tbl;
-        m_w_tbl = NULL;
-    }
-    ;
-
-    m_has_w_proofErr = false;
-
-    if (m_w_proofErr)
-    {
-        delete m_w_proofErr;
-        m_w_proofErr = NULL;
-    }
-    ;
-
-    m_has_w_permStart = false;
-
-    if (m_w_permStart)
-    {
-        delete m_w_permStart;
-        m_w_permStart = NULL;
-    }
-    ;
-
-    m_has_w_permEnd = false;
-
-    if (m_w_permEnd)
-    {
-        delete m_w_permEnd;
-        m_w_permEnd = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkStart = false;
-
-    if (m_w_bookmarkStart)
-    {
-        delete m_w_bookmarkStart;
-        m_w_bookmarkStart = NULL;
-    }
-    ;
-
-    m_has_w_bookmarkEnd = false;
-
-    if (m_w_bookmarkEnd)
-    {
-        delete m_w_bookmarkEnd;
-        m_w_bookmarkEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeStart = false;
-
-    if (m_w_moveFromRangeStart)
-    {
-        delete m_w_moveFromRangeStart;
-        m_w_moveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveFromRangeEnd = false;
-
-    if (m_w_moveFromRangeEnd)
-    {
-        delete m_w_moveFromRangeEnd;
-        m_w_moveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeStart = false;
-
-    if (m_w_moveToRangeStart)
-    {
-        delete m_w_moveToRangeStart;
-        m_w_moveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_moveToRangeEnd = false;
-
-    if (m_w_moveToRangeEnd)
-    {
-        delete m_w_moveToRangeEnd;
-        m_w_moveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeStart = false;
-
-    if (m_w_commentRangeStart)
-    {
-        delete m_w_commentRangeStart;
-        m_w_commentRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_commentRangeEnd = false;
-
-    if (m_w_commentRangeEnd)
-    {
-        delete m_w_commentRangeEnd;
-        m_w_commentRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeStart = false;
-
-    if (m_w_customXmlInsRangeStart)
-    {
-        delete m_w_customXmlInsRangeStart;
-        m_w_customXmlInsRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlInsRangeEnd = false;
-
-    if (m_w_customXmlInsRangeEnd)
-    {
-        delete m_w_customXmlInsRangeEnd;
-        m_w_customXmlInsRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeStart = false;
-
-    if (m_w_customXmlDelRangeStart)
-    {
-        delete m_w_customXmlDelRangeStart;
-        m_w_customXmlDelRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlDelRangeEnd = false;
-
-    if (m_w_customXmlDelRangeEnd)
-    {
-        delete m_w_customXmlDelRangeEnd;
-        m_w_customXmlDelRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeStart = false;
-
-    if (m_w_customXmlMoveFromRangeStart)
-    {
-        delete m_w_customXmlMoveFromRangeStart;
-        m_w_customXmlMoveFromRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveFromRangeEnd = false;
-
-    if (m_w_customXmlMoveFromRangeEnd)
-    {
-        delete m_w_customXmlMoveFromRangeEnd;
-        m_w_customXmlMoveFromRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeStart = false;
-
-    if (m_w_customXmlMoveToRangeStart)
-    {
-        delete m_w_customXmlMoveToRangeStart;
-        m_w_customXmlMoveToRangeStart = NULL;
-    }
-    ;
-
-    m_has_w_customXmlMoveToRangeEnd = false;
-
-    if (m_w_customXmlMoveToRangeEnd)
-    {
-        delete m_w_customXmlMoveToRangeEnd;
-        m_w_customXmlMoveToRangeEnd = NULL;
-    }
-    ;
-
-    m_has_w_ins = false;
-
-    if (m_w_ins)
-    {
-        delete m_w_ins;
-        m_w_ins = NULL;
-    }
-    ;
-
-    m_has_w_del = false;
-
-    if (m_w_del)
-    {
-        delete m_w_del;
-        m_w_del = NULL;
-    }
-    ;
-
-    m_has_w_moveFrom = false;
-
-    if (m_w_moveFrom)
-    {
-        delete m_w_moveFrom;
-        m_w_moveFrom = NULL;
-    }
-    ;
-
-    m_has_w_moveTo = false;
-
-    if (m_w_moveTo)
-    {
-        delete m_w_moveTo;
-        m_w_moveTo = NULL;
-    }
-    ;
-
-    m_has_m_oMathPara = false;
-
-    if (m_m_oMathPara)
-    {
-        delete m_m_oMathPara;
-        m_m_oMathPara = NULL;
-    }
-    ;
-
-    m_has_m_oMath = false;
-
-    if (m_m_oMath)
-    {
-        delete m_m_oMath;
-        m_m_oMath = NULL;
-    }
-    ;
 
     m_has_w_altChunk = true;
     if (!m_w_altChunk)
@@ -12687,7 +7420,7 @@ ns_w::CT_AltChunk* CT_TxbxContent::ChildGroup_1::mutable_w_altChunk()
     return m_w_altChunk;
 }
 
-const ns_w::CT_AltChunk& CT_TxbxContent::ChildGroup_1::get_w_altChunk() const
+const ns_w::CT_AltChunk& CT_TxbxContent::ChildGroup_6::get_w_altChunk() const
 {
     if (m_w_altChunk)
     {

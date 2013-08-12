@@ -147,10 +147,17 @@ def groupByElemCont(pbComplexType):
     curElemCont = None
 
     for elemCont in pbComplexType.element_container:
-        if prevElemCont is not None and \
+        if not elemCont.HasField('kind'):
+            curElemCont = PB.ElementContainer()
+            curElemCont.kind = elemCont.kind
+
+            copyElemCont(elemCont, curElemCont)
+            newElemContList.append(curElemCont)
+
+        elif prevElemCont is not None and \
                 (prevElemCont.kind == elemCont.kind
                  and elemCont.kind != PB.ElementContainer.RepeatedSequence
-                 and elemCont.kind != PB.ElementContainer.Choice):
+                 and elemCont.kind != PB.ElementContainer.RepeatedChoice):
             copyElemCont(elemCont, curElemCont)
         else:
             curElemCont = PB.ElementContainer()
@@ -391,6 +398,7 @@ class ALL_SCHEMA:
                     if childElem.tag == '{%s}group' % XSD_URI:
                         self._parseGroup(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
                     elif childElem.tag == '{%s}choice' % XSD_URI:
+                        pbComplexType.element_container.add()
                         self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix)
                     elif childElem.tag == '{%s}sequence' % XSD_URI:
                         self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix)

@@ -1027,25 +1027,25 @@ ns_pvml::CT_Rel* CT_Shape::add_pvml_textdata()
 
 ns_o::CT_Ink* CT_Shape::add_o_ink()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_Ink* pNewChild = pChildGroup->mutable_o_ink();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_pvml::CT_Empty* CT_Shape::add_pvml_iscomment()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_pvml::CT_Empty* pNewChild = pChildGroup->mutable_pvml_iscomment();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_o::CT_EquationXml* CT_Shape::add_o_equationxml()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_EquationXml* pNewChild = pChildGroup->mutable_o_equationxml();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -1073,6 +1073,15 @@ void CT_Shape::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -1268,7 +1277,19 @@ void CT_Shape::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
             }
 
 
-            else if ((*iter)->has_o_ink())
+        }
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_o_ink())
             {
                 (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
             }
@@ -1429,13 +1450,7 @@ CT_Shape::ChildGroup_1::ChildGroup_1()
      m_has_x_ClientData(false),
      m_x_ClientData(NULL),
      m_has_pvml_textdata(false),
-     m_pvml_textdata(NULL),
-     m_has_o_ink(false),
-     m_o_ink(NULL),
-     m_has_pvml_iscomment(false),
-     m_pvml_iscomment(NULL),
-     m_has_o_equationxml(false),
-     m_o_equationxml(NULL)
+     m_pvml_textdata(NULL)
 {
 }
 bool CT_Shape::ChildGroup_1::has_path() const
@@ -1641,33 +1656,6 @@ CT_Path* CT_Shape::ChildGroup_1::mutable_path()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -1894,33 +1882,6 @@ CT_Formulas* CT_Shape::ChildGroup_1::mutable_formulas()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_formulas = true;
     if (!m_formulas)
     {
@@ -2141,33 +2102,6 @@ CT_Handles* CT_Shape::ChildGroup_1::mutable_handles()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -2394,33 +2328,6 @@ CT_Fill* CT_Shape::ChildGroup_1::mutable_fill()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_fill = true;
     if (!m_fill)
     {
@@ -2641,33 +2548,6 @@ CT_Stroke* CT_Shape::ChildGroup_1::mutable_stroke()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -2894,33 +2774,6 @@ CT_Shadow* CT_Shape::ChildGroup_1::mutable_shadow()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_shadow = true;
     if (!m_shadow)
     {
@@ -3141,33 +2994,6 @@ CT_Textbox* CT_Shape::ChildGroup_1::mutable_textbox()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -3394,33 +3220,6 @@ CT_TextPath* CT_Shape::ChildGroup_1::mutable_textpath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_textpath = true;
     if (!m_textpath)
     {
@@ -3641,33 +3440,6 @@ CT_ImageData* CT_Shape::ChildGroup_1::mutable_imagedata()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -3894,33 +3666,6 @@ ns_o::CT_Skew* CT_Shape::ChildGroup_1::mutable_o_skew()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_o_skew = true;
     if (!m_o_skew)
     {
@@ -4141,33 +3886,6 @@ ns_o::CT_Extrusion* CT_Shape::ChildGroup_1::mutable_o_extrusion()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -4394,33 +4112,6 @@ ns_o::CT_Callout* CT_Shape::ChildGroup_1::mutable_o_callout()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_o_callout = true;
     if (!m_o_callout)
     {
@@ -4641,33 +4332,6 @@ ns_o::CT_Lock* CT_Shape::ChildGroup_1::mutable_o_lock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -4894,33 +4558,6 @@ ns_o::CT_ClipPath* CT_Shape::ChildGroup_1::mutable_o_clippath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_o_clippath = true;
     if (!m_o_clippath)
     {
@@ -5141,33 +4778,6 @@ ns_o::CT_SignatureLine* CT_Shape::ChildGroup_1::mutable_o_signatureline()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -5394,33 +5004,6 @@ ns_w10::CT_Wrap* CT_Shape::ChildGroup_1::mutable_w10_wrap()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_w10_wrap = true;
     if (!m_w10_wrap)
     {
@@ -5641,33 +5224,6 @@ ns_w10::CT_AnchorLock* CT_Shape::ChildGroup_1::mutable_w10_anchorlock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -5894,33 +5450,6 @@ ns_w10::CT_Border* CT_Shape::ChildGroup_1::mutable_w10_bordertop()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_w10_bordertop = true;
     if (!m_w10_bordertop)
     {
@@ -6141,33 +5670,6 @@ ns_w10::CT_Border* CT_Shape::ChildGroup_1::mutable_w10_borderbottom()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -6394,33 +5896,6 @@ ns_w10::CT_Border* CT_Shape::ChildGroup_1::mutable_w10_borderleft()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_w10_borderleft = true;
     if (!m_w10_borderleft)
     {
@@ -6641,33 +6116,6 @@ ns_w10::CT_Border* CT_Shape::ChildGroup_1::mutable_w10_borderright()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -6894,33 +6342,6 @@ ns_x::CT_ClientData* CT_Shape::ChildGroup_1::mutable_x_ClientData()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_x_ClientData = true;
     if (!m_x_ClientData)
     {
@@ -7144,33 +6565,6 @@ ns_pvml::CT_Rel* CT_Shape::ChildGroup_1::mutable_pvml_textdata()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_pvml_textdata = true;
     if (!m_pvml_textdata)
     {
@@ -7188,220 +6582,24 @@ const ns_pvml::CT_Rel& CT_Shape::ChildGroup_1::get_pvml_textdata() const
     return ns_pvml::CT_Rel::default_instance();
 }
 
-bool CT_Shape::ChildGroup_1::has_o_ink() const
+
+// CT_Shape::ChildGroup_2
+CT_Shape::ChildGroup_2::ChildGroup_2()
+    :m_has_o_ink(false),
+     m_o_ink(NULL),
+     m_has_pvml_iscomment(false),
+     m_pvml_iscomment(NULL),
+     m_has_o_equationxml(false),
+     m_o_equationxml(NULL)
+{
+}
+bool CT_Shape::ChildGroup_2::has_o_ink() const
 {
     return m_has_o_ink;
 }
 
-ns_o::CT_Ink* CT_Shape::ChildGroup_1::mutable_o_ink()
+ns_o::CT_Ink* CT_Shape::ChildGroup_2::mutable_o_ink()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_pvml_iscomment = false;
 
@@ -7429,7 +6627,7 @@ ns_o::CT_Ink* CT_Shape::ChildGroup_1::mutable_o_ink()
     return m_o_ink;
 }
 
-const ns_o::CT_Ink& CT_Shape::ChildGroup_1::get_o_ink() const
+const ns_o::CT_Ink& CT_Shape::ChildGroup_2::get_o_ink() const
 {
     if (m_o_ink)
     {
@@ -7438,220 +6636,13 @@ const ns_o::CT_Ink& CT_Shape::ChildGroup_1::get_o_ink() const
     return ns_o::CT_Ink::default_instance();
 }
 
-bool CT_Shape::ChildGroup_1::has_pvml_iscomment() const
+bool CT_Shape::ChildGroup_2::has_pvml_iscomment() const
 {
     return m_has_pvml_iscomment;
 }
 
-ns_pvml::CT_Empty* CT_Shape::ChildGroup_1::mutable_pvml_iscomment()
+ns_pvml::CT_Empty* CT_Shape::ChildGroup_2::mutable_pvml_iscomment()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_o_ink = false;
 
@@ -7679,7 +6670,7 @@ ns_pvml::CT_Empty* CT_Shape::ChildGroup_1::mutable_pvml_iscomment()
     return m_pvml_iscomment;
 }
 
-const ns_pvml::CT_Empty& CT_Shape::ChildGroup_1::get_pvml_iscomment() const
+const ns_pvml::CT_Empty& CT_Shape::ChildGroup_2::get_pvml_iscomment() const
 {
     if (m_pvml_iscomment)
     {
@@ -7688,220 +6679,13 @@ const ns_pvml::CT_Empty& CT_Shape::ChildGroup_1::get_pvml_iscomment() const
     return ns_pvml::CT_Empty::default_instance();
 }
 
-bool CT_Shape::ChildGroup_1::has_o_equationxml() const
+bool CT_Shape::ChildGroup_2::has_o_equationxml() const
 {
     return m_has_o_equationxml;
 }
 
-ns_o::CT_EquationXml* CT_Shape::ChildGroup_1::mutable_o_equationxml()
+ns_o::CT_EquationXml* CT_Shape::ChildGroup_2::mutable_o_equationxml()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_o_ink = false;
 
@@ -7929,7 +6713,7 @@ ns_o::CT_EquationXml* CT_Shape::ChildGroup_1::mutable_o_equationxml()
     return m_o_equationxml;
 }
 
-const ns_o::CT_EquationXml& CT_Shape::ChildGroup_1::get_o_equationxml() const
+const ns_o::CT_EquationXml& CT_Shape::ChildGroup_2::get_o_equationxml() const
 {
     if (m_o_equationxml)
     {
@@ -13822,97 +12606,97 @@ ns_pvml::CT_Rel* CT_Group::add_pvml_textdata()
 
 CT_Group* CT_Group::add_group()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Group* pNewChild = pChildGroup->mutable_group();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Shape* CT_Group::add_shape()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Shape* pNewChild = pChildGroup->mutable_shape();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Shapetype* CT_Group::add_shapetype()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Shapetype* pNewChild = pChildGroup->mutable_shapetype();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Arc* CT_Group::add_arc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Arc* pNewChild = pChildGroup->mutable_arc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Curve* CT_Group::add_curve()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Curve* pNewChild = pChildGroup->mutable_curve();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Image* CT_Group::add_image()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Image* pNewChild = pChildGroup->mutable_image();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Line* CT_Group::add_line()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Line* pNewChild = pChildGroup->mutable_line();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Oval* CT_Group::add_oval()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Oval* pNewChild = pChildGroup->mutable_oval();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_PolyLine* CT_Group::add_polyline()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_PolyLine* pNewChild = pChildGroup->mutable_polyline();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Rect* CT_Group::add_rect()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Rect* pNewChild = pChildGroup->mutable_rect();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_RoundRect* CT_Group::add_roundrect()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_RoundRect* pNewChild = pChildGroup->mutable_roundrect();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_o::CT_Diagram* CT_Group::add_o_diagram()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_Diagram* pNewChild = pChildGroup->mutable_o_diagram();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -13958,6 +12742,15 @@ void CT_Group::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -14153,7 +12946,19 @@ void CT_Group::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
             }
 
 
-            else if ((*iter)->has_group())
+        }
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_group())
             {
                 (*iter)->get_group().toXmlElem("v:group", "", _outStream);
             }
@@ -14380,31 +13185,7 @@ CT_Group::ChildGroup_1::ChildGroup_1()
      m_has_x_ClientData(false),
      m_x_ClientData(NULL),
      m_has_pvml_textdata(false),
-     m_pvml_textdata(NULL),
-     m_has_group(false),
-     m_group(NULL),
-     m_has_shape(false),
-     m_shape(NULL),
-     m_has_shapetype(false),
-     m_shapetype(NULL),
-     m_has_arc(false),
-     m_arc(NULL),
-     m_has_curve(false),
-     m_curve(NULL),
-     m_has_image(false),
-     m_image(NULL),
-     m_has_line(false),
-     m_line(NULL),
-     m_has_oval(false),
-     m_oval(NULL),
-     m_has_polyline(false),
-     m_polyline(NULL),
-     m_has_rect(false),
-     m_rect(NULL),
-     m_has_roundrect(false),
-     m_roundrect(NULL),
-     m_has_o_diagram(false),
-     m_o_diagram(NULL)
+     m_pvml_textdata(NULL)
 {
 }
 bool CT_Group::ChildGroup_1::has_path() const
@@ -14610,114 +13391,6 @@ CT_Path* CT_Group::ChildGroup_1::mutable_path()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -14944,114 +13617,6 @@ CT_Formulas* CT_Group::ChildGroup_1::mutable_formulas()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_formulas = true;
     if (!m_formulas)
     {
@@ -15272,114 +13837,6 @@ CT_Handles* CT_Group::ChildGroup_1::mutable_handles()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -15606,114 +14063,6 @@ CT_Fill* CT_Group::ChildGroup_1::mutable_fill()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_fill = true;
     if (!m_fill)
     {
@@ -15934,114 +14283,6 @@ CT_Stroke* CT_Group::ChildGroup_1::mutable_stroke()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -16268,114 +14509,6 @@ CT_Shadow* CT_Group::ChildGroup_1::mutable_shadow()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_shadow = true;
     if (!m_shadow)
     {
@@ -16596,114 +14729,6 @@ CT_Textbox* CT_Group::ChildGroup_1::mutable_textbox()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -16930,114 +14955,6 @@ CT_TextPath* CT_Group::ChildGroup_1::mutable_textpath()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_textpath = true;
     if (!m_textpath)
     {
@@ -17258,114 +15175,6 @@ CT_ImageData* CT_Group::ChildGroup_1::mutable_imagedata()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -17592,114 +15401,6 @@ ns_o::CT_Skew* CT_Group::ChildGroup_1::mutable_o_skew()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_o_skew = true;
     if (!m_o_skew)
     {
@@ -17920,114 +15621,6 @@ ns_o::CT_Extrusion* CT_Group::ChildGroup_1::mutable_o_extrusion()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -18254,114 +15847,6 @@ ns_o::CT_Callout* CT_Group::ChildGroup_1::mutable_o_callout()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_o_callout = true;
     if (!m_o_callout)
     {
@@ -18582,114 +16067,6 @@ ns_o::CT_Lock* CT_Group::ChildGroup_1::mutable_o_lock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -18916,114 +16293,6 @@ ns_o::CT_ClipPath* CT_Group::ChildGroup_1::mutable_o_clippath()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_o_clippath = true;
     if (!m_o_clippath)
     {
@@ -19244,114 +16513,6 @@ ns_o::CT_SignatureLine* CT_Group::ChildGroup_1::mutable_o_signatureline()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -19578,114 +16739,6 @@ ns_w10::CT_Wrap* CT_Group::ChildGroup_1::mutable_w10_wrap()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_w10_wrap = true;
     if (!m_w10_wrap)
     {
@@ -19906,114 +16959,6 @@ ns_w10::CT_AnchorLock* CT_Group::ChildGroup_1::mutable_w10_anchorlock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -20240,114 +17185,6 @@ ns_w10::CT_Border* CT_Group::ChildGroup_1::mutable_w10_bordertop()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_w10_bordertop = true;
     if (!m_w10_bordertop)
     {
@@ -20568,114 +17405,6 @@ ns_w10::CT_Border* CT_Group::ChildGroup_1::mutable_w10_borderbottom()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -20902,114 +17631,6 @@ ns_w10::CT_Border* CT_Group::ChildGroup_1::mutable_w10_borderleft()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_w10_borderleft = true;
     if (!m_w10_borderleft)
     {
@@ -21230,114 +17851,6 @@ ns_w10::CT_Border* CT_Group::ChildGroup_1::mutable_w10_borderright()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -21564,114 +18077,6 @@ ns_x::CT_ClientData* CT_Group::ChildGroup_1::mutable_x_ClientData()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_x_ClientData = true;
     if (!m_x_ClientData)
     {
@@ -21895,114 +18300,6 @@ ns_pvml::CT_Rel* CT_Group::ChildGroup_1::mutable_pvml_textdata()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_pvml_textdata = true;
     if (!m_pvml_textdata)
     {
@@ -22020,220 +18317,42 @@ const ns_pvml::CT_Rel& CT_Group::ChildGroup_1::get_pvml_textdata() const
     return ns_pvml::CT_Rel::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_group() const
+
+// CT_Group::ChildGroup_2
+CT_Group::ChildGroup_2::ChildGroup_2()
+    :m_has_group(false),
+     m_group(NULL),
+     m_has_shape(false),
+     m_shape(NULL),
+     m_has_shapetype(false),
+     m_shapetype(NULL),
+     m_has_arc(false),
+     m_arc(NULL),
+     m_has_curve(false),
+     m_curve(NULL),
+     m_has_image(false),
+     m_image(NULL),
+     m_has_line(false),
+     m_line(NULL),
+     m_has_oval(false),
+     m_oval(NULL),
+     m_has_polyline(false),
+     m_polyline(NULL),
+     m_has_rect(false),
+     m_rect(NULL),
+     m_has_roundrect(false),
+     m_roundrect(NULL),
+     m_has_o_diagram(false),
+     m_o_diagram(NULL)
+{
+}
+bool CT_Group::ChildGroup_2::has_group() const
 {
     return m_has_group;
 }
 
-CT_Group* CT_Group::ChildGroup_1::mutable_group()
+CT_Group* CT_Group::ChildGroup_2::mutable_group()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_shape = false;
 
@@ -22342,7 +18461,7 @@ CT_Group* CT_Group::ChildGroup_1::mutable_group()
     return m_group;
 }
 
-const CT_Group& CT_Group::ChildGroup_1::get_group() const
+const CT_Group& CT_Group::ChildGroup_2::get_group() const
 {
     if (m_group)
     {
@@ -22351,220 +18470,13 @@ const CT_Group& CT_Group::ChildGroup_1::get_group() const
     return CT_Group::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_shape() const
+bool CT_Group::ChildGroup_2::has_shape() const
 {
     return m_has_shape;
 }
 
-CT_Shape* CT_Group::ChildGroup_1::mutable_shape()
+CT_Shape* CT_Group::ChildGroup_2::mutable_shape()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -22673,7 +18585,7 @@ CT_Shape* CT_Group::ChildGroup_1::mutable_shape()
     return m_shape;
 }
 
-const CT_Shape& CT_Group::ChildGroup_1::get_shape() const
+const CT_Shape& CT_Group::ChildGroup_2::get_shape() const
 {
     if (m_shape)
     {
@@ -22682,220 +18594,13 @@ const CT_Shape& CT_Group::ChildGroup_1::get_shape() const
     return CT_Shape::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_shapetype() const
+bool CT_Group::ChildGroup_2::has_shapetype() const
 {
     return m_has_shapetype;
 }
 
-CT_Shapetype* CT_Group::ChildGroup_1::mutable_shapetype()
+CT_Shapetype* CT_Group::ChildGroup_2::mutable_shapetype()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -23004,7 +18709,7 @@ CT_Shapetype* CT_Group::ChildGroup_1::mutable_shapetype()
     return m_shapetype;
 }
 
-const CT_Shapetype& CT_Group::ChildGroup_1::get_shapetype() const
+const CT_Shapetype& CT_Group::ChildGroup_2::get_shapetype() const
 {
     if (m_shapetype)
     {
@@ -23013,220 +18718,13 @@ const CT_Shapetype& CT_Group::ChildGroup_1::get_shapetype() const
     return CT_Shapetype::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_arc() const
+bool CT_Group::ChildGroup_2::has_arc() const
 {
     return m_has_arc;
 }
 
-CT_Arc* CT_Group::ChildGroup_1::mutable_arc()
+CT_Arc* CT_Group::ChildGroup_2::mutable_arc()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -23335,7 +18833,7 @@ CT_Arc* CT_Group::ChildGroup_1::mutable_arc()
     return m_arc;
 }
 
-const CT_Arc& CT_Group::ChildGroup_1::get_arc() const
+const CT_Arc& CT_Group::ChildGroup_2::get_arc() const
 {
     if (m_arc)
     {
@@ -23344,220 +18842,13 @@ const CT_Arc& CT_Group::ChildGroup_1::get_arc() const
     return CT_Arc::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_curve() const
+bool CT_Group::ChildGroup_2::has_curve() const
 {
     return m_has_curve;
 }
 
-CT_Curve* CT_Group::ChildGroup_1::mutable_curve()
+CT_Curve* CT_Group::ChildGroup_2::mutable_curve()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -23666,7 +18957,7 @@ CT_Curve* CT_Group::ChildGroup_1::mutable_curve()
     return m_curve;
 }
 
-const CT_Curve& CT_Group::ChildGroup_1::get_curve() const
+const CT_Curve& CT_Group::ChildGroup_2::get_curve() const
 {
     if (m_curve)
     {
@@ -23675,220 +18966,13 @@ const CT_Curve& CT_Group::ChildGroup_1::get_curve() const
     return CT_Curve::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_image() const
+bool CT_Group::ChildGroup_2::has_image() const
 {
     return m_has_image;
 }
 
-CT_Image* CT_Group::ChildGroup_1::mutable_image()
+CT_Image* CT_Group::ChildGroup_2::mutable_image()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -23997,7 +19081,7 @@ CT_Image* CT_Group::ChildGroup_1::mutable_image()
     return m_image;
 }
 
-const CT_Image& CT_Group::ChildGroup_1::get_image() const
+const CT_Image& CT_Group::ChildGroup_2::get_image() const
 {
     if (m_image)
     {
@@ -24006,220 +19090,13 @@ const CT_Image& CT_Group::ChildGroup_1::get_image() const
     return CT_Image::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_line() const
+bool CT_Group::ChildGroup_2::has_line() const
 {
     return m_has_line;
 }
 
-CT_Line* CT_Group::ChildGroup_1::mutable_line()
+CT_Line* CT_Group::ChildGroup_2::mutable_line()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -24328,7 +19205,7 @@ CT_Line* CT_Group::ChildGroup_1::mutable_line()
     return m_line;
 }
 
-const CT_Line& CT_Group::ChildGroup_1::get_line() const
+const CT_Line& CT_Group::ChildGroup_2::get_line() const
 {
     if (m_line)
     {
@@ -24337,220 +19214,13 @@ const CT_Line& CT_Group::ChildGroup_1::get_line() const
     return CT_Line::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_oval() const
+bool CT_Group::ChildGroup_2::has_oval() const
 {
     return m_has_oval;
 }
 
-CT_Oval* CT_Group::ChildGroup_1::mutable_oval()
+CT_Oval* CT_Group::ChildGroup_2::mutable_oval()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -24659,7 +19329,7 @@ CT_Oval* CT_Group::ChildGroup_1::mutable_oval()
     return m_oval;
 }
 
-const CT_Oval& CT_Group::ChildGroup_1::get_oval() const
+const CT_Oval& CT_Group::ChildGroup_2::get_oval() const
 {
     if (m_oval)
     {
@@ -24668,220 +19338,13 @@ const CT_Oval& CT_Group::ChildGroup_1::get_oval() const
     return CT_Oval::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_polyline() const
+bool CT_Group::ChildGroup_2::has_polyline() const
 {
     return m_has_polyline;
 }
 
-CT_PolyLine* CT_Group::ChildGroup_1::mutable_polyline()
+CT_PolyLine* CT_Group::ChildGroup_2::mutable_polyline()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -24990,7 +19453,7 @@ CT_PolyLine* CT_Group::ChildGroup_1::mutable_polyline()
     return m_polyline;
 }
 
-const CT_PolyLine& CT_Group::ChildGroup_1::get_polyline() const
+const CT_PolyLine& CT_Group::ChildGroup_2::get_polyline() const
 {
     if (m_polyline)
     {
@@ -24999,220 +19462,13 @@ const CT_PolyLine& CT_Group::ChildGroup_1::get_polyline() const
     return CT_PolyLine::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_rect() const
+bool CT_Group::ChildGroup_2::has_rect() const
 {
     return m_has_rect;
 }
 
-CT_Rect* CT_Group::ChildGroup_1::mutable_rect()
+CT_Rect* CT_Group::ChildGroup_2::mutable_rect()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -25321,7 +19577,7 @@ CT_Rect* CT_Group::ChildGroup_1::mutable_rect()
     return m_rect;
 }
 
-const CT_Rect& CT_Group::ChildGroup_1::get_rect() const
+const CT_Rect& CT_Group::ChildGroup_2::get_rect() const
 {
     if (m_rect)
     {
@@ -25330,220 +19586,13 @@ const CT_Rect& CT_Group::ChildGroup_1::get_rect() const
     return CT_Rect::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_roundrect() const
+bool CT_Group::ChildGroup_2::has_roundrect() const
 {
     return m_has_roundrect;
 }
 
-CT_RoundRect* CT_Group::ChildGroup_1::mutable_roundrect()
+CT_RoundRect* CT_Group::ChildGroup_2::mutable_roundrect()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -25652,7 +19701,7 @@ CT_RoundRect* CT_Group::ChildGroup_1::mutable_roundrect()
     return m_roundrect;
 }
 
-const CT_RoundRect& CT_Group::ChildGroup_1::get_roundrect() const
+const CT_RoundRect& CT_Group::ChildGroup_2::get_roundrect() const
 {
     if (m_roundrect)
     {
@@ -25661,220 +19710,13 @@ const CT_RoundRect& CT_Group::ChildGroup_1::get_roundrect() const
     return CT_RoundRect::default_instance();
 }
 
-bool CT_Group::ChildGroup_1::has_o_diagram() const
+bool CT_Group::ChildGroup_2::has_o_diagram() const
 {
     return m_has_o_diagram;
 }
 
-ns_o::CT_Diagram* CT_Group::ChildGroup_1::mutable_o_diagram()
+ns_o::CT_Diagram* CT_Group::ChildGroup_2::mutable_o_diagram()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -25983,7 +19825,7 @@ ns_o::CT_Diagram* CT_Group::ChildGroup_1::mutable_o_diagram()
     return m_o_diagram;
 }
 
-const ns_o::CT_Diagram& CT_Group::ChildGroup_1::get_o_diagram() const
+const ns_o::CT_Diagram& CT_Group::ChildGroup_2::get_o_diagram() const
 {
     if (m_o_diagram)
     {
@@ -30975,8 +24817,8 @@ void CT_Textbox::toXmlElem(const std::string& _elemName, const std::string& _xml
     _outStream << ">";
 
     {
-        bool elemHasValueList[1] = {m_has_w_txbxContent};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -30984,12 +24826,6 @@ void CT_Textbox::toXmlElem(const std::string& _elemName, const std::string& _xml
     if (m_has_w_txbxContent)
     {
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
-    }
-
-    {
-        bool elemHasValueList[1] = {m_has__any};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 1);
     }
 
 
@@ -59901,9 +53737,9 @@ ns_pvml::CT_Rel* CT_PolyLine::add_pvml_textdata()
 
 ns_o::CT_Ink* CT_PolyLine::add_o_ink()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_Ink* pNewChild = pChildGroup->mutable_o_ink();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -59919,6 +53755,15 @@ void CT_PolyLine::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -59938,6 +53783,11 @@ void CT_PolyLine::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -60081,7 +53931,14 @@ void CT_PolyLine::toXmlElem(const std::string& _elemName, const std::string& _xm
             }
 
 
-            else if ((*iter)->has_o_ink())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_o_ink())
             {
                 (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
             }
@@ -60166,9 +54023,7 @@ CT_PolyLine::ChildGroup_1::ChildGroup_1()
      m_has_x_ClientData(false),
      m_x_ClientData(NULL),
      m_has_pvml_textdata(false),
-     m_pvml_textdata(NULL),
-     m_has_o_ink(false),
-     m_o_ink(NULL)
+     m_pvml_textdata(NULL)
 {
 }
 bool CT_PolyLine::ChildGroup_1::has_path() const
@@ -60374,15 +54229,6 @@ CT_Path* CT_PolyLine::ChildGroup_1::mutable_path()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -60609,15 +54455,6 @@ CT_Formulas* CT_PolyLine::ChildGroup_1::mutable_formulas()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_formulas = true;
     if (!m_formulas)
     {
@@ -60838,15 +54675,6 @@ CT_Handles* CT_PolyLine::ChildGroup_1::mutable_handles()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -61073,15 +54901,6 @@ CT_Fill* CT_PolyLine::ChildGroup_1::mutable_fill()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_fill = true;
     if (!m_fill)
     {
@@ -61302,15 +55121,6 @@ CT_Stroke* CT_PolyLine::ChildGroup_1::mutable_stroke()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -61537,15 +55347,6 @@ CT_Shadow* CT_PolyLine::ChildGroup_1::mutable_shadow()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_shadow = true;
     if (!m_shadow)
     {
@@ -61766,15 +55567,6 @@ CT_Textbox* CT_PolyLine::ChildGroup_1::mutable_textbox()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -62001,15 +55793,6 @@ CT_TextPath* CT_PolyLine::ChildGroup_1::mutable_textpath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_textpath = true;
     if (!m_textpath)
     {
@@ -62230,15 +56013,6 @@ CT_ImageData* CT_PolyLine::ChildGroup_1::mutable_imagedata()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -62465,15 +56239,6 @@ ns_o::CT_Skew* CT_PolyLine::ChildGroup_1::mutable_o_skew()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_o_skew = true;
     if (!m_o_skew)
     {
@@ -62694,15 +56459,6 @@ ns_o::CT_Extrusion* CT_PolyLine::ChildGroup_1::mutable_o_extrusion()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -62929,15 +56685,6 @@ ns_o::CT_Callout* CT_PolyLine::ChildGroup_1::mutable_o_callout()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_o_callout = true;
     if (!m_o_callout)
     {
@@ -63158,15 +56905,6 @@ ns_o::CT_Lock* CT_PolyLine::ChildGroup_1::mutable_o_lock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -63393,15 +57131,6 @@ ns_o::CT_ClipPath* CT_PolyLine::ChildGroup_1::mutable_o_clippath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_o_clippath = true;
     if (!m_o_clippath)
     {
@@ -63622,15 +57351,6 @@ ns_o::CT_SignatureLine* CT_PolyLine::ChildGroup_1::mutable_o_signatureline()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -63857,15 +57577,6 @@ ns_w10::CT_Wrap* CT_PolyLine::ChildGroup_1::mutable_w10_wrap()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_w10_wrap = true;
     if (!m_w10_wrap)
     {
@@ -64086,15 +57797,6 @@ ns_w10::CT_AnchorLock* CT_PolyLine::ChildGroup_1::mutable_w10_anchorlock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -64321,15 +58023,6 @@ ns_w10::CT_Border* CT_PolyLine::ChildGroup_1::mutable_w10_bordertop()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_w10_bordertop = true;
     if (!m_w10_bordertop)
     {
@@ -64550,15 +58243,6 @@ ns_w10::CT_Border* CT_PolyLine::ChildGroup_1::mutable_w10_borderbottom()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -64785,15 +58469,6 @@ ns_w10::CT_Border* CT_PolyLine::ChildGroup_1::mutable_w10_borderleft()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_w10_borderleft = true;
     if (!m_w10_borderleft)
     {
@@ -65014,15 +58689,6 @@ ns_w10::CT_Border* CT_PolyLine::ChildGroup_1::mutable_w10_borderright()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -65249,15 +58915,6 @@ ns_x::CT_ClientData* CT_PolyLine::ChildGroup_1::mutable_x_ClientData()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_x_ClientData = true;
     if (!m_x_ClientData)
     {
@@ -65481,15 +59138,6 @@ ns_pvml::CT_Rel* CT_PolyLine::ChildGroup_1::mutable_pvml_textdata()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_pvml_textdata = true;
     if (!m_pvml_textdata)
     {
@@ -65507,220 +59155,20 @@ const ns_pvml::CT_Rel& CT_PolyLine::ChildGroup_1::get_pvml_textdata() const
     return ns_pvml::CT_Rel::default_instance();
 }
 
-bool CT_PolyLine::ChildGroup_1::has_o_ink() const
+
+// CT_PolyLine::ChildGroup_2
+CT_PolyLine::ChildGroup_2::ChildGroup_2()
+    :m_has_o_ink(false),
+     m_o_ink(NULL)
+{
+}
+bool CT_PolyLine::ChildGroup_2::has_o_ink() const
 {
     return m_has_o_ink;
 }
 
-ns_o::CT_Ink* CT_PolyLine::ChildGroup_1::mutable_o_ink()
+ns_o::CT_Ink* CT_PolyLine::ChildGroup_2::mutable_o_ink()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_o_ink = true;
     if (!m_o_ink)
@@ -65730,7 +59178,7 @@ ns_o::CT_Ink* CT_PolyLine::ChildGroup_1::mutable_o_ink()
     return m_o_ink;
 }
 
-const ns_o::CT_Ink& CT_PolyLine::ChildGroup_1::get_o_ink() const
+const ns_o::CT_Ink& CT_PolyLine::ChildGroup_2::get_o_ink() const
 {
     if (m_o_ink)
     {
@@ -77091,25 +70539,25 @@ ns_pvml::CT_Rel* shape_element::add_pvml_textdata()
 
 ns_o::CT_Ink* shape_element::add_o_ink()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_Ink* pNewChild = pChildGroup->mutable_o_ink();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_pvml::CT_Empty* shape_element::add_pvml_iscomment()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_pvml::CT_Empty* pNewChild = pChildGroup->mutable_pvml_iscomment();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_o::CT_EquationXml* shape_element::add_o_equationxml()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_EquationXml* pNewChild = pChildGroup->mutable_o_equationxml();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -77137,6 +70585,15 @@ void shape_element::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -77336,7 +70793,19 @@ void shape_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_o_ink())
+        }
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_o_ink())
             {
                 (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
             }
@@ -77497,13 +70966,7 @@ shape_element::ChildGroup_1::ChildGroup_1()
      m_has_x_ClientData(false),
      m_x_ClientData(NULL),
      m_has_pvml_textdata(false),
-     m_pvml_textdata(NULL),
-     m_has_o_ink(false),
-     m_o_ink(NULL),
-     m_has_pvml_iscomment(false),
-     m_pvml_iscomment(NULL),
-     m_has_o_equationxml(false),
-     m_o_equationxml(NULL)
+     m_pvml_textdata(NULL)
 {
 }
 bool shape_element::ChildGroup_1::has_path() const
@@ -77709,33 +71172,6 @@ CT_Path* shape_element::ChildGroup_1::mutable_path()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -77962,33 +71398,6 @@ CT_Formulas* shape_element::ChildGroup_1::mutable_formulas()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_formulas = true;
     if (!m_formulas)
     {
@@ -78209,33 +71618,6 @@ CT_Handles* shape_element::ChildGroup_1::mutable_handles()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -78462,33 +71844,6 @@ CT_Fill* shape_element::ChildGroup_1::mutable_fill()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_fill = true;
     if (!m_fill)
     {
@@ -78709,33 +72064,6 @@ CT_Stroke* shape_element::ChildGroup_1::mutable_stroke()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -78962,33 +72290,6 @@ CT_Shadow* shape_element::ChildGroup_1::mutable_shadow()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_shadow = true;
     if (!m_shadow)
     {
@@ -79209,33 +72510,6 @@ CT_Textbox* shape_element::ChildGroup_1::mutable_textbox()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -79462,33 +72736,6 @@ CT_TextPath* shape_element::ChildGroup_1::mutable_textpath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_textpath = true;
     if (!m_textpath)
     {
@@ -79709,33 +72956,6 @@ CT_ImageData* shape_element::ChildGroup_1::mutable_imagedata()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -79962,33 +73182,6 @@ ns_o::CT_Skew* shape_element::ChildGroup_1::mutable_o_skew()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_o_skew = true;
     if (!m_o_skew)
     {
@@ -80209,33 +73402,6 @@ ns_o::CT_Extrusion* shape_element::ChildGroup_1::mutable_o_extrusion()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -80462,33 +73628,6 @@ ns_o::CT_Callout* shape_element::ChildGroup_1::mutable_o_callout()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_o_callout = true;
     if (!m_o_callout)
     {
@@ -80709,33 +73848,6 @@ ns_o::CT_Lock* shape_element::ChildGroup_1::mutable_o_lock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -80962,33 +74074,6 @@ ns_o::CT_ClipPath* shape_element::ChildGroup_1::mutable_o_clippath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_o_clippath = true;
     if (!m_o_clippath)
     {
@@ -81209,33 +74294,6 @@ ns_o::CT_SignatureLine* shape_element::ChildGroup_1::mutable_o_signatureline()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -81462,33 +74520,6 @@ ns_w10::CT_Wrap* shape_element::ChildGroup_1::mutable_w10_wrap()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_w10_wrap = true;
     if (!m_w10_wrap)
     {
@@ -81709,33 +74740,6 @@ ns_w10::CT_AnchorLock* shape_element::ChildGroup_1::mutable_w10_anchorlock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -81962,33 +74966,6 @@ ns_w10::CT_Border* shape_element::ChildGroup_1::mutable_w10_bordertop()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_w10_bordertop = true;
     if (!m_w10_bordertop)
     {
@@ -82209,33 +75186,6 @@ ns_w10::CT_Border* shape_element::ChildGroup_1::mutable_w10_borderbottom()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -82462,33 +75412,6 @@ ns_w10::CT_Border* shape_element::ChildGroup_1::mutable_w10_borderleft()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_w10_borderleft = true;
     if (!m_w10_borderleft)
     {
@@ -82709,33 +75632,6 @@ ns_w10::CT_Border* shape_element::ChildGroup_1::mutable_w10_borderright()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
     }
     ;
 
@@ -82962,33 +75858,6 @@ ns_x::CT_ClientData* shape_element::ChildGroup_1::mutable_x_ClientData()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_x_ClientData = true;
     if (!m_x_ClientData)
     {
@@ -83212,33 +76081,6 @@ ns_pvml::CT_Rel* shape_element::ChildGroup_1::mutable_pvml_textdata()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
-    m_has_pvml_iscomment = false;
-
-    if (m_pvml_iscomment)
-    {
-        delete m_pvml_iscomment;
-        m_pvml_iscomment = NULL;
-    }
-    ;
-
-    m_has_o_equationxml = false;
-
-    if (m_o_equationxml)
-    {
-        delete m_o_equationxml;
-        m_o_equationxml = NULL;
-    }
-    ;
-
     m_has_pvml_textdata = true;
     if (!m_pvml_textdata)
     {
@@ -83256,220 +76098,24 @@ const ns_pvml::CT_Rel& shape_element::ChildGroup_1::get_pvml_textdata() const
     return ns_pvml::CT_Rel::default_instance();
 }
 
-bool shape_element::ChildGroup_1::has_o_ink() const
+
+// shape_element::ChildGroup_2
+shape_element::ChildGroup_2::ChildGroup_2()
+    :m_has_o_ink(false),
+     m_o_ink(NULL),
+     m_has_pvml_iscomment(false),
+     m_pvml_iscomment(NULL),
+     m_has_o_equationxml(false),
+     m_o_equationxml(NULL)
+{
+}
+bool shape_element::ChildGroup_2::has_o_ink() const
 {
     return m_has_o_ink;
 }
 
-ns_o::CT_Ink* shape_element::ChildGroup_1::mutable_o_ink()
+ns_o::CT_Ink* shape_element::ChildGroup_2::mutable_o_ink()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_pvml_iscomment = false;
 
@@ -83497,7 +76143,7 @@ ns_o::CT_Ink* shape_element::ChildGroup_1::mutable_o_ink()
     return m_o_ink;
 }
 
-const ns_o::CT_Ink& shape_element::ChildGroup_1::get_o_ink() const
+const ns_o::CT_Ink& shape_element::ChildGroup_2::get_o_ink() const
 {
     if (m_o_ink)
     {
@@ -83506,220 +76152,13 @@ const ns_o::CT_Ink& shape_element::ChildGroup_1::get_o_ink() const
     return ns_o::CT_Ink::default_instance();
 }
 
-bool shape_element::ChildGroup_1::has_pvml_iscomment() const
+bool shape_element::ChildGroup_2::has_pvml_iscomment() const
 {
     return m_has_pvml_iscomment;
 }
 
-ns_pvml::CT_Empty* shape_element::ChildGroup_1::mutable_pvml_iscomment()
+ns_pvml::CT_Empty* shape_element::ChildGroup_2::mutable_pvml_iscomment()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_o_ink = false;
 
@@ -83747,7 +76186,7 @@ ns_pvml::CT_Empty* shape_element::ChildGroup_1::mutable_pvml_iscomment()
     return m_pvml_iscomment;
 }
 
-const ns_pvml::CT_Empty& shape_element::ChildGroup_1::get_pvml_iscomment() const
+const ns_pvml::CT_Empty& shape_element::ChildGroup_2::get_pvml_iscomment() const
 {
     if (m_pvml_iscomment)
     {
@@ -83756,220 +76195,13 @@ const ns_pvml::CT_Empty& shape_element::ChildGroup_1::get_pvml_iscomment() const
     return ns_pvml::CT_Empty::default_instance();
 }
 
-bool shape_element::ChildGroup_1::has_o_equationxml() const
+bool shape_element::ChildGroup_2::has_o_equationxml() const
 {
     return m_has_o_equationxml;
 }
 
-ns_o::CT_EquationXml* shape_element::ChildGroup_1::mutable_o_equationxml()
+ns_o::CT_EquationXml* shape_element::ChildGroup_2::mutable_o_equationxml()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_o_ink = false;
 
@@ -83997,7 +76229,7 @@ ns_o::CT_EquationXml* shape_element::ChildGroup_1::mutable_o_equationxml()
     return m_o_equationxml;
 }
 
-const ns_o::CT_EquationXml& shape_element::ChildGroup_1::get_o_equationxml() const
+const ns_o::CT_EquationXml& shape_element::ChildGroup_2::get_o_equationxml() const
 {
     if (m_o_equationxml)
     {
@@ -89894,97 +82126,97 @@ ns_pvml::CT_Rel* group_element::add_pvml_textdata()
 
 CT_Group* group_element::add_group()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Group* pNewChild = pChildGroup->mutable_group();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Shape* group_element::add_shape()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Shape* pNewChild = pChildGroup->mutable_shape();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Shapetype* group_element::add_shapetype()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Shapetype* pNewChild = pChildGroup->mutable_shapetype();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Arc* group_element::add_arc()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Arc* pNewChild = pChildGroup->mutable_arc();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Curve* group_element::add_curve()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Curve* pNewChild = pChildGroup->mutable_curve();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Image* group_element::add_image()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Image* pNewChild = pChildGroup->mutable_image();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Line* group_element::add_line()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Line* pNewChild = pChildGroup->mutable_line();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Oval* group_element::add_oval()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Oval* pNewChild = pChildGroup->mutable_oval();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_PolyLine* group_element::add_polyline()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_PolyLine* pNewChild = pChildGroup->mutable_polyline();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_Rect* group_element::add_rect()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_Rect* pNewChild = pChildGroup->mutable_rect();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 CT_RoundRect* group_element::add_roundrect()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_RoundRect* pNewChild = pChildGroup->mutable_roundrect();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
 ns_o::CT_Diagram* group_element::add_o_diagram()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_Diagram* pNewChild = pChildGroup->mutable_o_diagram();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -90030,6 +82262,15 @@ void group_element::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -90229,7 +82470,19 @@ void group_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_group())
+        }
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_group())
             {
                 (*iter)->get_group().toXmlElem("v:group", "", _outStream);
             }
@@ -90456,31 +82709,7 @@ group_element::ChildGroup_1::ChildGroup_1()
      m_has_x_ClientData(false),
      m_x_ClientData(NULL),
      m_has_pvml_textdata(false),
-     m_pvml_textdata(NULL),
-     m_has_group(false),
-     m_group(NULL),
-     m_has_shape(false),
-     m_shape(NULL),
-     m_has_shapetype(false),
-     m_shapetype(NULL),
-     m_has_arc(false),
-     m_arc(NULL),
-     m_has_curve(false),
-     m_curve(NULL),
-     m_has_image(false),
-     m_image(NULL),
-     m_has_line(false),
-     m_line(NULL),
-     m_has_oval(false),
-     m_oval(NULL),
-     m_has_polyline(false),
-     m_polyline(NULL),
-     m_has_rect(false),
-     m_rect(NULL),
-     m_has_roundrect(false),
-     m_roundrect(NULL),
-     m_has_o_diagram(false),
-     m_o_diagram(NULL)
+     m_pvml_textdata(NULL)
 {
 }
 bool group_element::ChildGroup_1::has_path() const
@@ -90686,114 +82915,6 @@ CT_Path* group_element::ChildGroup_1::mutable_path()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -91020,114 +83141,6 @@ CT_Formulas* group_element::ChildGroup_1::mutable_formulas()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_formulas = true;
     if (!m_formulas)
     {
@@ -91348,114 +83361,6 @@ CT_Handles* group_element::ChildGroup_1::mutable_handles()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -91682,114 +83587,6 @@ CT_Fill* group_element::ChildGroup_1::mutable_fill()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_fill = true;
     if (!m_fill)
     {
@@ -92010,114 +83807,6 @@ CT_Stroke* group_element::ChildGroup_1::mutable_stroke()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -92344,114 +84033,6 @@ CT_Shadow* group_element::ChildGroup_1::mutable_shadow()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_shadow = true;
     if (!m_shadow)
     {
@@ -92672,114 +84253,6 @@ CT_Textbox* group_element::ChildGroup_1::mutable_textbox()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -93006,114 +84479,6 @@ CT_TextPath* group_element::ChildGroup_1::mutable_textpath()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_textpath = true;
     if (!m_textpath)
     {
@@ -93334,114 +84699,6 @@ CT_ImageData* group_element::ChildGroup_1::mutable_imagedata()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -93668,114 +84925,6 @@ ns_o::CT_Skew* group_element::ChildGroup_1::mutable_o_skew()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_o_skew = true;
     if (!m_o_skew)
     {
@@ -93996,114 +85145,6 @@ ns_o::CT_Extrusion* group_element::ChildGroup_1::mutable_o_extrusion()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -94330,114 +85371,6 @@ ns_o::CT_Callout* group_element::ChildGroup_1::mutable_o_callout()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_o_callout = true;
     if (!m_o_callout)
     {
@@ -94658,114 +85591,6 @@ ns_o::CT_Lock* group_element::ChildGroup_1::mutable_o_lock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -94992,114 +85817,6 @@ ns_o::CT_ClipPath* group_element::ChildGroup_1::mutable_o_clippath()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_o_clippath = true;
     if (!m_o_clippath)
     {
@@ -95320,114 +86037,6 @@ ns_o::CT_SignatureLine* group_element::ChildGroup_1::mutable_o_signatureline()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -95654,114 +86263,6 @@ ns_w10::CT_Wrap* group_element::ChildGroup_1::mutable_w10_wrap()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_w10_wrap = true;
     if (!m_w10_wrap)
     {
@@ -95982,114 +86483,6 @@ ns_w10::CT_AnchorLock* group_element::ChildGroup_1::mutable_w10_anchorlock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -96316,114 +86709,6 @@ ns_w10::CT_Border* group_element::ChildGroup_1::mutable_w10_bordertop()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_w10_bordertop = true;
     if (!m_w10_bordertop)
     {
@@ -96644,114 +86929,6 @@ ns_w10::CT_Border* group_element::ChildGroup_1::mutable_w10_borderbottom()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -96978,114 +87155,6 @@ ns_w10::CT_Border* group_element::ChildGroup_1::mutable_w10_borderleft()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_w10_borderleft = true;
     if (!m_w10_borderleft)
     {
@@ -97306,114 +87375,6 @@ ns_w10::CT_Border* group_element::ChildGroup_1::mutable_w10_borderright()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
     }
     ;
 
@@ -97640,114 +87601,6 @@ ns_x::CT_ClientData* group_element::ChildGroup_1::mutable_x_ClientData()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_x_ClientData = true;
     if (!m_x_ClientData)
     {
@@ -97971,114 +87824,6 @@ ns_pvml::CT_Rel* group_element::ChildGroup_1::mutable_pvml_textdata()
     }
     ;
 
-    m_has_group = false;
-
-    if (m_group)
-    {
-        delete m_group;
-        m_group = NULL;
-    }
-    ;
-
-    m_has_shape = false;
-
-    if (m_shape)
-    {
-        delete m_shape;
-        m_shape = NULL;
-    }
-    ;
-
-    m_has_shapetype = false;
-
-    if (m_shapetype)
-    {
-        delete m_shapetype;
-        m_shapetype = NULL;
-    }
-    ;
-
-    m_has_arc = false;
-
-    if (m_arc)
-    {
-        delete m_arc;
-        m_arc = NULL;
-    }
-    ;
-
-    m_has_curve = false;
-
-    if (m_curve)
-    {
-        delete m_curve;
-        m_curve = NULL;
-    }
-    ;
-
-    m_has_image = false;
-
-    if (m_image)
-    {
-        delete m_image;
-        m_image = NULL;
-    }
-    ;
-
-    m_has_line = false;
-
-    if (m_line)
-    {
-        delete m_line;
-        m_line = NULL;
-    }
-    ;
-
-    m_has_oval = false;
-
-    if (m_oval)
-    {
-        delete m_oval;
-        m_oval = NULL;
-    }
-    ;
-
-    m_has_polyline = false;
-
-    if (m_polyline)
-    {
-        delete m_polyline;
-        m_polyline = NULL;
-    }
-    ;
-
-    m_has_rect = false;
-
-    if (m_rect)
-    {
-        delete m_rect;
-        m_rect = NULL;
-    }
-    ;
-
-    m_has_roundrect = false;
-
-    if (m_roundrect)
-    {
-        delete m_roundrect;
-        m_roundrect = NULL;
-    }
-    ;
-
-    m_has_o_diagram = false;
-
-    if (m_o_diagram)
-    {
-        delete m_o_diagram;
-        m_o_diagram = NULL;
-    }
-    ;
-
     m_has_pvml_textdata = true;
     if (!m_pvml_textdata)
     {
@@ -98096,220 +87841,42 @@ const ns_pvml::CT_Rel& group_element::ChildGroup_1::get_pvml_textdata() const
     return ns_pvml::CT_Rel::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_group() const
+
+// group_element::ChildGroup_2
+group_element::ChildGroup_2::ChildGroup_2()
+    :m_has_group(false),
+     m_group(NULL),
+     m_has_shape(false),
+     m_shape(NULL),
+     m_has_shapetype(false),
+     m_shapetype(NULL),
+     m_has_arc(false),
+     m_arc(NULL),
+     m_has_curve(false),
+     m_curve(NULL),
+     m_has_image(false),
+     m_image(NULL),
+     m_has_line(false),
+     m_line(NULL),
+     m_has_oval(false),
+     m_oval(NULL),
+     m_has_polyline(false),
+     m_polyline(NULL),
+     m_has_rect(false),
+     m_rect(NULL),
+     m_has_roundrect(false),
+     m_roundrect(NULL),
+     m_has_o_diagram(false),
+     m_o_diagram(NULL)
+{
+}
+bool group_element::ChildGroup_2::has_group() const
 {
     return m_has_group;
 }
 
-CT_Group* group_element::ChildGroup_1::mutable_group()
+CT_Group* group_element::ChildGroup_2::mutable_group()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_shape = false;
 
@@ -98418,7 +87985,7 @@ CT_Group* group_element::ChildGroup_1::mutable_group()
     return m_group;
 }
 
-const CT_Group& group_element::ChildGroup_1::get_group() const
+const CT_Group& group_element::ChildGroup_2::get_group() const
 {
     if (m_group)
     {
@@ -98427,220 +87994,13 @@ const CT_Group& group_element::ChildGroup_1::get_group() const
     return CT_Group::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_shape() const
+bool group_element::ChildGroup_2::has_shape() const
 {
     return m_has_shape;
 }
 
-CT_Shape* group_element::ChildGroup_1::mutable_shape()
+CT_Shape* group_element::ChildGroup_2::mutable_shape()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -98749,7 +88109,7 @@ CT_Shape* group_element::ChildGroup_1::mutable_shape()
     return m_shape;
 }
 
-const CT_Shape& group_element::ChildGroup_1::get_shape() const
+const CT_Shape& group_element::ChildGroup_2::get_shape() const
 {
     if (m_shape)
     {
@@ -98758,220 +88118,13 @@ const CT_Shape& group_element::ChildGroup_1::get_shape() const
     return CT_Shape::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_shapetype() const
+bool group_element::ChildGroup_2::has_shapetype() const
 {
     return m_has_shapetype;
 }
 
-CT_Shapetype* group_element::ChildGroup_1::mutable_shapetype()
+CT_Shapetype* group_element::ChildGroup_2::mutable_shapetype()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -99080,7 +88233,7 @@ CT_Shapetype* group_element::ChildGroup_1::mutable_shapetype()
     return m_shapetype;
 }
 
-const CT_Shapetype& group_element::ChildGroup_1::get_shapetype() const
+const CT_Shapetype& group_element::ChildGroup_2::get_shapetype() const
 {
     if (m_shapetype)
     {
@@ -99089,220 +88242,13 @@ const CT_Shapetype& group_element::ChildGroup_1::get_shapetype() const
     return CT_Shapetype::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_arc() const
+bool group_element::ChildGroup_2::has_arc() const
 {
     return m_has_arc;
 }
 
-CT_Arc* group_element::ChildGroup_1::mutable_arc()
+CT_Arc* group_element::ChildGroup_2::mutable_arc()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -99411,7 +88357,7 @@ CT_Arc* group_element::ChildGroup_1::mutable_arc()
     return m_arc;
 }
 
-const CT_Arc& group_element::ChildGroup_1::get_arc() const
+const CT_Arc& group_element::ChildGroup_2::get_arc() const
 {
     if (m_arc)
     {
@@ -99420,220 +88366,13 @@ const CT_Arc& group_element::ChildGroup_1::get_arc() const
     return CT_Arc::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_curve() const
+bool group_element::ChildGroup_2::has_curve() const
 {
     return m_has_curve;
 }
 
-CT_Curve* group_element::ChildGroup_1::mutable_curve()
+CT_Curve* group_element::ChildGroup_2::mutable_curve()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -99742,7 +88481,7 @@ CT_Curve* group_element::ChildGroup_1::mutable_curve()
     return m_curve;
 }
 
-const CT_Curve& group_element::ChildGroup_1::get_curve() const
+const CT_Curve& group_element::ChildGroup_2::get_curve() const
 {
     if (m_curve)
     {
@@ -99751,220 +88490,13 @@ const CT_Curve& group_element::ChildGroup_1::get_curve() const
     return CT_Curve::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_image() const
+bool group_element::ChildGroup_2::has_image() const
 {
     return m_has_image;
 }
 
-CT_Image* group_element::ChildGroup_1::mutable_image()
+CT_Image* group_element::ChildGroup_2::mutable_image()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -100073,7 +88605,7 @@ CT_Image* group_element::ChildGroup_1::mutable_image()
     return m_image;
 }
 
-const CT_Image& group_element::ChildGroup_1::get_image() const
+const CT_Image& group_element::ChildGroup_2::get_image() const
 {
     if (m_image)
     {
@@ -100082,220 +88614,13 @@ const CT_Image& group_element::ChildGroup_1::get_image() const
     return CT_Image::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_line() const
+bool group_element::ChildGroup_2::has_line() const
 {
     return m_has_line;
 }
 
-CT_Line* group_element::ChildGroup_1::mutable_line()
+CT_Line* group_element::ChildGroup_2::mutable_line()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -100404,7 +88729,7 @@ CT_Line* group_element::ChildGroup_1::mutable_line()
     return m_line;
 }
 
-const CT_Line& group_element::ChildGroup_1::get_line() const
+const CT_Line& group_element::ChildGroup_2::get_line() const
 {
     if (m_line)
     {
@@ -100413,220 +88738,13 @@ const CT_Line& group_element::ChildGroup_1::get_line() const
     return CT_Line::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_oval() const
+bool group_element::ChildGroup_2::has_oval() const
 {
     return m_has_oval;
 }
 
-CT_Oval* group_element::ChildGroup_1::mutable_oval()
+CT_Oval* group_element::ChildGroup_2::mutable_oval()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -100735,7 +88853,7 @@ CT_Oval* group_element::ChildGroup_1::mutable_oval()
     return m_oval;
 }
 
-const CT_Oval& group_element::ChildGroup_1::get_oval() const
+const CT_Oval& group_element::ChildGroup_2::get_oval() const
 {
     if (m_oval)
     {
@@ -100744,220 +88862,13 @@ const CT_Oval& group_element::ChildGroup_1::get_oval() const
     return CT_Oval::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_polyline() const
+bool group_element::ChildGroup_2::has_polyline() const
 {
     return m_has_polyline;
 }
 
-CT_PolyLine* group_element::ChildGroup_1::mutable_polyline()
+CT_PolyLine* group_element::ChildGroup_2::mutable_polyline()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -101066,7 +88977,7 @@ CT_PolyLine* group_element::ChildGroup_1::mutable_polyline()
     return m_polyline;
 }
 
-const CT_PolyLine& group_element::ChildGroup_1::get_polyline() const
+const CT_PolyLine& group_element::ChildGroup_2::get_polyline() const
 {
     if (m_polyline)
     {
@@ -101075,220 +88986,13 @@ const CT_PolyLine& group_element::ChildGroup_1::get_polyline() const
     return CT_PolyLine::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_rect() const
+bool group_element::ChildGroup_2::has_rect() const
 {
     return m_has_rect;
 }
 
-CT_Rect* group_element::ChildGroup_1::mutable_rect()
+CT_Rect* group_element::ChildGroup_2::mutable_rect()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -101397,7 +89101,7 @@ CT_Rect* group_element::ChildGroup_1::mutable_rect()
     return m_rect;
 }
 
-const CT_Rect& group_element::ChildGroup_1::get_rect() const
+const CT_Rect& group_element::ChildGroup_2::get_rect() const
 {
     if (m_rect)
     {
@@ -101406,220 +89110,13 @@ const CT_Rect& group_element::ChildGroup_1::get_rect() const
     return CT_Rect::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_roundrect() const
+bool group_element::ChildGroup_2::has_roundrect() const
 {
     return m_has_roundrect;
 }
 
-CT_RoundRect* group_element::ChildGroup_1::mutable_roundrect()
+CT_RoundRect* group_element::ChildGroup_2::mutable_roundrect()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -101728,7 +89225,7 @@ CT_RoundRect* group_element::ChildGroup_1::mutable_roundrect()
     return m_roundrect;
 }
 
-const CT_RoundRect& group_element::ChildGroup_1::get_roundrect() const
+const CT_RoundRect& group_element::ChildGroup_2::get_roundrect() const
 {
     if (m_roundrect)
     {
@@ -101737,220 +89234,13 @@ const CT_RoundRect& group_element::ChildGroup_1::get_roundrect() const
     return CT_RoundRect::default_instance();
 }
 
-bool group_element::ChildGroup_1::has_o_diagram() const
+bool group_element::ChildGroup_2::has_o_diagram() const
 {
     return m_has_o_diagram;
 }
 
-ns_o::CT_Diagram* group_element::ChildGroup_1::mutable_o_diagram()
+ns_o::CT_Diagram* group_element::ChildGroup_2::mutable_o_diagram()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_group = false;
 
@@ -102059,7 +89349,7 @@ ns_o::CT_Diagram* group_element::ChildGroup_1::mutable_o_diagram()
     return m_o_diagram;
 }
 
-const ns_o::CT_Diagram& group_element::ChildGroup_1::get_o_diagram() const
+const ns_o::CT_Diagram& group_element::ChildGroup_2::get_o_diagram() const
 {
     if (m_o_diagram)
     {
@@ -105064,8 +92354,8 @@ void textbox_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        bool elemHasValueList[1] = {m_has_w_txbxContent};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -105073,12 +92363,6 @@ void textbox_element::toXml(std::ostream& _outStream) const
     if (m_has_w_txbxContent)
     {
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
-    }
-
-    {
-        bool elemHasValueList[1] = {m_has__any};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 1);
     }
 
 
@@ -135657,9 +122941,9 @@ ns_pvml::CT_Rel* polyline_element::add_pvml_textdata()
 
 ns_o::CT_Ink* polyline_element::add_o_ink()
 {
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     ns_o::CT_Ink* pNewChild = pChildGroup->mutable_o_ink();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
 }
 
@@ -135675,6 +122959,15 @@ void polyline_element::clear()
             delete *iter;
         }
         m_childGroupList_1.clear();
+    }
+
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
     }
 }
 
@@ -135698,6 +122991,11 @@ void polyline_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -135841,7 +123139,14 @@ void polyline_element::toXml(std::ostream& _outStream) const
             }
 
 
-            else if ((*iter)->has_o_ink())
+        }
+    }
+
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            if ((*iter)->has_o_ink())
             {
                 (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
             }
@@ -135926,9 +123231,7 @@ polyline_element::ChildGroup_1::ChildGroup_1()
      m_has_x_ClientData(false),
      m_x_ClientData(NULL),
      m_has_pvml_textdata(false),
-     m_pvml_textdata(NULL),
-     m_has_o_ink(false),
-     m_o_ink(NULL)
+     m_pvml_textdata(NULL)
 {
 }
 bool polyline_element::ChildGroup_1::has_path() const
@@ -136134,15 +123437,6 @@ CT_Path* polyline_element::ChildGroup_1::mutable_path()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -136369,15 +123663,6 @@ CT_Formulas* polyline_element::ChildGroup_1::mutable_formulas()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_formulas = true;
     if (!m_formulas)
     {
@@ -136598,15 +123883,6 @@ CT_Handles* polyline_element::ChildGroup_1::mutable_handles()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -136833,15 +124109,6 @@ CT_Fill* polyline_element::ChildGroup_1::mutable_fill()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_fill = true;
     if (!m_fill)
     {
@@ -137062,15 +124329,6 @@ CT_Stroke* polyline_element::ChildGroup_1::mutable_stroke()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -137297,15 +124555,6 @@ CT_Shadow* polyline_element::ChildGroup_1::mutable_shadow()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_shadow = true;
     if (!m_shadow)
     {
@@ -137526,15 +124775,6 @@ CT_Textbox* polyline_element::ChildGroup_1::mutable_textbox()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -137761,15 +125001,6 @@ CT_TextPath* polyline_element::ChildGroup_1::mutable_textpath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_textpath = true;
     if (!m_textpath)
     {
@@ -137990,15 +125221,6 @@ CT_ImageData* polyline_element::ChildGroup_1::mutable_imagedata()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -138225,15 +125447,6 @@ ns_o::CT_Skew* polyline_element::ChildGroup_1::mutable_o_skew()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_o_skew = true;
     if (!m_o_skew)
     {
@@ -138454,15 +125667,6 @@ ns_o::CT_Extrusion* polyline_element::ChildGroup_1::mutable_o_extrusion()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -138689,15 +125893,6 @@ ns_o::CT_Callout* polyline_element::ChildGroup_1::mutable_o_callout()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_o_callout = true;
     if (!m_o_callout)
     {
@@ -138918,15 +126113,6 @@ ns_o::CT_Lock* polyline_element::ChildGroup_1::mutable_o_lock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -139153,15 +126339,6 @@ ns_o::CT_ClipPath* polyline_element::ChildGroup_1::mutable_o_clippath()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_o_clippath = true;
     if (!m_o_clippath)
     {
@@ -139382,15 +126559,6 @@ ns_o::CT_SignatureLine* polyline_element::ChildGroup_1::mutable_o_signatureline(
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -139617,15 +126785,6 @@ ns_w10::CT_Wrap* polyline_element::ChildGroup_1::mutable_w10_wrap()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_w10_wrap = true;
     if (!m_w10_wrap)
     {
@@ -139846,15 +127005,6 @@ ns_w10::CT_AnchorLock* polyline_element::ChildGroup_1::mutable_w10_anchorlock()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -140081,15 +127231,6 @@ ns_w10::CT_Border* polyline_element::ChildGroup_1::mutable_w10_bordertop()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_w10_bordertop = true;
     if (!m_w10_bordertop)
     {
@@ -140310,15 +127451,6 @@ ns_w10::CT_Border* polyline_element::ChildGroup_1::mutable_w10_borderbottom()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -140545,15 +127677,6 @@ ns_w10::CT_Border* polyline_element::ChildGroup_1::mutable_w10_borderleft()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_w10_borderleft = true;
     if (!m_w10_borderleft)
     {
@@ -140774,15 +127897,6 @@ ns_w10::CT_Border* polyline_element::ChildGroup_1::mutable_w10_borderright()
     {
         delete m_pvml_textdata;
         m_pvml_textdata = NULL;
-    }
-    ;
-
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
     }
     ;
 
@@ -141009,15 +128123,6 @@ ns_x::CT_ClientData* polyline_element::ChildGroup_1::mutable_x_ClientData()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_x_ClientData = true;
     if (!m_x_ClientData)
     {
@@ -141241,15 +128346,6 @@ ns_pvml::CT_Rel* polyline_element::ChildGroup_1::mutable_pvml_textdata()
     }
     ;
 
-    m_has_o_ink = false;
-
-    if (m_o_ink)
-    {
-        delete m_o_ink;
-        m_o_ink = NULL;
-    }
-    ;
-
     m_has_pvml_textdata = true;
     if (!m_pvml_textdata)
     {
@@ -141267,220 +128363,20 @@ const ns_pvml::CT_Rel& polyline_element::ChildGroup_1::get_pvml_textdata() const
     return ns_pvml::CT_Rel::default_instance();
 }
 
-bool polyline_element::ChildGroup_1::has_o_ink() const
+
+// polyline_element::ChildGroup_2
+polyline_element::ChildGroup_2::ChildGroup_2()
+    :m_has_o_ink(false),
+     m_o_ink(NULL)
+{
+}
+bool polyline_element::ChildGroup_2::has_o_ink() const
 {
     return m_has_o_ink;
 }
 
-ns_o::CT_Ink* polyline_element::ChildGroup_1::mutable_o_ink()
+ns_o::CT_Ink* polyline_element::ChildGroup_2::mutable_o_ink()
 {
-
-    m_has_path = false;
-
-    if (m_path)
-    {
-        delete m_path;
-        m_path = NULL;
-    }
-    ;
-
-    m_has_formulas = false;
-
-    if (m_formulas)
-    {
-        delete m_formulas;
-        m_formulas = NULL;
-    }
-    ;
-
-    m_has_handles = false;
-
-    if (m_handles)
-    {
-        delete m_handles;
-        m_handles = NULL;
-    }
-    ;
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_stroke = false;
-
-    if (m_stroke)
-    {
-        delete m_stroke;
-        m_stroke = NULL;
-    }
-    ;
-
-    m_has_shadow = false;
-
-    if (m_shadow)
-    {
-        delete m_shadow;
-        m_shadow = NULL;
-    }
-    ;
-
-    m_has_textbox = false;
-
-    if (m_textbox)
-    {
-        delete m_textbox;
-        m_textbox = NULL;
-    }
-    ;
-
-    m_has_textpath = false;
-
-    if (m_textpath)
-    {
-        delete m_textpath;
-        m_textpath = NULL;
-    }
-    ;
-
-    m_has_imagedata = false;
-
-    if (m_imagedata)
-    {
-        delete m_imagedata;
-        m_imagedata = NULL;
-    }
-    ;
-
-    m_has_o_skew = false;
-
-    if (m_o_skew)
-    {
-        delete m_o_skew;
-        m_o_skew = NULL;
-    }
-    ;
-
-    m_has_o_extrusion = false;
-
-    if (m_o_extrusion)
-    {
-        delete m_o_extrusion;
-        m_o_extrusion = NULL;
-    }
-    ;
-
-    m_has_o_callout = false;
-
-    if (m_o_callout)
-    {
-        delete m_o_callout;
-        m_o_callout = NULL;
-    }
-    ;
-
-    m_has_o_lock = false;
-
-    if (m_o_lock)
-    {
-        delete m_o_lock;
-        m_o_lock = NULL;
-    }
-    ;
-
-    m_has_o_clippath = false;
-
-    if (m_o_clippath)
-    {
-        delete m_o_clippath;
-        m_o_clippath = NULL;
-    }
-    ;
-
-    m_has_o_signatureline = false;
-
-    if (m_o_signatureline)
-    {
-        delete m_o_signatureline;
-        m_o_signatureline = NULL;
-    }
-    ;
-
-    m_has_w10_wrap = false;
-
-    if (m_w10_wrap)
-    {
-        delete m_w10_wrap;
-        m_w10_wrap = NULL;
-    }
-    ;
-
-    m_has_w10_anchorlock = false;
-
-    if (m_w10_anchorlock)
-    {
-        delete m_w10_anchorlock;
-        m_w10_anchorlock = NULL;
-    }
-    ;
-
-    m_has_w10_bordertop = false;
-
-    if (m_w10_bordertop)
-    {
-        delete m_w10_bordertop;
-        m_w10_bordertop = NULL;
-    }
-    ;
-
-    m_has_w10_borderbottom = false;
-
-    if (m_w10_borderbottom)
-    {
-        delete m_w10_borderbottom;
-        m_w10_borderbottom = NULL;
-    }
-    ;
-
-    m_has_w10_borderleft = false;
-
-    if (m_w10_borderleft)
-    {
-        delete m_w10_borderleft;
-        m_w10_borderleft = NULL;
-    }
-    ;
-
-    m_has_w10_borderright = false;
-
-    if (m_w10_borderright)
-    {
-        delete m_w10_borderright;
-        m_w10_borderright = NULL;
-    }
-    ;
-
-    m_has_x_ClientData = false;
-
-    if (m_x_ClientData)
-    {
-        delete m_x_ClientData;
-        m_x_ClientData = NULL;
-    }
-    ;
-
-    m_has_pvml_textdata = false;
-
-    if (m_pvml_textdata)
-    {
-        delete m_pvml_textdata;
-        m_pvml_textdata = NULL;
-    }
-    ;
 
     m_has_o_ink = true;
     if (!m_o_ink)
@@ -141490,7 +128386,7 @@ ns_o::CT_Ink* polyline_element::ChildGroup_1::mutable_o_ink()
     return m_o_ink;
 }
 
-const ns_o::CT_Ink& polyline_element::ChildGroup_1::get_o_ink() const
+const ns_o::CT_Ink& polyline_element::ChildGroup_2::get_o_ink() const
 {
     if (m_o_ink)
     {
