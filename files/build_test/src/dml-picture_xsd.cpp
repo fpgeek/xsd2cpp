@@ -429,7 +429,7 @@ void pic_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<dpct:pic";
 
-    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
 
     _outStream << ">";

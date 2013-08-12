@@ -24713,9 +24713,9 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:colorsDef";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_uniqueId_attr)
@@ -25060,9 +25060,9 @@ void colorsDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:colorsDefHdr";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     assert(m_has_uniqueId_attr);
     if (m_has_uniqueId_attr)
@@ -25294,9 +25294,9 @@ void colorsDefHdrLst_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:colorsDefHdrLst";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -25550,9 +25550,9 @@ void dataModel_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:dataModel";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -25877,9 +25877,9 @@ void layoutDef_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:layoutDef";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_uniqueId_attr)
@@ -26233,9 +26233,9 @@ void layoutDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:layoutDefHdr";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     assert(m_has_uniqueId_attr);
     if (m_has_uniqueId_attr)
@@ -26490,9 +26490,9 @@ void layoutDefHdrLst_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:layoutDefHdrLst";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -26615,9 +26615,9 @@ void relIds_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:relIds";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     assert(m_has_r_dm_attr);
     if (m_has_r_dm_attr)
@@ -26924,9 +26924,9 @@ void styleDef_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:styleDef";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_uniqueId_attr)
@@ -27282,9 +27282,9 @@ void styleDefHdr_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:styleDefHdr";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     assert(m_has_uniqueId_attr);
     if (m_has_uniqueId_attr)
@@ -27516,9 +27516,9 @@ void styleDefHdrLst_element::toXml(std::ostream& _outStream) const
     _outStream << "<dgm:styleDefHdrLst";
 
     _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 

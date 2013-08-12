@@ -10148,10 +10148,10 @@ void wpc_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:wpc";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -10749,10 +10749,10 @@ void wgp_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:wgp";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -11532,10 +11532,10 @@ void wsp_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:wsp";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_normalEastAsianFlow_attr)
@@ -11880,10 +11880,10 @@ void inline_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:inline";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_distT_attr)
@@ -12781,10 +12781,10 @@ void anchor_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:anchor";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_distT_attr)

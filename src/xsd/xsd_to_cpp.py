@@ -149,7 +149,7 @@ def _getXmlNsPrefixStr(ns, pbScheme):
         else:
             return 'xmlns'
     else:
-        return 'xmlns:%s' % pbScheme.xml_ns_prefix
+        return 'xmlns:%s' % ns.prefix
 
 def _makeXmlNsCode(pbScheme, cppStreamName):
     pbNsSet = set()

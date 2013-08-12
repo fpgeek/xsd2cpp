@@ -38746,8 +38746,8 @@ void mathPr_element::toXml(std::ostream& _outStream) const
     _outStream << "<m:mathPr";
 
     _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"";
-    _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -38935,8 +38935,8 @@ void oMathPara_element::toXml(std::ostream& _outStream) const
     _outStream << "<m:oMathPara";
 
     _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"";
-    _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -39490,8 +39490,8 @@ void oMath_element::toXml(std::ostream& _outStream) const
     _outStream << "<m:oMath";
 
     _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"";
-    _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 

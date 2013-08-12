@@ -9400,9 +9400,9 @@ void shapedefaults_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:shapedefaults";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -9819,9 +9819,9 @@ void shapelayout_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:shapelayout";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -10006,9 +10006,9 @@ void signatureline_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:signatureline";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -10395,9 +10395,9 @@ void ink_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:ink";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_i_attr)
@@ -10616,9 +10616,9 @@ void diagram_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:diagram";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -10916,9 +10916,9 @@ void equationxml_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:equationxml";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_contentType_attr)
@@ -11028,9 +11028,9 @@ void skew_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:skew";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -11452,9 +11452,9 @@ void extrusion_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:extrusion";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -12428,9 +12428,9 @@ void callout_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:callout";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -12957,9 +12957,9 @@ void lock_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:lock";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -13466,9 +13466,9 @@ void OLEObject_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:OLEObject";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_Type_attr)
@@ -13707,9 +13707,9 @@ void complex_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:complex";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -14012,9 +14012,9 @@ void left_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:left";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -14983,9 +14983,9 @@ void top_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:top";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -15954,9 +15954,9 @@ void right_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:right";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -16925,9 +16925,9 @@ void bottom_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:bottom";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -17896,9 +17896,9 @@ void column_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:column";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -18629,9 +18629,9 @@ void clippath_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:clippath";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
     assert(m_has_v_attr);
     if (m_has_v_attr)
@@ -18709,9 +18709,9 @@ void fill_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:fill";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)

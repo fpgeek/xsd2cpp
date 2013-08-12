@@ -17009,7 +17009,7 @@ void variant_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:variant";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -17422,7 +17422,7 @@ void vector_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:vector";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_baseType_attr);
     if (m_has_baseType_attr)
@@ -19802,7 +19802,7 @@ void array_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:array";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_lBounds_attr);
     if (m_has_lBounds_attr)
@@ -21483,7 +21483,7 @@ void empty_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:empty";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -21518,7 +21518,7 @@ void null_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:null";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -21616,7 +21616,7 @@ void vstream_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:vstream";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
 
     if (m_has_version_attr)

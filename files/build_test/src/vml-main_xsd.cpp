@@ -70602,13 +70602,13 @@ void shape_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:shape";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_type_attr)
@@ -76499,13 +76499,13 @@ void shapetype_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:shapetype";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_adj_attr)
@@ -82279,13 +82279,13 @@ void group_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:group";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_filled_attr)
@@ -89482,13 +89482,13 @@ void background_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:background";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -89954,13 +89954,13 @@ void fill_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:fill";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -90686,13 +90686,13 @@ void formulas_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:formulas";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -90789,13 +90789,13 @@ void handles_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:handles";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -91054,13 +91054,13 @@ void imagedata_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:imagedata";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -91814,13 +91814,13 @@ void path_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:path";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -92309,13 +92309,13 @@ void textbox_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:textbox";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -92574,13 +92574,13 @@ void shadow_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:shadow";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -93320,13 +93320,13 @@ void stroke_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:stroke";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -94202,13 +94202,13 @@ void textpath_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:textpath";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -94648,13 +94648,13 @@ void arc_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:arc";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_startAngle_attr)
@@ -100271,13 +100271,13 @@ void curve_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:curve";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_from_attr)
@@ -105982,13 +105982,13 @@ void image_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:image";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_src_attr)
@@ -111787,13 +111787,13 @@ void line_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:line";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_from_attr)
@@ -117391,13 +117391,13 @@ void oval_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:oval";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -122976,13 +122976,13 @@ void polyline_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:polyline";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_points_attr)
@@ -128607,13 +128607,13 @@ void rect_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:rect";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -134175,13 +134175,13 @@ void roundrect_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:roundrect";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_arcsize_attr)

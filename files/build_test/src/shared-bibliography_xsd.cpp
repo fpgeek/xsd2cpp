@@ -29795,7 +29795,7 @@ void Sources_element::toXml(std::ostream& _outStream) const
     _outStream << "<b:Sources";
 
     _outStream << " " << "xmlns:b=\"http://schemas.openxmlformats.org/officeDocument/2006/bibliography\"";
-    _outStream << " " << "xmlns:b=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
 
     if (m_has_SelectedStyle_attr)

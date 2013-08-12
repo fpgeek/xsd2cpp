@@ -262,8 +262,8 @@ void alternative_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:alternative";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -325,8 +325,8 @@ void tableOfContents_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:tableOfContents";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -388,8 +388,8 @@ void abstract_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:abstract";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -451,8 +451,8 @@ void created_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:created";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -514,8 +514,8 @@ void valid_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:valid";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -577,8 +577,8 @@ void available_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:available";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -640,8 +640,8 @@ void issued_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:issued";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -703,8 +703,8 @@ void modified_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:modified";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -766,8 +766,8 @@ void dateAccepted_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:dateAccepted";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -829,8 +829,8 @@ void dateCopyrighted_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:dateCopyrighted";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -892,8 +892,8 @@ void dateSubmitted_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:dateSubmitted";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -955,8 +955,8 @@ void extent_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:extent";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1018,8 +1018,8 @@ void medium_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:medium";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1081,8 +1081,8 @@ void isVersionOf_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:isVersionOf";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1144,8 +1144,8 @@ void hasVersion_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:hasVersion";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1207,8 +1207,8 @@ void isReplacedBy_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:isReplacedBy";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1270,8 +1270,8 @@ void replaces_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:replaces";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1333,8 +1333,8 @@ void isRequiredBy_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:isRequiredBy";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1396,8 +1396,8 @@ void requires_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:requires";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1459,8 +1459,8 @@ void isPartOf_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:isPartOf";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1522,8 +1522,8 @@ void hasPart_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:hasPart";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1585,8 +1585,8 @@ void isReferencedBy_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:isReferencedBy";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1648,8 +1648,8 @@ void references_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:references";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1711,8 +1711,8 @@ void isFormatOf_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:isFormatOf";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1774,8 +1774,8 @@ void hasFormat_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:hasFormat";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1837,8 +1837,8 @@ void conformsTo_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:conformsTo";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1900,8 +1900,8 @@ void spatial_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:spatial";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -1963,8 +1963,8 @@ void temporal_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:temporal";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -2026,8 +2026,8 @@ void audience_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:audience";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -2089,8 +2089,8 @@ void mediator_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:mediator";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -2152,8 +2152,8 @@ void educationLevel_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:educationLevel";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -2215,8 +2215,8 @@ void accessRights_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:accessRights";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)
@@ -2278,8 +2278,8 @@ void bibliographicCitation_element::toXml(std::ostream& _outStream) const
     _outStream << "<dcterms:bibliographicCitation";
 
     _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/dcmitype/\"";
-    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
 
     if (m_has__attr)

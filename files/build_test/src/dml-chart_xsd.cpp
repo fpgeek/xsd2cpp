@@ -43405,10 +43405,10 @@ void chartSpace_element::toXml(std::ostream& _outStream) const
     _outStream << "<c:chartSpace";
 
     _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -43541,10 +43541,10 @@ void chart_element::toXml(std::ostream& _outStream) const
     _outStream << "<c:chart";
 
     _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     assert(m_has_r_id_attr);
     if (m_has_r_id_attr)

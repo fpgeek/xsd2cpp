@@ -1696,7 +1696,7 @@ void Properties_element::toXml(std::ostream& _outStream) const
     _outStream << "<Properties";
 
     _outStream << " " << "xmlns=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\"";
-    _outStream << " " << "xmlns:ap=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
+    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
 
     _outStream << ">";
 

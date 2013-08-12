@@ -29970,7 +29970,7 @@ void ClientData_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:ClientData";
 
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_ObjectType_attr);
     if (m_has_ObjectType_attr)

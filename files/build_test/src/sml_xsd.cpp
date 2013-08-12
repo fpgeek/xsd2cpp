@@ -104120,9 +104120,9 @@ void calcChain_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:calcChain";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -104317,9 +104317,9 @@ void comments_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:comments";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -104415,9 +104415,9 @@ void MapInfo_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:MapInfo";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     assert(m_has_SelectionNamespaces_attr);
     if (m_has_SelectionNamespaces_attr)
@@ -104591,9 +104591,9 @@ void connections_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:connections";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -105169,9 +105169,9 @@ void pivotCacheDefinition_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:pivotCacheDefinition";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
 
     if (m_has_r_id_attr)
@@ -105777,9 +105777,9 @@ void pivotCacheRecords_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:pivotCacheRecords";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
 
     if (m_has_count_attr)
@@ -106887,9 +106887,9 @@ void pivotTableDefinition_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:pivotTableDefinition";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     assert(m_has_name_attr);
     if (m_has_name_attr)
@@ -108826,9 +108826,9 @@ void queryTable_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:queryTable";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     assert(m_has_name_attr);
     if (m_has_name_attr)
@@ -109449,9 +109449,9 @@ void sst_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:sst";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
 
     if (m_has_count_attr)
@@ -109670,9 +109670,9 @@ void headers_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:headers";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     assert(m_has_guid_attr);
     if (m_has_guid_attr)
@@ -110145,9 +110145,9 @@ void revisions_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:revisions";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -111804,9 +111804,9 @@ void users_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:users";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
 
     if (m_has_count_attr)
@@ -113241,9 +113241,9 @@ void worksheet_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:worksheet";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -114081,9 +114081,9 @@ void chartsheet_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:chartsheet";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -114766,9 +114766,9 @@ void dialogsheet_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:dialogsheet";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -115125,9 +115125,9 @@ void metadata_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:metadata";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -115260,9 +115260,9 @@ void singleXmlCells_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:singleXmlCells";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -115731,9 +115731,9 @@ void styleSheet_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:styleSheet";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -116030,9 +116030,9 @@ void externalLink_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:externalLink";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -116465,9 +116465,9 @@ void table_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:table";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     assert(m_has_id_attr);
     if (m_has_id_attr)
@@ -117146,9 +117146,9 @@ void volTypes_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:volTypes";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
     _outStream << ">";
 
@@ -117896,9 +117896,9 @@ void workbook_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:workbook";
 
     _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
+    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
 
 
     if (m_has_conformance_attr)

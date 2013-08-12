@@ -1291,8 +1291,8 @@ void coreProperties_element::toXml(std::ostream& _outStream) const
     _outStream << "<cp:coreProperties";
 
     _outStream << " " << "xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\"";
-    _outStream << " " << "xmlns:cp=\"http://purl.org/dc/terms/\"";
-    _outStream << " " << "xmlns:cp=\"http://purl.org/dc/elements/1.1/\"";
+    _outStream << " " << "xmlns:dcterms=\"http://purl.org/dc/terms/\"";
+    _outStream << " " << "xmlns:dc=\"http://purl.org/dc/elements/1.1/\"";
 
     _outStream << ">";
 
