@@ -15,6 +15,7 @@ class Properties_element;
 #include <string>
 #include <iostream>
 #include "shared-documentPropertiesVariantTypes_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
 namespace ns_ap {
 using namespace std;
 class Element: public XSD::Element

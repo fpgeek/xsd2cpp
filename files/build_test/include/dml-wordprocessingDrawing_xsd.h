@@ -45,7 +45,19 @@ class anchor_element;
 #include "wml_xsd.h"
 #include "dml-picture_xsd.h"
 #include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
+#include "dml-wordprocessingDrawing_xsd.h"
 #include "shared-math_xsd.h"
+#include "shared-customXmlSchemaProperties_xsd.h"
+#include "vml-main_xsd.h"
+#include "vml-officeDrawing_xsd.h"
+#include "vml-wordprocessingDrawing_xsd.h"
+#include "vml-spreadsheetDrawing_xsd.h"
+#include "vml-presentationDrawing_xsd.h"
 namespace ns_wp {
 using namespace std;
 class Element: public XSD::Element
@@ -66,11 +78,11 @@ class ST_WrapDistance: public XSD::SimpleType
 {
 public:
     ST_WrapDistance();
-    ST_WrapDistance(const XSD::unsignedInt_& _unsignedInt);
+    ST_WrapDistance(const XSD::unsignedInt_& _value);
     ~ST_WrapDistance();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_WrapDistance& default_instance();
@@ -78,8 +90,8 @@ public:
 protected:
 private:
     static ST_WrapDistance* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_WrapText: public XSD::SimpleType
@@ -93,11 +105,11 @@ public:
         _largest_
     };
     ST_WrapText();
-    ST_WrapText(const ST_WrapText::Type& _type);
+    ST_WrapText(const ST_WrapText::Type& _value);
     ~ST_WrapText();
-    bool has_type() const;
-    void set_type(const ST_WrapText::Type& _type);
-    const ST_WrapText::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_WrapText::Type& _value);
+    const ST_WrapText::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -106,19 +118,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_WrapText* default_instance_;
-    bool m_has_type;
-    ST_WrapText::Type m_type;
+    bool m_has_value;
+    ST_WrapText::Type m_value;
 };
 
 class ST_PositionOffset: public XSD::SimpleType
 {
 public:
     ST_PositionOffset();
-    ST_PositionOffset(const XSD::int_& _int);
+    ST_PositionOffset(const XSD::int_& _value);
     ~ST_PositionOffset();
-    bool has_int() const;
-    void set_int(const XSD::int_& _int);
-    const XSD::int_& get_int() const;
+    bool has_value() const;
+    void set_value(const XSD::int_& _value);
+    const XSD::int_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_PositionOffset& default_instance();
@@ -126,8 +138,8 @@ public:
 protected:
 private:
     static ST_PositionOffset* default_instance_;
-    bool m_has_int;
-    XSD::int_ m_int;
+    bool m_has_value;
+    XSD::int_ m_value;
 };
 
 class ST_AlignH: public XSD::SimpleType
@@ -142,11 +154,11 @@ public:
         _outside_
     };
     ST_AlignH();
-    ST_AlignH(const ST_AlignH::Type& _type);
+    ST_AlignH(const ST_AlignH::Type& _value);
     ~ST_AlignH();
-    bool has_type() const;
-    void set_type(const ST_AlignH::Type& _type);
-    const ST_AlignH::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_AlignH::Type& _value);
+    const ST_AlignH::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -155,8 +167,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_AlignH* default_instance_;
-    bool m_has_type;
-    ST_AlignH::Type m_type;
+    bool m_has_value;
+    ST_AlignH::Type m_value;
 };
 
 class ST_RelFromH: public XSD::SimpleType
@@ -174,11 +186,11 @@ public:
         _outsideMargin_
     };
     ST_RelFromH();
-    ST_RelFromH(const ST_RelFromH::Type& _type);
+    ST_RelFromH(const ST_RelFromH::Type& _value);
     ~ST_RelFromH();
-    bool has_type() const;
-    void set_type(const ST_RelFromH::Type& _type);
-    const ST_RelFromH::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_RelFromH::Type& _value);
+    const ST_RelFromH::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -187,8 +199,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_RelFromH* default_instance_;
-    bool m_has_type;
-    ST_RelFromH::Type m_type;
+    bool m_has_value;
+    ST_RelFromH::Type m_value;
 };
 
 class ST_AlignV: public XSD::SimpleType
@@ -203,11 +215,11 @@ public:
         _outside_
     };
     ST_AlignV();
-    ST_AlignV(const ST_AlignV::Type& _type);
+    ST_AlignV(const ST_AlignV::Type& _value);
     ~ST_AlignV();
-    bool has_type() const;
-    void set_type(const ST_AlignV::Type& _type);
-    const ST_AlignV::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_AlignV::Type& _value);
+    const ST_AlignV::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -216,8 +228,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_AlignV* default_instance_;
-    bool m_has_type;
-    ST_AlignV::Type m_type;
+    bool m_has_value;
+    ST_AlignV::Type m_value;
 };
 
 class ST_RelFromV: public XSD::SimpleType
@@ -235,11 +247,11 @@ public:
         _outsideMargin_
     };
     ST_RelFromV();
-    ST_RelFromV(const ST_RelFromV::Type& _type);
+    ST_RelFromV(const ST_RelFromV::Type& _value);
     ~ST_RelFromV();
-    bool has_type() const;
-    void set_type(const ST_RelFromV::Type& _type);
-    const ST_RelFromV::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_RelFromV::Type& _value);
+    const ST_RelFromV::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -248,8 +260,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_RelFromV* default_instance_;
-    bool m_has_type;
-    ST_RelFromV::Type m_type;
+    bool m_has_value;
+    ST_RelFromV::Type m_value;
 };
 
 class CT_EffectExtent: public XSD::ComplexType

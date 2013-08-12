@@ -5,6 +5,13 @@
 #include <functional>
 #include <assert.h>
 #include "dml-main_xsd.h"
+#include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_cdr {
 using namespace std;
 
@@ -14,49 +21,49 @@ using namespace std;
 
 // ST_MarkerCoordinate
 ST_MarkerCoordinate::ST_MarkerCoordinate()
-    :m_has_double(false),
-     m_double(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_MarkerCoordinate::ST_MarkerCoordinate(const XSD::double_& _double)
-    :m_has_double(true)
+ST_MarkerCoordinate::ST_MarkerCoordinate(const XSD::double_& _value)
+    :m_has_value(true)
 {
 
-    set_double(_double);
+    set_value(_value);
 }
 ST_MarkerCoordinate::~ST_MarkerCoordinate()
 {
     clear();
 }
-bool ST_MarkerCoordinate::has_double() const
+bool ST_MarkerCoordinate::has_value() const
 {
-    return m_has_double;
+    return m_has_value;
 }
 
-void ST_MarkerCoordinate::set_double(const XSD::double_& _double)
-{   assert(0.0 <= _double);
-    assert(_double <= 1.0);
+void ST_MarkerCoordinate::set_value(const XSD::double_& _value)
+{   assert(0.0 <= _value);
+    assert(_value <= 1.0);
 
-    m_has_double = true;
-    m_double = _double;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::double_& ST_MarkerCoordinate::get_double() const
+const XSD::double_& ST_MarkerCoordinate::get_value() const
 {
-    return m_double;
+    return m_value;
 }
 
 void ST_MarkerCoordinate::clear()
 {
-    m_has_double = false;
-    m_double = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_MarkerCoordinate::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_double)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_double << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -72,7 +79,7 @@ const ST_MarkerCoordinate& ST_MarkerCoordinate::default_instance()
 std::string ST_MarkerCoordinate::toString() const
 {
     std::stringstream strStream;
-    strStream << get_double();
+    strStream << get_value();
     return strStream.str();
 }
 

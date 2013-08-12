@@ -74,11 +74,11 @@ public:
         _HTMLInset_
     };
     ST_BorderType();
-    ST_BorderType(const ST_BorderType::Type& _type);
+    ST_BorderType(const ST_BorderType::Type& _value);
     ~ST_BorderType();
-    bool has_type() const;
-    void set_type(const ST_BorderType::Type& _type);
-    const ST_BorderType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_BorderType::Type& _value);
+    const ST_BorderType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -87,8 +87,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_BorderType* default_instance_;
-    bool m_has_type;
-    ST_BorderType::Type m_type;
+    bool m_has_value;
+    ST_BorderType::Type m_value;
 };
 
 class ST_BorderShadow: public XSD::SimpleType
@@ -102,11 +102,11 @@ public:
         _false_
     };
     ST_BorderShadow();
-    ST_BorderShadow(const ST_BorderShadow::Type& _type);
+    ST_BorderShadow(const ST_BorderShadow::Type& _value);
     ~ST_BorderShadow();
-    bool has_type() const;
-    void set_type(const ST_BorderShadow::Type& _type);
-    const ST_BorderShadow::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_BorderShadow::Type& _value);
+    const ST_BorderShadow::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -115,8 +115,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_BorderShadow* default_instance_;
-    bool m_has_type;
-    ST_BorderShadow::Type m_type;
+    bool m_has_value;
+    ST_BorderShadow::Type m_value;
 };
 
 class ST_WrapType: public XSD::SimpleType
@@ -131,11 +131,11 @@ public:
         _through_
     };
     ST_WrapType();
-    ST_WrapType(const ST_WrapType::Type& _type);
+    ST_WrapType(const ST_WrapType::Type& _value);
     ~ST_WrapType();
-    bool has_type() const;
-    void set_type(const ST_WrapType::Type& _type);
-    const ST_WrapType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_WrapType::Type& _value);
+    const ST_WrapType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -144,8 +144,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_WrapType* default_instance_;
-    bool m_has_type;
-    ST_WrapType::Type m_type;
+    bool m_has_value;
+    ST_WrapType::Type m_value;
 };
 
 class ST_WrapSide: public XSD::SimpleType
@@ -159,11 +159,11 @@ public:
         _largest_
     };
     ST_WrapSide();
-    ST_WrapSide(const ST_WrapSide::Type& _type);
+    ST_WrapSide(const ST_WrapSide::Type& _value);
     ~ST_WrapSide();
-    bool has_type() const;
-    void set_type(const ST_WrapSide::Type& _type);
-    const ST_WrapSide::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_WrapSide::Type& _value);
+    const ST_WrapSide::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -172,8 +172,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_WrapSide* default_instance_;
-    bool m_has_type;
-    ST_WrapSide::Type m_type;
+    bool m_has_value;
+    ST_WrapSide::Type m_value;
 };
 
 class ST_HorizontalAnchor: public XSD::SimpleType
@@ -187,11 +187,11 @@ public:
         _char_
     };
     ST_HorizontalAnchor();
-    ST_HorizontalAnchor(const ST_HorizontalAnchor::Type& _type);
+    ST_HorizontalAnchor(const ST_HorizontalAnchor::Type& _value);
     ~ST_HorizontalAnchor();
-    bool has_type() const;
-    void set_type(const ST_HorizontalAnchor::Type& _type);
-    const ST_HorizontalAnchor::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_HorizontalAnchor::Type& _value);
+    const ST_HorizontalAnchor::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -200,8 +200,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_HorizontalAnchor* default_instance_;
-    bool m_has_type;
-    ST_HorizontalAnchor::Type m_type;
+    bool m_has_value;
+    ST_HorizontalAnchor::Type m_value;
 };
 
 class ST_VerticalAnchor: public XSD::SimpleType
@@ -215,11 +215,11 @@ public:
         _line_
     };
     ST_VerticalAnchor();
-    ST_VerticalAnchor(const ST_VerticalAnchor::Type& _type);
+    ST_VerticalAnchor(const ST_VerticalAnchor::Type& _value);
     ~ST_VerticalAnchor();
-    bool has_type() const;
-    void set_type(const ST_VerticalAnchor::Type& _type);
-    const ST_VerticalAnchor::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_VerticalAnchor::Type& _value);
+    const ST_VerticalAnchor::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -228,8 +228,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_VerticalAnchor* default_instance_;
-    bool m_has_type;
-    ST_VerticalAnchor::Type m_type;
+    bool m_has_value;
+    ST_VerticalAnchor::Type m_value;
 };
 
 class CT_Border: public XSD::ComplexType

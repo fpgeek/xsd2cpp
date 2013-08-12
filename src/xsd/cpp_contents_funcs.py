@@ -464,7 +464,7 @@ def _makeRestrictionSetMethodCode(argName, pbRestriction):
 def simpleType_restriction_enum(pbRestriction, cppClass):
     pbEnumList = pbRestriction.enumeration
 
-    cppVarName = 'type'
+    cppVarName = 'value'
     cppVarType = '%s::Type' % cppClass.name
 
     hasVarName = 'm_has_%s' % cppVarName
@@ -567,8 +567,9 @@ _outStream << " " << _attrName << "=\\\\"" << %s() << "\\\\"";
 
 def _simpleType_base_builtIn(pbBuiltIn, cppClass, makeSetMethodAssertCode=None):
 
-    cppVarName = getBuiltInStr(pbBuiltIn)
-    cppVarType = 'XSD::%s_' % cppVarName
+    # cppVarName = getBuiltInStr(pbBuiltIn)
+    cppVarName = 'value'
+    cppVarType = 'XSD::%s_' % getBuiltInStr(pbBuiltIn)
 
     hasVarName = 'm_has_%s' % cppVarName
     varName = 'm_%s' % cppVarName
@@ -1163,6 +1164,11 @@ def simpleType_list_simpleTypeName(pbSimpleTypeName, cppClass):
     hasVarName = 'm_has_%s_list' % cppVarName
     varName = 'm_%s_list' % cppVarName
 
+    const1 = cppClass.constructor.add()
+    constInit1 = const1.const_init.add()
+    constInit1.name = hasVarName
+    constInit1.value = 'false'
+
     hasMemberVar = cppClass.member_var.add()
     hasMemberVar.type = 'bool'
     hasMemberVar.name = hasVarName
@@ -1246,6 +1252,33 @@ if (%(hasVarName)s)
 }
 """ % {'hasVarName': hasVarName}
     makeToXmlAttrMethod(toXmlMethodBody, cppClass)
+
+
+
+    const2 = cppClass.constructor.add()
+    const2Arg1 = const2.argument.add()
+    const2Arg1.type = '%s&' % cppClass.name
+    const2Arg1.name = '_%s' % cppClass.name
+    const2Arg1.const = True
+    const2Init1 = const2.const_init.add()
+    const2Init1.name = hasVarName
+    const2Init1.value = 'true'
+    const2.body = \
+"""
+const %(vectorMemberVarType)s& otherSqrefList = %(argName)s.%(getterName)s();
+%(vectorMemberVarType)s::const_iterator it;
+%(cppVarType)s* val;
+for (it = otherSqrefList.begin(); it < otherSqrefList.end(); ++it)
+{
+    val = new %(cppVarType)s((*it)->get_value());
+    %(varName)s.push_back(val);
+}
+""" % { 'vectorMemberVarType':vectorMemberVar.type,
+        'argName':const2Arg1.name,
+        'getterName':method3.name,
+        'cppVarType':cppVarType,
+        'varName':varName
+}
 
     makeDefaultInstanceMethod(cppClass)
     makeDefaultInstanceMember(cppClass)

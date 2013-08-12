@@ -25,6 +25,13 @@ class CT_Drawing;
 #include <string>
 #include <iostream>
 #include "dml-main_xsd.h"
+#include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_cdr {
 using namespace std;
 class Element: public XSD::Element
@@ -45,11 +52,11 @@ class ST_MarkerCoordinate: public XSD::SimpleType
 {
 public:
     ST_MarkerCoordinate();
-    ST_MarkerCoordinate(const XSD::double_& _double);
+    ST_MarkerCoordinate(const XSD::double_& _value);
     ~ST_MarkerCoordinate();
-    bool has_double() const;
-    void set_double(const XSD::double_& _double);
-    const XSD::double_& get_double() const;
+    bool has_value() const;
+    void set_value(const XSD::double_& _value);
+    const XSD::double_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_MarkerCoordinate& default_instance();
@@ -57,8 +64,8 @@ public:
 protected:
 private:
     static ST_MarkerCoordinate* default_instance_;
-    bool m_has_double;
-    XSD::double_ m_double;
+    bool m_has_value;
+    XSD::double_ m_value;
 };
 
 class CT_ShapeNonVisual: public XSD::ComplexType

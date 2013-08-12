@@ -11,6 +11,16 @@
 #include "vml-spreadsheetDrawing_xsd.h"
 #include "vml-presentationDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
+#include "vml-main_xsd.h"
+#include "dml-wordprocessingDrawing_xsd.h"
+#include "shared-math_xsd.h"
+#include "shared-customXmlSchemaProperties_xsd.h"
+#include "dml-main_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_v {
 using namespace std;
 
@@ -20,47 +30,47 @@ using namespace std;
 
 // ST_Ext
 ST_Ext::ST_Ext()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_Ext::ST_Ext(const ST_Ext::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_Ext::ST_Ext(const ST_Ext::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_Ext::~ST_Ext()
 {
     clear();
 }
-bool ST_Ext::has_type() const
+bool ST_Ext::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_Ext::set_type(const ST_Ext::Type& _type)
+void ST_Ext::set_value(const ST_Ext::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_Ext::Type& ST_Ext::get_type() const
+const ST_Ext::Type& ST_Ext::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_Ext::toString() const
 {
-    return ST_Ext::TypeStrList[m_type];
+    return ST_Ext::TypeStrList[m_value];
 }
 
 void ST_Ext::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_Ext::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -85,47 +95,47 @@ ST_Ext* ST_Ext::default_instance_ = NULL;
 
 // ST_FillType
 ST_FillType::ST_FillType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_FillType::ST_FillType(const ST_FillType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_FillType::ST_FillType(const ST_FillType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_FillType::~ST_FillType()
 {
     clear();
 }
-bool ST_FillType::has_type() const
+bool ST_FillType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_FillType::set_type(const ST_FillType::Type& _type)
+void ST_FillType::set_value(const ST_FillType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_FillType::Type& ST_FillType::get_type() const
+const ST_FillType::Type& ST_FillType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_FillType::toString() const
 {
-    return ST_FillType::TypeStrList[m_type];
+    return ST_FillType::TypeStrList[m_value];
 }
 
 void ST_FillType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_FillType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -153,47 +163,47 @@ ST_FillType* ST_FillType::default_instance_ = NULL;
 
 // ST_FillMethod
 ST_FillMethod::ST_FillMethod()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_FillMethod::ST_FillMethod(const ST_FillMethod::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_FillMethod::ST_FillMethod(const ST_FillMethod::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_FillMethod::~ST_FillMethod()
 {
     clear();
 }
-bool ST_FillMethod::has_type() const
+bool ST_FillMethod::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_FillMethod::set_type(const ST_FillMethod::Type& _type)
+void ST_FillMethod::set_value(const ST_FillMethod::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_FillMethod::Type& ST_FillMethod::get_type() const
+const ST_FillMethod::Type& ST_FillMethod::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_FillMethod::toString() const
 {
-    return ST_FillMethod::TypeStrList[m_type];
+    return ST_FillMethod::TypeStrList[m_value];
 }
 
 void ST_FillMethod::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_FillMethod::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -220,47 +230,47 @@ ST_FillMethod* ST_FillMethod::default_instance_ = NULL;
 
 // ST_ShadowType
 ST_ShadowType::ST_ShadowType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ShadowType::ST_ShadowType(const ST_ShadowType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ShadowType::ST_ShadowType(const ST_ShadowType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ShadowType::~ST_ShadowType()
 {
     clear();
 }
-bool ST_ShadowType::has_type() const
+bool ST_ShadowType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ShadowType::set_type(const ST_ShadowType::Type& _type)
+void ST_ShadowType::set_value(const ST_ShadowType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ShadowType::Type& ST_ShadowType::get_type() const
+const ST_ShadowType::Type& ST_ShadowType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ShadowType::toString() const
 {
-    return ST_ShadowType::TypeStrList[m_type];
+    return ST_ShadowType::TypeStrList[m_value];
 }
 
 void ST_ShadowType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ShadowType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -286,47 +296,47 @@ ST_ShadowType* ST_ShadowType::default_instance_ = NULL;
 
 // ST_StrokeLineStyle
 ST_StrokeLineStyle::ST_StrokeLineStyle()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_StrokeLineStyle::ST_StrokeLineStyle(const ST_StrokeLineStyle::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_StrokeLineStyle::ST_StrokeLineStyle(const ST_StrokeLineStyle::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_StrokeLineStyle::~ST_StrokeLineStyle()
 {
     clear();
 }
-bool ST_StrokeLineStyle::has_type() const
+bool ST_StrokeLineStyle::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_StrokeLineStyle::set_type(const ST_StrokeLineStyle::Type& _type)
+void ST_StrokeLineStyle::set_value(const ST_StrokeLineStyle::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_StrokeLineStyle::Type& ST_StrokeLineStyle::get_type() const
+const ST_StrokeLineStyle::Type& ST_StrokeLineStyle::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_StrokeLineStyle::toString() const
 {
-    return ST_StrokeLineStyle::TypeStrList[m_type];
+    return ST_StrokeLineStyle::TypeStrList[m_value];
 }
 
 void ST_StrokeLineStyle::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_StrokeLineStyle::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -353,47 +363,47 @@ ST_StrokeLineStyle* ST_StrokeLineStyle::default_instance_ = NULL;
 
 // ST_StrokeJoinStyle
 ST_StrokeJoinStyle::ST_StrokeJoinStyle()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_StrokeJoinStyle::ST_StrokeJoinStyle(const ST_StrokeJoinStyle::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_StrokeJoinStyle::ST_StrokeJoinStyle(const ST_StrokeJoinStyle::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_StrokeJoinStyle::~ST_StrokeJoinStyle()
 {
     clear();
 }
-bool ST_StrokeJoinStyle::has_type() const
+bool ST_StrokeJoinStyle::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_StrokeJoinStyle::set_type(const ST_StrokeJoinStyle::Type& _type)
+void ST_StrokeJoinStyle::set_value(const ST_StrokeJoinStyle::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_StrokeJoinStyle::Type& ST_StrokeJoinStyle::get_type() const
+const ST_StrokeJoinStyle::Type& ST_StrokeJoinStyle::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_StrokeJoinStyle::toString() const
 {
-    return ST_StrokeJoinStyle::TypeStrList[m_type];
+    return ST_StrokeJoinStyle::TypeStrList[m_value];
 }
 
 void ST_StrokeJoinStyle::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_StrokeJoinStyle::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -418,47 +428,47 @@ ST_StrokeJoinStyle* ST_StrokeJoinStyle::default_instance_ = NULL;
 
 // ST_StrokeEndCap
 ST_StrokeEndCap::ST_StrokeEndCap()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_StrokeEndCap::ST_StrokeEndCap(const ST_StrokeEndCap::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_StrokeEndCap::ST_StrokeEndCap(const ST_StrokeEndCap::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_StrokeEndCap::~ST_StrokeEndCap()
 {
     clear();
 }
-bool ST_StrokeEndCap::has_type() const
+bool ST_StrokeEndCap::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_StrokeEndCap::set_type(const ST_StrokeEndCap::Type& _type)
+void ST_StrokeEndCap::set_value(const ST_StrokeEndCap::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_StrokeEndCap::Type& ST_StrokeEndCap::get_type() const
+const ST_StrokeEndCap::Type& ST_StrokeEndCap::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_StrokeEndCap::toString() const
 {
-    return ST_StrokeEndCap::TypeStrList[m_type];
+    return ST_StrokeEndCap::TypeStrList[m_value];
 }
 
 void ST_StrokeEndCap::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_StrokeEndCap::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -483,47 +493,47 @@ ST_StrokeEndCap* ST_StrokeEndCap::default_instance_ = NULL;
 
 // ST_StrokeArrowLength
 ST_StrokeArrowLength::ST_StrokeArrowLength()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_StrokeArrowLength::ST_StrokeArrowLength(const ST_StrokeArrowLength::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_StrokeArrowLength::ST_StrokeArrowLength(const ST_StrokeArrowLength::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_StrokeArrowLength::~ST_StrokeArrowLength()
 {
     clear();
 }
-bool ST_StrokeArrowLength::has_type() const
+bool ST_StrokeArrowLength::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_StrokeArrowLength::set_type(const ST_StrokeArrowLength::Type& _type)
+void ST_StrokeArrowLength::set_value(const ST_StrokeArrowLength::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_StrokeArrowLength::Type& ST_StrokeArrowLength::get_type() const
+const ST_StrokeArrowLength::Type& ST_StrokeArrowLength::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_StrokeArrowLength::toString() const
 {
-    return ST_StrokeArrowLength::TypeStrList[m_type];
+    return ST_StrokeArrowLength::TypeStrList[m_value];
 }
 
 void ST_StrokeArrowLength::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_StrokeArrowLength::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -548,47 +558,47 @@ ST_StrokeArrowLength* ST_StrokeArrowLength::default_instance_ = NULL;
 
 // ST_StrokeArrowWidth
 ST_StrokeArrowWidth::ST_StrokeArrowWidth()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_StrokeArrowWidth::ST_StrokeArrowWidth(const ST_StrokeArrowWidth::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_StrokeArrowWidth::ST_StrokeArrowWidth(const ST_StrokeArrowWidth::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_StrokeArrowWidth::~ST_StrokeArrowWidth()
 {
     clear();
 }
-bool ST_StrokeArrowWidth::has_type() const
+bool ST_StrokeArrowWidth::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_StrokeArrowWidth::set_type(const ST_StrokeArrowWidth::Type& _type)
+void ST_StrokeArrowWidth::set_value(const ST_StrokeArrowWidth::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_StrokeArrowWidth::Type& ST_StrokeArrowWidth::get_type() const
+const ST_StrokeArrowWidth::Type& ST_StrokeArrowWidth::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_StrokeArrowWidth::toString() const
 {
-    return ST_StrokeArrowWidth::TypeStrList[m_type];
+    return ST_StrokeArrowWidth::TypeStrList[m_value];
 }
 
 void ST_StrokeArrowWidth::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_StrokeArrowWidth::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -613,47 +623,47 @@ ST_StrokeArrowWidth* ST_StrokeArrowWidth::default_instance_ = NULL;
 
 // ST_StrokeArrowType
 ST_StrokeArrowType::ST_StrokeArrowType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_StrokeArrowType::ST_StrokeArrowType(const ST_StrokeArrowType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_StrokeArrowType::ST_StrokeArrowType(const ST_StrokeArrowType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_StrokeArrowType::~ST_StrokeArrowType()
 {
     clear();
 }
-bool ST_StrokeArrowType::has_type() const
+bool ST_StrokeArrowType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_StrokeArrowType::set_type(const ST_StrokeArrowType::Type& _type)
+void ST_StrokeArrowType::set_value(const ST_StrokeArrowType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_StrokeArrowType::Type& ST_StrokeArrowType::get_type() const
+const ST_StrokeArrowType::Type& ST_StrokeArrowType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_StrokeArrowType::toString() const
 {
-    return ST_StrokeArrowType::TypeStrList[m_type];
+    return ST_StrokeArrowType::TypeStrList[m_value];
 }
 
 void ST_StrokeArrowType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_StrokeArrowType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -681,47 +691,47 @@ ST_StrokeArrowType* ST_StrokeArrowType::default_instance_ = NULL;
 
 // ST_ImageAspect
 ST_ImageAspect::ST_ImageAspect()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ImageAspect::ST_ImageAspect(const ST_ImageAspect::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ImageAspect::ST_ImageAspect(const ST_ImageAspect::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ImageAspect::~ST_ImageAspect()
 {
     clear();
 }
-bool ST_ImageAspect::has_type() const
+bool ST_ImageAspect::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ImageAspect::set_type(const ST_ImageAspect::Type& _type)
+void ST_ImageAspect::set_value(const ST_ImageAspect::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ImageAspect::Type& ST_ImageAspect::get_type() const
+const ST_ImageAspect::Type& ST_ImageAspect::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ImageAspect::toString() const
 {
-    return ST_ImageAspect::TypeStrList[m_type];
+    return ST_ImageAspect::TypeStrList[m_value];
 }
 
 void ST_ImageAspect::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ImageAspect::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -746,47 +756,47 @@ ST_ImageAspect* ST_ImageAspect::default_instance_ = NULL;
 
 // ST_EditAs
 ST_EditAs::ST_EditAs()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_EditAs::ST_EditAs(const ST_EditAs::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_EditAs::ST_EditAs(const ST_EditAs::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_EditAs::~ST_EditAs()
 {
     clear();
 }
-bool ST_EditAs::has_type() const
+bool ST_EditAs::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_EditAs::set_type(const ST_EditAs::Type& _type)
+void ST_EditAs::set_value(const ST_EditAs::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_EditAs::Type& ST_EditAs::get_type() const
+const ST_EditAs::Type& ST_EditAs::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_EditAs::toString() const
 {
-    return ST_EditAs::TypeStrList[m_type];
+    return ST_EditAs::TypeStrList[m_value];
 }
 
 void ST_EditAs::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_EditAs::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -30965,8 +30975,8 @@ void CT_Textbox::toXmlElem(const std::string& _elemName, const std::string& _xml
     _outStream << ">";
 
     {
-        bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
-        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        bool elemHasValueList[1] = {m_has_w_txbxContent};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
         assert(cnt == 1);
     }
 
@@ -30974,6 +30984,12 @@ void CT_Textbox::toXmlElem(const std::string& _elemName, const std::string& _xml
     if (m_has_w_txbxContent)
     {
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[1] = {m_has__any};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        assert(cnt == 1);
     }
 
 
@@ -77129,13 +77145,13 @@ void shape_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:shape";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_type_attr)
@@ -84251,13 +84267,13 @@ void shapetype_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:shapetype";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_adj_attr)
@@ -90022,13 +90038,13 @@ void group_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:group";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_filled_attr)
@@ -102176,13 +102192,13 @@ void background_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:background";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -102648,13 +102664,13 @@ void fill_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:fill";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -103380,13 +103396,13 @@ void formulas_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:formulas";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -103483,13 +103499,13 @@ void handles_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:handles";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -103748,13 +103764,13 @@ void imagedata_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:imagedata";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -104508,13 +104524,13 @@ void path_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:path";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -105003,13 +105019,13 @@ void textbox_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:textbox";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -105048,8 +105064,8 @@ void textbox_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
-        bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
-        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        bool elemHasValueList[1] = {m_has_w_txbxContent};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
         assert(cnt == 1);
     }
 
@@ -105057,6 +105073,12 @@ void textbox_element::toXml(std::ostream& _outStream) const
     if (m_has_w_txbxContent)
     {
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[1] = {m_has__any};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        assert(cnt == 1);
     }
 
 
@@ -105268,13 +105290,13 @@ void shadow_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:shadow";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -106014,13 +106036,13 @@ void stroke_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:stroke";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -106896,13 +106918,13 @@ void textpath_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:textpath";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_id_attr)
@@ -107342,13 +107364,13 @@ void arc_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:arc";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_startAngle_attr)
@@ -112965,13 +112987,13 @@ void curve_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:curve";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_from_attr)
@@ -118676,13 +118698,13 @@ void image_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:image";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_src_attr)
@@ -124481,13 +124503,13 @@ void line_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:line";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_from_attr)
@@ -130085,13 +130107,13 @@ void oval_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:oval";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -135661,13 +135683,13 @@ void polyline_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:polyline";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_points_attr)
@@ -141689,13 +141711,13 @@ void rect_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:rect";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
     _outStream << ">";
 
@@ -147257,13 +147279,13 @@ void roundrect_element::toXml(std::ostream& _outStream) const
     _outStream << "<v:roundrect";
 
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:excel\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:word\"";
+    _outStream << " " << "xmlns:v=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:office\"";
+    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:office:powerpoint\"";
 
 
     if (m_has_arcsize_attr)

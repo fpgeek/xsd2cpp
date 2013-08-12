@@ -14,47 +14,47 @@ using namespace std;
 
 // ST_VectorBaseType
 ST_VectorBaseType::ST_VectorBaseType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_VectorBaseType::ST_VectorBaseType(const ST_VectorBaseType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_VectorBaseType::ST_VectorBaseType(const ST_VectorBaseType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_VectorBaseType::~ST_VectorBaseType()
 {
     clear();
 }
-bool ST_VectorBaseType::has_type() const
+bool ST_VectorBaseType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_VectorBaseType::set_type(const ST_VectorBaseType::Type& _type)
+void ST_VectorBaseType::set_value(const ST_VectorBaseType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_VectorBaseType::Type& ST_VectorBaseType::get_type() const
+const ST_VectorBaseType::Type& ST_VectorBaseType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_VectorBaseType::toString() const
 {
-    return ST_VectorBaseType::TypeStrList[m_type];
+    return ST_VectorBaseType::TypeStrList[m_value];
 }
 
 void ST_VectorBaseType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_VectorBaseType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -96,47 +96,47 @@ ST_VectorBaseType* ST_VectorBaseType::default_instance_ = NULL;
 
 // ST_ArrayBaseType
 ST_ArrayBaseType::ST_ArrayBaseType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ArrayBaseType::ST_ArrayBaseType(const ST_ArrayBaseType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ArrayBaseType::ST_ArrayBaseType(const ST_ArrayBaseType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ArrayBaseType::~ST_ArrayBaseType()
 {
     clear();
 }
-bool ST_ArrayBaseType::has_type() const
+bool ST_ArrayBaseType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ArrayBaseType::set_type(const ST_ArrayBaseType::Type& _type)
+void ST_ArrayBaseType::set_value(const ST_ArrayBaseType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ArrayBaseType::Type& ST_ArrayBaseType::get_type() const
+const ST_ArrayBaseType::Type& ST_ArrayBaseType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ArrayBaseType::toString() const
 {
-    return ST_ArrayBaseType::TypeStrList[m_type];
+    return ST_ArrayBaseType::TypeStrList[m_value];
 }
 
 void ST_ArrayBaseType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ArrayBaseType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -175,47 +175,47 @@ ST_ArrayBaseType* ST_ArrayBaseType::default_instance_ = NULL;
 
 // ST_Cy
 ST_Cy::ST_Cy()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_Cy::ST_Cy(const XSD::string_& _string)
-    :m_has_string(true)
+ST_Cy::ST_Cy(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_Cy::~ST_Cy()
 {
     clear();
 }
-bool ST_Cy::has_string() const
+bool ST_Cy::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_Cy::set_string(const XSD::string_& _string)
+void ST_Cy::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_Cy::get_string() const
+const XSD::string_& ST_Cy::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_Cy::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_Cy::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -231,7 +231,7 @@ const ST_Cy& ST_Cy::default_instance()
 std::string ST_Cy::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -239,47 +239,47 @@ ST_Cy* ST_Cy::default_instance_ = NULL;
 
 // ST_Error
 ST_Error::ST_Error()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_Error::ST_Error(const XSD::string_& _string)
-    :m_has_string(true)
+ST_Error::ST_Error(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_Error::~ST_Error()
 {
     clear();
 }
-bool ST_Error::has_string() const
+bool ST_Error::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_Error::set_string(const XSD::string_& _string)
+void ST_Error::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_Error::get_string() const
+const XSD::string_& ST_Error::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_Error::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_Error::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -295,7 +295,7 @@ const ST_Error& ST_Error::default_instance()
 std::string ST_Error::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -17009,7 +17009,7 @@ void variant_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:variant";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -17422,7 +17422,7 @@ void vector_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:vector";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_baseType_attr);
     if (m_has_baseType_attr)
@@ -19802,7 +19802,7 @@ void array_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:array";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_lBounds_attr);
     if (m_has_lBounds_attr)
@@ -21483,7 +21483,7 @@ void empty_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:empty";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -21518,7 +21518,7 @@ void null_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:null";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     _outStream << ">";
 
@@ -21616,7 +21616,7 @@ void vstream_element::toXml(std::ostream& _outStream) const
     _outStream << "<vt:vstream";
 
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
 
     if (m_has_version_attr)

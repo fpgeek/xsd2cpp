@@ -41,11 +41,11 @@ public:
         _eq_
     };
     ST_Relation();
-    ST_Relation(const ST_Relation::Type& _type);
+    ST_Relation(const ST_Relation::Type& _value);
     ~ST_Relation();
-    bool has_type() const;
-    void set_type(const ST_Relation::Type& _type);
-    const ST_Relation::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_Relation::Type& _value);
+    const ST_Relation::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -54,8 +54,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_Relation* default_instance_;
-    bool m_has_type;
-    ST_Relation::Type m_type;
+    bool m_has_value;
+    ST_Relation::Type m_value;
 };
 
 class CT_AdditionalCharacteristics: public XSD::ComplexType

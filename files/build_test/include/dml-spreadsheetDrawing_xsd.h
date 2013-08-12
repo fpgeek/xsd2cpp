@@ -34,6 +34,12 @@ class wsDr_element;
 #include <iostream>
 #include "dml-main_xsd.h"
 #include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_xdr {
 using namespace std;
 class Element: public XSD::Element
@@ -54,11 +60,11 @@ class ST_ColID: public XSD::SimpleType
 {
 public:
     ST_ColID();
-    ST_ColID(const XSD::int_& _int);
+    ST_ColID(const XSD::int_& _value);
     ~ST_ColID();
-    bool has_int() const;
-    void set_int(const XSD::int_& _int);
-    const XSD::int_& get_int() const;
+    bool has_value() const;
+    void set_value(const XSD::int_& _value);
+    const XSD::int_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_ColID& default_instance();
@@ -66,19 +72,19 @@ public:
 protected:
 private:
     static ST_ColID* default_instance_;
-    bool m_has_int;
-    XSD::int_ m_int;
+    bool m_has_value;
+    XSD::int_ m_value;
 };
 
 class ST_RowID: public XSD::SimpleType
 {
 public:
     ST_RowID();
-    ST_RowID(const XSD::int_& _int);
+    ST_RowID(const XSD::int_& _value);
     ~ST_RowID();
-    bool has_int() const;
-    void set_int(const XSD::int_& _int);
-    const XSD::int_& get_int() const;
+    bool has_value() const;
+    void set_value(const XSD::int_& _value);
+    const XSD::int_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_RowID& default_instance();
@@ -86,8 +92,8 @@ public:
 protected:
 private:
     static ST_RowID* default_instance_;
-    bool m_has_int;
-    XSD::int_ m_int;
+    bool m_has_value;
+    XSD::int_ m_value;
 };
 
 class ST_EditAs: public XSD::SimpleType
@@ -100,11 +106,11 @@ public:
         _absolute_
     };
     ST_EditAs();
-    ST_EditAs(const ST_EditAs::Type& _type);
+    ST_EditAs(const ST_EditAs::Type& _value);
     ~ST_EditAs();
-    bool has_type() const;
-    void set_type(const ST_EditAs::Type& _type);
-    const ST_EditAs::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_EditAs::Type& _value);
+    const ST_EditAs::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -113,8 +119,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_EditAs* default_instance_;
-    bool m_has_type;
-    ST_EditAs::Type m_type;
+    bool m_has_value;
+    ST_EditAs::Type m_value;
 };
 
 class CT_AnchorClientData: public XSD::ComplexType

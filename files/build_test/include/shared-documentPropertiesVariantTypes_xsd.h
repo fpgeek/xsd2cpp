@@ -97,11 +97,11 @@ public:
         _clsid_
     };
     ST_VectorBaseType();
-    ST_VectorBaseType(const ST_VectorBaseType::Type& _type);
+    ST_VectorBaseType(const ST_VectorBaseType::Type& _value);
     ~ST_VectorBaseType();
-    bool has_type() const;
-    void set_type(const ST_VectorBaseType::Type& _type);
-    const ST_VectorBaseType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_VectorBaseType::Type& _value);
+    const ST_VectorBaseType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -110,8 +110,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_VectorBaseType* default_instance_;
-    bool m_has_type;
-    ST_VectorBaseType::Type m_type;
+    bool m_has_value;
+    ST_VectorBaseType::Type m_value;
 };
 
 class ST_ArrayBaseType: public XSD::SimpleType
@@ -138,11 +138,11 @@ public:
         _error_
     };
     ST_ArrayBaseType();
-    ST_ArrayBaseType(const ST_ArrayBaseType::Type& _type);
+    ST_ArrayBaseType(const ST_ArrayBaseType::Type& _value);
     ~ST_ArrayBaseType();
-    bool has_type() const;
-    void set_type(const ST_ArrayBaseType::Type& _type);
-    const ST_ArrayBaseType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ArrayBaseType::Type& _value);
+    const ST_ArrayBaseType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -151,19 +151,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ArrayBaseType* default_instance_;
-    bool m_has_type;
-    ST_ArrayBaseType::Type m_type;
+    bool m_has_value;
+    ST_ArrayBaseType::Type m_value;
 };
 
 class ST_Cy: public XSD::SimpleType
 {
 public:
     ST_Cy();
-    ST_Cy(const XSD::string_& _string);
+    ST_Cy(const XSD::string_& _value);
     ~ST_Cy();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Cy& default_instance();
@@ -171,19 +171,19 @@ public:
 protected:
 private:
     static ST_Cy* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_Error: public XSD::SimpleType
 {
 public:
     ST_Error();
-    ST_Error(const XSD::string_& _string);
+    ST_Error(const XSD::string_& _value);
     ~ST_Error();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Error& default_instance();
@@ -191,8 +191,8 @@ public:
 protected:
 private:
     static ST_Error* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class CT_Empty: public XSD::ComplexType

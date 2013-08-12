@@ -57,11 +57,11 @@ class ST_Lang: public XSD::SimpleType
 {
 public:
     ST_Lang();
-    ST_Lang(const XSD::string_& _string);
+    ST_Lang(const XSD::string_& _value);
     ~ST_Lang();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Lang& default_instance();
@@ -69,19 +69,19 @@ public:
 protected:
 private:
     static ST_Lang* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_HexColorRGB: public XSD::SimpleType
 {
 public:
     ST_HexColorRGB();
-    ST_HexColorRGB(const XSD::hexBinary_& _hexBinary);
+    ST_HexColorRGB(const XSD::hexBinary_& _value);
     ~ST_HexColorRGB();
-    bool has_hexBinary() const;
-    void set_hexBinary(const XSD::hexBinary_& _hexBinary);
-    const XSD::hexBinary_& get_hexBinary() const;
+    bool has_value() const;
+    void set_value(const XSD::hexBinary_& _value);
+    const XSD::hexBinary_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_HexColorRGB& default_instance();
@@ -89,19 +89,19 @@ public:
 protected:
 private:
     static ST_HexColorRGB* default_instance_;
-    bool m_has_hexBinary;
-    XSD::hexBinary_ m_hexBinary;
+    bool m_has_value;
+    XSD::hexBinary_ m_value;
 };
 
 class ST_Panose: public XSD::SimpleType
 {
 public:
     ST_Panose();
-    ST_Panose(const XSD::hexBinary_& _hexBinary);
+    ST_Panose(const XSD::hexBinary_& _value);
     ~ST_Panose();
-    bool has_hexBinary() const;
-    void set_hexBinary(const XSD::hexBinary_& _hexBinary);
-    const XSD::hexBinary_& get_hexBinary() const;
+    bool has_value() const;
+    void set_value(const XSD::hexBinary_& _value);
+    const XSD::hexBinary_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Panose& default_instance();
@@ -109,8 +109,8 @@ public:
 protected:
 private:
     static ST_Panose* default_instance_;
-    bool m_has_hexBinary;
-    XSD::hexBinary_ m_hexBinary;
+    bool m_has_value;
+    XSD::hexBinary_ m_value;
 };
 
 class ST_CalendarType: public XSD::SimpleType
@@ -134,11 +134,11 @@ public:
         _none_
     };
     ST_CalendarType();
-    ST_CalendarType(const ST_CalendarType::Type& _type);
+    ST_CalendarType(const ST_CalendarType::Type& _value);
     ~ST_CalendarType();
-    bool has_type() const;
-    void set_type(const ST_CalendarType::Type& _type);
-    const ST_CalendarType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_CalendarType::Type& _value);
+    const ST_CalendarType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -147,8 +147,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_CalendarType* default_instance_;
-    bool m_has_type;
-    ST_CalendarType::Type m_type;
+    bool m_has_value;
+    ST_CalendarType::Type m_value;
 };
 
 class ST_AlgClass: public XSD::SimpleType
@@ -160,11 +160,11 @@ public:
         _custom_
     };
     ST_AlgClass();
-    ST_AlgClass(const ST_AlgClass::Type& _type);
+    ST_AlgClass(const ST_AlgClass::Type& _value);
     ~ST_AlgClass();
-    bool has_type() const;
-    void set_type(const ST_AlgClass::Type& _type);
-    const ST_AlgClass::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_AlgClass::Type& _value);
+    const ST_AlgClass::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -173,8 +173,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_AlgClass* default_instance_;
-    bool m_has_type;
-    ST_AlgClass::Type m_type;
+    bool m_has_value;
+    ST_AlgClass::Type m_value;
 };
 
 class ST_CryptProv: public XSD::SimpleType
@@ -187,11 +187,11 @@ public:
         _custom_
     };
     ST_CryptProv();
-    ST_CryptProv(const ST_CryptProv::Type& _type);
+    ST_CryptProv(const ST_CryptProv::Type& _value);
     ~ST_CryptProv();
-    bool has_type() const;
-    void set_type(const ST_CryptProv::Type& _type);
-    const ST_CryptProv::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_CryptProv::Type& _value);
+    const ST_CryptProv::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -200,8 +200,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_CryptProv* default_instance_;
-    bool m_has_type;
-    ST_CryptProv::Type m_type;
+    bool m_has_value;
+    ST_CryptProv::Type m_value;
 };
 
 class ST_AlgType: public XSD::SimpleType
@@ -213,11 +213,11 @@ public:
         _custom_
     };
     ST_AlgType();
-    ST_AlgType(const ST_AlgType::Type& _type);
+    ST_AlgType(const ST_AlgType::Type& _value);
     ~ST_AlgType();
-    bool has_type() const;
-    void set_type(const ST_AlgType::Type& _type);
-    const ST_AlgType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_AlgType::Type& _value);
+    const ST_AlgType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -226,19 +226,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_AlgType* default_instance_;
-    bool m_has_type;
-    ST_AlgType::Type m_type;
+    bool m_has_value;
+    ST_AlgType::Type m_value;
 };
 
 class ST_ColorType: public XSD::SimpleType
 {
 public:
     ST_ColorType();
-    ST_ColorType(const XSD::string_& _string);
+    ST_ColorType(const XSD::string_& _value);
     ~ST_ColorType();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_ColorType& default_instance();
@@ -246,19 +246,19 @@ public:
 protected:
 private:
     static ST_ColorType* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_Guid: public XSD::SimpleType
 {
 public:
     ST_Guid();
-    ST_Guid(const XSD::token_& _token);
+    ST_Guid(const XSD::token_& _value);
     ~ST_Guid();
-    bool has_token() const;
-    void set_token(const XSD::token_& _token);
-    const XSD::token_& get_token() const;
+    bool has_value() const;
+    void set_value(const XSD::token_& _value);
+    const XSD::token_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Guid& default_instance();
@@ -266,8 +266,8 @@ public:
 protected:
 private:
     static ST_Guid* default_instance_;
-    bool m_has_token;
-    XSD::token_ m_token;
+    bool m_has_value;
+    XSD::token_ m_value;
 };
 
 class ST_OnOff: public XSD::SimpleType
@@ -306,11 +306,11 @@ public:
         _off_
     };
     ST_OnOff1();
-    ST_OnOff1(const ST_OnOff1::Type& _type);
+    ST_OnOff1(const ST_OnOff1::Type& _value);
     ~ST_OnOff1();
-    bool has_type() const;
-    void set_type(const ST_OnOff1::Type& _type);
-    const ST_OnOff1::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_OnOff1::Type& _value);
+    const ST_OnOff1::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -319,19 +319,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_OnOff1* default_instance_;
-    bool m_has_type;
-    ST_OnOff1::Type m_type;
+    bool m_has_value;
+    ST_OnOff1::Type m_value;
 };
 
 class ST_String: public XSD::SimpleType
 {
 public:
     ST_String();
-    ST_String(const XSD::string_& _string);
+    ST_String(const XSD::string_& _value);
     ~ST_String();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_String& default_instance();
@@ -339,19 +339,19 @@ public:
 protected:
 private:
     static ST_String* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_XmlName: public XSD::SimpleType
 {
 public:
     ST_XmlName();
-    ST_XmlName(const XSD::NCName_& _NCName);
+    ST_XmlName(const XSD::NCName_& _value);
     ~ST_XmlName();
-    bool has_NCName() const;
-    void set_NCName(const XSD::NCName_& _NCName);
-    const XSD::NCName_& get_NCName() const;
+    bool has_value() const;
+    void set_value(const XSD::NCName_& _value);
+    const XSD::NCName_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_XmlName& default_instance();
@@ -359,8 +359,8 @@ public:
 protected:
 private:
     static ST_XmlName* default_instance_;
-    bool m_has_NCName;
-    XSD::NCName_ m_NCName;
+    bool m_has_value;
+    XSD::NCName_ m_value;
 };
 
 class ST_TrueFalse: public XSD::SimpleType
@@ -374,11 +374,11 @@ public:
         _false_
     };
     ST_TrueFalse();
-    ST_TrueFalse(const ST_TrueFalse::Type& _type);
+    ST_TrueFalse(const ST_TrueFalse::Type& _value);
     ~ST_TrueFalse();
-    bool has_type() const;
-    void set_type(const ST_TrueFalse::Type& _type);
-    const ST_TrueFalse::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TrueFalse::Type& _value);
+    const ST_TrueFalse::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -387,8 +387,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TrueFalse* default_instance_;
-    bool m_has_type;
-    ST_TrueFalse::Type m_type;
+    bool m_has_value;
+    ST_TrueFalse::Type m_value;
 };
 
 class ST_TrueFalseBlank: public XSD::SimpleType
@@ -405,11 +405,11 @@ public:
         _False_
     };
     ST_TrueFalseBlank();
-    ST_TrueFalseBlank(const ST_TrueFalseBlank::Type& _type);
+    ST_TrueFalseBlank(const ST_TrueFalseBlank::Type& _value);
     ~ST_TrueFalseBlank();
-    bool has_type() const;
-    void set_type(const ST_TrueFalseBlank::Type& _type);
-    const ST_TrueFalseBlank::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TrueFalseBlank::Type& _value);
+    const ST_TrueFalseBlank::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -418,19 +418,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TrueFalseBlank* default_instance_;
-    bool m_has_type;
-    ST_TrueFalseBlank::Type m_type;
+    bool m_has_value;
+    ST_TrueFalseBlank::Type m_value;
 };
 
 class ST_UnsignedDecimalNumber: public XSD::SimpleType
 {
 public:
     ST_UnsignedDecimalNumber();
-    ST_UnsignedDecimalNumber(const XSD::unsignedLong_& _unsignedLong);
+    ST_UnsignedDecimalNumber(const XSD::unsignedLong_& _value);
     ~ST_UnsignedDecimalNumber();
-    bool has_unsignedLong() const;
-    void set_unsignedLong(const XSD::unsignedLong_& _unsignedLong);
-    const XSD::unsignedLong_& get_unsignedLong() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedLong_& _value);
+    const XSD::unsignedLong_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_UnsignedDecimalNumber& default_instance();
@@ -438,8 +438,8 @@ public:
 protected:
 private:
     static ST_UnsignedDecimalNumber* default_instance_;
-    bool m_has_unsignedLong;
-    XSD::unsignedLong_ m_unsignedLong;
+    bool m_has_value;
+    XSD::unsignedLong_ m_value;
 };
 
 class ST_TwipsMeasure: public XSD::SimpleType
@@ -479,11 +479,11 @@ public:
         _subscript_
     };
     ST_VerticalAlignRun();
-    ST_VerticalAlignRun(const ST_VerticalAlignRun::Type& _type);
+    ST_VerticalAlignRun(const ST_VerticalAlignRun::Type& _value);
     ~ST_VerticalAlignRun();
-    bool has_type() const;
-    void set_type(const ST_VerticalAlignRun::Type& _type);
-    const ST_VerticalAlignRun::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_VerticalAlignRun::Type& _value);
+    const ST_VerticalAlignRun::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -492,19 +492,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_VerticalAlignRun* default_instance_;
-    bool m_has_type;
-    ST_VerticalAlignRun::Type m_type;
+    bool m_has_value;
+    ST_VerticalAlignRun::Type m_value;
 };
 
 class ST_Xstring: public XSD::SimpleType
 {
 public:
     ST_Xstring();
-    ST_Xstring(const XSD::string_& _string);
+    ST_Xstring(const XSD::string_& _value);
     ~ST_Xstring();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Xstring& default_instance();
@@ -512,8 +512,8 @@ public:
 protected:
 private:
     static ST_Xstring* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_XAlign: public XSD::SimpleType
@@ -528,11 +528,11 @@ public:
         _outside_
     };
     ST_XAlign();
-    ST_XAlign(const ST_XAlign::Type& _type);
+    ST_XAlign(const ST_XAlign::Type& _value);
     ~ST_XAlign();
-    bool has_type() const;
-    void set_type(const ST_XAlign::Type& _type);
-    const ST_XAlign::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_XAlign::Type& _value);
+    const ST_XAlign::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -541,8 +541,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_XAlign* default_instance_;
-    bool m_has_type;
-    ST_XAlign::Type m_type;
+    bool m_has_value;
+    ST_XAlign::Type m_value;
 };
 
 class ST_YAlign: public XSD::SimpleType
@@ -558,11 +558,11 @@ public:
         _outside_
     };
     ST_YAlign();
-    ST_YAlign(const ST_YAlign::Type& _type);
+    ST_YAlign(const ST_YAlign::Type& _value);
     ~ST_YAlign();
-    bool has_type() const;
-    void set_type(const ST_YAlign::Type& _type);
-    const ST_YAlign::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_YAlign::Type& _value);
+    const ST_YAlign::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -571,8 +571,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_YAlign* default_instance_;
-    bool m_has_type;
-    ST_YAlign::Type m_type;
+    bool m_has_value;
+    ST_YAlign::Type m_value;
 };
 
 class ST_ConformanceClass: public XSD::SimpleType
@@ -584,11 +584,11 @@ public:
         _transitional_
     };
     ST_ConformanceClass();
-    ST_ConformanceClass(const ST_ConformanceClass::Type& _type);
+    ST_ConformanceClass(const ST_ConformanceClass::Type& _value);
     ~ST_ConformanceClass();
-    bool has_type() const;
-    void set_type(const ST_ConformanceClass::Type& _type);
-    const ST_ConformanceClass::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ConformanceClass::Type& _value);
+    const ST_ConformanceClass::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -597,19 +597,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ConformanceClass* default_instance_;
-    bool m_has_type;
-    ST_ConformanceClass::Type m_type;
+    bool m_has_value;
+    ST_ConformanceClass::Type m_value;
 };
 
 class ST_UniversalMeasure: public XSD::SimpleType
 {
 public:
     ST_UniversalMeasure();
-    ST_UniversalMeasure(const XSD::string_& _string);
+    ST_UniversalMeasure(const XSD::string_& _value);
     ~ST_UniversalMeasure();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_UniversalMeasure& default_instance();
@@ -617,8 +617,8 @@ public:
 protected:
 private:
     static ST_UniversalMeasure* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_PositiveUniversalMeasure: public ST_UniversalMeasure
@@ -637,11 +637,11 @@ class ST_Percentage: public XSD::SimpleType
 {
 public:
     ST_Percentage();
-    ST_Percentage(const XSD::string_& _string);
+    ST_Percentage(const XSD::string_& _value);
     ~ST_Percentage();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Percentage& default_instance();
@@ -649,8 +649,8 @@ public:
 protected:
 private:
     static ST_Percentage* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_FixedPercentage: public ST_Percentage

@@ -13,47 +13,47 @@ using namespace std;
 
 // ST_Relation
 ST_Relation::ST_Relation()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_Relation::ST_Relation(const ST_Relation::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_Relation::ST_Relation(const ST_Relation::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_Relation::~ST_Relation()
 {
     clear();
 }
-bool ST_Relation::has_type() const
+bool ST_Relation::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_Relation::set_type(const ST_Relation::Type& _type)
+void ST_Relation::set_value(const ST_Relation::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_Relation::Type& ST_Relation::get_type() const
+const ST_Relation::Type& ST_Relation::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_Relation::toString() const
 {
-    return ST_Relation::TypeStrList[m_type];
+    return ST_Relation::TypeStrList[m_value];
 }
 
 void ST_Relation::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_Relation::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }

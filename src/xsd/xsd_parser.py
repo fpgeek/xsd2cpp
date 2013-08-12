@@ -148,7 +148,9 @@ def groupByElemCont(pbComplexType):
 
     for elemCont in pbComplexType.element_container:
         if prevElemCont is not None and \
-                (prevElemCont.kind == elemCont.kind and elemCont.kind != PB.ElementContainer.RepeatedSequence):
+                (prevElemCont.kind == elemCont.kind
+                 and elemCont.kind != PB.ElementContainer.RepeatedSequence
+                 and elemCont.kind != PB.ElementContainer.Choice):
             copyElemCont(elemCont, curElemCont)
         else:
             curElemCont = PB.ElementContainer()
@@ -353,7 +355,7 @@ class ALL_SCHEMA:
         childElemGroups = itertools.groupby([childElem for childElem in sequnceElem], lambda elem: elem.tag)
         for tag, childElems in childElemGroups:
             pbContType = orgContType
-            if tag == '{%s}element' % XSD_URI:
+            if tag == '{%s}element' % XSD_URI or tag == '{%s}any' % XSD_URI:
 
                 def elemGroupByKeyFunc(elem):
                     maxOccurs = parseMaxOccurs(elem)
@@ -367,12 +369,19 @@ class ALL_SCHEMA:
                         for childElem in childElems:
                             pbElemCont = self._createPbElemCont(pbComplexType, pbContType, pbMaxOccurs, minOccurs, isManyMaxOcc)
                             pbContType = pbElemCont.kind
-                            self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
+                            if childElem.tag == '{%s}element' % XSD_URI:
+                                self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
+                            elif childElem.tag == '{%s}any' % XSD_URI:
+                                self._parseAny(xmlSchema, childElem, pbContType, pbElemCont, pbMaxOccurs)
                     else:
                         pbElemCont = self._createPbElemCont(pbComplexType, pbContType, pbMaxOccurs, minOccurs, isManyMaxOcc)
                         for childElem in childElems:
                             pbContType = pbElemCont.kind
-                            self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
+                            if childElem.tag == '{%s}element' % XSD_URI:
+                                self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, ELEMENT_SEQUENCE)
+                            elif childElem.tag == '{%s}any' % XSD_URI:
+                                self._parseAny(xmlSchema, childElem, pbContType, pbElemCont, pbMaxOccurs)
+
 
             else:
 
@@ -446,6 +455,24 @@ class ALL_SCHEMA:
                 elif childElem.tag == '{%s}any' % XSD_URI:
                     self._parseAny(xmlSchema, childElem, pbContType, pbElemCont, pbMaxOccurs, nsPrefix)
 
+
+    def _registImportAndNamespace(self, xmlSchema, namespace):
+        nsPrefix = self._findNsPrefixFromAllSchema(namespace)
+        if nsPrefix:
+            namespaceUriList = [ns for ns in xmlSchema.pbSchema.namespace if ns.uri == namespace] # 이미 있는 네임스페이스는 또다시 등록되지 않도록 한다.
+            if len(namespaceUriList) == 0:
+
+                pbImport = xmlSchema.pbSchema.import_.add()
+                pbImport.namespace = namespace
+                schemaLocation = self._findSchemaLocationFromAllSchema(nsPrefix)
+                if schemaLocation: pbImport.schema_location = schemaLocation
+
+                pbNs = xmlSchema.pbSchema.namespace.add()
+                pbNs.prefix = nsPrefix
+                pbNs.uri = namespace
+        return nsPrefix
+
+
     def _parseAny(self, xmlSchema, anyElem, pbContType, pbElemCont, pbMaxOccurs, nsPrefix=None):
         pbElem = None
         if pbContType == PB.ElementContainer.Sequence:
@@ -471,21 +498,8 @@ class ALL_SCHEMA:
             pbElem.type.kind = PB.Element.Type.Any
             namespace = anyElem.attrib.get('namespace')
             if namespace:
-                nsPrefix = self._findNsPrefixFromAllSchema(namespace)
-                if nsPrefix:
-                    # pbElem.name = '%s_%s' % (pbElem.name, nsPrefix)
-                    pbElem.type.any.ns_prefix = nsPrefix
-                    namespaceUriList = [ns for ns in xmlSchema.pbSchema.namespace if ns.uri == namespace] # 이미 있는 네임스페이스는 또다시 등록되지 않도록 한다.
-                    if len(namespaceUriList) == 0:
-
-                        pbImport = xmlSchema.pbSchema.import_.add()
-                        pbImport.namespace = namespace
-                        schemaLocation = self._findSchemaLocationFromAllSchema(nsPrefix)
-                        if schemaLocation: pbImport.schema_location = schemaLocation
-
-                        pbNs = xmlSchema.pbSchema.namespace.add()
-                        pbNs.prefix = nsPrefix
-                        pbNs.uri = namespace
+                nsPrefix = self._registImportAndNamespace(xmlSchema, namespace)
+                if nsPrefix: pbElem.type.any.ns_prefix = nsPrefix
 
             processContents = anyElem.attrib.get('processContents')
             if processContents: pbElem.type.any.process_contents = processContents
@@ -605,6 +619,8 @@ class ALL_SCHEMA:
             otherGroupElem, otherSchema = self._findGroup(xmlSchema, ref)
             if hasNsPrefix(ref):
                 nsPrefix = getNsPrefix(ref)
+                # imp = xmlSchema.pbSchema.import_.add()
+                # imp.schema_location = otherSchema.fileName
 
             self._parseGroup(otherSchema, otherGroupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix, parentElement, minOccurs)
 
@@ -976,6 +992,17 @@ def parseNamespaces(xmlSchema, pbSchema):
         pbNs = pbSchema.namespace.add()
         pbNs.prefix = ns.get('prefix')
         pbNs.uri = ns.get('uri')
+
+def parseRelatedAllImports(xmlSchema, pbSchema):
+    for importElem in xmlSchema.importElems:
+        pbImport = pbSchema.import_.add()
+        namespace = importElem.attrib.get('namespace')
+        if namespace: pbImport.namespace = namespace
+        schemaLocation = importElem.attrib.get('schemaLocation')
+        if schemaLocation: pbImport.schema_location = schemaLocation
+
+
+
 
 def parseImports(xmlSchema, pbSchema):
     for importElem in xmlSchema.importElems:

@@ -13,47 +13,47 @@ using namespace std;
 
 // ST_String
 ST_String::ST_String()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_String::ST_String(const XSD::string_& _string)
-    :m_has_string(true)
+ST_String::ST_String(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_String::~ST_String()
 {
     clear();
 }
-bool ST_String::has_string() const
+bool ST_String::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_String::set_string(const XSD::string_& _string)
+void ST_String::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_String::get_string() const
+const XSD::string_& ST_String::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_String::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_String::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -69,7 +69,7 @@ const ST_String& ST_String::default_instance()
 std::string ST_String::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 

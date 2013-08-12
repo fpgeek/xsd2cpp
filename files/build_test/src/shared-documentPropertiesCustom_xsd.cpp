@@ -6049,8 +6049,8 @@ void Properties_element::toXml(std::ostream& _outStream) const
     _outStream << "<op:Properties";
 
     _outStream << " " << "xmlns:op=\"http://schemas.openxmlformats.org/officeDocument/2006/custom-properties\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
+    _outStream << " " << "xmlns:op=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:op=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
 
     _outStream << ">";
 

@@ -14,47 +14,47 @@ using namespace std;
 
 // ST_CF
 ST_CF::ST_CF()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_CF::ST_CF(const XSD::string_& _string)
-    :m_has_string(true)
+ST_CF::ST_CF(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_CF::~ST_CF()
 {
     clear();
 }
-bool ST_CF::has_string() const
+bool ST_CF::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_CF::set_string(const XSD::string_& _string)
+void ST_CF::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_CF::get_string() const
+const XSD::string_& ST_CF::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_CF::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_CF::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -70,7 +70,7 @@ const ST_CF& ST_CF::default_instance()
 std::string ST_CF::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -78,47 +78,47 @@ ST_CF* ST_CF::default_instance_ = NULL;
 
 // ST_ObjectType
 ST_ObjectType::ST_ObjectType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ObjectType::ST_ObjectType(const ST_ObjectType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ObjectType::ST_ObjectType(const ST_ObjectType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ObjectType::~ST_ObjectType()
 {
     clear();
 }
-bool ST_ObjectType::has_type() const
+bool ST_ObjectType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ObjectType::set_type(const ST_ObjectType::Type& _type)
+void ST_ObjectType::set_value(const ST_ObjectType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ObjectType::Type& ST_ObjectType::get_type() const
+const ST_ObjectType::Type& ST_ObjectType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ObjectType::toString() const
 {
-    return ST_ObjectType::TypeStrList[m_type];
+    return ST_ObjectType::TypeStrList[m_value];
 }
 
 void ST_ObjectType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ObjectType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -29970,7 +29970,7 @@ void ClientData_element::toXml(std::ostream& _outStream) const
     _outStream << "<x:ClientData";
 
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_ObjectType_attr);
     if (m_has_ObjectType_attr)

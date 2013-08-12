@@ -350,7 +350,7 @@ void datastoreItem_element::toXml(std::ostream& _outStream) const
     _outStream << "<ds:datastoreItem";
 
     _outStream << " " << "xmlns:ds=\"http://schemas.openxmlformats.org/officeDocument/2006/customXml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:ds=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_itemID_attr);
     if (m_has_itemID_attr)

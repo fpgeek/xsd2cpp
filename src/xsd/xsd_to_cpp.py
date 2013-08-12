@@ -9,18 +9,29 @@ import functools
 
 def parseToCpp(pbSchema, allPbSchemas):
     cppFile = CPB.File()
-    _makeCppFileProp(cppFile, pbSchema)
+    cppFile.name = _getCppFileName(pbSchema.file_name)
+
+    searchFileSet = set()
+    _makeCppFileProp(cppFile, pbSchema, allPbSchemas, searchFileSet)
     _makeCppClasses(cppFile, pbSchema, allPbSchemas)
     return cppFile
 
 
 # cpp - File 속성 채우기
-def _makeCppFileProp(cppFile, pbSchema):
-    cppFile.name = _getCppFileName(pbSchema.file_name)
+def _makeCppFileProp(cppFile, pbSchema, allPbSchemas, searchFileSet):
     for imp in pbSchema.import_:
         includeFileName = _getCppIncludeFileName(imp.schema_location)
         if includeFileName:
-            cppFile.include_file.append(includeFileName)
+            if includeFileName not in cppFile.include_file:
+                cppFile.include_file.append(includeFileName)
+
+    for imp in pbSchema.import_:
+        importPbSchemas = [otherPbSchema for otherPbSchema in allPbSchemas
+                           if otherPbSchema.file_name == imp.schema_location]
+        for impPbSchema in importPbSchemas:
+            if not impPbSchema.file_name in searchFileSet:
+                searchFileSet.add(impPbSchema.file_name)
+                _makeCppFileProp(cppFile, impPbSchema, allPbSchemas, searchFileSet)
 
 
 def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass, cppFile):
@@ -78,7 +89,7 @@ _outStream << "<%s";
     toXmlMethodBodyStr += \
 """
 %s
-""" % _makeXmlNsCode(pbSchema.namespace, pbSchema.xml_ns_prefix, "_outStream")
+""" % _makeXmlNsCode(pbSchema, "_outStream")
 
     toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromAttrs(pbSchema, pbComplexType.attribute)
     toXmlMethodBodyStr += \
@@ -127,25 +138,28 @@ def _makeCppClasses(cppFile, pbSchema, allPbSchemas):
         _makeCppClassFromAttribute(pbSchema, pbAttr, cppClass)
 
 
-def _getXmlNsPrefixStr(nsPrefix, mainNsPrefix):
-    if nsPrefix == '':
-        if mainNsPrefix:
-            return 'xmlns:%s' % mainNsPrefix
+def _getXmlNsPrefixStr(ns, pbScheme):
+    if ns.uri == pbScheme.target_namespace:
+        if pbScheme.element_form_default == PB.Form.unqualified:
+            return 'xmlns'
+
+    if ns.prefix == '':
+        if pbScheme.xml_ns_prefix:
+            return 'xmlns:%s' % pbScheme.xml_ns_prefix
         else:
             return 'xmlns'
     else:
-        return 'xmlns:%s' % nsPrefix
+        return 'xmlns:%s' % pbScheme.xml_ns_prefix
 
-
-def _makeXmlNsCode(pbNsList, mainNsPrefix, cppStreamName):
+def _makeXmlNsCode(pbScheme, cppStreamName):
     pbNsSet = set()
     pbNsRemoveDupList = []
-    for pbNs in pbNsList:
+    for pbNs in pbScheme.namespace:
         if not pbNs.uri in pbNsSet:
             pbNsRemoveDupList.append(pbNs)
         pbNsSet.add(pbNs.uri)
 
-    nsCodeList= ['%s << " " << "%s=\\\\"%s\\\\"";' % (cppStreamName, _getXmlNsPrefixStr(pbNs.prefix, mainNsPrefix), pbNs.uri) for pbNs in pbNsRemoveDupList if pbNs.prefix not in ['xsd'] ]
+    nsCodeList= ['%s << " " << "%s=\\\\"%s\\\\"";' % (cppStreamName, _getXmlNsPrefixStr(pbNs, pbScheme), pbNs.uri) for pbNs in pbNsRemoveDupList if pbNs.prefix not in ['xsd'] ]
     return '\n'.join(nsCodeList)
 
 

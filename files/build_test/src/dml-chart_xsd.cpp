@@ -8,6 +8,10 @@
 #include "dml-main_xsd.h"
 #include "dml-chartDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
 namespace ns_c {
 using namespace std;
 
@@ -17,47 +21,47 @@ using namespace std;
 
 // ST_LayoutTarget
 ST_LayoutTarget::ST_LayoutTarget()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_LayoutTarget::ST_LayoutTarget(const ST_LayoutTarget::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_LayoutTarget::ST_LayoutTarget(const ST_LayoutTarget::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_LayoutTarget::~ST_LayoutTarget()
 {
     clear();
 }
-bool ST_LayoutTarget::has_type() const
+bool ST_LayoutTarget::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_LayoutTarget::set_type(const ST_LayoutTarget::Type& _type)
+void ST_LayoutTarget::set_value(const ST_LayoutTarget::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_LayoutTarget::Type& ST_LayoutTarget::get_type() const
+const ST_LayoutTarget::Type& ST_LayoutTarget::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_LayoutTarget::toString() const
 {
-    return ST_LayoutTarget::TypeStrList[m_type];
+    return ST_LayoutTarget::TypeStrList[m_value];
 }
 
 void ST_LayoutTarget::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_LayoutTarget::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -81,47 +85,47 @@ ST_LayoutTarget* ST_LayoutTarget::default_instance_ = NULL;
 
 // ST_LayoutMode
 ST_LayoutMode::ST_LayoutMode()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_LayoutMode::ST_LayoutMode(const ST_LayoutMode::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_LayoutMode::ST_LayoutMode(const ST_LayoutMode::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_LayoutMode::~ST_LayoutMode()
 {
     clear();
 }
-bool ST_LayoutMode::has_type() const
+bool ST_LayoutMode::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_LayoutMode::set_type(const ST_LayoutMode::Type& _type)
+void ST_LayoutMode::set_value(const ST_LayoutMode::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_LayoutMode::Type& ST_LayoutMode::get_type() const
+const ST_LayoutMode::Type& ST_LayoutMode::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_LayoutMode::toString() const
 {
-    return ST_LayoutMode::TypeStrList[m_type];
+    return ST_LayoutMode::TypeStrList[m_value];
 }
 
 void ST_LayoutMode::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_LayoutMode::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -145,49 +149,49 @@ ST_LayoutMode* ST_LayoutMode::default_instance_ = NULL;
 
 // ST_RotX
 ST_RotX::ST_RotX()
-    :m_has_byte(false),
-     m_byte(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_RotX::ST_RotX(const XSD::byte_& _byte)
-    :m_has_byte(true)
+ST_RotX::ST_RotX(const XSD::byte_& _value)
+    :m_has_value(true)
 {
 
-    set_byte(_byte);
+    set_value(_value);
 }
 ST_RotX::~ST_RotX()
 {
     clear();
 }
-bool ST_RotX::has_byte() const
+bool ST_RotX::has_value() const
 {
-    return m_has_byte;
+    return m_has_value;
 }
 
-void ST_RotX::set_byte(const XSD::byte_& _byte)
-{   assert(-90 <= _byte);
-    assert(_byte <= 90);
+void ST_RotX::set_value(const XSD::byte_& _value)
+{   assert(-90 <= _value);
+    assert(_value <= 90);
 
-    m_has_byte = true;
-    m_byte = _byte;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::byte_& ST_RotX::get_byte() const
+const XSD::byte_& ST_RotX::get_value() const
 {
-    return m_byte;
+    return m_value;
 }
 
 void ST_RotX::clear()
 {
-    m_has_byte = false;
-    m_byte = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_RotX::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_byte)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_byte << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -203,7 +207,7 @@ const ST_RotX& ST_RotX::default_instance()
 std::string ST_RotX::toString() const
 {
     std::stringstream strStream;
-    strStream << get_byte();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -359,47 +363,47 @@ ST_HPercent* ST_HPercent::default_instance_ = NULL;
 
 // ST_HPercentWithSymbol
 ST_HPercentWithSymbol::ST_HPercentWithSymbol()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_HPercentWithSymbol::ST_HPercentWithSymbol(const XSD::string_& _string)
-    :m_has_string(true)
+ST_HPercentWithSymbol::ST_HPercentWithSymbol(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_HPercentWithSymbol::~ST_HPercentWithSymbol()
 {
     clear();
 }
-bool ST_HPercentWithSymbol::has_string() const
+bool ST_HPercentWithSymbol::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_HPercentWithSymbol::set_string(const XSD::string_& _string)
+void ST_HPercentWithSymbol::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_HPercentWithSymbol::get_string() const
+const XSD::string_& ST_HPercentWithSymbol::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_HPercentWithSymbol::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_HPercentWithSymbol::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -415,7 +419,7 @@ const ST_HPercentWithSymbol& ST_HPercentWithSymbol::default_instance()
 std::string ST_HPercentWithSymbol::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -423,49 +427,49 @@ ST_HPercentWithSymbol* ST_HPercentWithSymbol::default_instance_ = NULL;
 
 // ST_HPercentUShort
 ST_HPercentUShort::ST_HPercentUShort()
-    :m_has_unsignedShort(false),
-     m_unsignedShort(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_HPercentUShort::ST_HPercentUShort(const XSD::unsignedShort_& _unsignedShort)
-    :m_has_unsignedShort(true)
+ST_HPercentUShort::ST_HPercentUShort(const XSD::unsignedShort_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedShort(_unsignedShort);
+    set_value(_value);
 }
 ST_HPercentUShort::~ST_HPercentUShort()
 {
     clear();
 }
-bool ST_HPercentUShort::has_unsignedShort() const
+bool ST_HPercentUShort::has_value() const
 {
-    return m_has_unsignedShort;
+    return m_has_value;
 }
 
-void ST_HPercentUShort::set_unsignedShort(const XSD::unsignedShort_& _unsignedShort)
-{   assert(5 <= _unsignedShort);
-    assert(_unsignedShort <= 500);
+void ST_HPercentUShort::set_value(const XSD::unsignedShort_& _value)
+{   assert(5 <= _value);
+    assert(_value <= 500);
 
-    m_has_unsignedShort = true;
-    m_unsignedShort = _unsignedShort;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedShort_& ST_HPercentUShort::get_unsignedShort() const
+const XSD::unsignedShort_& ST_HPercentUShort::get_value() const
 {
-    return m_unsignedShort;
+    return m_value;
 }
 
 void ST_HPercentUShort::clear()
 {
-    m_has_unsignedShort = false;
-    m_unsignedShort = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_HPercentUShort::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedShort)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedShort << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -481,7 +485,7 @@ const ST_HPercentUShort& ST_HPercentUShort::default_instance()
 std::string ST_HPercentUShort::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedShort();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -489,49 +493,49 @@ ST_HPercentUShort* ST_HPercentUShort::default_instance_ = NULL;
 
 // ST_RotY
 ST_RotY::ST_RotY()
-    :m_has_unsignedShort(false),
-     m_unsignedShort(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_RotY::ST_RotY(const XSD::unsignedShort_& _unsignedShort)
-    :m_has_unsignedShort(true)
+ST_RotY::ST_RotY(const XSD::unsignedShort_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedShort(_unsignedShort);
+    set_value(_value);
 }
 ST_RotY::~ST_RotY()
 {
     clear();
 }
-bool ST_RotY::has_unsignedShort() const
+bool ST_RotY::has_value() const
 {
-    return m_has_unsignedShort;
+    return m_has_value;
 }
 
-void ST_RotY::set_unsignedShort(const XSD::unsignedShort_& _unsignedShort)
-{   assert(0 <= _unsignedShort);
-    assert(_unsignedShort <= 360);
+void ST_RotY::set_value(const XSD::unsignedShort_& _value)
+{   assert(0 <= _value);
+    assert(_value <= 360);
 
-    m_has_unsignedShort = true;
-    m_unsignedShort = _unsignedShort;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedShort_& ST_RotY::get_unsignedShort() const
+const XSD::unsignedShort_& ST_RotY::get_value() const
 {
-    return m_unsignedShort;
+    return m_value;
 }
 
 void ST_RotY::clear()
 {
-    m_has_unsignedShort = false;
-    m_unsignedShort = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_RotY::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedShort)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedShort << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -547,7 +551,7 @@ const ST_RotY& ST_RotY::default_instance()
 std::string ST_RotY::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedShort();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -703,47 +707,47 @@ ST_DepthPercent* ST_DepthPercent::default_instance_ = NULL;
 
 // ST_DepthPercentWithSymbol
 ST_DepthPercentWithSymbol::ST_DepthPercentWithSymbol()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_DepthPercentWithSymbol::ST_DepthPercentWithSymbol(const XSD::string_& _string)
-    :m_has_string(true)
+ST_DepthPercentWithSymbol::ST_DepthPercentWithSymbol(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_DepthPercentWithSymbol::~ST_DepthPercentWithSymbol()
 {
     clear();
 }
-bool ST_DepthPercentWithSymbol::has_string() const
+bool ST_DepthPercentWithSymbol::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_DepthPercentWithSymbol::set_string(const XSD::string_& _string)
+void ST_DepthPercentWithSymbol::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_DepthPercentWithSymbol::get_string() const
+const XSD::string_& ST_DepthPercentWithSymbol::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_DepthPercentWithSymbol::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_DepthPercentWithSymbol::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -759,7 +763,7 @@ const ST_DepthPercentWithSymbol& ST_DepthPercentWithSymbol::default_instance()
 std::string ST_DepthPercentWithSymbol::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -767,49 +771,49 @@ ST_DepthPercentWithSymbol* ST_DepthPercentWithSymbol::default_instance_ = NULL;
 
 // ST_DepthPercentUShort
 ST_DepthPercentUShort::ST_DepthPercentUShort()
-    :m_has_unsignedShort(false),
-     m_unsignedShort(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_DepthPercentUShort::ST_DepthPercentUShort(const XSD::unsignedShort_& _unsignedShort)
-    :m_has_unsignedShort(true)
+ST_DepthPercentUShort::ST_DepthPercentUShort(const XSD::unsignedShort_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedShort(_unsignedShort);
+    set_value(_value);
 }
 ST_DepthPercentUShort::~ST_DepthPercentUShort()
 {
     clear();
 }
-bool ST_DepthPercentUShort::has_unsignedShort() const
+bool ST_DepthPercentUShort::has_value() const
 {
-    return m_has_unsignedShort;
+    return m_has_value;
 }
 
-void ST_DepthPercentUShort::set_unsignedShort(const XSD::unsignedShort_& _unsignedShort)
-{   assert(20 <= _unsignedShort);
-    assert(_unsignedShort <= 2000);
+void ST_DepthPercentUShort::set_value(const XSD::unsignedShort_& _value)
+{   assert(20 <= _value);
+    assert(_value <= 2000);
 
-    m_has_unsignedShort = true;
-    m_unsignedShort = _unsignedShort;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedShort_& ST_DepthPercentUShort::get_unsignedShort() const
+const XSD::unsignedShort_& ST_DepthPercentUShort::get_value() const
 {
-    return m_unsignedShort;
+    return m_value;
 }
 
 void ST_DepthPercentUShort::clear()
 {
-    m_has_unsignedShort = false;
-    m_unsignedShort = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_DepthPercentUShort::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedShort)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedShort << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -825,7 +829,7 @@ const ST_DepthPercentUShort& ST_DepthPercentUShort::default_instance()
 std::string ST_DepthPercentUShort::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedShort();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -833,49 +837,49 @@ ST_DepthPercentUShort* ST_DepthPercentUShort::default_instance_ = NULL;
 
 // ST_Perspective
 ST_Perspective::ST_Perspective()
-    :m_has_unsignedByte(false),
-     m_unsignedByte(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_Perspective::ST_Perspective(const XSD::unsignedByte_& _unsignedByte)
-    :m_has_unsignedByte(true)
+ST_Perspective::ST_Perspective(const XSD::unsignedByte_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedByte(_unsignedByte);
+    set_value(_value);
 }
 ST_Perspective::~ST_Perspective()
 {
     clear();
 }
-bool ST_Perspective::has_unsignedByte() const
+bool ST_Perspective::has_value() const
 {
-    return m_has_unsignedByte;
+    return m_has_value;
 }
 
-void ST_Perspective::set_unsignedByte(const XSD::unsignedByte_& _unsignedByte)
-{   assert(0 <= _unsignedByte);
-    assert(_unsignedByte <= 240);
+void ST_Perspective::set_value(const XSD::unsignedByte_& _value)
+{   assert(0 <= _value);
+    assert(_value <= 240);
 
-    m_has_unsignedByte = true;
-    m_unsignedByte = _unsignedByte;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedByte_& ST_Perspective::get_unsignedByte() const
+const XSD::unsignedByte_& ST_Perspective::get_value() const
 {
-    return m_unsignedByte;
+    return m_value;
 }
 
 void ST_Perspective::clear()
 {
-    m_has_unsignedByte = false;
-    m_unsignedByte = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_Perspective::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedByte)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedByte << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -891,7 +895,7 @@ const ST_Perspective& ST_Perspective::default_instance()
 std::string ST_Perspective::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedByte();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1036,47 +1040,47 @@ ST_Thickness* ST_Thickness::default_instance_ = NULL;
 
 // ST_ThicknessPercent
 ST_ThicknessPercent::ST_ThicknessPercent()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_ThicknessPercent::ST_ThicknessPercent(const XSD::string_& _string)
-    :m_has_string(true)
+ST_ThicknessPercent::ST_ThicknessPercent(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_ThicknessPercent::~ST_ThicknessPercent()
 {
     clear();
 }
-bool ST_ThicknessPercent::has_string() const
+bool ST_ThicknessPercent::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_ThicknessPercent::set_string(const XSD::string_& _string)
+void ST_ThicknessPercent::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_ThicknessPercent::get_string() const
+const XSD::string_& ST_ThicknessPercent::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_ThicknessPercent::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_ThicknessPercent::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1092,7 +1096,7 @@ const ST_ThicknessPercent& ST_ThicknessPercent::default_instance()
 std::string ST_ThicknessPercent::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1248,47 +1252,47 @@ ST_GapAmount* ST_GapAmount::default_instance_ = NULL;
 
 // ST_GapAmountPercent
 ST_GapAmountPercent::ST_GapAmountPercent()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_GapAmountPercent::ST_GapAmountPercent(const XSD::string_& _string)
-    :m_has_string(true)
+ST_GapAmountPercent::ST_GapAmountPercent(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_GapAmountPercent::~ST_GapAmountPercent()
 {
     clear();
 }
-bool ST_GapAmountPercent::has_string() const
+bool ST_GapAmountPercent::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_GapAmountPercent::set_string(const XSD::string_& _string)
+void ST_GapAmountPercent::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_GapAmountPercent::get_string() const
+const XSD::string_& ST_GapAmountPercent::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_GapAmountPercent::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_GapAmountPercent::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1304,7 +1308,7 @@ const ST_GapAmountPercent& ST_GapAmountPercent::default_instance()
 std::string ST_GapAmountPercent::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1312,49 +1316,49 @@ ST_GapAmountPercent* ST_GapAmountPercent::default_instance_ = NULL;
 
 // ST_GapAmountUShort
 ST_GapAmountUShort::ST_GapAmountUShort()
-    :m_has_unsignedShort(false),
-     m_unsignedShort(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_GapAmountUShort::ST_GapAmountUShort(const XSD::unsignedShort_& _unsignedShort)
-    :m_has_unsignedShort(true)
+ST_GapAmountUShort::ST_GapAmountUShort(const XSD::unsignedShort_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedShort(_unsignedShort);
+    set_value(_value);
 }
 ST_GapAmountUShort::~ST_GapAmountUShort()
 {
     clear();
 }
-bool ST_GapAmountUShort::has_unsignedShort() const
+bool ST_GapAmountUShort::has_value() const
 {
-    return m_has_unsignedShort;
+    return m_has_value;
 }
 
-void ST_GapAmountUShort::set_unsignedShort(const XSD::unsignedShort_& _unsignedShort)
-{   assert(0 <= _unsignedShort);
-    assert(_unsignedShort <= 500);
+void ST_GapAmountUShort::set_value(const XSD::unsignedShort_& _value)
+{   assert(0 <= _value);
+    assert(_value <= 500);
 
-    m_has_unsignedShort = true;
-    m_unsignedShort = _unsignedShort;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedShort_& ST_GapAmountUShort::get_unsignedShort() const
+const XSD::unsignedShort_& ST_GapAmountUShort::get_value() const
 {
-    return m_unsignedShort;
+    return m_value;
 }
 
 void ST_GapAmountUShort::clear()
 {
-    m_has_unsignedShort = false;
-    m_unsignedShort = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_GapAmountUShort::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedShort)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedShort << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1370,7 +1374,7 @@ const ST_GapAmountUShort& ST_GapAmountUShort::default_instance()
 std::string ST_GapAmountUShort::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedShort();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1526,47 +1530,47 @@ ST_Overlap* ST_Overlap::default_instance_ = NULL;
 
 // ST_OverlapPercent
 ST_OverlapPercent::ST_OverlapPercent()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_OverlapPercent::ST_OverlapPercent(const XSD::string_& _string)
-    :m_has_string(true)
+ST_OverlapPercent::ST_OverlapPercent(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_OverlapPercent::~ST_OverlapPercent()
 {
     clear();
 }
-bool ST_OverlapPercent::has_string() const
+bool ST_OverlapPercent::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_OverlapPercent::set_string(const XSD::string_& _string)
+void ST_OverlapPercent::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_OverlapPercent::get_string() const
+const XSD::string_& ST_OverlapPercent::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_OverlapPercent::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_OverlapPercent::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1582,7 +1586,7 @@ const ST_OverlapPercent& ST_OverlapPercent::default_instance()
 std::string ST_OverlapPercent::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1590,49 +1594,49 @@ ST_OverlapPercent* ST_OverlapPercent::default_instance_ = NULL;
 
 // ST_OverlapByte
 ST_OverlapByte::ST_OverlapByte()
-    :m_has_byte(false),
-     m_byte(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_OverlapByte::ST_OverlapByte(const XSD::byte_& _byte)
-    :m_has_byte(true)
+ST_OverlapByte::ST_OverlapByte(const XSD::byte_& _value)
+    :m_has_value(true)
 {
 
-    set_byte(_byte);
+    set_value(_value);
 }
 ST_OverlapByte::~ST_OverlapByte()
 {
     clear();
 }
-bool ST_OverlapByte::has_byte() const
+bool ST_OverlapByte::has_value() const
 {
-    return m_has_byte;
+    return m_has_value;
 }
 
-void ST_OverlapByte::set_byte(const XSD::byte_& _byte)
-{   assert(-100 <= _byte);
-    assert(_byte <= 100);
+void ST_OverlapByte::set_value(const XSD::byte_& _value)
+{   assert(-100 <= _value);
+    assert(_value <= 100);
 
-    m_has_byte = true;
-    m_byte = _byte;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::byte_& ST_OverlapByte::get_byte() const
+const XSD::byte_& ST_OverlapByte::get_value() const
 {
-    return m_byte;
+    return m_value;
 }
 
 void ST_OverlapByte::clear()
 {
-    m_has_byte = false;
-    m_byte = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_OverlapByte::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_byte)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_byte << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1648,7 +1652,7 @@ const ST_OverlapByte& ST_OverlapByte::default_instance()
 std::string ST_OverlapByte::toString() const
 {
     std::stringstream strStream;
-    strStream << get_byte();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1804,47 +1808,47 @@ ST_BubbleScale* ST_BubbleScale::default_instance_ = NULL;
 
 // ST_BubbleScalePercent
 ST_BubbleScalePercent::ST_BubbleScalePercent()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_BubbleScalePercent::ST_BubbleScalePercent(const XSD::string_& _string)
-    :m_has_string(true)
+ST_BubbleScalePercent::ST_BubbleScalePercent(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_BubbleScalePercent::~ST_BubbleScalePercent()
 {
     clear();
 }
-bool ST_BubbleScalePercent::has_string() const
+bool ST_BubbleScalePercent::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_BubbleScalePercent::set_string(const XSD::string_& _string)
+void ST_BubbleScalePercent::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_BubbleScalePercent::get_string() const
+const XSD::string_& ST_BubbleScalePercent::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_BubbleScalePercent::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_BubbleScalePercent::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1860,7 +1864,7 @@ const ST_BubbleScalePercent& ST_BubbleScalePercent::default_instance()
 std::string ST_BubbleScalePercent::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1868,49 +1872,49 @@ ST_BubbleScalePercent* ST_BubbleScalePercent::default_instance_ = NULL;
 
 // ST_BubbleScaleUInt
 ST_BubbleScaleUInt::ST_BubbleScaleUInt()
-    :m_has_unsignedInt(false),
-     m_unsignedInt(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_BubbleScaleUInt::ST_BubbleScaleUInt(const XSD::unsignedInt_& _unsignedInt)
-    :m_has_unsignedInt(true)
+ST_BubbleScaleUInt::ST_BubbleScaleUInt(const XSD::unsignedInt_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedInt(_unsignedInt);
+    set_value(_value);
 }
 ST_BubbleScaleUInt::~ST_BubbleScaleUInt()
 {
     clear();
 }
-bool ST_BubbleScaleUInt::has_unsignedInt() const
+bool ST_BubbleScaleUInt::has_value() const
 {
-    return m_has_unsignedInt;
+    return m_has_value;
 }
 
-void ST_BubbleScaleUInt::set_unsignedInt(const XSD::unsignedInt_& _unsignedInt)
-{   assert(0 <= _unsignedInt);
-    assert(_unsignedInt <= 300);
+void ST_BubbleScaleUInt::set_value(const XSD::unsignedInt_& _value)
+{   assert(0 <= _value);
+    assert(_value <= 300);
 
-    m_has_unsignedInt = true;
-    m_unsignedInt = _unsignedInt;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedInt_& ST_BubbleScaleUInt::get_unsignedInt() const
+const XSD::unsignedInt_& ST_BubbleScaleUInt::get_value() const
 {
-    return m_unsignedInt;
+    return m_value;
 }
 
 void ST_BubbleScaleUInt::clear()
 {
-    m_has_unsignedInt = false;
-    m_unsignedInt = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_BubbleScaleUInt::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedInt)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1926,7 +1930,7 @@ const ST_BubbleScaleUInt& ST_BubbleScaleUInt::default_instance()
 std::string ST_BubbleScaleUInt::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedInt();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1934,47 +1938,47 @@ ST_BubbleScaleUInt* ST_BubbleScaleUInt::default_instance_ = NULL;
 
 // ST_SizeRepresents
 ST_SizeRepresents::ST_SizeRepresents()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_SizeRepresents::ST_SizeRepresents(const ST_SizeRepresents::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_SizeRepresents::ST_SizeRepresents(const ST_SizeRepresents::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_SizeRepresents::~ST_SizeRepresents()
 {
     clear();
 }
-bool ST_SizeRepresents::has_type() const
+bool ST_SizeRepresents::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_SizeRepresents::set_type(const ST_SizeRepresents::Type& _type)
+void ST_SizeRepresents::set_value(const ST_SizeRepresents::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_SizeRepresents::Type& ST_SizeRepresents::get_type() const
+const ST_SizeRepresents::Type& ST_SizeRepresents::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_SizeRepresents::toString() const
 {
-    return ST_SizeRepresents::TypeStrList[m_type];
+    return ST_SizeRepresents::TypeStrList[m_value];
 }
 
 void ST_SizeRepresents::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_SizeRepresents::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1998,49 +2002,49 @@ ST_SizeRepresents* ST_SizeRepresents::default_instance_ = NULL;
 
 // ST_FirstSliceAng
 ST_FirstSliceAng::ST_FirstSliceAng()
-    :m_has_unsignedShort(false),
-     m_unsignedShort(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_FirstSliceAng::ST_FirstSliceAng(const XSD::unsignedShort_& _unsignedShort)
-    :m_has_unsignedShort(true)
+ST_FirstSliceAng::ST_FirstSliceAng(const XSD::unsignedShort_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedShort(_unsignedShort);
+    set_value(_value);
 }
 ST_FirstSliceAng::~ST_FirstSliceAng()
 {
     clear();
 }
-bool ST_FirstSliceAng::has_unsignedShort() const
+bool ST_FirstSliceAng::has_value() const
 {
-    return m_has_unsignedShort;
+    return m_has_value;
 }
 
-void ST_FirstSliceAng::set_unsignedShort(const XSD::unsignedShort_& _unsignedShort)
-{   assert(0 <= _unsignedShort);
-    assert(_unsignedShort <= 360);
+void ST_FirstSliceAng::set_value(const XSD::unsignedShort_& _value)
+{   assert(0 <= _value);
+    assert(_value <= 360);
 
-    m_has_unsignedShort = true;
-    m_unsignedShort = _unsignedShort;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedShort_& ST_FirstSliceAng::get_unsignedShort() const
+const XSD::unsignedShort_& ST_FirstSliceAng::get_value() const
 {
-    return m_unsignedShort;
+    return m_value;
 }
 
 void ST_FirstSliceAng::clear()
 {
-    m_has_unsignedShort = false;
-    m_unsignedShort = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_FirstSliceAng::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedShort)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedShort << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -2056,7 +2060,7 @@ const ST_FirstSliceAng& ST_FirstSliceAng::default_instance()
 std::string ST_FirstSliceAng::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedShort();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -2212,47 +2216,47 @@ ST_HoleSize* ST_HoleSize::default_instance_ = NULL;
 
 // ST_HoleSizePercent
 ST_HoleSizePercent::ST_HoleSizePercent()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_HoleSizePercent::ST_HoleSizePercent(const XSD::string_& _string)
-    :m_has_string(true)
+ST_HoleSizePercent::ST_HoleSizePercent(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_HoleSizePercent::~ST_HoleSizePercent()
 {
     clear();
 }
-bool ST_HoleSizePercent::has_string() const
+bool ST_HoleSizePercent::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_HoleSizePercent::set_string(const XSD::string_& _string)
+void ST_HoleSizePercent::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_HoleSizePercent::get_string() const
+const XSD::string_& ST_HoleSizePercent::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_HoleSizePercent::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_HoleSizePercent::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -2268,7 +2272,7 @@ const ST_HoleSizePercent& ST_HoleSizePercent::default_instance()
 std::string ST_HoleSizePercent::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -2276,49 +2280,49 @@ ST_HoleSizePercent* ST_HoleSizePercent::default_instance_ = NULL;
 
 // ST_HoleSizeUByte
 ST_HoleSizeUByte::ST_HoleSizeUByte()
-    :m_has_unsignedByte(false),
-     m_unsignedByte(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_HoleSizeUByte::ST_HoleSizeUByte(const XSD::unsignedByte_& _unsignedByte)
-    :m_has_unsignedByte(true)
+ST_HoleSizeUByte::ST_HoleSizeUByte(const XSD::unsignedByte_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedByte(_unsignedByte);
+    set_value(_value);
 }
 ST_HoleSizeUByte::~ST_HoleSizeUByte()
 {
     clear();
 }
-bool ST_HoleSizeUByte::has_unsignedByte() const
+bool ST_HoleSizeUByte::has_value() const
 {
-    return m_has_unsignedByte;
+    return m_has_value;
 }
 
-void ST_HoleSizeUByte::set_unsignedByte(const XSD::unsignedByte_& _unsignedByte)
-{   assert(1 <= _unsignedByte);
-    assert(_unsignedByte <= 90);
+void ST_HoleSizeUByte::set_value(const XSD::unsignedByte_& _value)
+{   assert(1 <= _value);
+    assert(_value <= 90);
 
-    m_has_unsignedByte = true;
-    m_unsignedByte = _unsignedByte;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedByte_& ST_HoleSizeUByte::get_unsignedByte() const
+const XSD::unsignedByte_& ST_HoleSizeUByte::get_value() const
 {
-    return m_unsignedByte;
+    return m_value;
 }
 
 void ST_HoleSizeUByte::clear()
 {
-    m_has_unsignedByte = false;
-    m_unsignedByte = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_HoleSizeUByte::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedByte)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedByte << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -2334,7 +2338,7 @@ const ST_HoleSizeUByte& ST_HoleSizeUByte::default_instance()
 std::string ST_HoleSizeUByte::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedByte();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -2342,47 +2346,47 @@ ST_HoleSizeUByte* ST_HoleSizeUByte::default_instance_ = NULL;
 
 // ST_SplitType
 ST_SplitType::ST_SplitType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_SplitType::ST_SplitType(const ST_SplitType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_SplitType::ST_SplitType(const ST_SplitType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_SplitType::~ST_SplitType()
 {
     clear();
 }
-bool ST_SplitType::has_type() const
+bool ST_SplitType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_SplitType::set_type(const ST_SplitType::Type& _type)
+void ST_SplitType::set_value(const ST_SplitType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_SplitType::Type& ST_SplitType::get_type() const
+const ST_SplitType::Type& ST_SplitType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_SplitType::toString() const
 {
-    return ST_SplitType::TypeStrList[m_type];
+    return ST_SplitType::TypeStrList[m_value];
 }
 
 void ST_SplitType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_SplitType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -2557,47 +2561,47 @@ ST_SecondPieSize* ST_SecondPieSize::default_instance_ = NULL;
 
 // ST_SecondPieSizePercent
 ST_SecondPieSizePercent::ST_SecondPieSizePercent()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_SecondPieSizePercent::ST_SecondPieSizePercent(const XSD::string_& _string)
-    :m_has_string(true)
+ST_SecondPieSizePercent::ST_SecondPieSizePercent(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_SecondPieSizePercent::~ST_SecondPieSizePercent()
 {
     clear();
 }
-bool ST_SecondPieSizePercent::has_string() const
+bool ST_SecondPieSizePercent::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_SecondPieSizePercent::set_string(const XSD::string_& _string)
+void ST_SecondPieSizePercent::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_SecondPieSizePercent::get_string() const
+const XSD::string_& ST_SecondPieSizePercent::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_SecondPieSizePercent::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_SecondPieSizePercent::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -2613,7 +2617,7 @@ const ST_SecondPieSizePercent& ST_SecondPieSizePercent::default_instance()
 std::string ST_SecondPieSizePercent::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -2621,49 +2625,49 @@ ST_SecondPieSizePercent* ST_SecondPieSizePercent::default_instance_ = NULL;
 
 // ST_SecondPieSizeUShort
 ST_SecondPieSizeUShort::ST_SecondPieSizeUShort()
-    :m_has_unsignedShort(false),
-     m_unsignedShort(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_SecondPieSizeUShort::ST_SecondPieSizeUShort(const XSD::unsignedShort_& _unsignedShort)
-    :m_has_unsignedShort(true)
+ST_SecondPieSizeUShort::ST_SecondPieSizeUShort(const XSD::unsignedShort_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedShort(_unsignedShort);
+    set_value(_value);
 }
 ST_SecondPieSizeUShort::~ST_SecondPieSizeUShort()
 {
     clear();
 }
-bool ST_SecondPieSizeUShort::has_unsignedShort() const
+bool ST_SecondPieSizeUShort::has_value() const
 {
-    return m_has_unsignedShort;
+    return m_has_value;
 }
 
-void ST_SecondPieSizeUShort::set_unsignedShort(const XSD::unsignedShort_& _unsignedShort)
-{   assert(5 <= _unsignedShort);
-    assert(_unsignedShort <= 200);
+void ST_SecondPieSizeUShort::set_value(const XSD::unsignedShort_& _value)
+{   assert(5 <= _value);
+    assert(_value <= 200);
 
-    m_has_unsignedShort = true;
-    m_unsignedShort = _unsignedShort;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedShort_& ST_SecondPieSizeUShort::get_unsignedShort() const
+const XSD::unsignedShort_& ST_SecondPieSizeUShort::get_value() const
 {
-    return m_unsignedShort;
+    return m_value;
 }
 
 void ST_SecondPieSizeUShort::clear()
 {
-    m_has_unsignedShort = false;
-    m_unsignedShort = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_SecondPieSizeUShort::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedShort)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedShort << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -2679,7 +2683,7 @@ const ST_SecondPieSizeUShort& ST_SecondPieSizeUShort::default_instance()
 std::string ST_SecondPieSizeUShort::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedShort();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -2687,47 +2691,47 @@ ST_SecondPieSizeUShort* ST_SecondPieSizeUShort::default_instance_ = NULL;
 
 // ST_LblAlgn
 ST_LblAlgn::ST_LblAlgn()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_LblAlgn::ST_LblAlgn(const ST_LblAlgn::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_LblAlgn::ST_LblAlgn(const ST_LblAlgn::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_LblAlgn::~ST_LblAlgn()
 {
     clear();
 }
-bool ST_LblAlgn::has_type() const
+bool ST_LblAlgn::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_LblAlgn::set_type(const ST_LblAlgn::Type& _type)
+void ST_LblAlgn::set_value(const ST_LblAlgn::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_LblAlgn::Type& ST_LblAlgn::get_type() const
+const ST_LblAlgn::Type& ST_LblAlgn::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_LblAlgn::toString() const
 {
-    return ST_LblAlgn::TypeStrList[m_type];
+    return ST_LblAlgn::TypeStrList[m_value];
 }
 
 void ST_LblAlgn::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_LblAlgn::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -2752,47 +2756,47 @@ ST_LblAlgn* ST_LblAlgn::default_instance_ = NULL;
 
 // ST_DLblPos
 ST_DLblPos::ST_DLblPos()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_DLblPos::ST_DLblPos(const ST_DLblPos::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_DLblPos::ST_DLblPos(const ST_DLblPos::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_DLblPos::~ST_DLblPos()
 {
     clear();
 }
-bool ST_DLblPos::has_type() const
+bool ST_DLblPos::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_DLblPos::set_type(const ST_DLblPos::Type& _type)
+void ST_DLblPos::set_value(const ST_DLblPos::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_DLblPos::Type& ST_DLblPos::get_type() const
+const ST_DLblPos::Type& ST_DLblPos::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_DLblPos::toString() const
 {
-    return ST_DLblPos::TypeStrList[m_type];
+    return ST_DLblPos::TypeStrList[m_value];
 }
 
 void ST_DLblPos::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_DLblPos::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -2823,47 +2827,47 @@ ST_DLblPos* ST_DLblPos::default_instance_ = NULL;
 
 // ST_MarkerStyle
 ST_MarkerStyle::ST_MarkerStyle()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_MarkerStyle::ST_MarkerStyle(const ST_MarkerStyle::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_MarkerStyle::ST_MarkerStyle(const ST_MarkerStyle::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_MarkerStyle::~ST_MarkerStyle()
 {
     clear();
 }
-bool ST_MarkerStyle::has_type() const
+bool ST_MarkerStyle::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_MarkerStyle::set_type(const ST_MarkerStyle::Type& _type)
+void ST_MarkerStyle::set_value(const ST_MarkerStyle::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_MarkerStyle::Type& ST_MarkerStyle::get_type() const
+const ST_MarkerStyle::Type& ST_MarkerStyle::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_MarkerStyle::toString() const
 {
-    return ST_MarkerStyle::TypeStrList[m_type];
+    return ST_MarkerStyle::TypeStrList[m_value];
 }
 
 void ST_MarkerStyle::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_MarkerStyle::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -2897,49 +2901,49 @@ ST_MarkerStyle* ST_MarkerStyle::default_instance_ = NULL;
 
 // ST_MarkerSize
 ST_MarkerSize::ST_MarkerSize()
-    :m_has_unsignedByte(false),
-     m_unsignedByte(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_MarkerSize::ST_MarkerSize(const XSD::unsignedByte_& _unsignedByte)
-    :m_has_unsignedByte(true)
+ST_MarkerSize::ST_MarkerSize(const XSD::unsignedByte_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedByte(_unsignedByte);
+    set_value(_value);
 }
 ST_MarkerSize::~ST_MarkerSize()
 {
     clear();
 }
-bool ST_MarkerSize::has_unsignedByte() const
+bool ST_MarkerSize::has_value() const
 {
-    return m_has_unsignedByte;
+    return m_has_value;
 }
 
-void ST_MarkerSize::set_unsignedByte(const XSD::unsignedByte_& _unsignedByte)
-{   assert(2 <= _unsignedByte);
-    assert(_unsignedByte <= 72);
+void ST_MarkerSize::set_value(const XSD::unsignedByte_& _value)
+{   assert(2 <= _value);
+    assert(_value <= 72);
 
-    m_has_unsignedByte = true;
-    m_unsignedByte = _unsignedByte;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedByte_& ST_MarkerSize::get_unsignedByte() const
+const XSD::unsignedByte_& ST_MarkerSize::get_value() const
 {
-    return m_unsignedByte;
+    return m_value;
 }
 
 void ST_MarkerSize::clear()
 {
-    m_has_unsignedByte = false;
-    m_unsignedByte = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_MarkerSize::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedByte)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedByte << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -2955,7 +2959,7 @@ const ST_MarkerSize& ST_MarkerSize::default_instance()
 std::string ST_MarkerSize::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedByte();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -2963,47 +2967,47 @@ ST_MarkerSize* ST_MarkerSize::default_instance_ = NULL;
 
 // ST_TrendlineType
 ST_TrendlineType::ST_TrendlineType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_TrendlineType::ST_TrendlineType(const ST_TrendlineType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_TrendlineType::ST_TrendlineType(const ST_TrendlineType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_TrendlineType::~ST_TrendlineType()
 {
     clear();
 }
-bool ST_TrendlineType::has_type() const
+bool ST_TrendlineType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_TrendlineType::set_type(const ST_TrendlineType::Type& _type)
+void ST_TrendlineType::set_value(const ST_TrendlineType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_TrendlineType::Type& ST_TrendlineType::get_type() const
+const ST_TrendlineType::Type& ST_TrendlineType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_TrendlineType::toString() const
 {
-    return ST_TrendlineType::TypeStrList[m_type];
+    return ST_TrendlineType::TypeStrList[m_value];
 }
 
 void ST_TrendlineType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_TrendlineType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3031,49 +3035,49 @@ ST_TrendlineType* ST_TrendlineType::default_instance_ = NULL;
 
 // ST_Order
 ST_Order::ST_Order()
-    :m_has_unsignedByte(false),
-     m_unsignedByte(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_Order::ST_Order(const XSD::unsignedByte_& _unsignedByte)
-    :m_has_unsignedByte(true)
+ST_Order::ST_Order(const XSD::unsignedByte_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedByte(_unsignedByte);
+    set_value(_value);
 }
 ST_Order::~ST_Order()
 {
     clear();
 }
-bool ST_Order::has_unsignedByte() const
+bool ST_Order::has_value() const
 {
-    return m_has_unsignedByte;
+    return m_has_value;
 }
 
-void ST_Order::set_unsignedByte(const XSD::unsignedByte_& _unsignedByte)
-{   assert(2 <= _unsignedByte);
-    assert(_unsignedByte <= 6);
+void ST_Order::set_value(const XSD::unsignedByte_& _value)
+{   assert(2 <= _value);
+    assert(_value <= 6);
 
-    m_has_unsignedByte = true;
-    m_unsignedByte = _unsignedByte;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedByte_& ST_Order::get_unsignedByte() const
+const XSD::unsignedByte_& ST_Order::get_value() const
 {
-    return m_unsignedByte;
+    return m_value;
 }
 
 void ST_Order::clear()
 {
-    m_has_unsignedByte = false;
-    m_unsignedByte = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_Order::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedByte)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedByte << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -3089,7 +3093,7 @@ const ST_Order& ST_Order::default_instance()
 std::string ST_Order::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedByte();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -3097,48 +3101,48 @@ ST_Order* ST_Order::default_instance_ = NULL;
 
 // ST_Period
 ST_Period::ST_Period()
-    :m_has_unsignedInt(false),
-     m_unsignedInt(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_Period::ST_Period(const XSD::unsignedInt_& _unsignedInt)
-    :m_has_unsignedInt(true)
+ST_Period::ST_Period(const XSD::unsignedInt_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedInt(_unsignedInt);
+    set_value(_value);
 }
 ST_Period::~ST_Period()
 {
     clear();
 }
-bool ST_Period::has_unsignedInt() const
+bool ST_Period::has_value() const
 {
-    return m_has_unsignedInt;
+    return m_has_value;
 }
 
-void ST_Period::set_unsignedInt(const XSD::unsignedInt_& _unsignedInt)
-{   assert(2 <= _unsignedInt);
+void ST_Period::set_value(const XSD::unsignedInt_& _value)
+{   assert(2 <= _value);
 
-    m_has_unsignedInt = true;
-    m_unsignedInt = _unsignedInt;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedInt_& ST_Period::get_unsignedInt() const
+const XSD::unsignedInt_& ST_Period::get_value() const
 {
-    return m_unsignedInt;
+    return m_value;
 }
 
 void ST_Period::clear()
 {
-    m_has_unsignedInt = false;
-    m_unsignedInt = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_Period::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedInt)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -3154,7 +3158,7 @@ const ST_Period& ST_Period::default_instance()
 std::string ST_Period::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedInt();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -3162,47 +3166,47 @@ ST_Period* ST_Period::default_instance_ = NULL;
 
 // ST_ErrDir
 ST_ErrDir::ST_ErrDir()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ErrDir::ST_ErrDir(const ST_ErrDir::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ErrDir::ST_ErrDir(const ST_ErrDir::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ErrDir::~ST_ErrDir()
 {
     clear();
 }
-bool ST_ErrDir::has_type() const
+bool ST_ErrDir::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ErrDir::set_type(const ST_ErrDir::Type& _type)
+void ST_ErrDir::set_value(const ST_ErrDir::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ErrDir::Type& ST_ErrDir::get_type() const
+const ST_ErrDir::Type& ST_ErrDir::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ErrDir::toString() const
 {
-    return ST_ErrDir::TypeStrList[m_type];
+    return ST_ErrDir::TypeStrList[m_value];
 }
 
 void ST_ErrDir::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ErrDir::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3226,47 +3230,47 @@ ST_ErrDir* ST_ErrDir::default_instance_ = NULL;
 
 // ST_ErrBarType
 ST_ErrBarType::ST_ErrBarType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ErrBarType::ST_ErrBarType(const ST_ErrBarType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ErrBarType::ST_ErrBarType(const ST_ErrBarType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ErrBarType::~ST_ErrBarType()
 {
     clear();
 }
-bool ST_ErrBarType::has_type() const
+bool ST_ErrBarType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ErrBarType::set_type(const ST_ErrBarType::Type& _type)
+void ST_ErrBarType::set_value(const ST_ErrBarType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ErrBarType::Type& ST_ErrBarType::get_type() const
+const ST_ErrBarType::Type& ST_ErrBarType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ErrBarType::toString() const
 {
-    return ST_ErrBarType::TypeStrList[m_type];
+    return ST_ErrBarType::TypeStrList[m_value];
 }
 
 void ST_ErrBarType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ErrBarType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3291,47 +3295,47 @@ ST_ErrBarType* ST_ErrBarType::default_instance_ = NULL;
 
 // ST_ErrValType
 ST_ErrValType::ST_ErrValType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ErrValType::ST_ErrValType(const ST_ErrValType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ErrValType::ST_ErrValType(const ST_ErrValType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ErrValType::~ST_ErrValType()
 {
     clear();
 }
-bool ST_ErrValType::has_type() const
+bool ST_ErrValType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ErrValType::set_type(const ST_ErrValType::Type& _type)
+void ST_ErrValType::set_value(const ST_ErrValType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ErrValType::Type& ST_ErrValType::get_type() const
+const ST_ErrValType::Type& ST_ErrValType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ErrValType::toString() const
 {
-    return ST_ErrValType::TypeStrList[m_type];
+    return ST_ErrValType::TypeStrList[m_value];
 }
 
 void ST_ErrValType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ErrValType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3358,47 +3362,47 @@ ST_ErrValType* ST_ErrValType::default_instance_ = NULL;
 
 // ST_Grouping
 ST_Grouping::ST_Grouping()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_Grouping::ST_Grouping(const ST_Grouping::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_Grouping::ST_Grouping(const ST_Grouping::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_Grouping::~ST_Grouping()
 {
     clear();
 }
-bool ST_Grouping::has_type() const
+bool ST_Grouping::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_Grouping::set_type(const ST_Grouping::Type& _type)
+void ST_Grouping::set_value(const ST_Grouping::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_Grouping::Type& ST_Grouping::get_type() const
+const ST_Grouping::Type& ST_Grouping::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_Grouping::toString() const
 {
-    return ST_Grouping::TypeStrList[m_type];
+    return ST_Grouping::TypeStrList[m_value];
 }
 
 void ST_Grouping::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_Grouping::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3423,47 +3427,47 @@ ST_Grouping* ST_Grouping::default_instance_ = NULL;
 
 // ST_ScatterStyle
 ST_ScatterStyle::ST_ScatterStyle()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ScatterStyle::ST_ScatterStyle(const ST_ScatterStyle::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ScatterStyle::ST_ScatterStyle(const ST_ScatterStyle::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ScatterStyle::~ST_ScatterStyle()
 {
     clear();
 }
-bool ST_ScatterStyle::has_type() const
+bool ST_ScatterStyle::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ScatterStyle::set_type(const ST_ScatterStyle::Type& _type)
+void ST_ScatterStyle::set_value(const ST_ScatterStyle::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ScatterStyle::Type& ST_ScatterStyle::get_type() const
+const ST_ScatterStyle::Type& ST_ScatterStyle::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ScatterStyle::toString() const
 {
-    return ST_ScatterStyle::TypeStrList[m_type];
+    return ST_ScatterStyle::TypeStrList[m_value];
 }
 
 void ST_ScatterStyle::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ScatterStyle::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3491,47 +3495,47 @@ ST_ScatterStyle* ST_ScatterStyle::default_instance_ = NULL;
 
 // ST_RadarStyle
 ST_RadarStyle::ST_RadarStyle()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_RadarStyle::ST_RadarStyle(const ST_RadarStyle::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_RadarStyle::ST_RadarStyle(const ST_RadarStyle::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_RadarStyle::~ST_RadarStyle()
 {
     clear();
 }
-bool ST_RadarStyle::has_type() const
+bool ST_RadarStyle::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_RadarStyle::set_type(const ST_RadarStyle::Type& _type)
+void ST_RadarStyle::set_value(const ST_RadarStyle::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_RadarStyle::Type& ST_RadarStyle::get_type() const
+const ST_RadarStyle::Type& ST_RadarStyle::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_RadarStyle::toString() const
 {
-    return ST_RadarStyle::TypeStrList[m_type];
+    return ST_RadarStyle::TypeStrList[m_value];
 }
 
 void ST_RadarStyle::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_RadarStyle::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3556,47 +3560,47 @@ ST_RadarStyle* ST_RadarStyle::default_instance_ = NULL;
 
 // ST_BarGrouping
 ST_BarGrouping::ST_BarGrouping()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_BarGrouping::ST_BarGrouping(const ST_BarGrouping::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_BarGrouping::ST_BarGrouping(const ST_BarGrouping::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_BarGrouping::~ST_BarGrouping()
 {
     clear();
 }
-bool ST_BarGrouping::has_type() const
+bool ST_BarGrouping::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_BarGrouping::set_type(const ST_BarGrouping::Type& _type)
+void ST_BarGrouping::set_value(const ST_BarGrouping::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_BarGrouping::Type& ST_BarGrouping::get_type() const
+const ST_BarGrouping::Type& ST_BarGrouping::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_BarGrouping::toString() const
 {
-    return ST_BarGrouping::TypeStrList[m_type];
+    return ST_BarGrouping::TypeStrList[m_value];
 }
 
 void ST_BarGrouping::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_BarGrouping::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3622,47 +3626,47 @@ ST_BarGrouping* ST_BarGrouping::default_instance_ = NULL;
 
 // ST_BarDir
 ST_BarDir::ST_BarDir()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_BarDir::ST_BarDir(const ST_BarDir::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_BarDir::ST_BarDir(const ST_BarDir::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_BarDir::~ST_BarDir()
 {
     clear();
 }
-bool ST_BarDir::has_type() const
+bool ST_BarDir::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_BarDir::set_type(const ST_BarDir::Type& _type)
+void ST_BarDir::set_value(const ST_BarDir::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_BarDir::Type& ST_BarDir::get_type() const
+const ST_BarDir::Type& ST_BarDir::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_BarDir::toString() const
 {
-    return ST_BarDir::TypeStrList[m_type];
+    return ST_BarDir::TypeStrList[m_value];
 }
 
 void ST_BarDir::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_BarDir::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3686,47 +3690,47 @@ ST_BarDir* ST_BarDir::default_instance_ = NULL;
 
 // ST_Shape
 ST_Shape::ST_Shape()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_Shape::ST_Shape(const ST_Shape::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_Shape::ST_Shape(const ST_Shape::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_Shape::~ST_Shape()
 {
     clear();
 }
-bool ST_Shape::has_type() const
+bool ST_Shape::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_Shape::set_type(const ST_Shape::Type& _type)
+void ST_Shape::set_value(const ST_Shape::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_Shape::Type& ST_Shape::get_type() const
+const ST_Shape::Type& ST_Shape::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_Shape::toString() const
 {
-    return ST_Shape::TypeStrList[m_type];
+    return ST_Shape::TypeStrList[m_value];
 }
 
 void ST_Shape::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_Shape::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3754,47 +3758,47 @@ ST_Shape* ST_Shape::default_instance_ = NULL;
 
 // ST_OfPieType
 ST_OfPieType::ST_OfPieType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_OfPieType::ST_OfPieType(const ST_OfPieType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_OfPieType::ST_OfPieType(const ST_OfPieType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_OfPieType::~ST_OfPieType()
 {
     clear();
 }
-bool ST_OfPieType::has_type() const
+bool ST_OfPieType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_OfPieType::set_type(const ST_OfPieType::Type& _type)
+void ST_OfPieType::set_value(const ST_OfPieType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_OfPieType::Type& ST_OfPieType::get_type() const
+const ST_OfPieType::Type& ST_OfPieType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_OfPieType::toString() const
 {
-    return ST_OfPieType::TypeStrList[m_type];
+    return ST_OfPieType::TypeStrList[m_value];
 }
 
 void ST_OfPieType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_OfPieType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3818,47 +3822,47 @@ ST_OfPieType* ST_OfPieType::default_instance_ = NULL;
 
 // ST_AxPos
 ST_AxPos::ST_AxPos()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_AxPos::ST_AxPos(const ST_AxPos::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_AxPos::ST_AxPos(const ST_AxPos::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_AxPos::~ST_AxPos()
 {
     clear();
 }
-bool ST_AxPos::has_type() const
+bool ST_AxPos::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_AxPos::set_type(const ST_AxPos::Type& _type)
+void ST_AxPos::set_value(const ST_AxPos::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_AxPos::Type& ST_AxPos::get_type() const
+const ST_AxPos::Type& ST_AxPos::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_AxPos::toString() const
 {
-    return ST_AxPos::TypeStrList[m_type];
+    return ST_AxPos::TypeStrList[m_value];
 }
 
 void ST_AxPos::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_AxPos::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3884,47 +3888,47 @@ ST_AxPos* ST_AxPos::default_instance_ = NULL;
 
 // ST_Crosses
 ST_Crosses::ST_Crosses()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_Crosses::ST_Crosses(const ST_Crosses::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_Crosses::ST_Crosses(const ST_Crosses::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_Crosses::~ST_Crosses()
 {
     clear();
 }
-bool ST_Crosses::has_type() const
+bool ST_Crosses::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_Crosses::set_type(const ST_Crosses::Type& _type)
+void ST_Crosses::set_value(const ST_Crosses::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_Crosses::Type& ST_Crosses::get_type() const
+const ST_Crosses::Type& ST_Crosses::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_Crosses::toString() const
 {
-    return ST_Crosses::TypeStrList[m_type];
+    return ST_Crosses::TypeStrList[m_value];
 }
 
 void ST_Crosses::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_Crosses::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -3949,47 +3953,47 @@ ST_Crosses* ST_Crosses::default_instance_ = NULL;
 
 // ST_CrossBetween
 ST_CrossBetween::ST_CrossBetween()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_CrossBetween::ST_CrossBetween(const ST_CrossBetween::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_CrossBetween::ST_CrossBetween(const ST_CrossBetween::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_CrossBetween::~ST_CrossBetween()
 {
     clear();
 }
-bool ST_CrossBetween::has_type() const
+bool ST_CrossBetween::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_CrossBetween::set_type(const ST_CrossBetween::Type& _type)
+void ST_CrossBetween::set_value(const ST_CrossBetween::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_CrossBetween::Type& ST_CrossBetween::get_type() const
+const ST_CrossBetween::Type& ST_CrossBetween::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_CrossBetween::toString() const
 {
-    return ST_CrossBetween::TypeStrList[m_type];
+    return ST_CrossBetween::TypeStrList[m_value];
 }
 
 void ST_CrossBetween::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_CrossBetween::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -4013,47 +4017,47 @@ ST_CrossBetween* ST_CrossBetween::default_instance_ = NULL;
 
 // ST_TickMark
 ST_TickMark::ST_TickMark()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_TickMark::ST_TickMark(const ST_TickMark::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_TickMark::ST_TickMark(const ST_TickMark::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_TickMark::~ST_TickMark()
 {
     clear();
 }
-bool ST_TickMark::has_type() const
+bool ST_TickMark::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_TickMark::set_type(const ST_TickMark::Type& _type)
+void ST_TickMark::set_value(const ST_TickMark::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_TickMark::Type& ST_TickMark::get_type() const
+const ST_TickMark::Type& ST_TickMark::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_TickMark::toString() const
 {
-    return ST_TickMark::TypeStrList[m_type];
+    return ST_TickMark::TypeStrList[m_value];
 }
 
 void ST_TickMark::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_TickMark::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -4079,47 +4083,47 @@ ST_TickMark* ST_TickMark::default_instance_ = NULL;
 
 // ST_TickLblPos
 ST_TickLblPos::ST_TickLblPos()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_TickLblPos::ST_TickLblPos(const ST_TickLblPos::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_TickLblPos::ST_TickLblPos(const ST_TickLblPos::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_TickLblPos::~ST_TickLblPos()
 {
     clear();
 }
-bool ST_TickLblPos::has_type() const
+bool ST_TickLblPos::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_TickLblPos::set_type(const ST_TickLblPos::Type& _type)
+void ST_TickLblPos::set_value(const ST_TickLblPos::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_TickLblPos::Type& ST_TickLblPos::get_type() const
+const ST_TickLblPos::Type& ST_TickLblPos::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_TickLblPos::toString() const
 {
-    return ST_TickLblPos::TypeStrList[m_type];
+    return ST_TickLblPos::TypeStrList[m_value];
 }
 
 void ST_TickLblPos::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_TickLblPos::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -4145,48 +4149,48 @@ ST_TickLblPos* ST_TickLblPos::default_instance_ = NULL;
 
 // ST_Skip
 ST_Skip::ST_Skip()
-    :m_has_unsignedInt(false),
-     m_unsignedInt(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_Skip::ST_Skip(const XSD::unsignedInt_& _unsignedInt)
-    :m_has_unsignedInt(true)
+ST_Skip::ST_Skip(const XSD::unsignedInt_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedInt(_unsignedInt);
+    set_value(_value);
 }
 ST_Skip::~ST_Skip()
 {
     clear();
 }
-bool ST_Skip::has_unsignedInt() const
+bool ST_Skip::has_value() const
 {
-    return m_has_unsignedInt;
+    return m_has_value;
 }
 
-void ST_Skip::set_unsignedInt(const XSD::unsignedInt_& _unsignedInt)
-{   assert(1 <= _unsignedInt);
+void ST_Skip::set_value(const XSD::unsignedInt_& _value)
+{   assert(1 <= _value);
 
-    m_has_unsignedInt = true;
-    m_unsignedInt = _unsignedInt;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedInt_& ST_Skip::get_unsignedInt() const
+const XSD::unsignedInt_& ST_Skip::get_value() const
 {
-    return m_unsignedInt;
+    return m_value;
 }
 
 void ST_Skip::clear()
 {
-    m_has_unsignedInt = false;
-    m_unsignedInt = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_Skip::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedInt)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -4202,7 +4206,7 @@ const ST_Skip& ST_Skip::default_instance()
 std::string ST_Skip::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedInt();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -4210,47 +4214,47 @@ ST_Skip* ST_Skip::default_instance_ = NULL;
 
 // ST_TimeUnit
 ST_TimeUnit::ST_TimeUnit()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_TimeUnit::ST_TimeUnit(const ST_TimeUnit::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_TimeUnit::ST_TimeUnit(const ST_TimeUnit::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_TimeUnit::~ST_TimeUnit()
 {
     clear();
 }
-bool ST_TimeUnit::has_type() const
+bool ST_TimeUnit::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_TimeUnit::set_type(const ST_TimeUnit::Type& _type)
+void ST_TimeUnit::set_value(const ST_TimeUnit::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_TimeUnit::Type& ST_TimeUnit::get_type() const
+const ST_TimeUnit::Type& ST_TimeUnit::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_TimeUnit::toString() const
 {
-    return ST_TimeUnit::TypeStrList[m_type];
+    return ST_TimeUnit::TypeStrList[m_value];
 }
 
 void ST_TimeUnit::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_TimeUnit::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -4275,48 +4279,48 @@ ST_TimeUnit* ST_TimeUnit::default_instance_ = NULL;
 
 // ST_AxisUnit
 ST_AxisUnit::ST_AxisUnit()
-    :m_has_double(false),
-     m_double(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_AxisUnit::ST_AxisUnit(const XSD::double_& _double)
-    :m_has_double(true)
+ST_AxisUnit::ST_AxisUnit(const XSD::double_& _value)
+    :m_has_value(true)
 {
 
-    set_double(_double);
+    set_value(_value);
 }
 ST_AxisUnit::~ST_AxisUnit()
 {
     clear();
 }
-bool ST_AxisUnit::has_double() const
+bool ST_AxisUnit::has_value() const
 {
-    return m_has_double;
+    return m_has_value;
 }
 
-void ST_AxisUnit::set_double(const XSD::double_& _double)
-{   assert(0 < _double);
+void ST_AxisUnit::set_value(const XSD::double_& _value)
+{   assert(0 < _value);
 
-    m_has_double = true;
-    m_double = _double;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::double_& ST_AxisUnit::get_double() const
+const XSD::double_& ST_AxisUnit::get_value() const
 {
-    return m_double;
+    return m_value;
 }
 
 void ST_AxisUnit::clear()
 {
-    m_has_double = false;
-    m_double = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_AxisUnit::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_double)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_double << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -4332,7 +4336,7 @@ const ST_AxisUnit& ST_AxisUnit::default_instance()
 std::string ST_AxisUnit::toString() const
 {
     std::stringstream strStream;
-    strStream << get_double();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -4340,47 +4344,47 @@ ST_AxisUnit* ST_AxisUnit::default_instance_ = NULL;
 
 // ST_BuiltInUnit
 ST_BuiltInUnit::ST_BuiltInUnit()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_BuiltInUnit::ST_BuiltInUnit(const ST_BuiltInUnit::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_BuiltInUnit::ST_BuiltInUnit(const ST_BuiltInUnit::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_BuiltInUnit::~ST_BuiltInUnit()
 {
     clear();
 }
-bool ST_BuiltInUnit::has_type() const
+bool ST_BuiltInUnit::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_BuiltInUnit::set_type(const ST_BuiltInUnit::Type& _type)
+void ST_BuiltInUnit::set_value(const ST_BuiltInUnit::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_BuiltInUnit::Type& ST_BuiltInUnit::get_type() const
+const ST_BuiltInUnit::Type& ST_BuiltInUnit::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_BuiltInUnit::toString() const
 {
-    return ST_BuiltInUnit::TypeStrList[m_type];
+    return ST_BuiltInUnit::TypeStrList[m_value];
 }
 
 void ST_BuiltInUnit::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_BuiltInUnit::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -4411,47 +4415,47 @@ ST_BuiltInUnit* ST_BuiltInUnit::default_instance_ = NULL;
 
 // ST_PictureFormat
 ST_PictureFormat::ST_PictureFormat()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_PictureFormat::ST_PictureFormat(const ST_PictureFormat::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_PictureFormat::ST_PictureFormat(const ST_PictureFormat::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_PictureFormat::~ST_PictureFormat()
 {
     clear();
 }
-bool ST_PictureFormat::has_type() const
+bool ST_PictureFormat::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_PictureFormat::set_type(const ST_PictureFormat::Type& _type)
+void ST_PictureFormat::set_value(const ST_PictureFormat::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_PictureFormat::Type& ST_PictureFormat::get_type() const
+const ST_PictureFormat::Type& ST_PictureFormat::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_PictureFormat::toString() const
 {
-    return ST_PictureFormat::TypeStrList[m_type];
+    return ST_PictureFormat::TypeStrList[m_value];
 }
 
 void ST_PictureFormat::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_PictureFormat::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -4476,48 +4480,48 @@ ST_PictureFormat* ST_PictureFormat::default_instance_ = NULL;
 
 // ST_PictureStackUnit
 ST_PictureStackUnit::ST_PictureStackUnit()
-    :m_has_double(false),
-     m_double(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_PictureStackUnit::ST_PictureStackUnit(const XSD::double_& _double)
-    :m_has_double(true)
+ST_PictureStackUnit::ST_PictureStackUnit(const XSD::double_& _value)
+    :m_has_value(true)
 {
 
-    set_double(_double);
+    set_value(_value);
 }
 ST_PictureStackUnit::~ST_PictureStackUnit()
 {
     clear();
 }
-bool ST_PictureStackUnit::has_double() const
+bool ST_PictureStackUnit::has_value() const
 {
-    return m_has_double;
+    return m_has_value;
 }
 
-void ST_PictureStackUnit::set_double(const XSD::double_& _double)
-{   assert(0 < _double);
+void ST_PictureStackUnit::set_value(const XSD::double_& _value)
+{   assert(0 < _value);
 
-    m_has_double = true;
-    m_double = _double;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::double_& ST_PictureStackUnit::get_double() const
+const XSD::double_& ST_PictureStackUnit::get_value() const
 {
-    return m_double;
+    return m_value;
 }
 
 void ST_PictureStackUnit::clear()
 {
-    m_has_double = false;
-    m_double = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_PictureStackUnit::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_double)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_double << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -4533,7 +4537,7 @@ const ST_PictureStackUnit& ST_PictureStackUnit::default_instance()
 std::string ST_PictureStackUnit::toString() const
 {
     std::stringstream strStream;
-    strStream << get_double();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -4541,47 +4545,47 @@ ST_PictureStackUnit* ST_PictureStackUnit::default_instance_ = NULL;
 
 // ST_Orientation
 ST_Orientation::ST_Orientation()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_Orientation::ST_Orientation(const ST_Orientation::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_Orientation::ST_Orientation(const ST_Orientation::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_Orientation::~ST_Orientation()
 {
     clear();
 }
-bool ST_Orientation::has_type() const
+bool ST_Orientation::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_Orientation::set_type(const ST_Orientation::Type& _type)
+void ST_Orientation::set_value(const ST_Orientation::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_Orientation::Type& ST_Orientation::get_type() const
+const ST_Orientation::Type& ST_Orientation::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_Orientation::toString() const
 {
-    return ST_Orientation::TypeStrList[m_type];
+    return ST_Orientation::TypeStrList[m_value];
 }
 
 void ST_Orientation::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_Orientation::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -4605,49 +4609,49 @@ ST_Orientation* ST_Orientation::default_instance_ = NULL;
 
 // ST_LogBase
 ST_LogBase::ST_LogBase()
-    :m_has_double(false),
-     m_double(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_LogBase::ST_LogBase(const XSD::double_& _double)
-    :m_has_double(true)
+ST_LogBase::ST_LogBase(const XSD::double_& _value)
+    :m_has_value(true)
 {
 
-    set_double(_double);
+    set_value(_value);
 }
 ST_LogBase::~ST_LogBase()
 {
     clear();
 }
-bool ST_LogBase::has_double() const
+bool ST_LogBase::has_value() const
 {
-    return m_has_double;
+    return m_has_value;
 }
 
-void ST_LogBase::set_double(const XSD::double_& _double)
-{   assert(2 <= _double);
-    assert(_double <= 1000);
+void ST_LogBase::set_value(const XSD::double_& _value)
+{   assert(2 <= _value);
+    assert(_value <= 1000);
 
-    m_has_double = true;
-    m_double = _double;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::double_& ST_LogBase::get_double() const
+const XSD::double_& ST_LogBase::get_value() const
 {
-    return m_double;
+    return m_value;
 }
 
 void ST_LogBase::clear()
 {
-    m_has_double = false;
-    m_double = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_LogBase::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_double)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_double << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -4663,7 +4667,7 @@ const ST_LogBase& ST_LogBase::default_instance()
 std::string ST_LogBase::toString() const
 {
     std::stringstream strStream;
-    strStream << get_double();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -4819,47 +4823,47 @@ ST_LblOffset* ST_LblOffset::default_instance_ = NULL;
 
 // ST_LblOffsetPercent
 ST_LblOffsetPercent::ST_LblOffsetPercent()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_LblOffsetPercent::ST_LblOffsetPercent(const XSD::string_& _string)
-    :m_has_string(true)
+ST_LblOffsetPercent::ST_LblOffsetPercent(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_LblOffsetPercent::~ST_LblOffsetPercent()
 {
     clear();
 }
-bool ST_LblOffsetPercent::has_string() const
+bool ST_LblOffsetPercent::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_LblOffsetPercent::set_string(const XSD::string_& _string)
+void ST_LblOffsetPercent::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_LblOffsetPercent::get_string() const
+const XSD::string_& ST_LblOffsetPercent::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_LblOffsetPercent::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_LblOffsetPercent::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -4875,7 +4879,7 @@ const ST_LblOffsetPercent& ST_LblOffsetPercent::default_instance()
 std::string ST_LblOffsetPercent::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -4883,49 +4887,49 @@ ST_LblOffsetPercent* ST_LblOffsetPercent::default_instance_ = NULL;
 
 // ST_LblOffsetUShort
 ST_LblOffsetUShort::ST_LblOffsetUShort()
-    :m_has_unsignedShort(false),
-     m_unsignedShort(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_LblOffsetUShort::ST_LblOffsetUShort(const XSD::unsignedShort_& _unsignedShort)
-    :m_has_unsignedShort(true)
+ST_LblOffsetUShort::ST_LblOffsetUShort(const XSD::unsignedShort_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedShort(_unsignedShort);
+    set_value(_value);
 }
 ST_LblOffsetUShort::~ST_LblOffsetUShort()
 {
     clear();
 }
-bool ST_LblOffsetUShort::has_unsignedShort() const
+bool ST_LblOffsetUShort::has_value() const
 {
-    return m_has_unsignedShort;
+    return m_has_value;
 }
 
-void ST_LblOffsetUShort::set_unsignedShort(const XSD::unsignedShort_& _unsignedShort)
-{   assert(0 <= _unsignedShort);
-    assert(_unsignedShort <= 1000);
+void ST_LblOffsetUShort::set_value(const XSD::unsignedShort_& _value)
+{   assert(0 <= _value);
+    assert(_value <= 1000);
 
-    m_has_unsignedShort = true;
-    m_unsignedShort = _unsignedShort;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedShort_& ST_LblOffsetUShort::get_unsignedShort() const
+const XSD::unsignedShort_& ST_LblOffsetUShort::get_value() const
 {
-    return m_unsignedShort;
+    return m_value;
 }
 
 void ST_LblOffsetUShort::clear()
 {
-    m_has_unsignedShort = false;
-    m_unsignedShort = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_LblOffsetUShort::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedShort)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedShort << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -4941,7 +4945,7 @@ const ST_LblOffsetUShort& ST_LblOffsetUShort::default_instance()
 std::string ST_LblOffsetUShort::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedShort();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -4949,47 +4953,47 @@ ST_LblOffsetUShort* ST_LblOffsetUShort::default_instance_ = NULL;
 
 // ST_LegendPos
 ST_LegendPos::ST_LegendPos()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_LegendPos::ST_LegendPos(const ST_LegendPos::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_LegendPos::ST_LegendPos(const ST_LegendPos::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_LegendPos::~ST_LegendPos()
 {
     clear();
 }
-bool ST_LegendPos::has_type() const
+bool ST_LegendPos::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_LegendPos::set_type(const ST_LegendPos::Type& _type)
+void ST_LegendPos::set_value(const ST_LegendPos::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_LegendPos::Type& ST_LegendPos::get_type() const
+const ST_LegendPos::Type& ST_LegendPos::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_LegendPos::toString() const
 {
-    return ST_LegendPos::TypeStrList[m_type];
+    return ST_LegendPos::TypeStrList[m_value];
 }
 
 void ST_LegendPos::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_LegendPos::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -5016,47 +5020,47 @@ ST_LegendPos* ST_LegendPos::default_instance_ = NULL;
 
 // ST_DispBlanksAs
 ST_DispBlanksAs::ST_DispBlanksAs()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_DispBlanksAs::ST_DispBlanksAs(const ST_DispBlanksAs::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_DispBlanksAs::ST_DispBlanksAs(const ST_DispBlanksAs::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_DispBlanksAs::~ST_DispBlanksAs()
 {
     clear();
 }
-bool ST_DispBlanksAs::has_type() const
+bool ST_DispBlanksAs::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_DispBlanksAs::set_type(const ST_DispBlanksAs::Type& _type)
+void ST_DispBlanksAs::set_value(const ST_DispBlanksAs::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_DispBlanksAs::Type& ST_DispBlanksAs::get_type() const
+const ST_DispBlanksAs::Type& ST_DispBlanksAs::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_DispBlanksAs::toString() const
 {
-    return ST_DispBlanksAs::TypeStrList[m_type];
+    return ST_DispBlanksAs::TypeStrList[m_value];
 }
 
 void ST_DispBlanksAs::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_DispBlanksAs::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -5081,49 +5085,49 @@ ST_DispBlanksAs* ST_DispBlanksAs::default_instance_ = NULL;
 
 // ST_Style
 ST_Style::ST_Style()
-    :m_has_unsignedByte(false),
-     m_unsignedByte(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_Style::ST_Style(const XSD::unsignedByte_& _unsignedByte)
-    :m_has_unsignedByte(true)
+ST_Style::ST_Style(const XSD::unsignedByte_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedByte(_unsignedByte);
+    set_value(_value);
 }
 ST_Style::~ST_Style()
 {
     clear();
 }
-bool ST_Style::has_unsignedByte() const
+bool ST_Style::has_value() const
 {
-    return m_has_unsignedByte;
+    return m_has_value;
 }
 
-void ST_Style::set_unsignedByte(const XSD::unsignedByte_& _unsignedByte)
-{   assert(1 <= _unsignedByte);
-    assert(_unsignedByte <= 48);
+void ST_Style::set_value(const XSD::unsignedByte_& _value)
+{   assert(1 <= _value);
+    assert(_value <= 48);
 
-    m_has_unsignedByte = true;
-    m_unsignedByte = _unsignedByte;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedByte_& ST_Style::get_unsignedByte() const
+const XSD::unsignedByte_& ST_Style::get_value() const
 {
-    return m_unsignedByte;
+    return m_value;
 }
 
 void ST_Style::clear()
 {
-    m_has_unsignedByte = false;
-    m_unsignedByte = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_Style::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedByte)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedByte << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -5139,7 +5143,7 @@ const ST_Style& ST_Style::default_instance()
 std::string ST_Style::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedByte();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -5147,47 +5151,47 @@ ST_Style* ST_Style::default_instance_ = NULL;
 
 // ST_PageSetupOrientation
 ST_PageSetupOrientation::ST_PageSetupOrientation()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_PageSetupOrientation::ST_PageSetupOrientation(const ST_PageSetupOrientation::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_PageSetupOrientation::ST_PageSetupOrientation(const ST_PageSetupOrientation::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_PageSetupOrientation::~ST_PageSetupOrientation()
 {
     clear();
 }
-bool ST_PageSetupOrientation::has_type() const
+bool ST_PageSetupOrientation::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_PageSetupOrientation::set_type(const ST_PageSetupOrientation::Type& _type)
+void ST_PageSetupOrientation::set_value(const ST_PageSetupOrientation::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_PageSetupOrientation::Type& ST_PageSetupOrientation::get_type() const
+const ST_PageSetupOrientation::Type& ST_PageSetupOrientation::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_PageSetupOrientation::toString() const
 {
-    return ST_PageSetupOrientation::TypeStrList[m_type];
+    return ST_PageSetupOrientation::TypeStrList[m_value];
 }
 
 void ST_PageSetupOrientation::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_PageSetupOrientation::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -11230,117 +11234,6 @@ bool CT_DLbl::has_delete() const
 CT_Boolean* CT_DLbl::mutable_delete()
 {
 
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
-
-    m_has_numFmt = false;
-
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    ;
-
-    m_has_spPr = false;
-
-    if (m_spPr)
-    {
-        delete m_spPr;
-        m_spPr = NULL;
-    }
-    ;
-
-    m_has_txPr = false;
-
-    if (m_txPr)
-    {
-        delete m_txPr;
-        m_txPr = NULL;
-    }
-    ;
-
-    m_has_dLblPos = false;
-
-    if (m_dLblPos)
-    {
-        delete m_dLblPos;
-        m_dLblPos = NULL;
-    }
-    ;
-
-    m_has_showLegendKey = false;
-
-    if (m_showLegendKey)
-    {
-        delete m_showLegendKey;
-        m_showLegendKey = NULL;
-    }
-    ;
-
-    m_has_showVal = false;
-
-    if (m_showVal)
-    {
-        delete m_showVal;
-        m_showVal = NULL;
-    }
-    ;
-
-    m_has_showCatName = false;
-
-    if (m_showCatName)
-    {
-        delete m_showCatName;
-        m_showCatName = NULL;
-    }
-    ;
-
-    m_has_showSerName = false;
-
-    if (m_showSerName)
-    {
-        delete m_showSerName;
-        m_showSerName = NULL;
-    }
-    ;
-
-    m_has_showPercent = false;
-
-    if (m_showPercent)
-    {
-        delete m_showPercent;
-        m_showPercent = NULL;
-    }
-    ;
-
-    m_has_showBubbleSize = false;
-
-    if (m_showBubbleSize)
-    {
-        delete m_showBubbleSize;
-        m_showBubbleSize = NULL;
-    }
-    ;
-
-    m_has_separator = false;
-    m_separator.clear();;
-
     m_has_delete = true;
     if (!m_delete)
     {
@@ -11366,15 +11259,6 @@ bool CT_DLbl::has_layout() const
 CT_Layout* CT_DLbl::mutable_layout()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_tx = false;
 
     if (m_tx)
@@ -11383,99 +11267,6 @@ CT_Layout* CT_DLbl::mutable_layout()
         m_tx = NULL;
     }
     ;
-
-    m_has_numFmt = false;
-
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    ;
-
-    m_has_spPr = false;
-
-    if (m_spPr)
-    {
-        delete m_spPr;
-        m_spPr = NULL;
-    }
-    ;
-
-    m_has_txPr = false;
-
-    if (m_txPr)
-    {
-        delete m_txPr;
-        m_txPr = NULL;
-    }
-    ;
-
-    m_has_dLblPos = false;
-
-    if (m_dLblPos)
-    {
-        delete m_dLblPos;
-        m_dLblPos = NULL;
-    }
-    ;
-
-    m_has_showLegendKey = false;
-
-    if (m_showLegendKey)
-    {
-        delete m_showLegendKey;
-        m_showLegendKey = NULL;
-    }
-    ;
-
-    m_has_showVal = false;
-
-    if (m_showVal)
-    {
-        delete m_showVal;
-        m_showVal = NULL;
-    }
-    ;
-
-    m_has_showCatName = false;
-
-    if (m_showCatName)
-    {
-        delete m_showCatName;
-        m_showCatName = NULL;
-    }
-    ;
-
-    m_has_showSerName = false;
-
-    if (m_showSerName)
-    {
-        delete m_showSerName;
-        m_showSerName = NULL;
-    }
-    ;
-
-    m_has_showPercent = false;
-
-    if (m_showPercent)
-    {
-        delete m_showPercent;
-        m_showPercent = NULL;
-    }
-    ;
-
-    m_has_showBubbleSize = false;
-
-    if (m_showBubbleSize)
-    {
-        delete m_showBubbleSize;
-        m_showBubbleSize = NULL;
-    }
-    ;
-
-    m_has_separator = false;
-    m_separator.clear();;
 
     m_has_layout = true;
     if (!m_layout)
@@ -11502,15 +11293,6 @@ bool CT_DLbl::has_tx() const
 CT_Tx* CT_DLbl::mutable_tx()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_layout = false;
 
     if (m_layout)
@@ -11519,99 +11301,6 @@ CT_Tx* CT_DLbl::mutable_tx()
         m_layout = NULL;
     }
     ;
-
-    m_has_numFmt = false;
-
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    ;
-
-    m_has_spPr = false;
-
-    if (m_spPr)
-    {
-        delete m_spPr;
-        m_spPr = NULL;
-    }
-    ;
-
-    m_has_txPr = false;
-
-    if (m_txPr)
-    {
-        delete m_txPr;
-        m_txPr = NULL;
-    }
-    ;
-
-    m_has_dLblPos = false;
-
-    if (m_dLblPos)
-    {
-        delete m_dLblPos;
-        m_dLblPos = NULL;
-    }
-    ;
-
-    m_has_showLegendKey = false;
-
-    if (m_showLegendKey)
-    {
-        delete m_showLegendKey;
-        m_showLegendKey = NULL;
-    }
-    ;
-
-    m_has_showVal = false;
-
-    if (m_showVal)
-    {
-        delete m_showVal;
-        m_showVal = NULL;
-    }
-    ;
-
-    m_has_showCatName = false;
-
-    if (m_showCatName)
-    {
-        delete m_showCatName;
-        m_showCatName = NULL;
-    }
-    ;
-
-    m_has_showSerName = false;
-
-    if (m_showSerName)
-    {
-        delete m_showSerName;
-        m_showSerName = NULL;
-    }
-    ;
-
-    m_has_showPercent = false;
-
-    if (m_showPercent)
-    {
-        delete m_showPercent;
-        m_showPercent = NULL;
-    }
-    ;
-
-    m_has_showBubbleSize = false;
-
-    if (m_showBubbleSize)
-    {
-        delete m_showBubbleSize;
-        m_showBubbleSize = NULL;
-    }
-    ;
-
-    m_has_separator = false;
-    m_separator.clear();;
 
     m_has_tx = true;
     if (!m_tx)
@@ -11637,33 +11326,6 @@ bool CT_DLbl::has_numFmt() const
 
 CT_NumFmt* CT_DLbl::mutable_numFmt()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
 
     m_has_spPr = false;
 
@@ -11774,33 +11436,6 @@ bool CT_DLbl::has_spPr() const
 ns_a::CT_ShapeProperties* CT_DLbl::mutable_spPr()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -11909,33 +11544,6 @@ bool CT_DLbl::has_txPr() const
 
 ns_a::CT_TextBody* CT_DLbl::mutable_txPr()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
 
     m_has_numFmt = false;
 
@@ -12046,33 +11654,6 @@ bool CT_DLbl::has_dLblPos() const
 CT_DLblPos* CT_DLbl::mutable_dLblPos()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -12181,33 +11762,6 @@ bool CT_DLbl::has_showLegendKey() const
 
 CT_Boolean* CT_DLbl::mutable_showLegendKey()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
 
     m_has_numFmt = false;
 
@@ -12318,33 +11872,6 @@ bool CT_DLbl::has_showVal() const
 CT_Boolean* CT_DLbl::mutable_showVal()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -12453,33 +11980,6 @@ bool CT_DLbl::has_showCatName() const
 
 CT_Boolean* CT_DLbl::mutable_showCatName()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
 
     m_has_numFmt = false;
 
@@ -12590,33 +12090,6 @@ bool CT_DLbl::has_showSerName() const
 CT_Boolean* CT_DLbl::mutable_showSerName()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -12725,33 +12198,6 @@ bool CT_DLbl::has_showPercent() const
 
 CT_Boolean* CT_DLbl::mutable_showPercent()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
 
     m_has_numFmt = false;
 
@@ -12862,33 +12308,6 @@ bool CT_DLbl::has_showBubbleSize() const
 CT_Boolean* CT_DLbl::mutable_showBubbleSize()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -12997,33 +12416,6 @@ bool CT_DLbl::has_separator() const
 
 void CT_DLbl::set_separator(const XSD::string_& _separator)
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_layout = false;
-
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    ;
-
-    m_has_tx = false;
-
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    ;
 
     m_has_numFmt = false;
 
@@ -13309,8 +12701,8 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     }
 
     {
-        bool elemHasValueList[14] = {m_has_delete, m_has_layout, m_has_tx, m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator};
-        int cnt = count(elemHasValueList, elemHasValueList + 14, true);
+        bool elemHasValueList[1] = {m_has_delete};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
         assert(cnt == 1);
     }
 
@@ -13318,6 +12710,12 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     if (m_has_delete)
     {
         m_delete->toXmlElem("c:delete", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[2] = {m_has_layout, m_has_tx};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
     }
 
 
@@ -13330,6 +12728,12 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     if (m_has_tx)
     {
         m_tx->toXmlElem("c:tx", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[11] = {m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator};
+        int cnt = count(elemHasValueList, elemHasValueList + 11, true);
+        assert(cnt == 1);
     }
 
 
@@ -13472,117 +12876,6 @@ bool CT_DLbls::has_delete() const
 CT_Boolean* CT_DLbls::mutable_delete()
 {
 
-    m_has_numFmt = false;
-
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    ;
-
-    m_has_spPr = false;
-
-    if (m_spPr)
-    {
-        delete m_spPr;
-        m_spPr = NULL;
-    }
-    ;
-
-    m_has_txPr = false;
-
-    if (m_txPr)
-    {
-        delete m_txPr;
-        m_txPr = NULL;
-    }
-    ;
-
-    m_has_dLblPos = false;
-
-    if (m_dLblPos)
-    {
-        delete m_dLblPos;
-        m_dLblPos = NULL;
-    }
-    ;
-
-    m_has_showLegendKey = false;
-
-    if (m_showLegendKey)
-    {
-        delete m_showLegendKey;
-        m_showLegendKey = NULL;
-    }
-    ;
-
-    m_has_showVal = false;
-
-    if (m_showVal)
-    {
-        delete m_showVal;
-        m_showVal = NULL;
-    }
-    ;
-
-    m_has_showCatName = false;
-
-    if (m_showCatName)
-    {
-        delete m_showCatName;
-        m_showCatName = NULL;
-    }
-    ;
-
-    m_has_showSerName = false;
-
-    if (m_showSerName)
-    {
-        delete m_showSerName;
-        m_showSerName = NULL;
-    }
-    ;
-
-    m_has_showPercent = false;
-
-    if (m_showPercent)
-    {
-        delete m_showPercent;
-        m_showPercent = NULL;
-    }
-    ;
-
-    m_has_showBubbleSize = false;
-
-    if (m_showBubbleSize)
-    {
-        delete m_showBubbleSize;
-        m_showBubbleSize = NULL;
-    }
-    ;
-
-    m_has_separator = false;
-    m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
-
     m_has_delete = true;
     if (!m_delete)
     {
@@ -13608,15 +12901,6 @@ bool CT_DLbls::has_numFmt() const
 CT_NumFmt* CT_DLbls::mutable_numFmt()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_spPr = false;
 
     if (m_spPr)
@@ -13700,24 +12984,6 @@ CT_NumFmt* CT_DLbls::mutable_numFmt()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_numFmt = true;
     if (!m_numFmt)
@@ -13744,15 +13010,6 @@ bool CT_DLbls::has_spPr() const
 ns_a::CT_ShapeProperties* CT_DLbls::mutable_spPr()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -13836,24 +13093,6 @@ ns_a::CT_ShapeProperties* CT_DLbls::mutable_spPr()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_spPr = true;
     if (!m_spPr)
@@ -13880,15 +13119,6 @@ bool CT_DLbls::has_txPr() const
 ns_a::CT_TextBody* CT_DLbls::mutable_txPr()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -13972,24 +13202,6 @@ ns_a::CT_TextBody* CT_DLbls::mutable_txPr()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_txPr = true;
     if (!m_txPr)
@@ -14016,15 +13228,6 @@ bool CT_DLbls::has_dLblPos() const
 CT_DLblPos* CT_DLbls::mutable_dLblPos()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14108,24 +13311,6 @@ CT_DLblPos* CT_DLbls::mutable_dLblPos()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_dLblPos = true;
     if (!m_dLblPos)
@@ -14152,15 +13337,6 @@ bool CT_DLbls::has_showLegendKey() const
 CT_Boolean* CT_DLbls::mutable_showLegendKey()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14244,24 +13420,6 @@ CT_Boolean* CT_DLbls::mutable_showLegendKey()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_showLegendKey = true;
     if (!m_showLegendKey)
@@ -14288,15 +13446,6 @@ bool CT_DLbls::has_showVal() const
 CT_Boolean* CT_DLbls::mutable_showVal()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14380,24 +13529,6 @@ CT_Boolean* CT_DLbls::mutable_showVal()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_showVal = true;
     if (!m_showVal)
@@ -14424,15 +13555,6 @@ bool CT_DLbls::has_showCatName() const
 CT_Boolean* CT_DLbls::mutable_showCatName()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14516,24 +13638,6 @@ CT_Boolean* CT_DLbls::mutable_showCatName()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_showCatName = true;
     if (!m_showCatName)
@@ -14560,15 +13664,6 @@ bool CT_DLbls::has_showSerName() const
 CT_Boolean* CT_DLbls::mutable_showSerName()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14652,24 +13747,6 @@ CT_Boolean* CT_DLbls::mutable_showSerName()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_showSerName = true;
     if (!m_showSerName)
@@ -14696,15 +13773,6 @@ bool CT_DLbls::has_showPercent() const
 CT_Boolean* CT_DLbls::mutable_showPercent()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14788,24 +13856,6 @@ CT_Boolean* CT_DLbls::mutable_showPercent()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_showPercent = true;
     if (!m_showPercent)
@@ -14832,15 +13882,6 @@ bool CT_DLbls::has_showBubbleSize() const
 CT_Boolean* CT_DLbls::mutable_showBubbleSize()
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14924,24 +13965,6 @@ CT_Boolean* CT_DLbls::mutable_showBubbleSize()
 
     m_has_separator = false;
     m_separator.clear();;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
-    }
-    ;
 
     m_has_showBubbleSize = true;
     if (!m_showBubbleSize)
@@ -14968,15 +13991,6 @@ bool CT_DLbls::has_separator() const
 void CT_DLbls::set_separator(const XSD::string_& _separator)
 {
 
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -15064,24 +14078,6 @@ void CT_DLbls::set_separator(const XSD::string_& _separator)
     {
         delete m_showBubbleSize;
         m_showBubbleSize = NULL;
-    }
-    ;
-
-    m_has_showLeaderLines = false;
-
-    if (m_showLeaderLines)
-    {
-        delete m_showLeaderLines;
-        m_showLeaderLines = NULL;
-    }
-    ;
-
-    m_has_leaderLines = false;
-
-    if (m_leaderLines)
-    {
-        delete m_leaderLines;
-        m_leaderLines = NULL;
     }
     ;
 
@@ -15101,108 +14097,6 @@ bool CT_DLbls::has_showLeaderLines() const
 
 CT_Boolean* CT_DLbls::mutable_showLeaderLines()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_numFmt = false;
-
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    ;
-
-    m_has_spPr = false;
-
-    if (m_spPr)
-    {
-        delete m_spPr;
-        m_spPr = NULL;
-    }
-    ;
-
-    m_has_txPr = false;
-
-    if (m_txPr)
-    {
-        delete m_txPr;
-        m_txPr = NULL;
-    }
-    ;
-
-    m_has_dLblPos = false;
-
-    if (m_dLblPos)
-    {
-        delete m_dLblPos;
-        m_dLblPos = NULL;
-    }
-    ;
-
-    m_has_showLegendKey = false;
-
-    if (m_showLegendKey)
-    {
-        delete m_showLegendKey;
-        m_showLegendKey = NULL;
-    }
-    ;
-
-    m_has_showVal = false;
-
-    if (m_showVal)
-    {
-        delete m_showVal;
-        m_showVal = NULL;
-    }
-    ;
-
-    m_has_showCatName = false;
-
-    if (m_showCatName)
-    {
-        delete m_showCatName;
-        m_showCatName = NULL;
-    }
-    ;
-
-    m_has_showSerName = false;
-
-    if (m_showSerName)
-    {
-        delete m_showSerName;
-        m_showSerName = NULL;
-    }
-    ;
-
-    m_has_showPercent = false;
-
-    if (m_showPercent)
-    {
-        delete m_showPercent;
-        m_showPercent = NULL;
-    }
-    ;
-
-    m_has_showBubbleSize = false;
-
-    if (m_showBubbleSize)
-    {
-        delete m_showBubbleSize;
-        m_showBubbleSize = NULL;
-    }
-    ;
-
-    m_has_separator = false;
-    m_separator.clear();;
 
     m_has_leaderLines = false;
 
@@ -15237,108 +14131,6 @@ bool CT_DLbls::has_leaderLines() const
 
 CT_ChartLines* CT_DLbls::mutable_leaderLines()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
-
-    m_has_numFmt = false;
-
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    ;
-
-    m_has_spPr = false;
-
-    if (m_spPr)
-    {
-        delete m_spPr;
-        m_spPr = NULL;
-    }
-    ;
-
-    m_has_txPr = false;
-
-    if (m_txPr)
-    {
-        delete m_txPr;
-        m_txPr = NULL;
-    }
-    ;
-
-    m_has_dLblPos = false;
-
-    if (m_dLblPos)
-    {
-        delete m_dLblPos;
-        m_dLblPos = NULL;
-    }
-    ;
-
-    m_has_showLegendKey = false;
-
-    if (m_showLegendKey)
-    {
-        delete m_showLegendKey;
-        m_showLegendKey = NULL;
-    }
-    ;
-
-    m_has_showVal = false;
-
-    if (m_showVal)
-    {
-        delete m_showVal;
-        m_showVal = NULL;
-    }
-    ;
-
-    m_has_showCatName = false;
-
-    if (m_showCatName)
-    {
-        delete m_showCatName;
-        m_showCatName = NULL;
-    }
-    ;
-
-    m_has_showSerName = false;
-
-    if (m_showSerName)
-    {
-        delete m_showSerName;
-        m_showSerName = NULL;
-    }
-    ;
-
-    m_has_showPercent = false;
-
-    if (m_showPercent)
-    {
-        delete m_showPercent;
-        m_showPercent = NULL;
-    }
-    ;
-
-    m_has_showBubbleSize = false;
-
-    if (m_showBubbleSize)
-    {
-        delete m_showBubbleSize;
-        m_showBubbleSize = NULL;
-    }
-    ;
-
-    m_has_separator = false;
-    m_separator.clear();;
 
     m_has_showLeaderLines = false;
 
@@ -15556,8 +14348,8 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     }
 
     {
-        bool elemHasValueList[14] = {m_has_delete, m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator, m_has_showLeaderLines, m_has_leaderLines};
-        int cnt = count(elemHasValueList, elemHasValueList + 14, true);
+        bool elemHasValueList[1] = {m_has_delete};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
         assert(cnt == 1);
     }
 
@@ -15565,6 +14357,12 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     if (m_has_delete)
     {
         m_delete->toXmlElem("c:delete", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[11] = {m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator};
+        int cnt = count(elemHasValueList, elemHasValueList + 11, true);
+        assert(cnt == 1);
     }
 
 
@@ -15631,6 +14429,12 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     if (m_has_separator)
     {
         _outStream << "<c:separator>" << m_separator << "</c:separator>";
+    }
+
+    {
+        bool elemHasValueList[2] = {m_has_showLeaderLines, m_has_leaderLines};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
     }
 
 
@@ -40487,15 +39291,6 @@ bool CT_LegendEntry::has_delete() const
 CT_Boolean* CT_LegendEntry::mutable_delete()
 {
 
-    m_has_txPr = false;
-
-    if (m_txPr)
-    {
-        delete m_txPr;
-        m_txPr = NULL;
-    }
-    ;
-
     m_has_delete = true;
     if (!m_delete)
     {
@@ -40520,15 +39315,6 @@ bool CT_LegendEntry::has_txPr() const
 
 ns_a::CT_TextBody* CT_LegendEntry::mutable_txPr()
 {
-
-    m_has_delete = false;
-
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    ;
 
     m_has_txPr = true;
     if (!m_txPr)
@@ -40630,8 +39416,8 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     {
-        bool elemHasValueList[2] = {m_has_delete, m_has_txPr};
-        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        bool elemHasValueList[1] = {m_has_delete};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
         assert(cnt == 1);
     }
 
@@ -40639,6 +39425,12 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
     if (m_has_delete)
     {
         m_delete->toXmlElem("c:delete", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[1] = {m_has_txPr};
+        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        assert(cnt == 1);
     }
 
 
@@ -44527,10 +43319,10 @@ void chartSpace_element::toXml(std::ostream& _outStream) const
     _outStream << "<c:chartSpace";
 
     _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
-    _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -44663,10 +43455,10 @@ void chart_element::toXml(std::ostream& _outStream) const
     _outStream << "<c:chart";
 
     _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
-    _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     assert(m_has_r_id_attr);
     if (m_has_r_id_attr)

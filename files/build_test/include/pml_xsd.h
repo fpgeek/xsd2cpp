@@ -233,6 +233,11 @@ class viewPr_element;
 #include "shared-relationshipReference_xsd.h"
 #include "dml-main_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_p {
 using namespace std;
 class Element: public XSD::Element
@@ -260,11 +265,11 @@ public:
         _d_
     };
     ST_TransitionSideDirectionType();
-    ST_TransitionSideDirectionType(const ST_TransitionSideDirectionType::Type& _type);
+    ST_TransitionSideDirectionType(const ST_TransitionSideDirectionType::Type& _value);
     ~ST_TransitionSideDirectionType();
-    bool has_type() const;
-    void set_type(const ST_TransitionSideDirectionType::Type& _type);
-    const ST_TransitionSideDirectionType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TransitionSideDirectionType::Type& _value);
+    const ST_TransitionSideDirectionType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -273,8 +278,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TransitionSideDirectionType* default_instance_;
-    bool m_has_type;
-    ST_TransitionSideDirectionType::Type m_type;
+    bool m_has_value;
+    ST_TransitionSideDirectionType::Type m_value;
 };
 
 class ST_TransitionCornerDirectionType: public XSD::SimpleType
@@ -288,11 +293,11 @@ public:
         _rd_
     };
     ST_TransitionCornerDirectionType();
-    ST_TransitionCornerDirectionType(const ST_TransitionCornerDirectionType::Type& _type);
+    ST_TransitionCornerDirectionType(const ST_TransitionCornerDirectionType::Type& _value);
     ~ST_TransitionCornerDirectionType();
-    bool has_type() const;
-    void set_type(const ST_TransitionCornerDirectionType::Type& _type);
-    const ST_TransitionCornerDirectionType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TransitionCornerDirectionType::Type& _value);
+    const ST_TransitionCornerDirectionType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -301,8 +306,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TransitionCornerDirectionType* default_instance_;
-    bool m_has_type;
-    ST_TransitionCornerDirectionType::Type m_type;
+    bool m_has_value;
+    ST_TransitionCornerDirectionType::Type m_value;
 };
 
 class ST_TransitionInOutDirectionType: public XSD::SimpleType
@@ -314,11 +319,11 @@ public:
         _in_
     };
     ST_TransitionInOutDirectionType();
-    ST_TransitionInOutDirectionType(const ST_TransitionInOutDirectionType::Type& _type);
+    ST_TransitionInOutDirectionType(const ST_TransitionInOutDirectionType::Type& _value);
     ~ST_TransitionInOutDirectionType();
-    bool has_type() const;
-    void set_type(const ST_TransitionInOutDirectionType::Type& _type);
-    const ST_TransitionInOutDirectionType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TransitionInOutDirectionType::Type& _value);
+    const ST_TransitionInOutDirectionType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -327,8 +332,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TransitionInOutDirectionType* default_instance_;
-    bool m_has_type;
-    ST_TransitionInOutDirectionType::Type m_type;
+    bool m_has_value;
+    ST_TransitionInOutDirectionType::Type m_value;
 };
 
 class ST_TransitionEightDirectionType: public XSD::SimpleType
@@ -368,11 +373,11 @@ public:
         _fast_
     };
     ST_TransitionSpeed();
-    ST_TransitionSpeed(const ST_TransitionSpeed::Type& _type);
+    ST_TransitionSpeed(const ST_TransitionSpeed::Type& _value);
     ~ST_TransitionSpeed();
-    bool has_type() const;
-    void set_type(const ST_TransitionSpeed::Type& _type);
-    const ST_TransitionSpeed::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TransitionSpeed::Type& _value);
+    const ST_TransitionSpeed::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -381,8 +386,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TransitionSpeed* default_instance_;
-    bool m_has_type;
-    ST_TransitionSpeed::Type m_type;
+    bool m_has_value;
+    ST_TransitionSpeed::Type m_value;
 };
 
 class ST_TLTimeIndefinite: public XSD::SimpleType
@@ -393,11 +398,11 @@ public:
         _indefinite_ = 0
     };
     ST_TLTimeIndefinite();
-    ST_TLTimeIndefinite(const ST_TLTimeIndefinite::Type& _type);
+    ST_TLTimeIndefinite(const ST_TLTimeIndefinite::Type& _value);
     ~ST_TLTimeIndefinite();
-    bool has_type() const;
-    void set_type(const ST_TLTimeIndefinite::Type& _type);
-    const ST_TLTimeIndefinite::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTimeIndefinite::Type& _value);
+    const ST_TLTimeIndefinite::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -406,8 +411,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTimeIndefinite* default_instance_;
-    bool m_has_type;
-    ST_TLTimeIndefinite::Type m_type;
+    bool m_has_value;
+    ST_TLTimeIndefinite::Type m_value;
 };
 
 class ST_TLTime: public XSD::SimpleType
@@ -441,11 +446,11 @@ class ST_TLTimeNodeID: public XSD::SimpleType
 {
 public:
     ST_TLTimeNodeID();
-    ST_TLTimeNodeID(const XSD::unsignedInt_& _unsignedInt);
+    ST_TLTimeNodeID(const XSD::unsignedInt_& _value);
     ~ST_TLTimeNodeID();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_TLTimeNodeID& default_instance();
@@ -453,8 +458,8 @@ public:
 protected:
 private:
     static ST_TLTimeNodeID* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_IterateType: public XSD::SimpleType
@@ -467,11 +472,11 @@ public:
         _lt_
     };
     ST_IterateType();
-    ST_IterateType(const ST_IterateType::Type& _type);
+    ST_IterateType(const ST_IterateType::Type& _value);
     ~ST_IterateType();
-    bool has_type() const;
-    void set_type(const ST_IterateType::Type& _type);
-    const ST_IterateType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_IterateType::Type& _value);
+    const ST_IterateType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -480,8 +485,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_IterateType* default_instance_;
-    bool m_has_type;
-    ST_IterateType::Type m_type;
+    bool m_has_value;
+    ST_IterateType::Type m_value;
 };
 
 class ST_TLChartSubelementType: public XSD::SimpleType
@@ -496,11 +501,11 @@ public:
         _ptInCategory_
     };
     ST_TLChartSubelementType();
-    ST_TLChartSubelementType(const ST_TLChartSubelementType::Type& _type);
+    ST_TLChartSubelementType(const ST_TLChartSubelementType::Type& _value);
     ~ST_TLChartSubelementType();
-    bool has_type() const;
-    void set_type(const ST_TLChartSubelementType::Type& _type);
-    const ST_TLChartSubelementType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLChartSubelementType::Type& _value);
+    const ST_TLChartSubelementType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -509,8 +514,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLChartSubelementType* default_instance_;
-    bool m_has_type;
-    ST_TLChartSubelementType::Type m_type;
+    bool m_has_value;
+    ST_TLChartSubelementType::Type m_value;
 };
 
 class ST_TLTriggerRuntimeNode: public XSD::SimpleType
@@ -523,11 +528,11 @@ public:
         _all_
     };
     ST_TLTriggerRuntimeNode();
-    ST_TLTriggerRuntimeNode(const ST_TLTriggerRuntimeNode::Type& _type);
+    ST_TLTriggerRuntimeNode(const ST_TLTriggerRuntimeNode::Type& _value);
     ~ST_TLTriggerRuntimeNode();
-    bool has_type() const;
-    void set_type(const ST_TLTriggerRuntimeNode::Type& _type);
-    const ST_TLTriggerRuntimeNode::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTriggerRuntimeNode::Type& _value);
+    const ST_TLTriggerRuntimeNode::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -536,8 +541,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTriggerRuntimeNode* default_instance_;
-    bool m_has_type;
-    ST_TLTriggerRuntimeNode::Type m_type;
+    bool m_has_value;
+    ST_TLTriggerRuntimeNode::Type m_value;
 };
 
 class ST_TLTriggerEvent: public XSD::SimpleType
@@ -558,11 +563,11 @@ public:
         _onStopAudio_
     };
     ST_TLTriggerEvent();
-    ST_TLTriggerEvent(const ST_TLTriggerEvent::Type& _type);
+    ST_TLTriggerEvent(const ST_TLTriggerEvent::Type& _value);
     ~ST_TLTriggerEvent();
-    bool has_type() const;
-    void set_type(const ST_TLTriggerEvent::Type& _type);
-    const ST_TLTriggerEvent::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTriggerEvent::Type& _value);
+    const ST_TLTriggerEvent::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -571,8 +576,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTriggerEvent* default_instance_;
-    bool m_has_type;
-    ST_TLTriggerEvent::Type m_type;
+    bool m_has_value;
+    ST_TLTriggerEvent::Type m_value;
 };
 
 class ST_TLTimeNodePresetClassType: public XSD::SimpleType
@@ -588,11 +593,11 @@ public:
         _mediacall_
     };
     ST_TLTimeNodePresetClassType();
-    ST_TLTimeNodePresetClassType(const ST_TLTimeNodePresetClassType::Type& _type);
+    ST_TLTimeNodePresetClassType(const ST_TLTimeNodePresetClassType::Type& _value);
     ~ST_TLTimeNodePresetClassType();
-    bool has_type() const;
-    void set_type(const ST_TLTimeNodePresetClassType::Type& _type);
-    const ST_TLTimeNodePresetClassType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTimeNodePresetClassType::Type& _value);
+    const ST_TLTimeNodePresetClassType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -601,8 +606,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTimeNodePresetClassType* default_instance_;
-    bool m_has_type;
-    ST_TLTimeNodePresetClassType::Type m_type;
+    bool m_has_value;
+    ST_TLTimeNodePresetClassType::Type m_value;
 };
 
 class ST_TLTimeNodeRestartType: public XSD::SimpleType
@@ -615,11 +620,11 @@ public:
         _never_
     };
     ST_TLTimeNodeRestartType();
-    ST_TLTimeNodeRestartType(const ST_TLTimeNodeRestartType::Type& _type);
+    ST_TLTimeNodeRestartType(const ST_TLTimeNodeRestartType::Type& _value);
     ~ST_TLTimeNodeRestartType();
-    bool has_type() const;
-    void set_type(const ST_TLTimeNodeRestartType::Type& _type);
-    const ST_TLTimeNodeRestartType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTimeNodeRestartType::Type& _value);
+    const ST_TLTimeNodeRestartType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -628,8 +633,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTimeNodeRestartType* default_instance_;
-    bool m_has_type;
-    ST_TLTimeNodeRestartType::Type m_type;
+    bool m_has_value;
+    ST_TLTimeNodeRestartType::Type m_value;
 };
 
 class ST_TLTimeNodeFillType: public XSD::SimpleType
@@ -643,11 +648,11 @@ public:
         _transition_
     };
     ST_TLTimeNodeFillType();
-    ST_TLTimeNodeFillType(const ST_TLTimeNodeFillType::Type& _type);
+    ST_TLTimeNodeFillType(const ST_TLTimeNodeFillType::Type& _value);
     ~ST_TLTimeNodeFillType();
-    bool has_type() const;
-    void set_type(const ST_TLTimeNodeFillType::Type& _type);
-    const ST_TLTimeNodeFillType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTimeNodeFillType::Type& _value);
+    const ST_TLTimeNodeFillType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -656,8 +661,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTimeNodeFillType* default_instance_;
-    bool m_has_type;
-    ST_TLTimeNodeFillType::Type m_type;
+    bool m_has_value;
+    ST_TLTimeNodeFillType::Type m_value;
 };
 
 class ST_TLTimeNodeSyncType: public XSD::SimpleType
@@ -669,11 +674,11 @@ public:
         _locked_
     };
     ST_TLTimeNodeSyncType();
-    ST_TLTimeNodeSyncType(const ST_TLTimeNodeSyncType::Type& _type);
+    ST_TLTimeNodeSyncType(const ST_TLTimeNodeSyncType::Type& _value);
     ~ST_TLTimeNodeSyncType();
-    bool has_type() const;
-    void set_type(const ST_TLTimeNodeSyncType::Type& _type);
-    const ST_TLTimeNodeSyncType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTimeNodeSyncType::Type& _value);
+    const ST_TLTimeNodeSyncType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -682,8 +687,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTimeNodeSyncType* default_instance_;
-    bool m_has_type;
-    ST_TLTimeNodeSyncType::Type m_type;
+    bool m_has_value;
+    ST_TLTimeNodeSyncType::Type m_value;
 };
 
 class ST_TLTimeNodeMasterRelation: public XSD::SimpleType
@@ -696,11 +701,11 @@ public:
         _nextClick_
     };
     ST_TLTimeNodeMasterRelation();
-    ST_TLTimeNodeMasterRelation(const ST_TLTimeNodeMasterRelation::Type& _type);
+    ST_TLTimeNodeMasterRelation(const ST_TLTimeNodeMasterRelation::Type& _value);
     ~ST_TLTimeNodeMasterRelation();
-    bool has_type() const;
-    void set_type(const ST_TLTimeNodeMasterRelation::Type& _type);
-    const ST_TLTimeNodeMasterRelation::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTimeNodeMasterRelation::Type& _value);
+    const ST_TLTimeNodeMasterRelation::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -709,8 +714,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTimeNodeMasterRelation* default_instance_;
-    bool m_has_type;
-    ST_TLTimeNodeMasterRelation::Type m_type;
+    bool m_has_value;
+    ST_TLTimeNodeMasterRelation::Type m_value;
 };
 
 class ST_TLTimeNodeType: public XSD::SimpleType
@@ -729,11 +734,11 @@ public:
         _tmRoot_
     };
     ST_TLTimeNodeType();
-    ST_TLTimeNodeType(const ST_TLTimeNodeType::Type& _type);
+    ST_TLTimeNodeType(const ST_TLTimeNodeType::Type& _value);
     ~ST_TLTimeNodeType();
-    bool has_type() const;
-    void set_type(const ST_TLTimeNodeType::Type& _type);
-    const ST_TLTimeNodeType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLTimeNodeType::Type& _value);
+    const ST_TLTimeNodeType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -742,8 +747,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLTimeNodeType* default_instance_;
-    bool m_has_type;
-    ST_TLTimeNodeType::Type m_type;
+    bool m_has_value;
+    ST_TLTimeNodeType::Type m_value;
 };
 
 class ST_TLNextActionType: public XSD::SimpleType
@@ -755,11 +760,11 @@ public:
         _seek_
     };
     ST_TLNextActionType();
-    ST_TLNextActionType(const ST_TLNextActionType::Type& _type);
+    ST_TLNextActionType(const ST_TLNextActionType::Type& _value);
     ~ST_TLNextActionType();
-    bool has_type() const;
-    void set_type(const ST_TLNextActionType::Type& _type);
-    const ST_TLNextActionType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLNextActionType::Type& _value);
+    const ST_TLNextActionType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -768,8 +773,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLNextActionType* default_instance_;
-    bool m_has_type;
-    ST_TLNextActionType::Type m_type;
+    bool m_has_value;
+    ST_TLNextActionType::Type m_value;
 };
 
 class ST_TLPreviousActionType: public XSD::SimpleType
@@ -781,11 +786,11 @@ public:
         _skipTimed_
     };
     ST_TLPreviousActionType();
-    ST_TLPreviousActionType(const ST_TLPreviousActionType::Type& _type);
+    ST_TLPreviousActionType(const ST_TLPreviousActionType::Type& _value);
     ~ST_TLPreviousActionType();
-    bool has_type() const;
-    void set_type(const ST_TLPreviousActionType::Type& _type);
-    const ST_TLPreviousActionType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLPreviousActionType::Type& _value);
+    const ST_TLPreviousActionType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -794,8 +799,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLPreviousActionType* default_instance_;
-    bool m_has_type;
-    ST_TLPreviousActionType::Type m_type;
+    bool m_has_value;
+    ST_TLPreviousActionType::Type m_value;
 };
 
 class ST_TLBehaviorAdditiveType: public XSD::SimpleType
@@ -810,11 +815,11 @@ public:
         _none_
     };
     ST_TLBehaviorAdditiveType();
-    ST_TLBehaviorAdditiveType(const ST_TLBehaviorAdditiveType::Type& _type);
+    ST_TLBehaviorAdditiveType(const ST_TLBehaviorAdditiveType::Type& _value);
     ~ST_TLBehaviorAdditiveType();
-    bool has_type() const;
-    void set_type(const ST_TLBehaviorAdditiveType::Type& _type);
-    const ST_TLBehaviorAdditiveType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLBehaviorAdditiveType::Type& _value);
+    const ST_TLBehaviorAdditiveType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -823,8 +828,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLBehaviorAdditiveType* default_instance_;
-    bool m_has_type;
-    ST_TLBehaviorAdditiveType::Type m_type;
+    bool m_has_value;
+    ST_TLBehaviorAdditiveType::Type m_value;
 };
 
 class ST_TLBehaviorAccumulateType: public XSD::SimpleType
@@ -836,11 +841,11 @@ public:
         _always_
     };
     ST_TLBehaviorAccumulateType();
-    ST_TLBehaviorAccumulateType(const ST_TLBehaviorAccumulateType::Type& _type);
+    ST_TLBehaviorAccumulateType(const ST_TLBehaviorAccumulateType::Type& _value);
     ~ST_TLBehaviorAccumulateType();
-    bool has_type() const;
-    void set_type(const ST_TLBehaviorAccumulateType::Type& _type);
-    const ST_TLBehaviorAccumulateType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLBehaviorAccumulateType::Type& _value);
+    const ST_TLBehaviorAccumulateType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -849,8 +854,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLBehaviorAccumulateType* default_instance_;
-    bool m_has_type;
-    ST_TLBehaviorAccumulateType::Type m_type;
+    bool m_has_value;
+    ST_TLBehaviorAccumulateType::Type m_value;
 };
 
 class ST_TLBehaviorTransformType: public XSD::SimpleType
@@ -862,11 +867,11 @@ public:
         _img_
     };
     ST_TLBehaviorTransformType();
-    ST_TLBehaviorTransformType(const ST_TLBehaviorTransformType::Type& _type);
+    ST_TLBehaviorTransformType(const ST_TLBehaviorTransformType::Type& _value);
     ~ST_TLBehaviorTransformType();
-    bool has_type() const;
-    void set_type(const ST_TLBehaviorTransformType::Type& _type);
-    const ST_TLBehaviorTransformType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLBehaviorTransformType::Type& _value);
+    const ST_TLBehaviorTransformType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -875,8 +880,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLBehaviorTransformType* default_instance_;
-    bool m_has_type;
-    ST_TLBehaviorTransformType::Type m_type;
+    bool m_has_value;
+    ST_TLBehaviorTransformType::Type m_value;
 };
 
 class ST_TLBehaviorOverrideType: public XSD::SimpleType
@@ -888,11 +893,11 @@ public:
         _childStyle_
     };
     ST_TLBehaviorOverrideType();
-    ST_TLBehaviorOverrideType(const ST_TLBehaviorOverrideType::Type& _type);
+    ST_TLBehaviorOverrideType(const ST_TLBehaviorOverrideType::Type& _value);
     ~ST_TLBehaviorOverrideType();
-    bool has_type() const;
-    void set_type(const ST_TLBehaviorOverrideType::Type& _type);
-    const ST_TLBehaviorOverrideType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLBehaviorOverrideType::Type& _value);
+    const ST_TLBehaviorOverrideType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -901,8 +906,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLBehaviorOverrideType* default_instance_;
-    bool m_has_type;
-    ST_TLBehaviorOverrideType::Type m_type;
+    bool m_has_value;
+    ST_TLBehaviorOverrideType::Type m_value;
 };
 
 class ST_TLTimeAnimateValueTime: public XSD::SimpleType
@@ -942,11 +947,11 @@ public:
         _fmla_
     };
     ST_TLAnimateBehaviorCalcMode();
-    ST_TLAnimateBehaviorCalcMode(const ST_TLAnimateBehaviorCalcMode::Type& _type);
+    ST_TLAnimateBehaviorCalcMode(const ST_TLAnimateBehaviorCalcMode::Type& _value);
     ~ST_TLAnimateBehaviorCalcMode();
-    bool has_type() const;
-    void set_type(const ST_TLAnimateBehaviorCalcMode::Type& _type);
-    const ST_TLAnimateBehaviorCalcMode::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLAnimateBehaviorCalcMode::Type& _value);
+    const ST_TLAnimateBehaviorCalcMode::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -955,8 +960,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLAnimateBehaviorCalcMode* default_instance_;
-    bool m_has_type;
-    ST_TLAnimateBehaviorCalcMode::Type m_type;
+    bool m_has_value;
+    ST_TLAnimateBehaviorCalcMode::Type m_value;
 };
 
 class ST_TLAnimateBehaviorValueType: public XSD::SimpleType
@@ -969,11 +974,11 @@ public:
         _clr_
     };
     ST_TLAnimateBehaviorValueType();
-    ST_TLAnimateBehaviorValueType(const ST_TLAnimateBehaviorValueType::Type& _type);
+    ST_TLAnimateBehaviorValueType(const ST_TLAnimateBehaviorValueType::Type& _value);
     ~ST_TLAnimateBehaviorValueType();
-    bool has_type() const;
-    void set_type(const ST_TLAnimateBehaviorValueType::Type& _type);
-    const ST_TLAnimateBehaviorValueType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLAnimateBehaviorValueType::Type& _value);
+    const ST_TLAnimateBehaviorValueType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -982,8 +987,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLAnimateBehaviorValueType* default_instance_;
-    bool m_has_type;
-    ST_TLAnimateBehaviorValueType::Type m_type;
+    bool m_has_value;
+    ST_TLAnimateBehaviorValueType::Type m_value;
 };
 
 class ST_TLAnimateColorSpace: public XSD::SimpleType
@@ -995,11 +1000,11 @@ public:
         _hsl_
     };
     ST_TLAnimateColorSpace();
-    ST_TLAnimateColorSpace(const ST_TLAnimateColorSpace::Type& _type);
+    ST_TLAnimateColorSpace(const ST_TLAnimateColorSpace::Type& _value);
     ~ST_TLAnimateColorSpace();
-    bool has_type() const;
-    void set_type(const ST_TLAnimateColorSpace::Type& _type);
-    const ST_TLAnimateColorSpace::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLAnimateColorSpace::Type& _value);
+    const ST_TLAnimateColorSpace::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1008,8 +1013,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLAnimateColorSpace* default_instance_;
-    bool m_has_type;
-    ST_TLAnimateColorSpace::Type m_type;
+    bool m_has_value;
+    ST_TLAnimateColorSpace::Type m_value;
 };
 
 class ST_TLAnimateColorDirection: public XSD::SimpleType
@@ -1021,11 +1026,11 @@ public:
         _ccw_
     };
     ST_TLAnimateColorDirection();
-    ST_TLAnimateColorDirection(const ST_TLAnimateColorDirection::Type& _type);
+    ST_TLAnimateColorDirection(const ST_TLAnimateColorDirection::Type& _value);
     ~ST_TLAnimateColorDirection();
-    bool has_type() const;
-    void set_type(const ST_TLAnimateColorDirection::Type& _type);
-    const ST_TLAnimateColorDirection::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLAnimateColorDirection::Type& _value);
+    const ST_TLAnimateColorDirection::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1034,8 +1039,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLAnimateColorDirection* default_instance_;
-    bool m_has_type;
-    ST_TLAnimateColorDirection::Type m_type;
+    bool m_has_value;
+    ST_TLAnimateColorDirection::Type m_value;
 };
 
 class ST_TLAnimateEffectTransition: public XSD::SimpleType
@@ -1048,11 +1053,11 @@ public:
         _none_
     };
     ST_TLAnimateEffectTransition();
-    ST_TLAnimateEffectTransition(const ST_TLAnimateEffectTransition::Type& _type);
+    ST_TLAnimateEffectTransition(const ST_TLAnimateEffectTransition::Type& _value);
     ~ST_TLAnimateEffectTransition();
-    bool has_type() const;
-    void set_type(const ST_TLAnimateEffectTransition::Type& _type);
-    const ST_TLAnimateEffectTransition::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLAnimateEffectTransition::Type& _value);
+    const ST_TLAnimateEffectTransition::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1061,8 +1066,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLAnimateEffectTransition* default_instance_;
-    bool m_has_type;
-    ST_TLAnimateEffectTransition::Type m_type;
+    bool m_has_value;
+    ST_TLAnimateEffectTransition::Type m_value;
 };
 
 class ST_TLAnimateMotionBehaviorOrigin: public XSD::SimpleType
@@ -1074,11 +1079,11 @@ public:
         _layout_
     };
     ST_TLAnimateMotionBehaviorOrigin();
-    ST_TLAnimateMotionBehaviorOrigin(const ST_TLAnimateMotionBehaviorOrigin::Type& _type);
+    ST_TLAnimateMotionBehaviorOrigin(const ST_TLAnimateMotionBehaviorOrigin::Type& _value);
     ~ST_TLAnimateMotionBehaviorOrigin();
-    bool has_type() const;
-    void set_type(const ST_TLAnimateMotionBehaviorOrigin::Type& _type);
-    const ST_TLAnimateMotionBehaviorOrigin::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLAnimateMotionBehaviorOrigin::Type& _value);
+    const ST_TLAnimateMotionBehaviorOrigin::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1087,8 +1092,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLAnimateMotionBehaviorOrigin* default_instance_;
-    bool m_has_type;
-    ST_TLAnimateMotionBehaviorOrigin::Type m_type;
+    bool m_has_value;
+    ST_TLAnimateMotionBehaviorOrigin::Type m_value;
 };
 
 class ST_TLAnimateMotionPathEditMode: public XSD::SimpleType
@@ -1100,11 +1105,11 @@ public:
         _fixed_
     };
     ST_TLAnimateMotionPathEditMode();
-    ST_TLAnimateMotionPathEditMode(const ST_TLAnimateMotionPathEditMode::Type& _type);
+    ST_TLAnimateMotionPathEditMode(const ST_TLAnimateMotionPathEditMode::Type& _value);
     ~ST_TLAnimateMotionPathEditMode();
-    bool has_type() const;
-    void set_type(const ST_TLAnimateMotionPathEditMode::Type& _type);
-    const ST_TLAnimateMotionPathEditMode::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLAnimateMotionPathEditMode::Type& _value);
+    const ST_TLAnimateMotionPathEditMode::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1113,8 +1118,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLAnimateMotionPathEditMode* default_instance_;
-    bool m_has_type;
-    ST_TLAnimateMotionPathEditMode::Type m_type;
+    bool m_has_value;
+    ST_TLAnimateMotionPathEditMode::Type m_value;
 };
 
 class ST_TLCommandType: public XSD::SimpleType
@@ -1127,11 +1132,11 @@ public:
         _verb_
     };
     ST_TLCommandType();
-    ST_TLCommandType(const ST_TLCommandType::Type& _type);
+    ST_TLCommandType(const ST_TLCommandType::Type& _value);
     ~ST_TLCommandType();
-    bool has_type() const;
-    void set_type(const ST_TLCommandType::Type& _type);
-    const ST_TLCommandType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLCommandType::Type& _value);
+    const ST_TLCommandType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1140,8 +1145,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLCommandType* default_instance_;
-    bool m_has_type;
-    ST_TLCommandType::Type m_type;
+    bool m_has_value;
+    ST_TLCommandType::Type m_value;
 };
 
 class ST_TLParaBuildType: public XSD::SimpleType
@@ -1155,11 +1160,11 @@ public:
         _whole_
     };
     ST_TLParaBuildType();
-    ST_TLParaBuildType(const ST_TLParaBuildType::Type& _type);
+    ST_TLParaBuildType(const ST_TLParaBuildType::Type& _value);
     ~ST_TLParaBuildType();
-    bool has_type() const;
-    void set_type(const ST_TLParaBuildType::Type& _type);
-    const ST_TLParaBuildType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLParaBuildType::Type& _value);
+    const ST_TLParaBuildType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1168,8 +1173,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLParaBuildType* default_instance_;
-    bool m_has_type;
-    ST_TLParaBuildType::Type m_type;
+    bool m_has_value;
+    ST_TLParaBuildType::Type m_value;
 };
 
 class ST_TLDiagramBuildType: public XSD::SimpleType
@@ -1196,11 +1201,11 @@ public:
         _cust_
     };
     ST_TLDiagramBuildType();
-    ST_TLDiagramBuildType(const ST_TLDiagramBuildType::Type& _type);
+    ST_TLDiagramBuildType(const ST_TLDiagramBuildType::Type& _value);
     ~ST_TLDiagramBuildType();
-    bool has_type() const;
-    void set_type(const ST_TLDiagramBuildType::Type& _type);
-    const ST_TLDiagramBuildType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLDiagramBuildType::Type& _value);
+    const ST_TLDiagramBuildType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1209,8 +1214,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLDiagramBuildType* default_instance_;
-    bool m_has_type;
-    ST_TLDiagramBuildType::Type m_type;
+    bool m_has_value;
+    ST_TLDiagramBuildType::Type m_value;
 };
 
 class ST_TLOleChartBuildType: public XSD::SimpleType
@@ -1225,11 +1230,11 @@ public:
         _categoryEl_
     };
     ST_TLOleChartBuildType();
-    ST_TLOleChartBuildType(const ST_TLOleChartBuildType::Type& _type);
+    ST_TLOleChartBuildType(const ST_TLOleChartBuildType::Type& _value);
     ~ST_TLOleChartBuildType();
-    bool has_type() const;
-    void set_type(const ST_TLOleChartBuildType::Type& _type);
-    const ST_TLOleChartBuildType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TLOleChartBuildType::Type& _value);
+    const ST_TLOleChartBuildType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1238,19 +1243,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TLOleChartBuildType* default_instance_;
-    bool m_has_type;
-    ST_TLOleChartBuildType::Type m_type;
+    bool m_has_value;
+    ST_TLOleChartBuildType::Type m_value;
 };
 
 class ST_Name: public XSD::SimpleType
 {
 public:
     ST_Name();
-    ST_Name(const XSD::string_& _string);
+    ST_Name(const XSD::string_& _value);
     ~ST_Name();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Name& default_instance();
@@ -1258,8 +1263,8 @@ public:
 protected:
 private:
     static ST_Name* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_Direction: public XSD::SimpleType
@@ -1271,11 +1276,11 @@ public:
         _vert_
     };
     ST_Direction();
-    ST_Direction(const ST_Direction::Type& _type);
+    ST_Direction(const ST_Direction::Type& _value);
     ~ST_Direction();
-    bool has_type() const;
-    void set_type(const ST_Direction::Type& _type);
-    const ST_Direction::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_Direction::Type& _value);
+    const ST_Direction::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1284,19 +1289,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_Direction* default_instance_;
-    bool m_has_type;
-    ST_Direction::Type m_type;
+    bool m_has_value;
+    ST_Direction::Type m_value;
 };
 
 class ST_Index: public XSD::SimpleType
 {
 public:
     ST_Index();
-    ST_Index(const XSD::unsignedInt_& _unsignedInt);
+    ST_Index(const XSD::unsignedInt_& _value);
     ~ST_Index();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Index& default_instance();
@@ -1304,8 +1309,8 @@ public:
 protected:
 private:
     static ST_Index* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_OleObjectFollowColorScheme: public XSD::SimpleType
@@ -1318,11 +1323,11 @@ public:
         _textAndBackground_
     };
     ST_OleObjectFollowColorScheme();
-    ST_OleObjectFollowColorScheme(const ST_OleObjectFollowColorScheme::Type& _type);
+    ST_OleObjectFollowColorScheme(const ST_OleObjectFollowColorScheme::Type& _value);
     ~ST_OleObjectFollowColorScheme();
-    bool has_type() const;
-    void set_type(const ST_OleObjectFollowColorScheme::Type& _type);
-    const ST_OleObjectFollowColorScheme::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_OleObjectFollowColorScheme::Type& _value);
+    const ST_OleObjectFollowColorScheme::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1331,19 +1336,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_OleObjectFollowColorScheme* default_instance_;
-    bool m_has_type;
-    ST_OleObjectFollowColorScheme::Type m_type;
+    bool m_has_value;
+    ST_OleObjectFollowColorScheme::Type m_value;
 };
 
 class ST_SlideId: public XSD::SimpleType
 {
 public:
     ST_SlideId();
-    ST_SlideId(const XSD::unsignedInt_& _unsignedInt);
+    ST_SlideId(const XSD::unsignedInt_& _value);
     ~ST_SlideId();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_SlideId& default_instance();
@@ -1351,19 +1356,19 @@ public:
 protected:
 private:
     static ST_SlideId* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_SlideMasterId: public XSD::SimpleType
 {
 public:
     ST_SlideMasterId();
-    ST_SlideMasterId(const XSD::unsignedInt_& _unsignedInt);
+    ST_SlideMasterId(const XSD::unsignedInt_& _value);
     ~ST_SlideMasterId();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_SlideMasterId& default_instance();
@@ -1371,8 +1376,8 @@ public:
 protected:
 private:
     static ST_SlideMasterId* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_PhotoAlbumLayout: public XSD::SimpleType
@@ -1389,11 +1394,11 @@ public:
         _4picTitle_
     };
     ST_PhotoAlbumLayout();
-    ST_PhotoAlbumLayout(const ST_PhotoAlbumLayout::Type& _type);
+    ST_PhotoAlbumLayout(const ST_PhotoAlbumLayout::Type& _value);
     ~ST_PhotoAlbumLayout();
-    bool has_type() const;
-    void set_type(const ST_PhotoAlbumLayout::Type& _type);
-    const ST_PhotoAlbumLayout::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PhotoAlbumLayout::Type& _value);
+    const ST_PhotoAlbumLayout::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1402,8 +1407,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PhotoAlbumLayout* default_instance_;
-    bool m_has_type;
-    ST_PhotoAlbumLayout::Type m_type;
+    bool m_has_value;
+    ST_PhotoAlbumLayout::Type m_value;
 };
 
 class ST_PhotoAlbumFrameShape: public XSD::SimpleType
@@ -1420,11 +1425,11 @@ public:
         _frameStyle7_
     };
     ST_PhotoAlbumFrameShape();
-    ST_PhotoAlbumFrameShape(const ST_PhotoAlbumFrameShape::Type& _type);
+    ST_PhotoAlbumFrameShape(const ST_PhotoAlbumFrameShape::Type& _value);
     ~ST_PhotoAlbumFrameShape();
-    bool has_type() const;
-    void set_type(const ST_PhotoAlbumFrameShape::Type& _type);
-    const ST_PhotoAlbumFrameShape::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PhotoAlbumFrameShape::Type& _value);
+    const ST_PhotoAlbumFrameShape::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1433,8 +1438,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PhotoAlbumFrameShape* default_instance_;
-    bool m_has_type;
-    ST_PhotoAlbumFrameShape::Type m_type;
+    bool m_has_value;
+    ST_PhotoAlbumFrameShape::Type m_value;
 };
 
 class ST_SlideSizeCoordinate: public ns_a::ST_PositiveCoordinate32
@@ -1472,11 +1477,11 @@ public:
         _screen16x10_
     };
     ST_SlideSizeType();
-    ST_SlideSizeType(const ST_SlideSizeType::Type& _type);
+    ST_SlideSizeType(const ST_SlideSizeType::Type& _value);
     ~ST_SlideSizeType();
-    bool has_type() const;
-    void set_type(const ST_SlideSizeType::Type& _type);
-    const ST_SlideSizeType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_SlideSizeType::Type& _value);
+    const ST_SlideSizeType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1485,19 +1490,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_SlideSizeType* default_instance_;
-    bool m_has_type;
-    ST_SlideSizeType::Type m_type;
+    bool m_has_value;
+    ST_SlideSizeType::Type m_value;
 };
 
 class ST_BookmarkIdSeed: public XSD::SimpleType
 {
 public:
     ST_BookmarkIdSeed();
-    ST_BookmarkIdSeed(const XSD::unsignedInt_& _unsignedInt);
+    ST_BookmarkIdSeed(const XSD::unsignedInt_& _value);
     ~ST_BookmarkIdSeed();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_BookmarkIdSeed& default_instance();
@@ -1505,8 +1510,8 @@ public:
 protected:
 private:
     static ST_BookmarkIdSeed* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_WebColorType: public XSD::SimpleType
@@ -1522,11 +1527,11 @@ public:
         _blackTextOnWhite_
     };
     ST_WebColorType();
-    ST_WebColorType(const ST_WebColorType::Type& _type);
+    ST_WebColorType(const ST_WebColorType::Type& _value);
     ~ST_WebColorType();
-    bool has_type() const;
-    void set_type(const ST_WebColorType::Type& _type);
-    const ST_WebColorType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_WebColorType::Type& _value);
+    const ST_WebColorType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1535,8 +1540,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_WebColorType* default_instance_;
-    bool m_has_type;
-    ST_WebColorType::Type m_type;
+    bool m_has_value;
+    ST_WebColorType::Type m_value;
 };
 
 class ST_WebScreenSize: public XSD::SimpleType
@@ -1557,11 +1562,11 @@ public:
         _1920x1200_
     };
     ST_WebScreenSize();
-    ST_WebScreenSize(const ST_WebScreenSize::Type& _type);
+    ST_WebScreenSize(const ST_WebScreenSize::Type& _value);
     ~ST_WebScreenSize();
-    bool has_type() const;
-    void set_type(const ST_WebScreenSize::Type& _type);
-    const ST_WebScreenSize::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_WebScreenSize::Type& _value);
+    const ST_WebScreenSize::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1570,19 +1575,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_WebScreenSize* default_instance_;
-    bool m_has_type;
-    ST_WebScreenSize::Type m_type;
+    bool m_has_value;
+    ST_WebScreenSize::Type m_value;
 };
 
 class ST_WebEncoding: public XSD::SimpleType
 {
 public:
     ST_WebEncoding();
-    ST_WebEncoding(const XSD::string_& _string);
+    ST_WebEncoding(const XSD::string_& _value);
     ~ST_WebEncoding();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_WebEncoding& default_instance();
@@ -1590,8 +1595,8 @@ public:
 protected:
 private:
     static ST_WebEncoding* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_PrintWhat: public XSD::SimpleType
@@ -1610,11 +1615,11 @@ public:
         _outline_
     };
     ST_PrintWhat();
-    ST_PrintWhat(const ST_PrintWhat::Type& _type);
+    ST_PrintWhat(const ST_PrintWhat::Type& _value);
     ~ST_PrintWhat();
-    bool has_type() const;
-    void set_type(const ST_PrintWhat::Type& _type);
-    const ST_PrintWhat::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PrintWhat::Type& _value);
+    const ST_PrintWhat::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1623,8 +1628,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PrintWhat* default_instance_;
-    bool m_has_type;
-    ST_PrintWhat::Type m_type;
+    bool m_has_value;
+    ST_PrintWhat::Type m_value;
 };
 
 class ST_PrintColorMode: public XSD::SimpleType
@@ -1637,11 +1642,11 @@ public:
         _clr_
     };
     ST_PrintColorMode();
-    ST_PrintColorMode(const ST_PrintColorMode::Type& _type);
+    ST_PrintColorMode(const ST_PrintColorMode::Type& _value);
     ~ST_PrintColorMode();
-    bool has_type() const;
-    void set_type(const ST_PrintColorMode::Type& _type);
-    const ST_PrintColorMode::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PrintColorMode::Type& _value);
+    const ST_PrintColorMode::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1650,8 +1655,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PrintColorMode* default_instance_;
-    bool m_has_type;
-    ST_PrintColorMode::Type m_type;
+    bool m_has_value;
+    ST_PrintColorMode::Type m_value;
 };
 
 class ST_PlaceholderType: public XSD::SimpleType
@@ -1677,11 +1682,11 @@ public:
         _pic_
     };
     ST_PlaceholderType();
-    ST_PlaceholderType(const ST_PlaceholderType::Type& _type);
+    ST_PlaceholderType(const ST_PlaceholderType::Type& _value);
     ~ST_PlaceholderType();
-    bool has_type() const;
-    void set_type(const ST_PlaceholderType::Type& _type);
-    const ST_PlaceholderType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PlaceholderType::Type& _value);
+    const ST_PlaceholderType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1690,8 +1695,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PlaceholderType* default_instance_;
-    bool m_has_type;
-    ST_PlaceholderType::Type m_type;
+    bool m_has_value;
+    ST_PlaceholderType::Type m_value;
 };
 
 class ST_PlaceholderSize: public XSD::SimpleType
@@ -1704,11 +1709,11 @@ public:
         _quarter_
     };
     ST_PlaceholderSize();
-    ST_PlaceholderSize(const ST_PlaceholderSize::Type& _type);
+    ST_PlaceholderSize(const ST_PlaceholderSize::Type& _value);
     ~ST_PlaceholderSize();
-    bool has_type() const;
-    void set_type(const ST_PlaceholderSize::Type& _type);
-    const ST_PlaceholderSize::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PlaceholderSize::Type& _value);
+    const ST_PlaceholderSize::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1717,8 +1722,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PlaceholderSize* default_instance_;
-    bool m_has_type;
-    ST_PlaceholderSize::Type m_type;
+    bool m_has_value;
+    ST_PlaceholderSize::Type m_value;
 };
 
 class ST_SlideLayoutType: public XSD::SimpleType
@@ -1764,11 +1769,11 @@ public:
         _picTx_
     };
     ST_SlideLayoutType();
-    ST_SlideLayoutType(const ST_SlideLayoutType::Type& _type);
+    ST_SlideLayoutType(const ST_SlideLayoutType::Type& _value);
     ~ST_SlideLayoutType();
-    bool has_type() const;
-    void set_type(const ST_SlideLayoutType::Type& _type);
-    const ST_SlideLayoutType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_SlideLayoutType::Type& _value);
+    const ST_SlideLayoutType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1777,19 +1782,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_SlideLayoutType* default_instance_;
-    bool m_has_type;
-    ST_SlideLayoutType::Type m_type;
+    bool m_has_value;
+    ST_SlideLayoutType::Type m_value;
 };
 
 class ST_SlideLayoutId: public XSD::SimpleType
 {
 public:
     ST_SlideLayoutId();
-    ST_SlideLayoutId(const XSD::unsignedInt_& _unsignedInt);
+    ST_SlideLayoutId(const XSD::unsignedInt_& _value);
     ~ST_SlideLayoutId();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_SlideLayoutId& default_instance();
@@ -1797,8 +1802,8 @@ public:
 protected:
 private:
     static ST_SlideLayoutId* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_SplitterBarState: public XSD::SimpleType
@@ -1811,11 +1816,11 @@ public:
         _maximized_
     };
     ST_SplitterBarState();
-    ST_SplitterBarState(const ST_SplitterBarState::Type& _type);
+    ST_SplitterBarState(const ST_SplitterBarState::Type& _value);
     ~ST_SplitterBarState();
-    bool has_type() const;
-    void set_type(const ST_SplitterBarState::Type& _type);
-    const ST_SplitterBarState::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_SplitterBarState::Type& _value);
+    const ST_SplitterBarState::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1824,8 +1829,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_SplitterBarState* default_instance_;
-    bool m_has_type;
-    ST_SplitterBarState::Type m_type;
+    bool m_has_value;
+    ST_SplitterBarState::Type m_value;
 };
 
 class ST_ViewType: public XSD::SimpleType
@@ -1843,11 +1848,11 @@ public:
         _sldThumbnailView_
     };
     ST_ViewType();
-    ST_ViewType(const ST_ViewType::Type& _type);
+    ST_ViewType(const ST_ViewType::Type& _value);
     ~ST_ViewType();
-    bool has_type() const;
-    void set_type(const ST_ViewType::Type& _type);
-    const ST_ViewType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ViewType::Type& _value);
+    const ST_ViewType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1856,8 +1861,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ViewType* default_instance_;
-    bool m_has_type;
-    ST_ViewType::Type m_type;
+    bool m_has_value;
+    ST_ViewType::Type m_value;
 };
 
 class CT_SideDirectionTransition: public XSD::ComplexType
@@ -4076,6 +4081,7 @@ class CT_Extension: public XSD::ComplexType
 public:
     CT_Extension();
     ~CT_Extension();
+    void append__any(XSD::Element* __any);
     void clear();
     void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
     static const CT_Extension& default_instance();
@@ -4084,8 +4090,7 @@ public:
     const XSD::token_& get_uri_attr() const;
 protected:
 private:
-    bool m_has__any;
-    XSD::Element* m__any;
+    vector<XSD::Element*> m__any_list;
     static CT_Extension* default_instance_;
     bool m_has_uri_attr;
     XSD::token_ m_uri_attr;

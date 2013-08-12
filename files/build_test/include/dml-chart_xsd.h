@@ -220,6 +220,10 @@ class chart_element;
 #include "dml-main_xsd.h"
 #include "dml-chartDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
 namespace ns_c {
 using namespace std;
 class Element: public XSD::Element
@@ -245,11 +249,11 @@ public:
         _outer_
     };
     ST_LayoutTarget();
-    ST_LayoutTarget(const ST_LayoutTarget::Type& _type);
+    ST_LayoutTarget(const ST_LayoutTarget::Type& _value);
     ~ST_LayoutTarget();
-    bool has_type() const;
-    void set_type(const ST_LayoutTarget::Type& _type);
-    const ST_LayoutTarget::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_LayoutTarget::Type& _value);
+    const ST_LayoutTarget::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -258,8 +262,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_LayoutTarget* default_instance_;
-    bool m_has_type;
-    ST_LayoutTarget::Type m_type;
+    bool m_has_value;
+    ST_LayoutTarget::Type m_value;
 };
 
 class ST_LayoutMode: public XSD::SimpleType
@@ -271,11 +275,11 @@ public:
         _factor_
     };
     ST_LayoutMode();
-    ST_LayoutMode(const ST_LayoutMode::Type& _type);
+    ST_LayoutMode(const ST_LayoutMode::Type& _value);
     ~ST_LayoutMode();
-    bool has_type() const;
-    void set_type(const ST_LayoutMode::Type& _type);
-    const ST_LayoutMode::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_LayoutMode::Type& _value);
+    const ST_LayoutMode::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -284,19 +288,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_LayoutMode* default_instance_;
-    bool m_has_type;
-    ST_LayoutMode::Type m_type;
+    bool m_has_value;
+    ST_LayoutMode::Type m_value;
 };
 
 class ST_RotX: public XSD::SimpleType
 {
 public:
     ST_RotX();
-    ST_RotX(const XSD::byte_& _byte);
+    ST_RotX(const XSD::byte_& _value);
     ~ST_RotX();
-    bool has_byte() const;
-    void set_byte(const XSD::byte_& _byte);
-    const XSD::byte_& get_byte() const;
+    bool has_value() const;
+    void set_value(const XSD::byte_& _value);
+    const XSD::byte_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_RotX& default_instance();
@@ -304,8 +308,8 @@ public:
 protected:
 private:
     static ST_RotX* default_instance_;
-    bool m_has_byte;
-    XSD::byte_ m_byte;
+    bool m_has_value;
+    XSD::byte_ m_value;
 };
 
 class ST_HPercent: public XSD::SimpleType
@@ -339,11 +343,11 @@ class ST_HPercentWithSymbol: public XSD::SimpleType
 {
 public:
     ST_HPercentWithSymbol();
-    ST_HPercentWithSymbol(const XSD::string_& _string);
+    ST_HPercentWithSymbol(const XSD::string_& _value);
     ~ST_HPercentWithSymbol();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_HPercentWithSymbol& default_instance();
@@ -351,19 +355,19 @@ public:
 protected:
 private:
     static ST_HPercentWithSymbol* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_HPercentUShort: public XSD::SimpleType
 {
 public:
     ST_HPercentUShort();
-    ST_HPercentUShort(const XSD::unsignedShort_& _unsignedShort);
+    ST_HPercentUShort(const XSD::unsignedShort_& _value);
     ~ST_HPercentUShort();
-    bool has_unsignedShort() const;
-    void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
-    const XSD::unsignedShort_& get_unsignedShort() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedShort_& _value);
+    const XSD::unsignedShort_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_HPercentUShort& default_instance();
@@ -371,19 +375,19 @@ public:
 protected:
 private:
     static ST_HPercentUShort* default_instance_;
-    bool m_has_unsignedShort;
-    XSD::unsignedShort_ m_unsignedShort;
+    bool m_has_value;
+    XSD::unsignedShort_ m_value;
 };
 
 class ST_RotY: public XSD::SimpleType
 {
 public:
     ST_RotY();
-    ST_RotY(const XSD::unsignedShort_& _unsignedShort);
+    ST_RotY(const XSD::unsignedShort_& _value);
     ~ST_RotY();
-    bool has_unsignedShort() const;
-    void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
-    const XSD::unsignedShort_& get_unsignedShort() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedShort_& _value);
+    const XSD::unsignedShort_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_RotY& default_instance();
@@ -391,8 +395,8 @@ public:
 protected:
 private:
     static ST_RotY* default_instance_;
-    bool m_has_unsignedShort;
-    XSD::unsignedShort_ m_unsignedShort;
+    bool m_has_value;
+    XSD::unsignedShort_ m_value;
 };
 
 class ST_DepthPercent: public XSD::SimpleType
@@ -426,11 +430,11 @@ class ST_DepthPercentWithSymbol: public XSD::SimpleType
 {
 public:
     ST_DepthPercentWithSymbol();
-    ST_DepthPercentWithSymbol(const XSD::string_& _string);
+    ST_DepthPercentWithSymbol(const XSD::string_& _value);
     ~ST_DepthPercentWithSymbol();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_DepthPercentWithSymbol& default_instance();
@@ -438,19 +442,19 @@ public:
 protected:
 private:
     static ST_DepthPercentWithSymbol* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_DepthPercentUShort: public XSD::SimpleType
 {
 public:
     ST_DepthPercentUShort();
-    ST_DepthPercentUShort(const XSD::unsignedShort_& _unsignedShort);
+    ST_DepthPercentUShort(const XSD::unsignedShort_& _value);
     ~ST_DepthPercentUShort();
-    bool has_unsignedShort() const;
-    void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
-    const XSD::unsignedShort_& get_unsignedShort() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedShort_& _value);
+    const XSD::unsignedShort_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_DepthPercentUShort& default_instance();
@@ -458,19 +462,19 @@ public:
 protected:
 private:
     static ST_DepthPercentUShort* default_instance_;
-    bool m_has_unsignedShort;
-    XSD::unsignedShort_ m_unsignedShort;
+    bool m_has_value;
+    XSD::unsignedShort_ m_value;
 };
 
 class ST_Perspective: public XSD::SimpleType
 {
 public:
     ST_Perspective();
-    ST_Perspective(const XSD::unsignedByte_& _unsignedByte);
+    ST_Perspective(const XSD::unsignedByte_& _value);
     ~ST_Perspective();
-    bool has_unsignedByte() const;
-    void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
-    const XSD::unsignedByte_& get_unsignedByte() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedByte_& _value);
+    const XSD::unsignedByte_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Perspective& default_instance();
@@ -478,8 +482,8 @@ public:
 protected:
 private:
     static ST_Perspective* default_instance_;
-    bool m_has_unsignedByte;
-    XSD::unsignedByte_ m_unsignedByte;
+    bool m_has_value;
+    XSD::unsignedByte_ m_value;
 };
 
 class ST_Thickness: public XSD::SimpleType
@@ -513,11 +517,11 @@ class ST_ThicknessPercent: public XSD::SimpleType
 {
 public:
     ST_ThicknessPercent();
-    ST_ThicknessPercent(const XSD::string_& _string);
+    ST_ThicknessPercent(const XSD::string_& _value);
     ~ST_ThicknessPercent();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_ThicknessPercent& default_instance();
@@ -525,8 +529,8 @@ public:
 protected:
 private:
     static ST_ThicknessPercent* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_GapAmount: public XSD::SimpleType
@@ -560,11 +564,11 @@ class ST_GapAmountPercent: public XSD::SimpleType
 {
 public:
     ST_GapAmountPercent();
-    ST_GapAmountPercent(const XSD::string_& _string);
+    ST_GapAmountPercent(const XSD::string_& _value);
     ~ST_GapAmountPercent();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_GapAmountPercent& default_instance();
@@ -572,19 +576,19 @@ public:
 protected:
 private:
     static ST_GapAmountPercent* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_GapAmountUShort: public XSD::SimpleType
 {
 public:
     ST_GapAmountUShort();
-    ST_GapAmountUShort(const XSD::unsignedShort_& _unsignedShort);
+    ST_GapAmountUShort(const XSD::unsignedShort_& _value);
     ~ST_GapAmountUShort();
-    bool has_unsignedShort() const;
-    void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
-    const XSD::unsignedShort_& get_unsignedShort() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedShort_& _value);
+    const XSD::unsignedShort_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_GapAmountUShort& default_instance();
@@ -592,8 +596,8 @@ public:
 protected:
 private:
     static ST_GapAmountUShort* default_instance_;
-    bool m_has_unsignedShort;
-    XSD::unsignedShort_ m_unsignedShort;
+    bool m_has_value;
+    XSD::unsignedShort_ m_value;
 };
 
 class ST_Overlap: public XSD::SimpleType
@@ -627,11 +631,11 @@ class ST_OverlapPercent: public XSD::SimpleType
 {
 public:
     ST_OverlapPercent();
-    ST_OverlapPercent(const XSD::string_& _string);
+    ST_OverlapPercent(const XSD::string_& _value);
     ~ST_OverlapPercent();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_OverlapPercent& default_instance();
@@ -639,19 +643,19 @@ public:
 protected:
 private:
     static ST_OverlapPercent* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_OverlapByte: public XSD::SimpleType
 {
 public:
     ST_OverlapByte();
-    ST_OverlapByte(const XSD::byte_& _byte);
+    ST_OverlapByte(const XSD::byte_& _value);
     ~ST_OverlapByte();
-    bool has_byte() const;
-    void set_byte(const XSD::byte_& _byte);
-    const XSD::byte_& get_byte() const;
+    bool has_value() const;
+    void set_value(const XSD::byte_& _value);
+    const XSD::byte_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_OverlapByte& default_instance();
@@ -659,8 +663,8 @@ public:
 protected:
 private:
     static ST_OverlapByte* default_instance_;
-    bool m_has_byte;
-    XSD::byte_ m_byte;
+    bool m_has_value;
+    XSD::byte_ m_value;
 };
 
 class ST_BubbleScale: public XSD::SimpleType
@@ -694,11 +698,11 @@ class ST_BubbleScalePercent: public XSD::SimpleType
 {
 public:
     ST_BubbleScalePercent();
-    ST_BubbleScalePercent(const XSD::string_& _string);
+    ST_BubbleScalePercent(const XSD::string_& _value);
     ~ST_BubbleScalePercent();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_BubbleScalePercent& default_instance();
@@ -706,19 +710,19 @@ public:
 protected:
 private:
     static ST_BubbleScalePercent* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_BubbleScaleUInt: public XSD::SimpleType
 {
 public:
     ST_BubbleScaleUInt();
-    ST_BubbleScaleUInt(const XSD::unsignedInt_& _unsignedInt);
+    ST_BubbleScaleUInt(const XSD::unsignedInt_& _value);
     ~ST_BubbleScaleUInt();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_BubbleScaleUInt& default_instance();
@@ -726,8 +730,8 @@ public:
 protected:
 private:
     static ST_BubbleScaleUInt* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_SizeRepresents: public XSD::SimpleType
@@ -739,11 +743,11 @@ public:
         _w_
     };
     ST_SizeRepresents();
-    ST_SizeRepresents(const ST_SizeRepresents::Type& _type);
+    ST_SizeRepresents(const ST_SizeRepresents::Type& _value);
     ~ST_SizeRepresents();
-    bool has_type() const;
-    void set_type(const ST_SizeRepresents::Type& _type);
-    const ST_SizeRepresents::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_SizeRepresents::Type& _value);
+    const ST_SizeRepresents::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -752,19 +756,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_SizeRepresents* default_instance_;
-    bool m_has_type;
-    ST_SizeRepresents::Type m_type;
+    bool m_has_value;
+    ST_SizeRepresents::Type m_value;
 };
 
 class ST_FirstSliceAng: public XSD::SimpleType
 {
 public:
     ST_FirstSliceAng();
-    ST_FirstSliceAng(const XSD::unsignedShort_& _unsignedShort);
+    ST_FirstSliceAng(const XSD::unsignedShort_& _value);
     ~ST_FirstSliceAng();
-    bool has_unsignedShort() const;
-    void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
-    const XSD::unsignedShort_& get_unsignedShort() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedShort_& _value);
+    const XSD::unsignedShort_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_FirstSliceAng& default_instance();
@@ -772,8 +776,8 @@ public:
 protected:
 private:
     static ST_FirstSliceAng* default_instance_;
-    bool m_has_unsignedShort;
-    XSD::unsignedShort_ m_unsignedShort;
+    bool m_has_value;
+    XSD::unsignedShort_ m_value;
 };
 
 class ST_HoleSize: public XSD::SimpleType
@@ -807,11 +811,11 @@ class ST_HoleSizePercent: public XSD::SimpleType
 {
 public:
     ST_HoleSizePercent();
-    ST_HoleSizePercent(const XSD::string_& _string);
+    ST_HoleSizePercent(const XSD::string_& _value);
     ~ST_HoleSizePercent();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_HoleSizePercent& default_instance();
@@ -819,19 +823,19 @@ public:
 protected:
 private:
     static ST_HoleSizePercent* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_HoleSizeUByte: public XSD::SimpleType
 {
 public:
     ST_HoleSizeUByte();
-    ST_HoleSizeUByte(const XSD::unsignedByte_& _unsignedByte);
+    ST_HoleSizeUByte(const XSD::unsignedByte_& _value);
     ~ST_HoleSizeUByte();
-    bool has_unsignedByte() const;
-    void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
-    const XSD::unsignedByte_& get_unsignedByte() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedByte_& _value);
+    const XSD::unsignedByte_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_HoleSizeUByte& default_instance();
@@ -839,8 +843,8 @@ public:
 protected:
 private:
     static ST_HoleSizeUByte* default_instance_;
-    bool m_has_unsignedByte;
-    XSD::unsignedByte_ m_unsignedByte;
+    bool m_has_value;
+    XSD::unsignedByte_ m_value;
 };
 
 class ST_SplitType: public XSD::SimpleType
@@ -855,11 +859,11 @@ public:
         _val_
     };
     ST_SplitType();
-    ST_SplitType(const ST_SplitType::Type& _type);
+    ST_SplitType(const ST_SplitType::Type& _value);
     ~ST_SplitType();
-    bool has_type() const;
-    void set_type(const ST_SplitType::Type& _type);
-    const ST_SplitType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_SplitType::Type& _value);
+    const ST_SplitType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -868,8 +872,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_SplitType* default_instance_;
-    bool m_has_type;
-    ST_SplitType::Type m_type;
+    bool m_has_value;
+    ST_SplitType::Type m_value;
 };
 
 class ST_SecondPieSize: public XSD::SimpleType
@@ -903,11 +907,11 @@ class ST_SecondPieSizePercent: public XSD::SimpleType
 {
 public:
     ST_SecondPieSizePercent();
-    ST_SecondPieSizePercent(const XSD::string_& _string);
+    ST_SecondPieSizePercent(const XSD::string_& _value);
     ~ST_SecondPieSizePercent();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_SecondPieSizePercent& default_instance();
@@ -915,19 +919,19 @@ public:
 protected:
 private:
     static ST_SecondPieSizePercent* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_SecondPieSizeUShort: public XSD::SimpleType
 {
 public:
     ST_SecondPieSizeUShort();
-    ST_SecondPieSizeUShort(const XSD::unsignedShort_& _unsignedShort);
+    ST_SecondPieSizeUShort(const XSD::unsignedShort_& _value);
     ~ST_SecondPieSizeUShort();
-    bool has_unsignedShort() const;
-    void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
-    const XSD::unsignedShort_& get_unsignedShort() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedShort_& _value);
+    const XSD::unsignedShort_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_SecondPieSizeUShort& default_instance();
@@ -935,8 +939,8 @@ public:
 protected:
 private:
     static ST_SecondPieSizeUShort* default_instance_;
-    bool m_has_unsignedShort;
-    XSD::unsignedShort_ m_unsignedShort;
+    bool m_has_value;
+    XSD::unsignedShort_ m_value;
 };
 
 class ST_LblAlgn: public XSD::SimpleType
@@ -949,11 +953,11 @@ public:
         _r_
     };
     ST_LblAlgn();
-    ST_LblAlgn(const ST_LblAlgn::Type& _type);
+    ST_LblAlgn(const ST_LblAlgn::Type& _value);
     ~ST_LblAlgn();
-    bool has_type() const;
-    void set_type(const ST_LblAlgn::Type& _type);
-    const ST_LblAlgn::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_LblAlgn::Type& _value);
+    const ST_LblAlgn::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -962,8 +966,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_LblAlgn* default_instance_;
-    bool m_has_type;
-    ST_LblAlgn::Type m_type;
+    bool m_has_value;
+    ST_LblAlgn::Type m_value;
 };
 
 class ST_DLblPos: public XSD::SimpleType
@@ -982,11 +986,11 @@ public:
         _t_
     };
     ST_DLblPos();
-    ST_DLblPos(const ST_DLblPos::Type& _type);
+    ST_DLblPos(const ST_DLblPos::Type& _value);
     ~ST_DLblPos();
-    bool has_type() const;
-    void set_type(const ST_DLblPos::Type& _type);
-    const ST_DLblPos::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_DLblPos::Type& _value);
+    const ST_DLblPos::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -995,8 +999,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_DLblPos* default_instance_;
-    bool m_has_type;
-    ST_DLblPos::Type m_type;
+    bool m_has_value;
+    ST_DLblPos::Type m_value;
 };
 
 class ST_MarkerStyle: public XSD::SimpleType
@@ -1018,11 +1022,11 @@ public:
         _auto_
     };
     ST_MarkerStyle();
-    ST_MarkerStyle(const ST_MarkerStyle::Type& _type);
+    ST_MarkerStyle(const ST_MarkerStyle::Type& _value);
     ~ST_MarkerStyle();
-    bool has_type() const;
-    void set_type(const ST_MarkerStyle::Type& _type);
-    const ST_MarkerStyle::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_MarkerStyle::Type& _value);
+    const ST_MarkerStyle::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1031,19 +1035,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_MarkerStyle* default_instance_;
-    bool m_has_type;
-    ST_MarkerStyle::Type m_type;
+    bool m_has_value;
+    ST_MarkerStyle::Type m_value;
 };
 
 class ST_MarkerSize: public XSD::SimpleType
 {
 public:
     ST_MarkerSize();
-    ST_MarkerSize(const XSD::unsignedByte_& _unsignedByte);
+    ST_MarkerSize(const XSD::unsignedByte_& _value);
     ~ST_MarkerSize();
-    bool has_unsignedByte() const;
-    void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
-    const XSD::unsignedByte_& get_unsignedByte() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedByte_& _value);
+    const XSD::unsignedByte_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_MarkerSize& default_instance();
@@ -1051,8 +1055,8 @@ public:
 protected:
 private:
     static ST_MarkerSize* default_instance_;
-    bool m_has_unsignedByte;
-    XSD::unsignedByte_ m_unsignedByte;
+    bool m_has_value;
+    XSD::unsignedByte_ m_value;
 };
 
 class ST_TrendlineType: public XSD::SimpleType
@@ -1068,11 +1072,11 @@ public:
         _power_
     };
     ST_TrendlineType();
-    ST_TrendlineType(const ST_TrendlineType::Type& _type);
+    ST_TrendlineType(const ST_TrendlineType::Type& _value);
     ~ST_TrendlineType();
-    bool has_type() const;
-    void set_type(const ST_TrendlineType::Type& _type);
-    const ST_TrendlineType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TrendlineType::Type& _value);
+    const ST_TrendlineType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1081,19 +1085,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TrendlineType* default_instance_;
-    bool m_has_type;
-    ST_TrendlineType::Type m_type;
+    bool m_has_value;
+    ST_TrendlineType::Type m_value;
 };
 
 class ST_Order: public XSD::SimpleType
 {
 public:
     ST_Order();
-    ST_Order(const XSD::unsignedByte_& _unsignedByte);
+    ST_Order(const XSD::unsignedByte_& _value);
     ~ST_Order();
-    bool has_unsignedByte() const;
-    void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
-    const XSD::unsignedByte_& get_unsignedByte() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedByte_& _value);
+    const XSD::unsignedByte_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Order& default_instance();
@@ -1101,19 +1105,19 @@ public:
 protected:
 private:
     static ST_Order* default_instance_;
-    bool m_has_unsignedByte;
-    XSD::unsignedByte_ m_unsignedByte;
+    bool m_has_value;
+    XSD::unsignedByte_ m_value;
 };
 
 class ST_Period: public XSD::SimpleType
 {
 public:
     ST_Period();
-    ST_Period(const XSD::unsignedInt_& _unsignedInt);
+    ST_Period(const XSD::unsignedInt_& _value);
     ~ST_Period();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Period& default_instance();
@@ -1121,8 +1125,8 @@ public:
 protected:
 private:
     static ST_Period* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_ErrDir: public XSD::SimpleType
@@ -1134,11 +1138,11 @@ public:
         _y_
     };
     ST_ErrDir();
-    ST_ErrDir(const ST_ErrDir::Type& _type);
+    ST_ErrDir(const ST_ErrDir::Type& _value);
     ~ST_ErrDir();
-    bool has_type() const;
-    void set_type(const ST_ErrDir::Type& _type);
-    const ST_ErrDir::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ErrDir::Type& _value);
+    const ST_ErrDir::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1147,8 +1151,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ErrDir* default_instance_;
-    bool m_has_type;
-    ST_ErrDir::Type m_type;
+    bool m_has_value;
+    ST_ErrDir::Type m_value;
 };
 
 class ST_ErrBarType: public XSD::SimpleType
@@ -1161,11 +1165,11 @@ public:
         _plus_
     };
     ST_ErrBarType();
-    ST_ErrBarType(const ST_ErrBarType::Type& _type);
+    ST_ErrBarType(const ST_ErrBarType::Type& _value);
     ~ST_ErrBarType();
-    bool has_type() const;
-    void set_type(const ST_ErrBarType::Type& _type);
-    const ST_ErrBarType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ErrBarType::Type& _value);
+    const ST_ErrBarType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1174,8 +1178,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ErrBarType* default_instance_;
-    bool m_has_type;
-    ST_ErrBarType::Type m_type;
+    bool m_has_value;
+    ST_ErrBarType::Type m_value;
 };
 
 class ST_ErrValType: public XSD::SimpleType
@@ -1190,11 +1194,11 @@ public:
         _stdErr_
     };
     ST_ErrValType();
-    ST_ErrValType(const ST_ErrValType::Type& _type);
+    ST_ErrValType(const ST_ErrValType::Type& _value);
     ~ST_ErrValType();
-    bool has_type() const;
-    void set_type(const ST_ErrValType::Type& _type);
-    const ST_ErrValType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ErrValType::Type& _value);
+    const ST_ErrValType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1203,8 +1207,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ErrValType* default_instance_;
-    bool m_has_type;
-    ST_ErrValType::Type m_type;
+    bool m_has_value;
+    ST_ErrValType::Type m_value;
 };
 
 class ST_Grouping: public XSD::SimpleType
@@ -1217,11 +1221,11 @@ public:
         _stacked_
     };
     ST_Grouping();
-    ST_Grouping(const ST_Grouping::Type& _type);
+    ST_Grouping(const ST_Grouping::Type& _value);
     ~ST_Grouping();
-    bool has_type() const;
-    void set_type(const ST_Grouping::Type& _type);
-    const ST_Grouping::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_Grouping::Type& _value);
+    const ST_Grouping::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1230,8 +1234,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_Grouping* default_instance_;
-    bool m_has_type;
-    ST_Grouping::Type m_type;
+    bool m_has_value;
+    ST_Grouping::Type m_value;
 };
 
 class ST_ScatterStyle: public XSD::SimpleType
@@ -1247,11 +1251,11 @@ public:
         _smoothMarker_
     };
     ST_ScatterStyle();
-    ST_ScatterStyle(const ST_ScatterStyle::Type& _type);
+    ST_ScatterStyle(const ST_ScatterStyle::Type& _value);
     ~ST_ScatterStyle();
-    bool has_type() const;
-    void set_type(const ST_ScatterStyle::Type& _type);
-    const ST_ScatterStyle::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ScatterStyle::Type& _value);
+    const ST_ScatterStyle::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1260,8 +1264,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ScatterStyle* default_instance_;
-    bool m_has_type;
-    ST_ScatterStyle::Type m_type;
+    bool m_has_value;
+    ST_ScatterStyle::Type m_value;
 };
 
 class ST_RadarStyle: public XSD::SimpleType
@@ -1274,11 +1278,11 @@ public:
         _filled_
     };
     ST_RadarStyle();
-    ST_RadarStyle(const ST_RadarStyle::Type& _type);
+    ST_RadarStyle(const ST_RadarStyle::Type& _value);
     ~ST_RadarStyle();
-    bool has_type() const;
-    void set_type(const ST_RadarStyle::Type& _type);
-    const ST_RadarStyle::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_RadarStyle::Type& _value);
+    const ST_RadarStyle::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1287,8 +1291,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_RadarStyle* default_instance_;
-    bool m_has_type;
-    ST_RadarStyle::Type m_type;
+    bool m_has_value;
+    ST_RadarStyle::Type m_value;
 };
 
 class ST_BarGrouping: public XSD::SimpleType
@@ -1302,11 +1306,11 @@ public:
         _stacked_
     };
     ST_BarGrouping();
-    ST_BarGrouping(const ST_BarGrouping::Type& _type);
+    ST_BarGrouping(const ST_BarGrouping::Type& _value);
     ~ST_BarGrouping();
-    bool has_type() const;
-    void set_type(const ST_BarGrouping::Type& _type);
-    const ST_BarGrouping::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_BarGrouping::Type& _value);
+    const ST_BarGrouping::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1315,8 +1319,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_BarGrouping* default_instance_;
-    bool m_has_type;
-    ST_BarGrouping::Type m_type;
+    bool m_has_value;
+    ST_BarGrouping::Type m_value;
 };
 
 class ST_BarDir: public XSD::SimpleType
@@ -1328,11 +1332,11 @@ public:
         _col_
     };
     ST_BarDir();
-    ST_BarDir(const ST_BarDir::Type& _type);
+    ST_BarDir(const ST_BarDir::Type& _value);
     ~ST_BarDir();
-    bool has_type() const;
-    void set_type(const ST_BarDir::Type& _type);
-    const ST_BarDir::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_BarDir::Type& _value);
+    const ST_BarDir::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1341,8 +1345,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_BarDir* default_instance_;
-    bool m_has_type;
-    ST_BarDir::Type m_type;
+    bool m_has_value;
+    ST_BarDir::Type m_value;
 };
 
 class ST_Shape: public XSD::SimpleType
@@ -1358,11 +1362,11 @@ public:
         _pyramidToMax_
     };
     ST_Shape();
-    ST_Shape(const ST_Shape::Type& _type);
+    ST_Shape(const ST_Shape::Type& _value);
     ~ST_Shape();
-    bool has_type() const;
-    void set_type(const ST_Shape::Type& _type);
-    const ST_Shape::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_Shape::Type& _value);
+    const ST_Shape::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1371,8 +1375,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_Shape* default_instance_;
-    bool m_has_type;
-    ST_Shape::Type m_type;
+    bool m_has_value;
+    ST_Shape::Type m_value;
 };
 
 class ST_OfPieType: public XSD::SimpleType
@@ -1384,11 +1388,11 @@ public:
         _bar_
     };
     ST_OfPieType();
-    ST_OfPieType(const ST_OfPieType::Type& _type);
+    ST_OfPieType(const ST_OfPieType::Type& _value);
     ~ST_OfPieType();
-    bool has_type() const;
-    void set_type(const ST_OfPieType::Type& _type);
-    const ST_OfPieType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_OfPieType::Type& _value);
+    const ST_OfPieType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1397,8 +1401,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_OfPieType* default_instance_;
-    bool m_has_type;
-    ST_OfPieType::Type m_type;
+    bool m_has_value;
+    ST_OfPieType::Type m_value;
 };
 
 class ST_AxPos: public XSD::SimpleType
@@ -1412,11 +1416,11 @@ public:
         _t_
     };
     ST_AxPos();
-    ST_AxPos(const ST_AxPos::Type& _type);
+    ST_AxPos(const ST_AxPos::Type& _value);
     ~ST_AxPos();
-    bool has_type() const;
-    void set_type(const ST_AxPos::Type& _type);
-    const ST_AxPos::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_AxPos::Type& _value);
+    const ST_AxPos::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1425,8 +1429,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_AxPos* default_instance_;
-    bool m_has_type;
-    ST_AxPos::Type m_type;
+    bool m_has_value;
+    ST_AxPos::Type m_value;
 };
 
 class ST_Crosses: public XSD::SimpleType
@@ -1439,11 +1443,11 @@ public:
         _min_
     };
     ST_Crosses();
-    ST_Crosses(const ST_Crosses::Type& _type);
+    ST_Crosses(const ST_Crosses::Type& _value);
     ~ST_Crosses();
-    bool has_type() const;
-    void set_type(const ST_Crosses::Type& _type);
-    const ST_Crosses::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_Crosses::Type& _value);
+    const ST_Crosses::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1452,8 +1456,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_Crosses* default_instance_;
-    bool m_has_type;
-    ST_Crosses::Type m_type;
+    bool m_has_value;
+    ST_Crosses::Type m_value;
 };
 
 class ST_CrossBetween: public XSD::SimpleType
@@ -1465,11 +1469,11 @@ public:
         _midCat_
     };
     ST_CrossBetween();
-    ST_CrossBetween(const ST_CrossBetween::Type& _type);
+    ST_CrossBetween(const ST_CrossBetween::Type& _value);
     ~ST_CrossBetween();
-    bool has_type() const;
-    void set_type(const ST_CrossBetween::Type& _type);
-    const ST_CrossBetween::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_CrossBetween::Type& _value);
+    const ST_CrossBetween::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1478,8 +1482,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_CrossBetween* default_instance_;
-    bool m_has_type;
-    ST_CrossBetween::Type m_type;
+    bool m_has_value;
+    ST_CrossBetween::Type m_value;
 };
 
 class ST_TickMark: public XSD::SimpleType
@@ -1493,11 +1497,11 @@ public:
         _out_
     };
     ST_TickMark();
-    ST_TickMark(const ST_TickMark::Type& _type);
+    ST_TickMark(const ST_TickMark::Type& _value);
     ~ST_TickMark();
-    bool has_type() const;
-    void set_type(const ST_TickMark::Type& _type);
-    const ST_TickMark::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TickMark::Type& _value);
+    const ST_TickMark::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1506,8 +1510,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TickMark* default_instance_;
-    bool m_has_type;
-    ST_TickMark::Type m_type;
+    bool m_has_value;
+    ST_TickMark::Type m_value;
 };
 
 class ST_TickLblPos: public XSD::SimpleType
@@ -1521,11 +1525,11 @@ public:
         _none_
     };
     ST_TickLblPos();
-    ST_TickLblPos(const ST_TickLblPos::Type& _type);
+    ST_TickLblPos(const ST_TickLblPos::Type& _value);
     ~ST_TickLblPos();
-    bool has_type() const;
-    void set_type(const ST_TickLblPos::Type& _type);
-    const ST_TickLblPos::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TickLblPos::Type& _value);
+    const ST_TickLblPos::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1534,19 +1538,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TickLblPos* default_instance_;
-    bool m_has_type;
-    ST_TickLblPos::Type m_type;
+    bool m_has_value;
+    ST_TickLblPos::Type m_value;
 };
 
 class ST_Skip: public XSD::SimpleType
 {
 public:
     ST_Skip();
-    ST_Skip(const XSD::unsignedInt_& _unsignedInt);
+    ST_Skip(const XSD::unsignedInt_& _value);
     ~ST_Skip();
-    bool has_unsignedInt() const;
-    void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
-    const XSD::unsignedInt_& get_unsignedInt() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedInt_& _value);
+    const XSD::unsignedInt_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Skip& default_instance();
@@ -1554,8 +1558,8 @@ public:
 protected:
 private:
     static ST_Skip* default_instance_;
-    bool m_has_unsignedInt;
-    XSD::unsignedInt_ m_unsignedInt;
+    bool m_has_value;
+    XSD::unsignedInt_ m_value;
 };
 
 class ST_TimeUnit: public XSD::SimpleType
@@ -1568,11 +1572,11 @@ public:
         _years_
     };
     ST_TimeUnit();
-    ST_TimeUnit(const ST_TimeUnit::Type& _type);
+    ST_TimeUnit(const ST_TimeUnit::Type& _value);
     ~ST_TimeUnit();
-    bool has_type() const;
-    void set_type(const ST_TimeUnit::Type& _type);
-    const ST_TimeUnit::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_TimeUnit::Type& _value);
+    const ST_TimeUnit::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1581,19 +1585,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_TimeUnit* default_instance_;
-    bool m_has_type;
-    ST_TimeUnit::Type m_type;
+    bool m_has_value;
+    ST_TimeUnit::Type m_value;
 };
 
 class ST_AxisUnit: public XSD::SimpleType
 {
 public:
     ST_AxisUnit();
-    ST_AxisUnit(const XSD::double_& _double);
+    ST_AxisUnit(const XSD::double_& _value);
     ~ST_AxisUnit();
-    bool has_double() const;
-    void set_double(const XSD::double_& _double);
-    const XSD::double_& get_double() const;
+    bool has_value() const;
+    void set_value(const XSD::double_& _value);
+    const XSD::double_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_AxisUnit& default_instance();
@@ -1601,8 +1605,8 @@ public:
 protected:
 private:
     static ST_AxisUnit* default_instance_;
-    bool m_has_double;
-    XSD::double_ m_double;
+    bool m_has_value;
+    XSD::double_ m_value;
 };
 
 class ST_BuiltInUnit: public XSD::SimpleType
@@ -1621,11 +1625,11 @@ public:
         _trillions_
     };
     ST_BuiltInUnit();
-    ST_BuiltInUnit(const ST_BuiltInUnit::Type& _type);
+    ST_BuiltInUnit(const ST_BuiltInUnit::Type& _value);
     ~ST_BuiltInUnit();
-    bool has_type() const;
-    void set_type(const ST_BuiltInUnit::Type& _type);
-    const ST_BuiltInUnit::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_BuiltInUnit::Type& _value);
+    const ST_BuiltInUnit::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1634,8 +1638,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_BuiltInUnit* default_instance_;
-    bool m_has_type;
-    ST_BuiltInUnit::Type m_type;
+    bool m_has_value;
+    ST_BuiltInUnit::Type m_value;
 };
 
 class ST_PictureFormat: public XSD::SimpleType
@@ -1648,11 +1652,11 @@ public:
         _stackScale_
     };
     ST_PictureFormat();
-    ST_PictureFormat(const ST_PictureFormat::Type& _type);
+    ST_PictureFormat(const ST_PictureFormat::Type& _value);
     ~ST_PictureFormat();
-    bool has_type() const;
-    void set_type(const ST_PictureFormat::Type& _type);
-    const ST_PictureFormat::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PictureFormat::Type& _value);
+    const ST_PictureFormat::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1661,19 +1665,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PictureFormat* default_instance_;
-    bool m_has_type;
-    ST_PictureFormat::Type m_type;
+    bool m_has_value;
+    ST_PictureFormat::Type m_value;
 };
 
 class ST_PictureStackUnit: public XSD::SimpleType
 {
 public:
     ST_PictureStackUnit();
-    ST_PictureStackUnit(const XSD::double_& _double);
+    ST_PictureStackUnit(const XSD::double_& _value);
     ~ST_PictureStackUnit();
-    bool has_double() const;
-    void set_double(const XSD::double_& _double);
-    const XSD::double_& get_double() const;
+    bool has_value() const;
+    void set_value(const XSD::double_& _value);
+    const XSD::double_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_PictureStackUnit& default_instance();
@@ -1681,8 +1685,8 @@ public:
 protected:
 private:
     static ST_PictureStackUnit* default_instance_;
-    bool m_has_double;
-    XSD::double_ m_double;
+    bool m_has_value;
+    XSD::double_ m_value;
 };
 
 class ST_Orientation: public XSD::SimpleType
@@ -1694,11 +1698,11 @@ public:
         _minMax_
     };
     ST_Orientation();
-    ST_Orientation(const ST_Orientation::Type& _type);
+    ST_Orientation(const ST_Orientation::Type& _value);
     ~ST_Orientation();
-    bool has_type() const;
-    void set_type(const ST_Orientation::Type& _type);
-    const ST_Orientation::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_Orientation::Type& _value);
+    const ST_Orientation::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1707,19 +1711,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_Orientation* default_instance_;
-    bool m_has_type;
-    ST_Orientation::Type m_type;
+    bool m_has_value;
+    ST_Orientation::Type m_value;
 };
 
 class ST_LogBase: public XSD::SimpleType
 {
 public:
     ST_LogBase();
-    ST_LogBase(const XSD::double_& _double);
+    ST_LogBase(const XSD::double_& _value);
     ~ST_LogBase();
-    bool has_double() const;
-    void set_double(const XSD::double_& _double);
-    const XSD::double_& get_double() const;
+    bool has_value() const;
+    void set_value(const XSD::double_& _value);
+    const XSD::double_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_LogBase& default_instance();
@@ -1727,8 +1731,8 @@ public:
 protected:
 private:
     static ST_LogBase* default_instance_;
-    bool m_has_double;
-    XSD::double_ m_double;
+    bool m_has_value;
+    XSD::double_ m_value;
 };
 
 class ST_LblOffset: public XSD::SimpleType
@@ -1762,11 +1766,11 @@ class ST_LblOffsetPercent: public XSD::SimpleType
 {
 public:
     ST_LblOffsetPercent();
-    ST_LblOffsetPercent(const XSD::string_& _string);
+    ST_LblOffsetPercent(const XSD::string_& _value);
     ~ST_LblOffsetPercent();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_LblOffsetPercent& default_instance();
@@ -1774,19 +1778,19 @@ public:
 protected:
 private:
     static ST_LblOffsetPercent* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_LblOffsetUShort: public XSD::SimpleType
 {
 public:
     ST_LblOffsetUShort();
-    ST_LblOffsetUShort(const XSD::unsignedShort_& _unsignedShort);
+    ST_LblOffsetUShort(const XSD::unsignedShort_& _value);
     ~ST_LblOffsetUShort();
-    bool has_unsignedShort() const;
-    void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
-    const XSD::unsignedShort_& get_unsignedShort() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedShort_& _value);
+    const XSD::unsignedShort_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_LblOffsetUShort& default_instance();
@@ -1794,8 +1798,8 @@ public:
 protected:
 private:
     static ST_LblOffsetUShort* default_instance_;
-    bool m_has_unsignedShort;
-    XSD::unsignedShort_ m_unsignedShort;
+    bool m_has_value;
+    XSD::unsignedShort_ m_value;
 };
 
 class ST_LegendPos: public XSD::SimpleType
@@ -1810,11 +1814,11 @@ public:
         _t_
     };
     ST_LegendPos();
-    ST_LegendPos(const ST_LegendPos::Type& _type);
+    ST_LegendPos(const ST_LegendPos::Type& _value);
     ~ST_LegendPos();
-    bool has_type() const;
-    void set_type(const ST_LegendPos::Type& _type);
-    const ST_LegendPos::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_LegendPos::Type& _value);
+    const ST_LegendPos::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1823,8 +1827,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_LegendPos* default_instance_;
-    bool m_has_type;
-    ST_LegendPos::Type m_type;
+    bool m_has_value;
+    ST_LegendPos::Type m_value;
 };
 
 class ST_DispBlanksAs: public XSD::SimpleType
@@ -1837,11 +1841,11 @@ public:
         _zero_
     };
     ST_DispBlanksAs();
-    ST_DispBlanksAs(const ST_DispBlanksAs::Type& _type);
+    ST_DispBlanksAs(const ST_DispBlanksAs::Type& _value);
     ~ST_DispBlanksAs();
-    bool has_type() const;
-    void set_type(const ST_DispBlanksAs::Type& _type);
-    const ST_DispBlanksAs::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_DispBlanksAs::Type& _value);
+    const ST_DispBlanksAs::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1850,19 +1854,19 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_DispBlanksAs* default_instance_;
-    bool m_has_type;
-    ST_DispBlanksAs::Type m_type;
+    bool m_has_value;
+    ST_DispBlanksAs::Type m_value;
 };
 
 class ST_Style: public XSD::SimpleType
 {
 public:
     ST_Style();
-    ST_Style(const XSD::unsignedByte_& _unsignedByte);
+    ST_Style(const XSD::unsignedByte_& _value);
     ~ST_Style();
-    bool has_unsignedByte() const;
-    void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
-    const XSD::unsignedByte_& get_unsignedByte() const;
+    bool has_value() const;
+    void set_value(const XSD::unsignedByte_& _value);
+    const XSD::unsignedByte_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_Style& default_instance();
@@ -1870,8 +1874,8 @@ public:
 protected:
 private:
     static ST_Style* default_instance_;
-    bool m_has_unsignedByte;
-    XSD::unsignedByte_ m_unsignedByte;
+    bool m_has_value;
+    XSD::unsignedByte_ m_value;
 };
 
 class ST_PageSetupOrientation: public XSD::SimpleType
@@ -1884,11 +1888,11 @@ public:
         _landscape_
     };
     ST_PageSetupOrientation();
-    ST_PageSetupOrientation(const ST_PageSetupOrientation::Type& _type);
+    ST_PageSetupOrientation(const ST_PageSetupOrientation::Type& _value);
     ~ST_PageSetupOrientation();
-    bool has_type() const;
-    void set_type(const ST_PageSetupOrientation::Type& _type);
-    const ST_PageSetupOrientation::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_PageSetupOrientation::Type& _value);
+    const ST_PageSetupOrientation::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -1897,8 +1901,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_PageSetupOrientation* default_instance_;
-    bool m_has_type;
-    ST_PageSetupOrientation::Type m_type;
+    bool m_has_value;
+    ST_PageSetupOrientation::Type m_value;
 };
 
 class CT_Boolean: public XSD::ComplexType

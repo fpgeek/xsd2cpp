@@ -204,7 +204,7 @@ void CT_Relationships::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_Relationship())
             {
-                (*iter)->get_Relationship().toXmlElem("rs:Relationship", "", _outStream);
+                (*iter)->get_Relationship().toXmlElem("Relationship", "", _outStream);
             }
 
 
@@ -288,9 +288,9 @@ void Relationships_element::clear()
 
 void Relationships_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<rs:Relationships";
+    _outStream << "<Relationships";
 
-    _outStream << " " << "xmlns:rs=\"http://schemas.openxmlformats.org/package/2006/relationships\"";
+    _outStream << " " << "xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"";
 
     _outStream << ">";
 
@@ -300,14 +300,14 @@ void Relationships_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_Relationship())
             {
-                (*iter)->get_Relationship().toXmlElem("rs:Relationship", "", _outStream);
+                (*iter)->get_Relationship().toXmlElem("Relationship", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</rs:Relationships>";
+    _outStream << "</Relationships>";
 }
 
 const Relationships_element& Relationships_element::default_instance()

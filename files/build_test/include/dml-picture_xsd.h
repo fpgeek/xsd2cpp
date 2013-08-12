@@ -13,6 +13,13 @@ class pic_element;
 #include <string>
 #include <iostream>
 #include "dml-main_xsd.h"
+#include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_dpct {
 using namespace std;
 class Element: public XSD::Element

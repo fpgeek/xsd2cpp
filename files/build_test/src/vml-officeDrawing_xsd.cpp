@@ -7,6 +7,20 @@
 #include "vml-main_xsd.h"
 #include "shared-relationshipReference_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
+#include "vml-officeDrawing_xsd.h"
+#include "wml_xsd.h"
+#include "vml-wordprocessingDrawing_xsd.h"
+#include "vml-spreadsheetDrawing_xsd.h"
+#include "vml-presentationDrawing_xsd.h"
+#include "dml-wordprocessingDrawing_xsd.h"
+#include "shared-math_xsd.h"
+#include "shared-customXmlSchemaProperties_xsd.h"
+#include "dml-main_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_o {
 using namespace std;
 
@@ -16,47 +30,47 @@ using namespace std;
 
 // ST_AlternateMathContentType
 ST_AlternateMathContentType::ST_AlternateMathContentType()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_AlternateMathContentType::ST_AlternateMathContentType(const XSD::string_& _string)
-    :m_has_string(true)
+ST_AlternateMathContentType::ST_AlternateMathContentType(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_AlternateMathContentType::~ST_AlternateMathContentType()
 {
     clear();
 }
-bool ST_AlternateMathContentType::has_string() const
+bool ST_AlternateMathContentType::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_AlternateMathContentType::set_string(const XSD::string_& _string)
+void ST_AlternateMathContentType::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_AlternateMathContentType::get_string() const
+const XSD::string_& ST_AlternateMathContentType::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_AlternateMathContentType::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_AlternateMathContentType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -72,7 +86,7 @@ const ST_AlternateMathContentType& ST_AlternateMathContentType::default_instance
 std::string ST_AlternateMathContentType::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -80,47 +94,47 @@ ST_AlternateMathContentType* ST_AlternateMathContentType::default_instance_ = NU
 
 // ST_RType
 ST_RType::ST_RType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_RType::ST_RType(const ST_RType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_RType::ST_RType(const ST_RType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_RType::~ST_RType()
 {
     clear();
 }
-bool ST_RType::has_type() const
+bool ST_RType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_RType::set_type(const ST_RType::Type& _type)
+void ST_RType::set_value(const ST_RType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_RType::Type& ST_RType::get_type() const
+const ST_RType::Type& ST_RType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_RType::toString() const
 {
-    return ST_RType::TypeStrList[m_type];
+    return ST_RType::TypeStrList[m_value];
 }
 
 void ST_RType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_RType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -146,47 +160,47 @@ ST_RType* ST_RType::default_instance_ = NULL;
 
 // ST_How
 ST_How::ST_How()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_How::ST_How(const ST_How::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_How::ST_How(const ST_How::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_How::~ST_How()
 {
     clear();
 }
-bool ST_How::has_type() const
+bool ST_How::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_How::set_type(const ST_How::Type& _type)
+void ST_How::set_value(const ST_How::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_How::Type& ST_How::get_type() const
+const ST_How::Type& ST_How::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_How::toString() const
 {
-    return ST_How::TypeStrList[m_type];
+    return ST_How::TypeStrList[m_value];
 }
 
 void ST_How::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_How::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -214,47 +228,47 @@ ST_How* ST_How::default_instance_ = NULL;
 
 // ST_BWMode
 ST_BWMode::ST_BWMode()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_BWMode::ST_BWMode(const ST_BWMode::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_BWMode::ST_BWMode(const ST_BWMode::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_BWMode::~ST_BWMode()
 {
     clear();
 }
-bool ST_BWMode::has_type() const
+bool ST_BWMode::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_BWMode::set_type(const ST_BWMode::Type& _type)
+void ST_BWMode::set_value(const ST_BWMode::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_BWMode::Type& ST_BWMode::get_type() const
+const ST_BWMode::Type& ST_BWMode::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_BWMode::toString() const
 {
-    return ST_BWMode::TypeStrList[m_type];
+    return ST_BWMode::TypeStrList[m_value];
 }
 
 void ST_BWMode::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_BWMode::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -288,47 +302,47 @@ ST_BWMode* ST_BWMode::default_instance_ = NULL;
 
 // ST_ScreenSize
 ST_ScreenSize::ST_ScreenSize()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ScreenSize::ST_ScreenSize(const ST_ScreenSize::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ScreenSize::ST_ScreenSize(const ST_ScreenSize::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ScreenSize::~ST_ScreenSize()
 {
     clear();
 }
-bool ST_ScreenSize::has_type() const
+bool ST_ScreenSize::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ScreenSize::set_type(const ST_ScreenSize::Type& _type)
+void ST_ScreenSize::set_value(const ST_ScreenSize::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ScreenSize::Type& ST_ScreenSize::get_type() const
+const ST_ScreenSize::Type& ST_ScreenSize::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ScreenSize::toString() const
 {
-    return ST_ScreenSize::TypeStrList[m_type];
+    return ST_ScreenSize::TypeStrList[m_value];
 }
 
 void ST_ScreenSize::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ScreenSize::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -356,47 +370,47 @@ ST_ScreenSize* ST_ScreenSize::default_instance_ = NULL;
 
 // ST_InsetMode
 ST_InsetMode::ST_InsetMode()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_InsetMode::ST_InsetMode(const ST_InsetMode::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_InsetMode::ST_InsetMode(const ST_InsetMode::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_InsetMode::~ST_InsetMode()
 {
     clear();
 }
-bool ST_InsetMode::has_type() const
+bool ST_InsetMode::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_InsetMode::set_type(const ST_InsetMode::Type& _type)
+void ST_InsetMode::set_value(const ST_InsetMode::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_InsetMode::Type& ST_InsetMode::get_type() const
+const ST_InsetMode::Type& ST_InsetMode::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_InsetMode::toString() const
 {
-    return ST_InsetMode::TypeStrList[m_type];
+    return ST_InsetMode::TypeStrList[m_value];
 }
 
 void ST_InsetMode::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_InsetMode::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -420,47 +434,47 @@ ST_InsetMode* ST_InsetMode::default_instance_ = NULL;
 
 // ST_ColorMode
 ST_ColorMode::ST_ColorMode()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ColorMode::ST_ColorMode(const ST_ColorMode::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ColorMode::ST_ColorMode(const ST_ColorMode::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ColorMode::~ST_ColorMode()
 {
     clear();
 }
-bool ST_ColorMode::has_type() const
+bool ST_ColorMode::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ColorMode::set_type(const ST_ColorMode::Type& _type)
+void ST_ColorMode::set_value(const ST_ColorMode::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ColorMode::Type& ST_ColorMode::get_type() const
+const ST_ColorMode::Type& ST_ColorMode::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ColorMode::toString() const
 {
-    return ST_ColorMode::TypeStrList[m_type];
+    return ST_ColorMode::TypeStrList[m_value];
 }
 
 void ST_ColorMode::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ColorMode::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -484,47 +498,47 @@ ST_ColorMode* ST_ColorMode::default_instance_ = NULL;
 
 // ST_ContentType
 ST_ContentType::ST_ContentType()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_ContentType::ST_ContentType(const XSD::string_& _string)
-    :m_has_string(true)
+ST_ContentType::ST_ContentType(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_ContentType::~ST_ContentType()
 {
     clear();
 }
-bool ST_ContentType::has_string() const
+bool ST_ContentType::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_ContentType::set_string(const XSD::string_& _string)
+void ST_ContentType::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_ContentType::get_string() const
+const XSD::string_& ST_ContentType::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_ContentType::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_ContentType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -540,7 +554,7 @@ const ST_ContentType& ST_ContentType::default_instance()
 std::string ST_ContentType::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -548,47 +562,47 @@ ST_ContentType* ST_ContentType::default_instance_ = NULL;
 
 // ST_DiagramLayout
 ST_DiagramLayout::ST_DiagramLayout()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_DiagramLayout::ST_DiagramLayout(const ST_DiagramLayout::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_DiagramLayout::ST_DiagramLayout(const ST_DiagramLayout::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_DiagramLayout::~ST_DiagramLayout()
 {
     clear();
 }
-bool ST_DiagramLayout::has_type() const
+bool ST_DiagramLayout::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_DiagramLayout::set_type(const ST_DiagramLayout::Type& _type)
+void ST_DiagramLayout::set_value(const ST_DiagramLayout::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_DiagramLayout::Type& ST_DiagramLayout::get_type() const
+const ST_DiagramLayout::Type& ST_DiagramLayout::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_DiagramLayout::toString() const
 {
-    return ST_DiagramLayout::TypeStrList[m_type];
+    return ST_DiagramLayout::TypeStrList[m_value];
 }
 
 void ST_DiagramLayout::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_DiagramLayout::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -614,47 +628,47 @@ ST_DiagramLayout* ST_DiagramLayout::default_instance_ = NULL;
 
 // ST_ExtrusionType
 ST_ExtrusionType::ST_ExtrusionType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ExtrusionType::ST_ExtrusionType(const ST_ExtrusionType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ExtrusionType::ST_ExtrusionType(const ST_ExtrusionType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ExtrusionType::~ST_ExtrusionType()
 {
     clear();
 }
-bool ST_ExtrusionType::has_type() const
+bool ST_ExtrusionType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ExtrusionType::set_type(const ST_ExtrusionType::Type& _type)
+void ST_ExtrusionType::set_value(const ST_ExtrusionType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ExtrusionType::Type& ST_ExtrusionType::get_type() const
+const ST_ExtrusionType::Type& ST_ExtrusionType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ExtrusionType::toString() const
 {
-    return ST_ExtrusionType::TypeStrList[m_type];
+    return ST_ExtrusionType::TypeStrList[m_value];
 }
 
 void ST_ExtrusionType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ExtrusionType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -678,47 +692,47 @@ ST_ExtrusionType* ST_ExtrusionType::default_instance_ = NULL;
 
 // ST_ExtrusionRender
 ST_ExtrusionRender::ST_ExtrusionRender()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ExtrusionRender::ST_ExtrusionRender(const ST_ExtrusionRender::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ExtrusionRender::ST_ExtrusionRender(const ST_ExtrusionRender::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ExtrusionRender::~ST_ExtrusionRender()
 {
     clear();
 }
-bool ST_ExtrusionRender::has_type() const
+bool ST_ExtrusionRender::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ExtrusionRender::set_type(const ST_ExtrusionRender::Type& _type)
+void ST_ExtrusionRender::set_value(const ST_ExtrusionRender::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ExtrusionRender::Type& ST_ExtrusionRender::get_type() const
+const ST_ExtrusionRender::Type& ST_ExtrusionRender::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ExtrusionRender::toString() const
 {
-    return ST_ExtrusionRender::TypeStrList[m_type];
+    return ST_ExtrusionRender::TypeStrList[m_value];
 }
 
 void ST_ExtrusionRender::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ExtrusionRender::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -743,47 +757,47 @@ ST_ExtrusionRender* ST_ExtrusionRender::default_instance_ = NULL;
 
 // ST_ExtrusionPlane
 ST_ExtrusionPlane::ST_ExtrusionPlane()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ExtrusionPlane::ST_ExtrusionPlane(const ST_ExtrusionPlane::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ExtrusionPlane::ST_ExtrusionPlane(const ST_ExtrusionPlane::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ExtrusionPlane::~ST_ExtrusionPlane()
 {
     clear();
 }
-bool ST_ExtrusionPlane::has_type() const
+bool ST_ExtrusionPlane::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ExtrusionPlane::set_type(const ST_ExtrusionPlane::Type& _type)
+void ST_ExtrusionPlane::set_value(const ST_ExtrusionPlane::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ExtrusionPlane::Type& ST_ExtrusionPlane::get_type() const
+const ST_ExtrusionPlane::Type& ST_ExtrusionPlane::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ExtrusionPlane::toString() const
 {
-    return ST_ExtrusionPlane::TypeStrList[m_type];
+    return ST_ExtrusionPlane::TypeStrList[m_value];
 }
 
 void ST_ExtrusionPlane::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ExtrusionPlane::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -808,47 +822,47 @@ ST_ExtrusionPlane* ST_ExtrusionPlane::default_instance_ = NULL;
 
 // ST_Angle
 ST_Angle::ST_Angle()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_Angle::ST_Angle(const ST_Angle::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_Angle::ST_Angle(const ST_Angle::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_Angle::~ST_Angle()
 {
     clear();
 }
-bool ST_Angle::has_type() const
+bool ST_Angle::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_Angle::set_type(const ST_Angle::Type& _type)
+void ST_Angle::set_value(const ST_Angle::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_Angle::Type& ST_Angle::get_type() const
+const ST_Angle::Type& ST_Angle::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_Angle::toString() const
 {
-    return ST_Angle::TypeStrList[m_type];
+    return ST_Angle::TypeStrList[m_value];
 }
 
 void ST_Angle::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_Angle::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -876,47 +890,47 @@ ST_Angle* ST_Angle::default_instance_ = NULL;
 
 // ST_CalloutDrop
 ST_CalloutDrop::ST_CalloutDrop()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_CalloutDrop::ST_CalloutDrop(const XSD::string_& _string)
-    :m_has_string(true)
+ST_CalloutDrop::ST_CalloutDrop(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_CalloutDrop::~ST_CalloutDrop()
 {
     clear();
 }
-bool ST_CalloutDrop::has_string() const
+bool ST_CalloutDrop::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_CalloutDrop::set_string(const XSD::string_& _string)
+void ST_CalloutDrop::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_CalloutDrop::get_string() const
+const XSD::string_& ST_CalloutDrop::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_CalloutDrop::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_CalloutDrop::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -932,7 +946,7 @@ const ST_CalloutDrop& ST_CalloutDrop::default_instance()
 std::string ST_CalloutDrop::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -940,47 +954,47 @@ ST_CalloutDrop* ST_CalloutDrop::default_instance_ = NULL;
 
 // ST_CalloutPlacement
 ST_CalloutPlacement::ST_CalloutPlacement()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_CalloutPlacement::ST_CalloutPlacement(const ST_CalloutPlacement::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_CalloutPlacement::ST_CalloutPlacement(const ST_CalloutPlacement::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_CalloutPlacement::~ST_CalloutPlacement()
 {
     clear();
 }
-bool ST_CalloutPlacement::has_type() const
+bool ST_CalloutPlacement::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_CalloutPlacement::set_type(const ST_CalloutPlacement::Type& _type)
+void ST_CalloutPlacement::set_value(const ST_CalloutPlacement::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_CalloutPlacement::Type& ST_CalloutPlacement::get_type() const
+const ST_CalloutPlacement::Type& ST_CalloutPlacement::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_CalloutPlacement::toString() const
 {
-    return ST_CalloutPlacement::TypeStrList[m_type];
+    return ST_CalloutPlacement::TypeStrList[m_value];
 }
 
 void ST_CalloutPlacement::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_CalloutPlacement::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1006,47 +1020,47 @@ ST_CalloutPlacement* ST_CalloutPlacement::default_instance_ = NULL;
 
 // ST_ConnectorType
 ST_ConnectorType::ST_ConnectorType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ConnectorType::ST_ConnectorType(const ST_ConnectorType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ConnectorType::ST_ConnectorType(const ST_ConnectorType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ConnectorType::~ST_ConnectorType()
 {
     clear();
 }
-bool ST_ConnectorType::has_type() const
+bool ST_ConnectorType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ConnectorType::set_type(const ST_ConnectorType::Type& _type)
+void ST_ConnectorType::set_value(const ST_ConnectorType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ConnectorType::Type& ST_ConnectorType::get_type() const
+const ST_ConnectorType::Type& ST_ConnectorType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ConnectorType::toString() const
 {
-    return ST_ConnectorType::TypeStrList[m_type];
+    return ST_ConnectorType::TypeStrList[m_value];
 }
 
 void ST_ConnectorType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ConnectorType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1072,47 +1086,47 @@ ST_ConnectorType* ST_ConnectorType::default_instance_ = NULL;
 
 // ST_HrAlign
 ST_HrAlign::ST_HrAlign()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_HrAlign::ST_HrAlign(const ST_HrAlign::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_HrAlign::ST_HrAlign(const ST_HrAlign::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_HrAlign::~ST_HrAlign()
 {
     clear();
 }
-bool ST_HrAlign::has_type() const
+bool ST_HrAlign::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_HrAlign::set_type(const ST_HrAlign::Type& _type)
+void ST_HrAlign::set_value(const ST_HrAlign::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_HrAlign::Type& ST_HrAlign::get_type() const
+const ST_HrAlign::Type& ST_HrAlign::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_HrAlign::toString() const
 {
-    return ST_HrAlign::TypeStrList[m_type];
+    return ST_HrAlign::TypeStrList[m_value];
 }
 
 void ST_HrAlign::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_HrAlign::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1137,47 +1151,47 @@ ST_HrAlign* ST_HrAlign::default_instance_ = NULL;
 
 // ST_ConnectType
 ST_ConnectType::ST_ConnectType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_ConnectType::ST_ConnectType(const ST_ConnectType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_ConnectType::ST_ConnectType(const ST_ConnectType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_ConnectType::~ST_ConnectType()
 {
     clear();
 }
-bool ST_ConnectType::has_type() const
+bool ST_ConnectType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_ConnectType::set_type(const ST_ConnectType::Type& _type)
+void ST_ConnectType::set_value(const ST_ConnectType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_ConnectType::Type& ST_ConnectType::get_type() const
+const ST_ConnectType::Type& ST_ConnectType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_ConnectType::toString() const
 {
-    return ST_ConnectType::TypeStrList[m_type];
+    return ST_ConnectType::TypeStrList[m_value];
 }
 
 void ST_ConnectType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_ConnectType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1203,47 +1217,47 @@ ST_ConnectType* ST_ConnectType::default_instance_ = NULL;
 
 // ST_OLELinkType
 ST_OLELinkType::ST_OLELinkType()
-    :m_has_string(false),
-     m_string("")
+    :m_has_value(false),
+     m_value("")
 {
 }
-ST_OLELinkType::ST_OLELinkType(const XSD::string_& _string)
-    :m_has_string(true)
+ST_OLELinkType::ST_OLELinkType(const XSD::string_& _value)
+    :m_has_value(true)
 {
 
-    set_string(_string);
+    set_value(_value);
 }
 ST_OLELinkType::~ST_OLELinkType()
 {
     clear();
 }
-bool ST_OLELinkType::has_string() const
+bool ST_OLELinkType::has_value() const
 {
-    return m_has_string;
+    return m_has_value;
 }
 
-void ST_OLELinkType::set_string(const XSD::string_& _string)
+void ST_OLELinkType::set_value(const XSD::string_& _value)
 {
-    m_has_string = true;
-    m_string = _string;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::string_& ST_OLELinkType::get_string() const
+const XSD::string_& ST_OLELinkType::get_value() const
 {
-    return m_string;
+    return m_value;
 }
 
 void ST_OLELinkType::clear()
 {
-    m_has_string = false;
-    m_string.clear();;
+    m_has_value = false;
+    m_value.clear();;
 }
 
 void ST_OLELinkType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_string)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_string << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -1259,7 +1273,7 @@ const ST_OLELinkType& ST_OLELinkType::default_instance()
 std::string ST_OLELinkType::toString() const
 {
     std::stringstream strStream;
-    strStream << get_string();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -1267,47 +1281,47 @@ ST_OLELinkType* ST_OLELinkType::default_instance_ = NULL;
 
 // ST_OLEType
 ST_OLEType::ST_OLEType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_OLEType::ST_OLEType(const ST_OLEType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_OLEType::ST_OLEType(const ST_OLEType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_OLEType::~ST_OLEType()
 {
     clear();
 }
-bool ST_OLEType::has_type() const
+bool ST_OLEType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_OLEType::set_type(const ST_OLEType::Type& _type)
+void ST_OLEType::set_value(const ST_OLEType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_OLEType::Type& ST_OLEType::get_type() const
+const ST_OLEType::Type& ST_OLEType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_OLEType::toString() const
 {
-    return ST_OLEType::TypeStrList[m_type];
+    return ST_OLEType::TypeStrList[m_value];
 }
 
 void ST_OLEType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_OLEType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1331,47 +1345,47 @@ ST_OLEType* ST_OLEType::default_instance_ = NULL;
 
 // ST_OLEDrawAspect
 ST_OLEDrawAspect::ST_OLEDrawAspect()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_OLEDrawAspect::ST_OLEDrawAspect(const ST_OLEDrawAspect::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_OLEDrawAspect::ST_OLEDrawAspect(const ST_OLEDrawAspect::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_OLEDrawAspect::~ST_OLEDrawAspect()
 {
     clear();
 }
-bool ST_OLEDrawAspect::has_type() const
+bool ST_OLEDrawAspect::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_OLEDrawAspect::set_type(const ST_OLEDrawAspect::Type& _type)
+void ST_OLEDrawAspect::set_value(const ST_OLEDrawAspect::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_OLEDrawAspect::Type& ST_OLEDrawAspect::get_type() const
+const ST_OLEDrawAspect::Type& ST_OLEDrawAspect::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_OLEDrawAspect::toString() const
 {
-    return ST_OLEDrawAspect::TypeStrList[m_type];
+    return ST_OLEDrawAspect::TypeStrList[m_value];
 }
 
 void ST_OLEDrawAspect::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_OLEDrawAspect::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1395,47 +1409,47 @@ ST_OLEDrawAspect* ST_OLEDrawAspect::default_instance_ = NULL;
 
 // ST_OLEUpdateMode
 ST_OLEUpdateMode::ST_OLEUpdateMode()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_OLEUpdateMode::ST_OLEUpdateMode(const ST_OLEUpdateMode::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_OLEUpdateMode::ST_OLEUpdateMode(const ST_OLEUpdateMode::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_OLEUpdateMode::~ST_OLEUpdateMode()
 {
     clear();
 }
-bool ST_OLEUpdateMode::has_type() const
+bool ST_OLEUpdateMode::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_OLEUpdateMode::set_type(const ST_OLEUpdateMode::Type& _type)
+void ST_OLEUpdateMode::set_value(const ST_OLEUpdateMode::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_OLEUpdateMode::Type& ST_OLEUpdateMode::get_type() const
+const ST_OLEUpdateMode::Type& ST_OLEUpdateMode::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_OLEUpdateMode::toString() const
 {
-    return ST_OLEUpdateMode::TypeStrList[m_type];
+    return ST_OLEUpdateMode::TypeStrList[m_value];
 }
 
 void ST_OLEUpdateMode::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_OLEUpdateMode::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -1459,47 +1473,47 @@ ST_OLEUpdateMode* ST_OLEUpdateMode::default_instance_ = NULL;
 
 // ST_FillType
 ST_FillType::ST_FillType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_FillType::ST_FillType(const ST_FillType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_FillType::ST_FillType(const ST_FillType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_FillType::~ST_FillType()
 {
     clear();
 }
-bool ST_FillType::has_type() const
+bool ST_FillType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_FillType::set_type(const ST_FillType::Type& _type)
+void ST_FillType::set_value(const ST_FillType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_FillType::Type& ST_FillType::get_type() const
+const ST_FillType::Type& ST_FillType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_FillType::toString() const
 {
-    return ST_FillType::TypeStrList[m_type];
+    return ST_FillType::TypeStrList[m_value];
 }
 
 void ST_FillType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_FillType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -9386,9 +9400,9 @@ void shapedefaults_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:shapedefaults";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -9805,9 +9819,9 @@ void shapelayout_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:shapelayout";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -9992,9 +10006,9 @@ void signatureline_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:signatureline";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -10381,9 +10395,9 @@ void ink_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:ink";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_i_attr)
@@ -10602,9 +10616,9 @@ void diagram_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:diagram";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -10902,9 +10916,9 @@ void equationxml_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:equationxml";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_contentType_attr)
@@ -11014,9 +11028,9 @@ void skew_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:skew";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -11438,9 +11452,9 @@ void extrusion_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:extrusion";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -12414,9 +12428,9 @@ void callout_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:callout";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -12943,9 +12957,9 @@ void lock_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:lock";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -13452,9 +13466,9 @@ void OLEObject_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:OLEObject";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_Type_attr)
@@ -13693,9 +13707,9 @@ void complex_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:complex";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -13998,9 +14012,9 @@ void left_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:left";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -14969,9 +14983,9 @@ void top_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:top";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -15940,9 +15954,9 @@ void right_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:right";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -16911,9 +16925,9 @@ void bottom_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:bottom";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -17882,9 +17896,9 @@ void column_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:column";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)
@@ -18615,9 +18629,9 @@ void clippath_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:clippath";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
     assert(m_has_v_attr);
     if (m_has_v_attr)
@@ -18695,9 +18709,9 @@ void fill_element::toXml(std::ostream& _outStream) const
     _outStream << "<o:fill";
 
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
-    _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
-    _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:vml\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
+    _outStream << " " << "xmlns:o=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
 
 
     if (m_has_v_ext_attr)

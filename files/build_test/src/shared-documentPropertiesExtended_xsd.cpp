@@ -5,6 +5,7 @@
 #include <functional>
 #include <assert.h>
 #include "shared-documentPropertiesVariantTypes_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
 namespace ns_ap {
 using namespace std;
 
@@ -660,163 +661,163 @@ void CT_Properties::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_Template)
     {
-        _outStream << "<ap:Template>" << m_Template << "</ap:Template>";
+        _outStream << "<Template>" << m_Template << "</Template>";
     }
 
 
     if (m_has_Manager)
     {
-        _outStream << "<ap:Manager>" << m_Manager << "</ap:Manager>";
+        _outStream << "<Manager>" << m_Manager << "</Manager>";
     }
 
 
     if (m_has_Company)
     {
-        _outStream << "<ap:Company>" << m_Company << "</ap:Company>";
+        _outStream << "<Company>" << m_Company << "</Company>";
     }
 
 
     if (m_has_Pages)
     {
-        _outStream << "<ap:Pages>" << m_Pages << "</ap:Pages>";
+        _outStream << "<Pages>" << m_Pages << "</Pages>";
     }
 
 
     if (m_has_Words)
     {
-        _outStream << "<ap:Words>" << m_Words << "</ap:Words>";
+        _outStream << "<Words>" << m_Words << "</Words>";
     }
 
 
     if (m_has_Characters)
     {
-        _outStream << "<ap:Characters>" << m_Characters << "</ap:Characters>";
+        _outStream << "<Characters>" << m_Characters << "</Characters>";
     }
 
 
     if (m_has_PresentationFormat)
     {
-        _outStream << "<ap:PresentationFormat>" << m_PresentationFormat << "</ap:PresentationFormat>";
+        _outStream << "<PresentationFormat>" << m_PresentationFormat << "</PresentationFormat>";
     }
 
 
     if (m_has_Lines)
     {
-        _outStream << "<ap:Lines>" << m_Lines << "</ap:Lines>";
+        _outStream << "<Lines>" << m_Lines << "</Lines>";
     }
 
 
     if (m_has_Paragraphs)
     {
-        _outStream << "<ap:Paragraphs>" << m_Paragraphs << "</ap:Paragraphs>";
+        _outStream << "<Paragraphs>" << m_Paragraphs << "</Paragraphs>";
     }
 
 
     if (m_has_Slides)
     {
-        _outStream << "<ap:Slides>" << m_Slides << "</ap:Slides>";
+        _outStream << "<Slides>" << m_Slides << "</Slides>";
     }
 
 
     if (m_has_Notes)
     {
-        _outStream << "<ap:Notes>" << m_Notes << "</ap:Notes>";
+        _outStream << "<Notes>" << m_Notes << "</Notes>";
     }
 
 
     if (m_has_TotalTime)
     {
-        _outStream << "<ap:TotalTime>" << m_TotalTime << "</ap:TotalTime>";
+        _outStream << "<TotalTime>" << m_TotalTime << "</TotalTime>";
     }
 
 
     if (m_has_HiddenSlides)
     {
-        _outStream << "<ap:HiddenSlides>" << m_HiddenSlides << "</ap:HiddenSlides>";
+        _outStream << "<HiddenSlides>" << m_HiddenSlides << "</HiddenSlides>";
     }
 
 
     if (m_has_MMClips)
     {
-        _outStream << "<ap:MMClips>" << m_MMClips << "</ap:MMClips>";
+        _outStream << "<MMClips>" << m_MMClips << "</MMClips>";
     }
 
 
     if (m_has_ScaleCrop)
     {
-        _outStream << "<ap:ScaleCrop>" << m_ScaleCrop << "</ap:ScaleCrop>";
+        _outStream << "<ScaleCrop>" << m_ScaleCrop << "</ScaleCrop>";
     }
 
 
     if (m_has_HeadingPairs)
     {
-        m_HeadingPairs->toXmlElem("ap:HeadingPairs", "", _outStream);
+        m_HeadingPairs->toXmlElem("HeadingPairs", "", _outStream);
     }
 
 
     if (m_has_TitlesOfParts)
     {
-        m_TitlesOfParts->toXmlElem("ap:TitlesOfParts", "", _outStream);
+        m_TitlesOfParts->toXmlElem("TitlesOfParts", "", _outStream);
     }
 
 
     if (m_has_LinksUpToDate)
     {
-        _outStream << "<ap:LinksUpToDate>" << m_LinksUpToDate << "</ap:LinksUpToDate>";
+        _outStream << "<LinksUpToDate>" << m_LinksUpToDate << "</LinksUpToDate>";
     }
 
 
     if (m_has_CharactersWithSpaces)
     {
-        _outStream << "<ap:CharactersWithSpaces>" << m_CharactersWithSpaces << "</ap:CharactersWithSpaces>";
+        _outStream << "<CharactersWithSpaces>" << m_CharactersWithSpaces << "</CharactersWithSpaces>";
     }
 
 
     if (m_has_SharedDoc)
     {
-        _outStream << "<ap:SharedDoc>" << m_SharedDoc << "</ap:SharedDoc>";
+        _outStream << "<SharedDoc>" << m_SharedDoc << "</SharedDoc>";
     }
 
 
     if (m_has_HyperlinkBase)
     {
-        _outStream << "<ap:HyperlinkBase>" << m_HyperlinkBase << "</ap:HyperlinkBase>";
+        _outStream << "<HyperlinkBase>" << m_HyperlinkBase << "</HyperlinkBase>";
     }
 
 
     if (m_has_HLinks)
     {
-        m_HLinks->toXmlElem("ap:HLinks", "", _outStream);
+        m_HLinks->toXmlElem("HLinks", "", _outStream);
     }
 
 
     if (m_has_HyperlinksChanged)
     {
-        _outStream << "<ap:HyperlinksChanged>" << m_HyperlinksChanged << "</ap:HyperlinksChanged>";
+        _outStream << "<HyperlinksChanged>" << m_HyperlinksChanged << "</HyperlinksChanged>";
     }
 
 
     if (m_has_DigSig)
     {
-        m_DigSig->toXmlElem("ap:DigSig", "", _outStream);
+        m_DigSig->toXmlElem("DigSig", "", _outStream);
     }
 
 
     if (m_has_Application)
     {
-        _outStream << "<ap:Application>" << m_Application << "</ap:Application>";
+        _outStream << "<Application>" << m_Application << "</Application>";
     }
 
 
     if (m_has_AppVersion)
     {
-        _outStream << "<ap:AppVersion>" << m_AppVersion << "</ap:AppVersion>";
+        _outStream << "<AppVersion>" << m_AppVersion << "</AppVersion>";
     }
 
 
     if (m_has_DocSecurity)
     {
-        _outStream << "<ap:DocSecurity>" << m_DocSecurity << "</ap:DocSecurity>";
+        _outStream << "<DocSecurity>" << m_DocSecurity << "</DocSecurity>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -1692,176 +1693,176 @@ void Properties_element::clear()
 
 void Properties_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ap:Properties";
+    _outStream << "<Properties";
 
-    _outStream << " " << "xmlns:ap=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\"";
-    _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
+    _outStream << " " << "xmlns=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\"";
+    _outStream << " " << "xmlns:ap=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
 
     _outStream << ">";
 
 
     if (m_has_Template)
     {
-        _outStream << "<ap:Template>" << m_Template << "</ap:Template>";
+        _outStream << "<Template>" << m_Template << "</Template>";
     }
 
 
     if (m_has_Manager)
     {
-        _outStream << "<ap:Manager>" << m_Manager << "</ap:Manager>";
+        _outStream << "<Manager>" << m_Manager << "</Manager>";
     }
 
 
     if (m_has_Company)
     {
-        _outStream << "<ap:Company>" << m_Company << "</ap:Company>";
+        _outStream << "<Company>" << m_Company << "</Company>";
     }
 
 
     if (m_has_Pages)
     {
-        _outStream << "<ap:Pages>" << m_Pages << "</ap:Pages>";
+        _outStream << "<Pages>" << m_Pages << "</Pages>";
     }
 
 
     if (m_has_Words)
     {
-        _outStream << "<ap:Words>" << m_Words << "</ap:Words>";
+        _outStream << "<Words>" << m_Words << "</Words>";
     }
 
 
     if (m_has_Characters)
     {
-        _outStream << "<ap:Characters>" << m_Characters << "</ap:Characters>";
+        _outStream << "<Characters>" << m_Characters << "</Characters>";
     }
 
 
     if (m_has_PresentationFormat)
     {
-        _outStream << "<ap:PresentationFormat>" << m_PresentationFormat << "</ap:PresentationFormat>";
+        _outStream << "<PresentationFormat>" << m_PresentationFormat << "</PresentationFormat>";
     }
 
 
     if (m_has_Lines)
     {
-        _outStream << "<ap:Lines>" << m_Lines << "</ap:Lines>";
+        _outStream << "<Lines>" << m_Lines << "</Lines>";
     }
 
 
     if (m_has_Paragraphs)
     {
-        _outStream << "<ap:Paragraphs>" << m_Paragraphs << "</ap:Paragraphs>";
+        _outStream << "<Paragraphs>" << m_Paragraphs << "</Paragraphs>";
     }
 
 
     if (m_has_Slides)
     {
-        _outStream << "<ap:Slides>" << m_Slides << "</ap:Slides>";
+        _outStream << "<Slides>" << m_Slides << "</Slides>";
     }
 
 
     if (m_has_Notes)
     {
-        _outStream << "<ap:Notes>" << m_Notes << "</ap:Notes>";
+        _outStream << "<Notes>" << m_Notes << "</Notes>";
     }
 
 
     if (m_has_TotalTime)
     {
-        _outStream << "<ap:TotalTime>" << m_TotalTime << "</ap:TotalTime>";
+        _outStream << "<TotalTime>" << m_TotalTime << "</TotalTime>";
     }
 
 
     if (m_has_HiddenSlides)
     {
-        _outStream << "<ap:HiddenSlides>" << m_HiddenSlides << "</ap:HiddenSlides>";
+        _outStream << "<HiddenSlides>" << m_HiddenSlides << "</HiddenSlides>";
     }
 
 
     if (m_has_MMClips)
     {
-        _outStream << "<ap:MMClips>" << m_MMClips << "</ap:MMClips>";
+        _outStream << "<MMClips>" << m_MMClips << "</MMClips>";
     }
 
 
     if (m_has_ScaleCrop)
     {
-        _outStream << "<ap:ScaleCrop>" << m_ScaleCrop << "</ap:ScaleCrop>";
+        _outStream << "<ScaleCrop>" << m_ScaleCrop << "</ScaleCrop>";
     }
 
 
     if (m_has_HeadingPairs)
     {
-        m_HeadingPairs->toXmlElem("ap:HeadingPairs", "", _outStream);
+        m_HeadingPairs->toXmlElem("HeadingPairs", "", _outStream);
     }
 
 
     if (m_has_TitlesOfParts)
     {
-        m_TitlesOfParts->toXmlElem("ap:TitlesOfParts", "", _outStream);
+        m_TitlesOfParts->toXmlElem("TitlesOfParts", "", _outStream);
     }
 
 
     if (m_has_LinksUpToDate)
     {
-        _outStream << "<ap:LinksUpToDate>" << m_LinksUpToDate << "</ap:LinksUpToDate>";
+        _outStream << "<LinksUpToDate>" << m_LinksUpToDate << "</LinksUpToDate>";
     }
 
 
     if (m_has_CharactersWithSpaces)
     {
-        _outStream << "<ap:CharactersWithSpaces>" << m_CharactersWithSpaces << "</ap:CharactersWithSpaces>";
+        _outStream << "<CharactersWithSpaces>" << m_CharactersWithSpaces << "</CharactersWithSpaces>";
     }
 
 
     if (m_has_SharedDoc)
     {
-        _outStream << "<ap:SharedDoc>" << m_SharedDoc << "</ap:SharedDoc>";
+        _outStream << "<SharedDoc>" << m_SharedDoc << "</SharedDoc>";
     }
 
 
     if (m_has_HyperlinkBase)
     {
-        _outStream << "<ap:HyperlinkBase>" << m_HyperlinkBase << "</ap:HyperlinkBase>";
+        _outStream << "<HyperlinkBase>" << m_HyperlinkBase << "</HyperlinkBase>";
     }
 
 
     if (m_has_HLinks)
     {
-        m_HLinks->toXmlElem("ap:HLinks", "", _outStream);
+        m_HLinks->toXmlElem("HLinks", "", _outStream);
     }
 
 
     if (m_has_HyperlinksChanged)
     {
-        _outStream << "<ap:HyperlinksChanged>" << m_HyperlinksChanged << "</ap:HyperlinksChanged>";
+        _outStream << "<HyperlinksChanged>" << m_HyperlinksChanged << "</HyperlinksChanged>";
     }
 
 
     if (m_has_DigSig)
     {
-        m_DigSig->toXmlElem("ap:DigSig", "", _outStream);
+        m_DigSig->toXmlElem("DigSig", "", _outStream);
     }
 
 
     if (m_has_Application)
     {
-        _outStream << "<ap:Application>" << m_Application << "</ap:Application>";
+        _outStream << "<Application>" << m_Application << "</Application>";
     }
 
 
     if (m_has_AppVersion)
     {
-        _outStream << "<ap:AppVersion>" << m_AppVersion << "</ap:AppVersion>";
+        _outStream << "<AppVersion>" << m_AppVersion << "</AppVersion>";
     }
 
 
     if (m_has_DocSecurity)
     {
-        _outStream << "<ap:DocSecurity>" << m_DocSecurity << "</ap:DocSecurity>";
+        _outStream << "<DocSecurity>" << m_DocSecurity << "</DocSecurity>";
     }
 
-    _outStream << "</ap:Properties>";
+    _outStream << "</Properties>";
 }
 
 const Properties_element& Properties_element::default_instance()

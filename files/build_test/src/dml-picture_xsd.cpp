@@ -5,6 +5,13 @@
 #include <functional>
 #include <assert.h>
 #include "dml-main_xsd.h"
+#include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_dpct {
 using namespace std;
 
@@ -422,7 +429,7 @@ void pic_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<dpct:pic";
 
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
 
     _outStream << ">";

@@ -6,6 +6,12 @@
 #include <assert.h>
 #include "dml-main_xsd.h"
 #include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_xdr {
 using namespace std;
 
@@ -15,48 +21,48 @@ using namespace std;
 
 // ST_ColID
 ST_ColID::ST_ColID()
-    :m_has_int(false),
-     m_int(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_ColID::ST_ColID(const XSD::int_& _int)
-    :m_has_int(true)
+ST_ColID::ST_ColID(const XSD::int_& _value)
+    :m_has_value(true)
 {
 
-    set_int(_int);
+    set_value(_value);
 }
 ST_ColID::~ST_ColID()
 {
     clear();
 }
-bool ST_ColID::has_int() const
+bool ST_ColID::has_value() const
 {
-    return m_has_int;
+    return m_has_value;
 }
 
-void ST_ColID::set_int(const XSD::int_& _int)
-{   assert(0 <= _int);
+void ST_ColID::set_value(const XSD::int_& _value)
+{   assert(0 <= _value);
 
-    m_has_int = true;
-    m_int = _int;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::int_& ST_ColID::get_int() const
+const XSD::int_& ST_ColID::get_value() const
 {
-    return m_int;
+    return m_value;
 }
 
 void ST_ColID::clear()
 {
-    m_has_int = false;
-    m_int = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_ColID::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_int)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_int << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -72,7 +78,7 @@ const ST_ColID& ST_ColID::default_instance()
 std::string ST_ColID::toString() const
 {
     std::stringstream strStream;
-    strStream << get_int();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -80,48 +86,48 @@ ST_ColID* ST_ColID::default_instance_ = NULL;
 
 // ST_RowID
 ST_RowID::ST_RowID()
-    :m_has_int(false),
-     m_int(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_RowID::ST_RowID(const XSD::int_& _int)
-    :m_has_int(true)
+ST_RowID::ST_RowID(const XSD::int_& _value)
+    :m_has_value(true)
 {
 
-    set_int(_int);
+    set_value(_value);
 }
 ST_RowID::~ST_RowID()
 {
     clear();
 }
-bool ST_RowID::has_int() const
+bool ST_RowID::has_value() const
 {
-    return m_has_int;
+    return m_has_value;
 }
 
-void ST_RowID::set_int(const XSD::int_& _int)
-{   assert(0 <= _int);
+void ST_RowID::set_value(const XSD::int_& _value)
+{   assert(0 <= _value);
 
-    m_has_int = true;
-    m_int = _int;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::int_& ST_RowID::get_int() const
+const XSD::int_& ST_RowID::get_value() const
 {
-    return m_int;
+    return m_value;
 }
 
 void ST_RowID::clear()
 {
-    m_has_int = false;
-    m_int = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_RowID::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_int)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_int << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -137,7 +143,7 @@ const ST_RowID& ST_RowID::default_instance()
 std::string ST_RowID::toString() const
 {
     std::stringstream strStream;
-    strStream << get_int();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -145,47 +151,47 @@ ST_RowID* ST_RowID::default_instance_ = NULL;
 
 // ST_EditAs
 ST_EditAs::ST_EditAs()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_EditAs::ST_EditAs(const ST_EditAs::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_EditAs::ST_EditAs(const ST_EditAs::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_EditAs::~ST_EditAs()
 {
     clear();
 }
-bool ST_EditAs::has_type() const
+bool ST_EditAs::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_EditAs::set_type(const ST_EditAs::Type& _type)
+void ST_EditAs::set_value(const ST_EditAs::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_EditAs::Type& ST_EditAs::get_type() const
+const ST_EditAs::Type& ST_EditAs::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_EditAs::toString() const
 {
-    return ST_EditAs::TypeStrList[m_type];
+    return ST_EditAs::TypeStrList[m_value];
 }
 
 void ST_EditAs::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_EditAs::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -5257,8 +5263,8 @@ void from_element::toXml(std::ostream& _outStream) const
     _outStream << "<xdr:from";
 
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -5467,8 +5473,8 @@ void to_element::toXml(std::ostream& _outStream) const
     _outStream << "<xdr:to";
 
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -5571,8 +5577,8 @@ void wsDr_element::toXml(std::ostream& _outStream) const
     _outStream << "<xdr:wsDr";
 
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 

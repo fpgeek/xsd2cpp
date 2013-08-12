@@ -34,11 +34,11 @@ class ST_CF: public XSD::SimpleType
 {
 public:
     ST_CF();
-    ST_CF(const XSD::string_& _string);
+    ST_CF(const XSD::string_& _value);
     ~ST_CF();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_CF& default_instance();
@@ -46,8 +46,8 @@ public:
 protected:
 private:
     static ST_CF* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class ST_ObjectType: public XSD::SimpleType
@@ -76,11 +76,11 @@ public:
         _Rect_
     };
     ST_ObjectType();
-    ST_ObjectType(const ST_ObjectType::Type& _type);
+    ST_ObjectType(const ST_ObjectType::Type& _value);
     ~ST_ObjectType();
-    bool has_type() const;
-    void set_type(const ST_ObjectType::Type& _type);
-    const ST_ObjectType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ObjectType::Type& _value);
+    const ST_ObjectType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -89,8 +89,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ObjectType* default_instance_;
-    bool m_has_type;
-    ST_ObjectType::Type m_type;
+    bool m_has_value;
+    ST_ObjectType::Type m_value;
 };
 
 class CT_ClientData: public XSD::ComplexType

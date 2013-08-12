@@ -72,6 +72,16 @@ class roundrect_element;
 #include "vml-spreadsheetDrawing_xsd.h"
 #include "vml-presentationDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
+#include "vml-main_xsd.h"
+#include "dml-wordprocessingDrawing_xsd.h"
+#include "shared-math_xsd.h"
+#include "shared-customXmlSchemaProperties_xsd.h"
+#include "dml-main_xsd.h"
+#include "dml-picture_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
 namespace ns_v {
 using namespace std;
 class Element: public XSD::Element
@@ -98,11 +108,11 @@ public:
         _backwardCompatible_
     };
     ST_Ext();
-    ST_Ext(const ST_Ext::Type& _type);
+    ST_Ext(const ST_Ext::Type& _value);
     ~ST_Ext();
-    bool has_type() const;
-    void set_type(const ST_Ext::Type& _type);
-    const ST_Ext::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_Ext::Type& _value);
+    const ST_Ext::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -111,8 +121,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_Ext* default_instance_;
-    bool m_has_type;
-    ST_Ext::Type m_type;
+    bool m_has_value;
+    ST_Ext::Type m_value;
 };
 
 class ST_FillType: public XSD::SimpleType
@@ -128,11 +138,11 @@ public:
         _frame_
     };
     ST_FillType();
-    ST_FillType(const ST_FillType::Type& _type);
+    ST_FillType(const ST_FillType::Type& _value);
     ~ST_FillType();
-    bool has_type() const;
-    void set_type(const ST_FillType::Type& _type);
-    const ST_FillType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_FillType::Type& _value);
+    const ST_FillType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -141,8 +151,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_FillType* default_instance_;
-    bool m_has_type;
-    ST_FillType::Type m_type;
+    bool m_has_value;
+    ST_FillType::Type m_value;
 };
 
 class ST_FillMethod: public XSD::SimpleType
@@ -157,11 +167,11 @@ public:
         _linear_sigma_
     };
     ST_FillMethod();
-    ST_FillMethod(const ST_FillMethod::Type& _type);
+    ST_FillMethod(const ST_FillMethod::Type& _value);
     ~ST_FillMethod();
-    bool has_type() const;
-    void set_type(const ST_FillMethod::Type& _type);
-    const ST_FillMethod::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_FillMethod::Type& _value);
+    const ST_FillMethod::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -170,8 +180,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_FillMethod* default_instance_;
-    bool m_has_type;
-    ST_FillMethod::Type m_type;
+    bool m_has_value;
+    ST_FillMethod::Type m_value;
 };
 
 class ST_ShadowType: public XSD::SimpleType
@@ -185,11 +195,11 @@ public:
         _perspective_
     };
     ST_ShadowType();
-    ST_ShadowType(const ST_ShadowType::Type& _type);
+    ST_ShadowType(const ST_ShadowType::Type& _value);
     ~ST_ShadowType();
-    bool has_type() const;
-    void set_type(const ST_ShadowType::Type& _type);
-    const ST_ShadowType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ShadowType::Type& _value);
+    const ST_ShadowType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -198,8 +208,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ShadowType* default_instance_;
-    bool m_has_type;
-    ST_ShadowType::Type m_type;
+    bool m_has_value;
+    ST_ShadowType::Type m_value;
 };
 
 class ST_StrokeLineStyle: public XSD::SimpleType
@@ -214,11 +224,11 @@ public:
         _thickBetweenThin_
     };
     ST_StrokeLineStyle();
-    ST_StrokeLineStyle(const ST_StrokeLineStyle::Type& _type);
+    ST_StrokeLineStyle(const ST_StrokeLineStyle::Type& _value);
     ~ST_StrokeLineStyle();
-    bool has_type() const;
-    void set_type(const ST_StrokeLineStyle::Type& _type);
-    const ST_StrokeLineStyle::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_StrokeLineStyle::Type& _value);
+    const ST_StrokeLineStyle::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -227,8 +237,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_StrokeLineStyle* default_instance_;
-    bool m_has_type;
-    ST_StrokeLineStyle::Type m_type;
+    bool m_has_value;
+    ST_StrokeLineStyle::Type m_value;
 };
 
 class ST_StrokeJoinStyle: public XSD::SimpleType
@@ -241,11 +251,11 @@ public:
         _miter_
     };
     ST_StrokeJoinStyle();
-    ST_StrokeJoinStyle(const ST_StrokeJoinStyle::Type& _type);
+    ST_StrokeJoinStyle(const ST_StrokeJoinStyle::Type& _value);
     ~ST_StrokeJoinStyle();
-    bool has_type() const;
-    void set_type(const ST_StrokeJoinStyle::Type& _type);
-    const ST_StrokeJoinStyle::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_StrokeJoinStyle::Type& _value);
+    const ST_StrokeJoinStyle::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -254,8 +264,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_StrokeJoinStyle* default_instance_;
-    bool m_has_type;
-    ST_StrokeJoinStyle::Type m_type;
+    bool m_has_value;
+    ST_StrokeJoinStyle::Type m_value;
 };
 
 class ST_StrokeEndCap: public XSD::SimpleType
@@ -268,11 +278,11 @@ public:
         _round_
     };
     ST_StrokeEndCap();
-    ST_StrokeEndCap(const ST_StrokeEndCap::Type& _type);
+    ST_StrokeEndCap(const ST_StrokeEndCap::Type& _value);
     ~ST_StrokeEndCap();
-    bool has_type() const;
-    void set_type(const ST_StrokeEndCap::Type& _type);
-    const ST_StrokeEndCap::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_StrokeEndCap::Type& _value);
+    const ST_StrokeEndCap::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -281,8 +291,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_StrokeEndCap* default_instance_;
-    bool m_has_type;
-    ST_StrokeEndCap::Type m_type;
+    bool m_has_value;
+    ST_StrokeEndCap::Type m_value;
 };
 
 class ST_StrokeArrowLength: public XSD::SimpleType
@@ -295,11 +305,11 @@ public:
         _long_
     };
     ST_StrokeArrowLength();
-    ST_StrokeArrowLength(const ST_StrokeArrowLength::Type& _type);
+    ST_StrokeArrowLength(const ST_StrokeArrowLength::Type& _value);
     ~ST_StrokeArrowLength();
-    bool has_type() const;
-    void set_type(const ST_StrokeArrowLength::Type& _type);
-    const ST_StrokeArrowLength::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_StrokeArrowLength::Type& _value);
+    const ST_StrokeArrowLength::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -308,8 +318,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_StrokeArrowLength* default_instance_;
-    bool m_has_type;
-    ST_StrokeArrowLength::Type m_type;
+    bool m_has_value;
+    ST_StrokeArrowLength::Type m_value;
 };
 
 class ST_StrokeArrowWidth: public XSD::SimpleType
@@ -322,11 +332,11 @@ public:
         _wide_
     };
     ST_StrokeArrowWidth();
-    ST_StrokeArrowWidth(const ST_StrokeArrowWidth::Type& _type);
+    ST_StrokeArrowWidth(const ST_StrokeArrowWidth::Type& _value);
     ~ST_StrokeArrowWidth();
-    bool has_type() const;
-    void set_type(const ST_StrokeArrowWidth::Type& _type);
-    const ST_StrokeArrowWidth::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_StrokeArrowWidth::Type& _value);
+    const ST_StrokeArrowWidth::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -335,8 +345,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_StrokeArrowWidth* default_instance_;
-    bool m_has_type;
-    ST_StrokeArrowWidth::Type m_type;
+    bool m_has_value;
+    ST_StrokeArrowWidth::Type m_value;
 };
 
 class ST_StrokeArrowType: public XSD::SimpleType
@@ -352,11 +362,11 @@ public:
         _open_
     };
     ST_StrokeArrowType();
-    ST_StrokeArrowType(const ST_StrokeArrowType::Type& _type);
+    ST_StrokeArrowType(const ST_StrokeArrowType::Type& _value);
     ~ST_StrokeArrowType();
-    bool has_type() const;
-    void set_type(const ST_StrokeArrowType::Type& _type);
-    const ST_StrokeArrowType::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_StrokeArrowType::Type& _value);
+    const ST_StrokeArrowType::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -365,8 +375,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_StrokeArrowType* default_instance_;
-    bool m_has_type;
-    ST_StrokeArrowType::Type m_type;
+    bool m_has_value;
+    ST_StrokeArrowType::Type m_value;
 };
 
 class ST_ImageAspect: public XSD::SimpleType
@@ -379,11 +389,11 @@ public:
         _atLeast_
     };
     ST_ImageAspect();
-    ST_ImageAspect(const ST_ImageAspect::Type& _type);
+    ST_ImageAspect(const ST_ImageAspect::Type& _value);
     ~ST_ImageAspect();
-    bool has_type() const;
-    void set_type(const ST_ImageAspect::Type& _type);
-    const ST_ImageAspect::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_ImageAspect::Type& _value);
+    const ST_ImageAspect::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -392,8 +402,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_ImageAspect* default_instance_;
-    bool m_has_type;
-    ST_ImageAspect::Type m_type;
+    bool m_has_value;
+    ST_ImageAspect::Type m_value;
 };
 
 class ST_EditAs: public XSD::SimpleType
@@ -410,11 +420,11 @@ public:
         _bullseye_
     };
     ST_EditAs();
-    ST_EditAs(const ST_EditAs::Type& _type);
+    ST_EditAs(const ST_EditAs::Type& _value);
     ~ST_EditAs();
-    bool has_type() const;
-    void set_type(const ST_EditAs::Type& _type);
-    const ST_EditAs::Type& get_type() const;
+    bool has_value() const;
+    void set_value(const ST_EditAs::Type& _value);
+    const ST_EditAs::Type& get_value() const;
     std::string toString() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
@@ -423,8 +433,8 @@ protected:
 private:
     static const std::string TypeStrList[];
     static ST_EditAs* default_instance_;
-    bool m_has_type;
-    ST_EditAs::Type m_type;
+    bool m_has_value;
+    ST_EditAs::Type m_value;
 };
 
 class CT_Shape: public XSD::ComplexType

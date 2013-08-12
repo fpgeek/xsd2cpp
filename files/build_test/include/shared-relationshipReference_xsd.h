@@ -44,11 +44,11 @@ class ST_RelationshipId: public XSD::SimpleType
 {
 public:
     ST_RelationshipId();
-    ST_RelationshipId(const XSD::string_& _string);
+    ST_RelationshipId(const XSD::string_& _value);
     ~ST_RelationshipId();
-    bool has_string() const;
-    void set_string(const XSD::string_& _string);
-    const XSD::string_& get_string() const;
+    bool has_value() const;
+    void set_value(const XSD::string_& _value);
+    const XSD::string_& get_value() const;
     void clear();
     void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
     static const ST_RelationshipId& default_instance();
@@ -56,8 +56,8 @@ public:
 protected:
 private:
     static ST_RelationshipId* default_instance_;
-    bool m_has_string;
-    XSD::string_ m_string;
+    bool m_has_value;
+    XSD::string_ m_value;
 };
 
 class id_attr: public Attribute

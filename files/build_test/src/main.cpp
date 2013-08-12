@@ -20,10 +20,10 @@ int main()
         document_element docElement;
         CT_Body* pBodyElem = docElement.mutable_body();
         ns_s::ST_OnOff valAttr;
-        valAttr.mutable_ST_OnOff1()->set_type(ns_s::ST_OnOff1::_on_);
+        valAttr.mutable_ST_OnOff1()->set_value(ns_s::ST_OnOff1::_on_);
         CT_Text *pTextElem = pBodyElem->add_p()->add_r()->add_t();
         pTextElem->set_xml_space_attr(ns_xml::space::_preserve_);
-        pTextElem->set_string("test");
+        pTextElem->set_value("test");
         pBodyElem->add_p()->add_r()->get_rPr().has_rPrChange();
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_dstrike()->set_val_attr(valAttr);
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_b();

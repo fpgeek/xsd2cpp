@@ -256,7 +256,7 @@ void CT_Types::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_Default())
             {
-                (*iter)->get_Default().toXmlElem("ct:Default", "", _outStream);
+                (*iter)->get_Default().toXmlElem("Default", "", _outStream);
             }
 
 
@@ -269,7 +269,7 @@ void CT_Types::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_Override())
             {
-                (*iter)->get_Override().toXmlElem("ct:Override", "", _outStream);
+                (*iter)->get_Override().toXmlElem("Override", "", _outStream);
             }
 
 
@@ -402,9 +402,9 @@ void Types_element::clear()
 
 void Types_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ct:Types";
+    _outStream << "<Types";
 
-    _outStream << " " << "xmlns:ct=\"http://schemas.openxmlformats.org/package/2006/content-types\"";
+    _outStream << " " << "xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"";
 
     _outStream << ">";
 
@@ -414,7 +414,7 @@ void Types_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_Default())
             {
-                (*iter)->get_Default().toXmlElem("ct:Default", "", _outStream);
+                (*iter)->get_Default().toXmlElem("Default", "", _outStream);
             }
 
 
@@ -427,14 +427,14 @@ void Types_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_Override())
             {
-                (*iter)->get_Override().toXmlElem("ct:Override", "", _outStream);
+                (*iter)->get_Override().toXmlElem("Override", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ct:Types>";
+    _outStream << "</Types>";
 }
 
 const Types_element& Types_element::default_instance()

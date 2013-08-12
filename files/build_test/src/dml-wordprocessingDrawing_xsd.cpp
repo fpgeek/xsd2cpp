@@ -8,6 +8,19 @@
 #include "wml_xsd.h"
 #include "dml-picture_xsd.h"
 #include "shared-relationshipReference_xsd.h"
+#include "shared-commonSimpleTypes_xsd.h"
+#include "dml-diagram_xsd.h"
+#include "dml-chart_xsd.h"
+#include "dml-lockedCanvas_xsd.h"
+#include "dml-chartDrawing_xsd.h"
+#include "dml-wordprocessingDrawing_xsd.h"
+#include "shared-math_xsd.h"
+#include "shared-customXmlSchemaProperties_xsd.h"
+#include "vml-main_xsd.h"
+#include "vml-officeDrawing_xsd.h"
+#include "vml-wordprocessingDrawing_xsd.h"
+#include "vml-spreadsheetDrawing_xsd.h"
+#include "vml-presentationDrawing_xsd.h"
 namespace ns_wp {
 using namespace std;
 
@@ -17,47 +30,47 @@ using namespace std;
 
 // ST_WrapDistance
 ST_WrapDistance::ST_WrapDistance()
-    :m_has_unsignedInt(false),
-     m_unsignedInt(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_WrapDistance::ST_WrapDistance(const XSD::unsignedInt_& _unsignedInt)
-    :m_has_unsignedInt(true)
+ST_WrapDistance::ST_WrapDistance(const XSD::unsignedInt_& _value)
+    :m_has_value(true)
 {
 
-    set_unsignedInt(_unsignedInt);
+    set_value(_value);
 }
 ST_WrapDistance::~ST_WrapDistance()
 {
     clear();
 }
-bool ST_WrapDistance::has_unsignedInt() const
+bool ST_WrapDistance::has_value() const
 {
-    return m_has_unsignedInt;
+    return m_has_value;
 }
 
-void ST_WrapDistance::set_unsignedInt(const XSD::unsignedInt_& _unsignedInt)
+void ST_WrapDistance::set_value(const XSD::unsignedInt_& _value)
 {
-    m_has_unsignedInt = true;
-    m_unsignedInt = _unsignedInt;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::unsignedInt_& ST_WrapDistance::get_unsignedInt() const
+const XSD::unsignedInt_& ST_WrapDistance::get_value() const
 {
-    return m_unsignedInt;
+    return m_value;
 }
 
 void ST_WrapDistance::clear()
 {
-    m_has_unsignedInt = false;
-    m_unsignedInt = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_WrapDistance::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_unsignedInt)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -73,7 +86,7 @@ const ST_WrapDistance& ST_WrapDistance::default_instance()
 std::string ST_WrapDistance::toString() const
 {
     std::stringstream strStream;
-    strStream << get_unsignedInt();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -81,47 +94,47 @@ ST_WrapDistance* ST_WrapDistance::default_instance_ = NULL;
 
 // ST_WrapText
 ST_WrapText::ST_WrapText()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_WrapText::ST_WrapText(const ST_WrapText::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_WrapText::ST_WrapText(const ST_WrapText::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_WrapText::~ST_WrapText()
 {
     clear();
 }
-bool ST_WrapText::has_type() const
+bool ST_WrapText::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_WrapText::set_type(const ST_WrapText::Type& _type)
+void ST_WrapText::set_value(const ST_WrapText::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_WrapText::Type& ST_WrapText::get_type() const
+const ST_WrapText::Type& ST_WrapText::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_WrapText::toString() const
 {
-    return ST_WrapText::TypeStrList[m_type];
+    return ST_WrapText::TypeStrList[m_value];
 }
 
 void ST_WrapText::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_WrapText::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -147,47 +160,47 @@ ST_WrapText* ST_WrapText::default_instance_ = NULL;
 
 // ST_PositionOffset
 ST_PositionOffset::ST_PositionOffset()
-    :m_has_int(false),
-     m_int(0)
+    :m_has_value(false),
+     m_value(0)
 {
 }
-ST_PositionOffset::ST_PositionOffset(const XSD::int_& _int)
-    :m_has_int(true)
+ST_PositionOffset::ST_PositionOffset(const XSD::int_& _value)
+    :m_has_value(true)
 {
 
-    set_int(_int);
+    set_value(_value);
 }
 ST_PositionOffset::~ST_PositionOffset()
 {
     clear();
 }
-bool ST_PositionOffset::has_int() const
+bool ST_PositionOffset::has_value() const
 {
-    return m_has_int;
+    return m_has_value;
 }
 
-void ST_PositionOffset::set_int(const XSD::int_& _int)
+void ST_PositionOffset::set_value(const XSD::int_& _value)
 {
-    m_has_int = true;
-    m_int = _int;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const XSD::int_& ST_PositionOffset::get_int() const
+const XSD::int_& ST_PositionOffset::get_value() const
 {
-    return m_int;
+    return m_value;
 }
 
 void ST_PositionOffset::clear()
 {
-    m_has_int = false;
-    m_int = 0;;
+    m_has_value = false;
+    m_value = 0;;
 }
 
 void ST_PositionOffset::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_int)
+    if (m_has_value)
     {
-        _outStream << " " << _attrName << "=\"" << m_int << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_value << "\"";;
     }
 }
 
@@ -203,7 +216,7 @@ const ST_PositionOffset& ST_PositionOffset::default_instance()
 std::string ST_PositionOffset::toString() const
 {
     std::stringstream strStream;
-    strStream << get_int();
+    strStream << get_value();
     return strStream.str();
 }
 
@@ -211,47 +224,47 @@ ST_PositionOffset* ST_PositionOffset::default_instance_ = NULL;
 
 // ST_AlignH
 ST_AlignH::ST_AlignH()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_AlignH::ST_AlignH(const ST_AlignH::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_AlignH::ST_AlignH(const ST_AlignH::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_AlignH::~ST_AlignH()
 {
     clear();
 }
-bool ST_AlignH::has_type() const
+bool ST_AlignH::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_AlignH::set_type(const ST_AlignH::Type& _type)
+void ST_AlignH::set_value(const ST_AlignH::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_AlignH::Type& ST_AlignH::get_type() const
+const ST_AlignH::Type& ST_AlignH::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_AlignH::toString() const
 {
-    return ST_AlignH::TypeStrList[m_type];
+    return ST_AlignH::TypeStrList[m_value];
 }
 
 void ST_AlignH::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_AlignH::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -278,47 +291,47 @@ ST_AlignH* ST_AlignH::default_instance_ = NULL;
 
 // ST_RelFromH
 ST_RelFromH::ST_RelFromH()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_RelFromH::ST_RelFromH(const ST_RelFromH::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_RelFromH::ST_RelFromH(const ST_RelFromH::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_RelFromH::~ST_RelFromH()
 {
     clear();
 }
-bool ST_RelFromH::has_type() const
+bool ST_RelFromH::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_RelFromH::set_type(const ST_RelFromH::Type& _type)
+void ST_RelFromH::set_value(const ST_RelFromH::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_RelFromH::Type& ST_RelFromH::get_type() const
+const ST_RelFromH::Type& ST_RelFromH::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_RelFromH::toString() const
 {
-    return ST_RelFromH::TypeStrList[m_type];
+    return ST_RelFromH::TypeStrList[m_value];
 }
 
 void ST_RelFromH::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_RelFromH::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -348,47 +361,47 @@ ST_RelFromH* ST_RelFromH::default_instance_ = NULL;
 
 // ST_AlignV
 ST_AlignV::ST_AlignV()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_AlignV::ST_AlignV(const ST_AlignV::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_AlignV::ST_AlignV(const ST_AlignV::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_AlignV::~ST_AlignV()
 {
     clear();
 }
-bool ST_AlignV::has_type() const
+bool ST_AlignV::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_AlignV::set_type(const ST_AlignV::Type& _type)
+void ST_AlignV::set_value(const ST_AlignV::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_AlignV::Type& ST_AlignV::get_type() const
+const ST_AlignV::Type& ST_AlignV::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_AlignV::toString() const
 {
-    return ST_AlignV::TypeStrList[m_type];
+    return ST_AlignV::TypeStrList[m_value];
 }
 
 void ST_AlignV::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_AlignV::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -415,47 +428,47 @@ ST_AlignV* ST_AlignV::default_instance_ = NULL;
 
 // ST_RelFromV
 ST_RelFromV::ST_RelFromV()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_RelFromV::ST_RelFromV(const ST_RelFromV::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_RelFromV::ST_RelFromV(const ST_RelFromV::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_RelFromV::~ST_RelFromV()
 {
     clear();
 }
-bool ST_RelFromV::has_type() const
+bool ST_RelFromV::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_RelFromV::set_type(const ST_RelFromV::Type& _type)
+void ST_RelFromV::set_value(const ST_RelFromV::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_RelFromV::Type& ST_RelFromV::get_type() const
+const ST_RelFromV::Type& ST_RelFromV::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_RelFromV::toString() const
 {
-    return ST_RelFromV::TypeStrList[m_type];
+    return ST_RelFromV::TypeStrList[m_value];
 }
 
 void ST_RelFromV::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_RelFromV::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -15402,10 +15415,10 @@ void wpc_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:wpc";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -16003,10 +16016,10 @@ void wgp_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:wgp";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
 
@@ -16786,10 +16799,10 @@ void wsp_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:wsp";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_normalEastAsianFlow_attr)
@@ -17134,10 +17147,10 @@ void inline_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:inline";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_distT_attr)
@@ -18035,10 +18048,10 @@ void anchor_element::toXml(std::ostream& _outStream) const
     _outStream << "<wp:anchor";
 
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
-    _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
-    _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
-    _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
-    _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
+    _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
     if (m_has_distT_attr)

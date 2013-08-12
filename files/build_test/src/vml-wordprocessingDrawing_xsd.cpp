@@ -13,47 +13,47 @@ using namespace std;
 
 // ST_BorderType
 ST_BorderType::ST_BorderType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_BorderType::ST_BorderType(const ST_BorderType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_BorderType::ST_BorderType(const ST_BorderType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_BorderType::~ST_BorderType()
 {
     clear();
 }
-bool ST_BorderType::has_type() const
+bool ST_BorderType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_BorderType::set_type(const ST_BorderType::Type& _type)
+void ST_BorderType::set_value(const ST_BorderType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_BorderType::Type& ST_BorderType::get_type() const
+const ST_BorderType::Type& ST_BorderType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_BorderType::toString() const
 {
-    return ST_BorderType::TypeStrList[m_type];
+    return ST_BorderType::TypeStrList[m_value];
 }
 
 void ST_BorderType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_BorderType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -102,47 +102,47 @@ ST_BorderType* ST_BorderType::default_instance_ = NULL;
 
 // ST_BorderShadow
 ST_BorderShadow::ST_BorderShadow()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_BorderShadow::ST_BorderShadow(const ST_BorderShadow::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_BorderShadow::ST_BorderShadow(const ST_BorderShadow::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_BorderShadow::~ST_BorderShadow()
 {
     clear();
 }
-bool ST_BorderShadow::has_type() const
+bool ST_BorderShadow::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_BorderShadow::set_type(const ST_BorderShadow::Type& _type)
+void ST_BorderShadow::set_value(const ST_BorderShadow::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_BorderShadow::Type& ST_BorderShadow::get_type() const
+const ST_BorderShadow::Type& ST_BorderShadow::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_BorderShadow::toString() const
 {
-    return ST_BorderShadow::TypeStrList[m_type];
+    return ST_BorderShadow::TypeStrList[m_value];
 }
 
 void ST_BorderShadow::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_BorderShadow::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -168,47 +168,47 @@ ST_BorderShadow* ST_BorderShadow::default_instance_ = NULL;
 
 // ST_WrapType
 ST_WrapType::ST_WrapType()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_WrapType::ST_WrapType(const ST_WrapType::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_WrapType::ST_WrapType(const ST_WrapType::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_WrapType::~ST_WrapType()
 {
     clear();
 }
-bool ST_WrapType::has_type() const
+bool ST_WrapType::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_WrapType::set_type(const ST_WrapType::Type& _type)
+void ST_WrapType::set_value(const ST_WrapType::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_WrapType::Type& ST_WrapType::get_type() const
+const ST_WrapType::Type& ST_WrapType::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_WrapType::toString() const
 {
-    return ST_WrapType::TypeStrList[m_type];
+    return ST_WrapType::TypeStrList[m_value];
 }
 
 void ST_WrapType::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_WrapType::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -235,47 +235,47 @@ ST_WrapType* ST_WrapType::default_instance_ = NULL;
 
 // ST_WrapSide
 ST_WrapSide::ST_WrapSide()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_WrapSide::ST_WrapSide(const ST_WrapSide::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_WrapSide::ST_WrapSide(const ST_WrapSide::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_WrapSide::~ST_WrapSide()
 {
     clear();
 }
-bool ST_WrapSide::has_type() const
+bool ST_WrapSide::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_WrapSide::set_type(const ST_WrapSide::Type& _type)
+void ST_WrapSide::set_value(const ST_WrapSide::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_WrapSide::Type& ST_WrapSide::get_type() const
+const ST_WrapSide::Type& ST_WrapSide::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_WrapSide::toString() const
 {
-    return ST_WrapSide::TypeStrList[m_type];
+    return ST_WrapSide::TypeStrList[m_value];
 }
 
 void ST_WrapSide::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_WrapSide::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -301,47 +301,47 @@ ST_WrapSide* ST_WrapSide::default_instance_ = NULL;
 
 // ST_HorizontalAnchor
 ST_HorizontalAnchor::ST_HorizontalAnchor()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_HorizontalAnchor::ST_HorizontalAnchor(const ST_HorizontalAnchor::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_HorizontalAnchor::ST_HorizontalAnchor(const ST_HorizontalAnchor::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_HorizontalAnchor::~ST_HorizontalAnchor()
 {
     clear();
 }
-bool ST_HorizontalAnchor::has_type() const
+bool ST_HorizontalAnchor::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_HorizontalAnchor::set_type(const ST_HorizontalAnchor::Type& _type)
+void ST_HorizontalAnchor::set_value(const ST_HorizontalAnchor::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_HorizontalAnchor::Type& ST_HorizontalAnchor::get_type() const
+const ST_HorizontalAnchor::Type& ST_HorizontalAnchor::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_HorizontalAnchor::toString() const
 {
-    return ST_HorizontalAnchor::TypeStrList[m_type];
+    return ST_HorizontalAnchor::TypeStrList[m_value];
 }
 
 void ST_HorizontalAnchor::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_HorizontalAnchor::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
@@ -367,47 +367,47 @@ ST_HorizontalAnchor* ST_HorizontalAnchor::default_instance_ = NULL;
 
 // ST_VerticalAnchor
 ST_VerticalAnchor::ST_VerticalAnchor()
-    :m_has_type(false)
+    :m_has_value(false)
 {
 }
-ST_VerticalAnchor::ST_VerticalAnchor(const ST_VerticalAnchor::Type& _type)
-    :m_has_type(true),
-     m_type(_type)
+ST_VerticalAnchor::ST_VerticalAnchor(const ST_VerticalAnchor::Type& _value)
+    :m_has_value(true),
+     m_value(_value)
 {
 }
 ST_VerticalAnchor::~ST_VerticalAnchor()
 {
     clear();
 }
-bool ST_VerticalAnchor::has_type() const
+bool ST_VerticalAnchor::has_value() const
 {
-    return m_has_type;
+    return m_has_value;
 }
 
-void ST_VerticalAnchor::set_type(const ST_VerticalAnchor::Type& _type)
+void ST_VerticalAnchor::set_value(const ST_VerticalAnchor::Type& _value)
 {
-    m_has_type = true;
-    m_type = _type;
+    m_has_value = true;
+    m_value = _value;
 }
 
-const ST_VerticalAnchor::Type& ST_VerticalAnchor::get_type() const
+const ST_VerticalAnchor::Type& ST_VerticalAnchor::get_value() const
 {
-    return m_type;
+    return m_value;
 }
 
 std::string ST_VerticalAnchor::toString() const
 {
-    return ST_VerticalAnchor::TypeStrList[m_type];
+    return ST_VerticalAnchor::TypeStrList[m_value];
 }
 
 void ST_VerticalAnchor::clear()
 {
-    m_has_type = false;
+    m_has_value = false;
 }
 
 void ST_VerticalAnchor::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
 {
-    if (m_has_type)
+    if (m_has_value)
     {
         _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
