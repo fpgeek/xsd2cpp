@@ -426,7 +426,6 @@ class glossaryDocument_element;
 #include "vml-main_xsd.h"
 #include "vml-officeDrawing_xsd.h"
 #include "dml-main_xsd.h"
-#include "wml_xsd.h"
 #include "dml-picture_xsd.h"
 #include "dml-diagram_xsd.h"
 #include "dml-chart_xsd.h"

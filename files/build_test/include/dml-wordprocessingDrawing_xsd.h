@@ -50,7 +50,6 @@ class anchor_element;
 #include "dml-chart_xsd.h"
 #include "dml-lockedCanvas_xsd.h"
 #include "dml-chartDrawing_xsd.h"
-#include "dml-wordprocessingDrawing_xsd.h"
 #include "shared-math_xsd.h"
 #include "shared-customXmlSchemaProperties_xsd.h"
 #include "vml-main_xsd.h"

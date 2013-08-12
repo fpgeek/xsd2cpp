@@ -4,8 +4,6 @@
 #include <algorithm>
 #include <functional>
 #include <assert.h>
-#include "dc_xsd.h"
-#include "dcmitype_xsd.h"
 namespace ns_dcterms {
 using namespace std;
 

@@ -4,23 +4,6 @@
 #include <algorithm>
 #include <functional>
 #include <assert.h>
-#include "vml-main_xsd.h"
-#include "shared-relationshipReference_xsd.h"
-#include "shared-commonSimpleTypes_xsd.h"
-#include "vml-officeDrawing_xsd.h"
-#include "wml_xsd.h"
-#include "vml-wordprocessingDrawing_xsd.h"
-#include "vml-spreadsheetDrawing_xsd.h"
-#include "vml-presentationDrawing_xsd.h"
-#include "dml-wordprocessingDrawing_xsd.h"
-#include "shared-math_xsd.h"
-#include "shared-customXmlSchemaProperties_xsd.h"
-#include "dml-main_xsd.h"
-#include "dml-picture_xsd.h"
-#include "dml-diagram_xsd.h"
-#include "dml-chart_xsd.h"
-#include "dml-lockedCanvas_xsd.h"
-#include "dml-chartDrawing_xsd.h"
 namespace ns_o {
 using namespace std;
 

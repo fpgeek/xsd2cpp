@@ -132,7 +132,6 @@ class tablelimits_attr;
 #include "vml-main_xsd.h"
 #include "shared-relationshipReference_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-#include "vml-officeDrawing_xsd.h"
 #include "wml_xsd.h"
 #include "vml-wordprocessingDrawing_xsd.h"
 #include "vml-spreadsheetDrawing_xsd.h"

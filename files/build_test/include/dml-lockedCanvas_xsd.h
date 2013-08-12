@@ -16,7 +16,6 @@ class lockedCanvas_element;
 #include "dml-diagram_xsd.h"
 #include "dml-chart_xsd.h"
 #include "dml-picture_xsd.h"
-#include "dml-lockedCanvas_xsd.h"
 #include "dml-chartDrawing_xsd.h"
 namespace ns_lc {
 using namespace std;

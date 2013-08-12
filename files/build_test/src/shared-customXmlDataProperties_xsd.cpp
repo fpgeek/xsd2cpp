@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <functional>
 #include <assert.h>
-#include "shared-commonSimpleTypes_xsd.h"
 namespace ns_ds {
 using namespace std;
 

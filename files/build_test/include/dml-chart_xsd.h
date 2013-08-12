@@ -221,7 +221,6 @@ class chart_element;
 #include "dml-chartDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
 #include "dml-diagram_xsd.h"
-#include "dml-chart_xsd.h"
 #include "dml-picture_xsd.h"
 #include "dml-lockedCanvas_xsd.h"
 namespace ns_c {

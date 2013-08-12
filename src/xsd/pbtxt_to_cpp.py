@@ -17,8 +17,8 @@ def cppParse(cppSchema, filePath):
 
     deep = 0
 
-    for inFile in cppSchema.include_file:
-        cppBuf += '#include "%s"\n' % inFile
+    # for inFile in cppSchema.include_file:
+    #     cppBuf += '#include "%s"\n' % inFile
 
     cppBuf += 'namespace %s {\n using namespace std;\n' % cppSchema.namespace
     

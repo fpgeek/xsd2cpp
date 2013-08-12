@@ -31,7 +31,6 @@ class CT_Drawing;
 #include "dml-chart_xsd.h"
 #include "dml-picture_xsd.h"
 #include "dml-lockedCanvas_xsd.h"
-#include "dml-chartDrawing_xsd.h"
 namespace ns_cdr {
 using namespace std;
 class Element: public XSD::Element

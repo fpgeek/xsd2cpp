@@ -349,7 +349,6 @@ class tblStyleLst_element;
 #include "dml-chart_xsd.h"
 #include "dml-picture_xsd.h"
 #include "dml-lockedCanvas_xsd.h"
-#include "dml-main_xsd.h"
 #include "dml-chartDrawing_xsd.h"
 namespace ns_a {
 using namespace std;

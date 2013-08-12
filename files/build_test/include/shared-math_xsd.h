@@ -101,7 +101,6 @@ class oMath_element;
 #include "wml_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
 #include "dml-wordprocessingDrawing_xsd.h"
-#include "shared-math_xsd.h"
 #include "shared-relationshipReference_xsd.h"
 #include "shared-customXmlSchemaProperties_xsd.h"
 #include "vml-main_xsd.h"

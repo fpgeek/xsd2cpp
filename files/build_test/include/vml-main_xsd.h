@@ -72,7 +72,6 @@ class roundrect_element;
 #include "vml-spreadsheetDrawing_xsd.h"
 #include "vml-presentationDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-#include "vml-main_xsd.h"
 #include "dml-wordprocessingDrawing_xsd.h"
 #include "shared-math_xsd.h"
 #include "shared-customXmlSchemaProperties_xsd.h"

@@ -22,7 +22,7 @@ def _makeCppFileProp(cppFile, pbSchema, allPbSchemas, searchFileSet):
     for imp in pbSchema.import_:
         includeFileName = _getCppIncludeFileName(imp.schema_location)
         if includeFileName:
-            if includeFileName not in cppFile.include_file:
+            if (includeFileName != _getCppIncludeFileName(cppFile.name)) and (includeFileName not in cppFile.include_file):
                 cppFile.include_file.append(includeFileName)
 
     for imp in pbSchema.import_:

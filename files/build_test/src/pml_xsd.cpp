@@ -4,14 +4,6 @@
 #include <algorithm>
 #include <functional>
 #include <assert.h>
-#include "shared-relationshipReference_xsd.h"
-#include "dml-main_xsd.h"
-#include "shared-commonSimpleTypes_xsd.h"
-#include "dml-diagram_xsd.h"
-#include "dml-chart_xsd.h"
-#include "dml-picture_xsd.h"
-#include "dml-lockedCanvas_xsd.h"
-#include "dml-chartDrawing_xsd.h"
 namespace ns_p {
 using namespace std;
 
