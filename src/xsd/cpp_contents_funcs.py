@@ -1359,9 +1359,26 @@ def _getClearMethodBodyListFromAttrList(pbAttrList):
 
 def _getClearMethodBodyStrFromRepeated(pbElemList, idx):
 
+    clearMethodBody = ''
     anyElems = filter(lambda pbElem:pbElem.type.kind == PB.Element.Type.Any, pbElemList)
     if len(anyElems) == len(pbElemList):
-        return ''
+        for pbElem in pbElemList:
+            clearMethodBody += \
+"""
+{
+    vector<%(type)s*>::iterator iter;
+    for (iter = %(list_name)s.begin(); iter != %(list_name)s.end(); ++iter)
+    {
+        delete (*iter);
+    }
+    %(list_name)s.clear();
+}
+""" % {
+    'type': _getCppVarTypeFromElem(pbElem),
+    'list_name': 'm_%s_list' % _getCppVarNameFromElem(pbElem)
+    }
+        return clearMethodBody
+
 
     vector_type = 'vector<ChildGroup_%d*>' % idx
     vector_name = 'm_childGroupList_%d' % idx

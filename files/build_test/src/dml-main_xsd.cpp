@@ -12099,6 +12099,15 @@ void CT_OfficeArtExtension::clear()
 {
     m_has_uri_attr = false;
     m_uri_attr.clear();
+
+    {
+        vector<XSD::Element*>::iterator iter;
+        for (iter = m__any_list.begin(); iter != m__any_list.end(); ++iter)
+        {
+            delete (*iter);
+        }
+        m__any_list.clear();
+    }
 }
 
 void CT_OfficeArtExtension::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -67702,6 +67711,15 @@ void CT_GraphicalObjectData::clear()
 {
     m_has_uri_attr = false;
     m_uri_attr.clear();
+
+    {
+        vector<XSD::Element*>::iterator iter;
+        for (iter = m__any_list.begin(); iter != m__any_list.end(); ++iter)
+        {
+            delete (*iter);
+        }
+        m__any_list.clear();
+    }
 }
 
 void CT_GraphicalObjectData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
