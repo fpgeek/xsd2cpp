@@ -149,14 +149,11 @@ if (%(var)s)
 
 
 # cpp 변수 타입 가져오기
-def _getCppVarType(pbSTName, refNsPrefix=None):
+def _getCppVarType(pbSTName):
     cppVarName = pbSTName
     if ':' in cppVarName:
         ns, name = cppVarName.split(':')
         cppVarName = 'ns_%s::%s' % (ns, name)
-    else:
-        if refNsPrefix is not None:
-            cppVarName = 'ns_%s::%s' % (refNsPrefix, cppVarName)
 
     return cppVarName
 
@@ -360,17 +357,17 @@ def _getCppNsPrefixFromElem(pbElem):
 
 
 # Element로 부터 cpp var type 가져오기
-def _getCppVarTypeFromElem(pbElem, refNsPrefix=None):
+def _getCppVarTypeFromElem(pbElem):
     if pbElem.type.kind == PB.Element.Type.BuiltIn:
         return 'XSD::%s_' % getBuiltInStr(pbElem.type.built_in)
     elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
-        return _getCppVarType(pbElem.type.simple_type_name, refNsPrefix)
+        return _getCppVarType(pbElem.type.simple_type_name)
     elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
-        return _getCppVarType(pbElem.type.complex_type_name, refNsPrefix)
+        return _getCppVarType(pbElem.type.complex_type_name)
     elif pbElem.type.kind == PB.Element.Type.SimpleType:
-        return _getCppVarType(pbElem.type.simple_type.name, refNsPrefix)
+        return _getCppVarType(pbElem.type.simple_type.name)
     elif pbElem.type.kind == PB.Element.Type.ComplexType:
-        return _getCppVarType(pbElem.type.complex_type.name, refNsPrefix)
+        return _getCppVarType(pbElem.type.complex_type.name)
     elif pbElem.type.kind == PB.Element.Type.Any:
         if pbElem.type.any.ns_prefix:
             return _getCppVarType('%s:Element' % pbElem.type.any.ns_prefix)
@@ -379,11 +376,9 @@ def _getCppVarTypeFromElem(pbElem, refNsPrefix=None):
 
 
 # Element로 부터 cpp var type 가져오기
-def _getCppVarNameFromElem(pbElem, refNsPrefix=None):
+def _getCppVarNameFromElem(pbElem):
 
     varName = getCppVarName(pbElem.name)
-    if refNsPrefix is not None:
-        return '%s_%s' % (refNsPrefix, varName)
     if pbElem.type.kind == PB.Element.Type.Any:
         return '%s_%s' % (pbElem.type.any.ns_prefix, varName)
     elif pbElem.ref_ns_prefix:
@@ -1573,32 +1568,32 @@ else %(body)s
 """
     return toXmlMethodBody
 
-def complexType_one(pbElemList, xsdContainerType, cppClass, refNsPrefix=None):
+def complexType_one(pbElemList, xsdContainerType, cppClass):
     for pbElem in pbElemList:
         if pbElem.type.kind == PB.Element.Type.BuiltIn:
-            _addBuiltInMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass, refNsPrefix)
+            _addBuiltInMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass)
 
         elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
-            _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass, refNsPrefix)
+            _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass)
 
         elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
-            _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass, refNsPrefix)
+            _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass)
 
         elif pbElem.type.kind == PB.Element.Type.SimpleType:
             pass # TODO - 현재는 여기로 오는 것이 없음, 추후 구현 예정
         elif pbElem.type.kind == PB.Element.Type.ComplexType:
             pass # TODO - 현재는 여기로 오는 것이 없음, 추후 구현 예정
         elif pbElem.type.kind == PB.Element.Type.Any:
-            _addAnyMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass, refNsPrefix)
+            _addAnyMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass)
 
 
 
-def complexType_sequence(pbElemList, cppClass, refNsPrefix=None):
-    complexType_one(pbElemList, SEQUENCE, cppClass, refNsPrefix)
+def complexType_sequence(pbElemList, cppClass):
+    complexType_one(pbElemList, SEQUENCE, cppClass)
 
 
-def complexType_choice(pbElemList, cppClass, refNsPrefix=None):
-    complexType_one(pbElemList, CHOICE, cppClass, refNsPrefix)
+def complexType_choice(pbElemList, cppClass):
+    complexType_one(pbElemList, CHOICE, cppClass)
 
 
 def _addMethodFromBuiltIn(pbElem, cppClass, innerClass, choiceMember):
@@ -1701,7 +1696,7 @@ def _addMethodFromAny(pbElem, cppClass):
 """ % (mVar.name, addMethodArg1.name)
 
 
-def complexType_repeated(pbElemList, cppClass, idx, refNsPrefix=None):
+def complexType_repeated(pbElemList, cppClass, idx):
 
     anyElemList = filter(lambda pbElem:pbElem.type.kind == PB.Element.Type.Any, pbElemList)
     if len(pbElemList) == len(anyElemList):
@@ -1732,10 +1727,10 @@ def complexType_repeated(pbElemList, cppClass, idx, refNsPrefix=None):
         elif pbElem.type.kind == PB.Element.Type.Any:
             _addMethodFromAny(pbElem, cppClass)
 
-def _addBuiltInMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass, refNsPrefix=None):
+def _addBuiltInMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass):
 
-    cppVarName = _getCppVarNameFromElem(pbElem, refNsPrefix)
-    cppVarType = _getCppVarTypeFromElem(pbElem, refNsPrefix)
+    cppVarName = _getCppVarNameFromElem(pbElem)
+    cppVarType = _getCppVarTypeFromElem(pbElem)
     # cppVarType = 'XSD::%s_' % getBuiltInStr(pbBuiltIn)
 
     cppHasVar = cppClass.member_var.add()
@@ -1849,9 +1844,9 @@ return %s;
 return %s;
 """ % cppObjVar.name
 
-def _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass, refNsPrefix=None):
-    cppVarName = _getCppVarNameFromElem(pbElem, refNsPrefix)
-    cppVarType = _getCppVarTypeFromElem(pbElem, refNsPrefix)
+def _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass):
+    cppVarName = _getCppVarNameFromElem(pbElem)
+    cppVarType = _getCppVarTypeFromElem(pbElem)
 
     cppHasVar = cppClass.member_var.add()
     cppHasVar.type = 'bool'
@@ -1920,9 +1915,9 @@ return %(type)s::default_instance();
 """ % {'var':cppObjVar.name, 'type':cppVarType}
 
 
-def _addAnyMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass, refNsPrefix=None):
-    cppVarName = _getCppVarNameFromElem(pbElem, refNsPrefix)
-    cppVarType = _getCppVarTypeFromElem(pbElem, refNsPrefix)
+def _addAnyMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass):
+    cppVarName = _getCppVarNameFromElem(pbElem)
+    cppVarType = _getCppVarTypeFromElem(pbElem)
 
     cppHasVar = cppClass.member_var.add()
     cppHasVar.type = 'bool'

@@ -193,7 +193,7 @@ def _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas, cppFil
                         if schema.file_name != pbSchema.file_name and
                         schema.xml_ns_prefix == pbSchema.xml_ns_prefix and
                         ctType.name == getNameExceptCppNs(cppVarType)]
-    else: # 다른 파일에 있는 ComplexType에서 가져오기
+    else:
         foundCtTypes = [ctType for schema in allPbSchemas
                         for ctType in schema.complex_type
                         if schema.file_name == pbSchema.file_name and
