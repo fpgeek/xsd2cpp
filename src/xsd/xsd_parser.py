@@ -156,8 +156,7 @@ def groupByElemCont(pbComplexType):
 
         elif prevElemCont is not None and \
                 (prevElemCont.kind == elemCont.kind
-                 and elemCont.kind != PB.ElementContainer.RepeatedSequence
-                 and elemCont.kind != PB.ElementContainer.RepeatedChoice):
+                 and elemCont.kind != PB.ElementContainer.RepeatedSequence):
             copyElemCont(elemCont, curElemCont)
         else:
             curElemCont = PB.ElementContainer()
