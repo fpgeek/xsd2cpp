@@ -233,11 +233,13 @@ class viewPr_element;
 #include "shared-relationshipReference_xsd.h"
 #include "dml-main_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
+#include "pml-2010_xsd.h"
 #include "dml-diagram_xsd.h"
 #include "dml-chart_xsd.h"
 #include "dml-picture_xsd.h"
 #include "dml-lockedCanvas_xsd.h"
 #include "dml-chartDrawing_xsd.h"
+#include "dml-mainExt_xsd.h"
 namespace ns_p {
 using namespace std;
 class Element: public XSD::Element
@@ -2128,6 +2130,63 @@ public:
     bool has_zoom() const;
     CT_InOutTransition* mutable_zoom();
     const CT_InOutTransition& get_zoom() const;
+    bool has_p14_conveyor() const;
+    ns_p14::CT_LeftRightDirectionTransition* mutable_p14_conveyor();
+    const ns_p14::CT_LeftRightDirectionTransition& get_p14_conveyor() const;
+    bool has_p14_doors() const;
+    ns_p::CT_OrientationTransition* mutable_p14_doors();
+    const ns_p::CT_OrientationTransition& get_p14_doors() const;
+    bool has_p14_ferris() const;
+    ns_p14::CT_LeftRightDirectionTransition* mutable_p14_ferris();
+    const ns_p14::CT_LeftRightDirectionTransition& get_p14_ferris() const;
+    bool has_p14_flash() const;
+    ns_p::CT_Empty* mutable_p14_flash();
+    const ns_p::CT_Empty& get_p14_flash() const;
+    bool has_p14_flip() const;
+    ns_p14::CT_LeftRightDirectionTransition* mutable_p14_flip();
+    const ns_p14::CT_LeftRightDirectionTransition& get_p14_flip() const;
+    bool has_p14_flythrough() const;
+    ns_p14::CT_FlyThroughTransition* mutable_p14_flythrough();
+    const ns_p14::CT_FlyThroughTransition& get_p14_flythrough() const;
+    bool has_p14_gallery() const;
+    ns_p14::CT_LeftRightDirectionTransition* mutable_p14_gallery();
+    const ns_p14::CT_LeftRightDirectionTransition& get_p14_gallery() const;
+    bool has_p14_glitter() const;
+    ns_p14::CT_GlitterTransition* mutable_p14_glitter();
+    const ns_p14::CT_GlitterTransition& get_p14_glitter() const;
+    bool has_p14_honeycomb() const;
+    ns_p::CT_Empty* mutable_p14_honeycomb();
+    const ns_p::CT_Empty& get_p14_honeycomb() const;
+    bool has_p14_pan() const;
+    ns_p::CT_SideDirectionTransition* mutable_p14_pan();
+    const ns_p::CT_SideDirectionTransition& get_p14_pan() const;
+    bool has_p14_prism() const;
+    ns_p14::CT_PrismTransition* mutable_p14_prism();
+    const ns_p14::CT_PrismTransition& get_p14_prism() const;
+    bool has_p14_reveal() const;
+    ns_p14::CT_RevealTransition* mutable_p14_reveal();
+    const ns_p14::CT_RevealTransition& get_p14_reveal() const;
+    bool has_p14_ripple() const;
+    ns_p14::CT_RippleTransition* mutable_p14_ripple();
+    const ns_p14::CT_RippleTransition& get_p14_ripple() const;
+    bool has_p14_shred() const;
+    ns_p14::CT_ShredTransition* mutable_p14_shred();
+    const ns_p14::CT_ShredTransition& get_p14_shred() const;
+    bool has_p14_switch() const;
+    ns_p14::CT_LeftRightDirectionTransition* mutable_p14_switch();
+    const ns_p14::CT_LeftRightDirectionTransition& get_p14_switch() const;
+    bool has_p14_vortex() const;
+    ns_p::CT_SideDirectionTransition* mutable_p14_vortex();
+    const ns_p::CT_SideDirectionTransition& get_p14_vortex() const;
+    bool has_p14_warp() const;
+    ns_p::CT_InOutTransition* mutable_p14_warp();
+    const ns_p::CT_InOutTransition& get_p14_warp() const;
+    bool has_p14_wheelReverse() const;
+    ns_p::CT_WheelTransition* mutable_p14_wheelReverse();
+    const ns_p::CT_WheelTransition& get_p14_wheelReverse() const;
+    bool has_p14_window() const;
+    ns_p::CT_OrientationTransition* mutable_p14_window();
+    const ns_p::CT_OrientationTransition& get_p14_window() const;
     bool has_sndAc() const;
     CT_TransitionSoundAction* mutable_sndAc();
     const CT_TransitionSoundAction& get_sndAc() const;
@@ -2190,6 +2249,44 @@ private:
     CT_SideDirectionTransition* m_wipe;
     bool m_has_zoom;
     CT_InOutTransition* m_zoom;
+    bool m_has_p14_conveyor;
+    ns_p14::CT_LeftRightDirectionTransition* m_p14_conveyor;
+    bool m_has_p14_doors;
+    ns_p::CT_OrientationTransition* m_p14_doors;
+    bool m_has_p14_ferris;
+    ns_p14::CT_LeftRightDirectionTransition* m_p14_ferris;
+    bool m_has_p14_flash;
+    ns_p::CT_Empty* m_p14_flash;
+    bool m_has_p14_flip;
+    ns_p14::CT_LeftRightDirectionTransition* m_p14_flip;
+    bool m_has_p14_flythrough;
+    ns_p14::CT_FlyThroughTransition* m_p14_flythrough;
+    bool m_has_p14_gallery;
+    ns_p14::CT_LeftRightDirectionTransition* m_p14_gallery;
+    bool m_has_p14_glitter;
+    ns_p14::CT_GlitterTransition* m_p14_glitter;
+    bool m_has_p14_honeycomb;
+    ns_p::CT_Empty* m_p14_honeycomb;
+    bool m_has_p14_pan;
+    ns_p::CT_SideDirectionTransition* m_p14_pan;
+    bool m_has_p14_prism;
+    ns_p14::CT_PrismTransition* m_p14_prism;
+    bool m_has_p14_reveal;
+    ns_p14::CT_RevealTransition* m_p14_reveal;
+    bool m_has_p14_ripple;
+    ns_p14::CT_RippleTransition* m_p14_ripple;
+    bool m_has_p14_shred;
+    ns_p14::CT_ShredTransition* m_p14_shred;
+    bool m_has_p14_switch;
+    ns_p14::CT_LeftRightDirectionTransition* m_p14_switch;
+    bool m_has_p14_vortex;
+    ns_p::CT_SideDirectionTransition* m_p14_vortex;
+    bool m_has_p14_warp;
+    ns_p::CT_InOutTransition* m_p14_warp;
+    bool m_has_p14_wheelReverse;
+    ns_p::CT_WheelTransition* m_p14_wheelReverse;
+    bool m_has_p14_window;
+    ns_p::CT_OrientationTransition* m_p14_window;
     bool m_has_sndAc;
     CT_TransitionSoundAction* m_sndAc;
     bool m_has_extLst;

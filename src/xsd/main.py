@@ -23,7 +23,9 @@ userSetNsPrefixMap = {
 'http://schemas.openxmlformats.org/markup-compatibility/2006':'mc',
 'http://schemas.openxmlformats.org/package/2006/metadata/core-properties':'cp',
 'http://schemas.openxmlformats.org/package/2006/relationships':'rs',
-'http://schemas.openxmlformats.org/package/2006/content-types':'ct'
+'http://schemas.openxmlformats.org/package/2006/content-types':'ct',
+'http://schemas.microsoft.com/office/powerpoint/2012/main':'p15',
+'http://www.haansoft.com/HWPML':'hml'
 }
 
 
@@ -80,6 +82,9 @@ def run(xsdFileDirPath):
         if fileNsName is None:
             fileNsName = getFileNsNameFormDefaultNs(pbSchema, allNsList)
 
+        if fileNsName is None:
+            print 'xsd2cpp execution failed - namespace prefix not found'
+            return
         pbSchema.xml_ns_prefix = fileNsName
 
     for pbSchema in pbSchemas:

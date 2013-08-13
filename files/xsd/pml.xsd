@@ -5,6 +5,7 @@
   xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:s="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
+  xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main"
   elementFormDefault="qualified"
   targetNamespace="http://schemas.openxmlformats.org/presentationml/2006/main">
   <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
@@ -13,6 +14,8 @@
     schemaLocation="dml-main.xsd"/>
   <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
     schemaLocation="shared-commonSimpleTypes.xsd"/>
+  <xsd:import namespace="http://schemas.microsoft.com/office/powerpoint/2010/main"
+    schemaLocation="pml-2010.xsd"/>
   <xsd:simpleType name="ST_TransitionSideDirectionType">
     <xsd:restriction base="xsd:token">
       <xsd:enumeration value="l"/>
@@ -106,6 +109,25 @@
         <xsd:element name="wheel" type="CT_WheelTransition"/>
         <xsd:element name="wipe" type="CT_SideDirectionTransition"/>
         <xsd:element name="zoom" type="CT_InOutTransition"/>
+        <xsd:element ref="p14:conveyor" />
+        <xsd:element ref="p14:doors" />
+        <xsd:element ref="p14:ferris" />
+        <xsd:element ref="p14:flash" />
+        <xsd:element ref="p14:flip" />
+        <xsd:element ref="p14:flythrough" />
+        <xsd:element ref="p14:gallery" />
+        <xsd:element ref="p14:glitter" />
+        <xsd:element ref="p14:honeycomb" />
+        <xsd:element ref="p14:pan" />
+        <xsd:element ref="p14:prism" />
+        <xsd:element ref="p14:reveal" />
+        <xsd:element ref="p14:ripple" />
+        <xsd:element ref="p14:shred" />
+        <xsd:element ref="p14:switch" />
+        <xsd:element ref="p14:vortex" />
+        <xsd:element ref="p14:warp" />
+        <xsd:element ref="p14:wheelReverse" />
+        <xsd:element ref="p14:window" />
       </xsd:choice>
       <xsd:element name="sndAc" minOccurs="0" maxOccurs="1" type="CT_TransitionSoundAction"/>
       <xsd:element name="extLst" type="CT_ExtensionListModify" minOccurs="0" maxOccurs="1"/>

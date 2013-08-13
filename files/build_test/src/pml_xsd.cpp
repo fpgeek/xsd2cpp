@@ -4988,6 +4988,44 @@ CT_SlideTransition::CT_SlideTransition()
      m_wipe(NULL),
      m_has_zoom(false),
      m_zoom(NULL),
+     m_has_p14_conveyor(false),
+     m_p14_conveyor(NULL),
+     m_has_p14_doors(false),
+     m_p14_doors(NULL),
+     m_has_p14_ferris(false),
+     m_p14_ferris(NULL),
+     m_has_p14_flash(false),
+     m_p14_flash(NULL),
+     m_has_p14_flip(false),
+     m_p14_flip(NULL),
+     m_has_p14_flythrough(false),
+     m_p14_flythrough(NULL),
+     m_has_p14_gallery(false),
+     m_p14_gallery(NULL),
+     m_has_p14_glitter(false),
+     m_p14_glitter(NULL),
+     m_has_p14_honeycomb(false),
+     m_p14_honeycomb(NULL),
+     m_has_p14_pan(false),
+     m_p14_pan(NULL),
+     m_has_p14_prism(false),
+     m_p14_prism(NULL),
+     m_has_p14_reveal(false),
+     m_p14_reveal(NULL),
+     m_has_p14_ripple(false),
+     m_p14_ripple(NULL),
+     m_has_p14_shred(false),
+     m_p14_shred(NULL),
+     m_has_p14_switch(false),
+     m_p14_switch(NULL),
+     m_has_p14_vortex(false),
+     m_p14_vortex(NULL),
+     m_has_p14_warp(false),
+     m_p14_warp(NULL),
+     m_has_p14_wheelReverse(false),
+     m_p14_wheelReverse(NULL),
+     m_has_p14_window(false),
+     m_p14_window(NULL),
      m_has_sndAc(false),
      m_sndAc(NULL),
      m_has_extLst(false),
@@ -5189,6 +5227,177 @@ CT_OrientationTransition* CT_SlideTransition::mutable_blinds()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -5397,6 +5606,177 @@ CT_OrientationTransition* CT_SlideTransition::mutable_checker()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_checker = true;
     if (!m_checker)
     {
@@ -5599,6 +5979,177 @@ CT_Empty* CT_SlideTransition::mutable_circle()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -5807,6 +6358,177 @@ CT_Empty* CT_SlideTransition::mutable_dissolve()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_dissolve = true;
     if (!m_dissolve)
     {
@@ -6009,6 +6731,177 @@ CT_OrientationTransition* CT_SlideTransition::mutable_comb()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -6217,6 +7110,177 @@ CT_EightDirectionTransition* CT_SlideTransition::mutable_cover()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_cover = true;
     if (!m_cover)
     {
@@ -6419,6 +7483,177 @@ CT_OptionalBlackTransition* CT_SlideTransition::mutable_cut()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -6627,6 +7862,177 @@ CT_Empty* CT_SlideTransition::mutable_diamond()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_diamond = true;
     if (!m_diamond)
     {
@@ -6829,6 +8235,177 @@ CT_OptionalBlackTransition* CT_SlideTransition::mutable_fade()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -7037,6 +8614,177 @@ CT_Empty* CT_SlideTransition::mutable_newsflash()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_newsflash = true;
     if (!m_newsflash)
     {
@@ -7239,6 +8987,177 @@ CT_Empty* CT_SlideTransition::mutable_plus()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -7447,6 +9366,177 @@ CT_EightDirectionTransition* CT_SlideTransition::mutable_pull()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_pull = true;
     if (!m_pull)
     {
@@ -7649,6 +9739,177 @@ CT_SideDirectionTransition* CT_SlideTransition::mutable_push()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -7857,6 +10118,177 @@ CT_Empty* CT_SlideTransition::mutable_random()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_random = true;
     if (!m_random)
     {
@@ -8059,6 +10491,177 @@ CT_OrientationTransition* CT_SlideTransition::mutable_randomBar()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -8267,6 +10870,177 @@ CT_SplitTransition* CT_SlideTransition::mutable_split()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_split = true;
     if (!m_split)
     {
@@ -8469,6 +11243,177 @@ CT_CornerDirectionTransition* CT_SlideTransition::mutable_strips()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -8677,6 +11622,177 @@ CT_Empty* CT_SlideTransition::mutable_wedge()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_wedge = true;
     if (!m_wedge)
     {
@@ -8879,6 +11995,177 @@ CT_WheelTransition* CT_SlideTransition::mutable_wheel()
     {
         delete m_zoom;
         m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
     }
     ;
 
@@ -9087,6 +12374,177 @@ CT_SideDirectionTransition* CT_SlideTransition::mutable_wipe()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_wipe = true;
     if (!m_wipe)
     {
@@ -9292,6 +12750,177 @@ CT_InOutTransition* CT_SlideTransition::mutable_zoom()
     }
     ;
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
     m_has_zoom = true;
     if (!m_zoom)
     {
@@ -9307,6 +12936,7150 @@ const CT_InOutTransition& CT_SlideTransition::get_zoom() const
         return *m_zoom;
     }
     return CT_InOutTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_conveyor() const
+{
+    return m_has_p14_conveyor;
+}
+
+ns_p14::CT_LeftRightDirectionTransition* CT_SlideTransition::mutable_p14_conveyor()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = true;
+    if (!m_p14_conveyor)
+    {
+        m_p14_conveyor = new ns_p14::CT_LeftRightDirectionTransition();
+    }
+    return m_p14_conveyor;
+}
+
+const ns_p14::CT_LeftRightDirectionTransition& CT_SlideTransition::get_p14_conveyor() const
+{
+    if (m_p14_conveyor)
+    {
+        return *m_p14_conveyor;
+    }
+    return ns_p14::CT_LeftRightDirectionTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_doors() const
+{
+    return m_has_p14_doors;
+}
+
+ns_p::CT_OrientationTransition* CT_SlideTransition::mutable_p14_doors()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_doors = true;
+    if (!m_p14_doors)
+    {
+        m_p14_doors = new ns_p::CT_OrientationTransition();
+    }
+    return m_p14_doors;
+}
+
+const ns_p::CT_OrientationTransition& CT_SlideTransition::get_p14_doors() const
+{
+    if (m_p14_doors)
+    {
+        return *m_p14_doors;
+    }
+    return ns_p::CT_OrientationTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_ferris() const
+{
+    return m_has_p14_ferris;
+}
+
+ns_p14::CT_LeftRightDirectionTransition* CT_SlideTransition::mutable_p14_ferris()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = true;
+    if (!m_p14_ferris)
+    {
+        m_p14_ferris = new ns_p14::CT_LeftRightDirectionTransition();
+    }
+    return m_p14_ferris;
+}
+
+const ns_p14::CT_LeftRightDirectionTransition& CT_SlideTransition::get_p14_ferris() const
+{
+    if (m_p14_ferris)
+    {
+        return *m_p14_ferris;
+    }
+    return ns_p14::CT_LeftRightDirectionTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_flash() const
+{
+    return m_has_p14_flash;
+}
+
+ns_p::CT_Empty* CT_SlideTransition::mutable_p14_flash()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_flash = true;
+    if (!m_p14_flash)
+    {
+        m_p14_flash = new ns_p::CT_Empty();
+    }
+    return m_p14_flash;
+}
+
+const ns_p::CT_Empty& CT_SlideTransition::get_p14_flash() const
+{
+    if (m_p14_flash)
+    {
+        return *m_p14_flash;
+    }
+    return ns_p::CT_Empty::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_flip() const
+{
+    return m_has_p14_flip;
+}
+
+ns_p14::CT_LeftRightDirectionTransition* CT_SlideTransition::mutable_p14_flip()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_flip = true;
+    if (!m_p14_flip)
+    {
+        m_p14_flip = new ns_p14::CT_LeftRightDirectionTransition();
+    }
+    return m_p14_flip;
+}
+
+const ns_p14::CT_LeftRightDirectionTransition& CT_SlideTransition::get_p14_flip() const
+{
+    if (m_p14_flip)
+    {
+        return *m_p14_flip;
+    }
+    return ns_p14::CT_LeftRightDirectionTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_flythrough() const
+{
+    return m_has_p14_flythrough;
+}
+
+ns_p14::CT_FlyThroughTransition* CT_SlideTransition::mutable_p14_flythrough()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = true;
+    if (!m_p14_flythrough)
+    {
+        m_p14_flythrough = new ns_p14::CT_FlyThroughTransition();
+    }
+    return m_p14_flythrough;
+}
+
+const ns_p14::CT_FlyThroughTransition& CT_SlideTransition::get_p14_flythrough() const
+{
+    if (m_p14_flythrough)
+    {
+        return *m_p14_flythrough;
+    }
+    return ns_p14::CT_FlyThroughTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_gallery() const
+{
+    return m_has_p14_gallery;
+}
+
+ns_p14::CT_LeftRightDirectionTransition* CT_SlideTransition::mutable_p14_gallery()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = true;
+    if (!m_p14_gallery)
+    {
+        m_p14_gallery = new ns_p14::CT_LeftRightDirectionTransition();
+    }
+    return m_p14_gallery;
+}
+
+const ns_p14::CT_LeftRightDirectionTransition& CT_SlideTransition::get_p14_gallery() const
+{
+    if (m_p14_gallery)
+    {
+        return *m_p14_gallery;
+    }
+    return ns_p14::CT_LeftRightDirectionTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_glitter() const
+{
+    return m_has_p14_glitter;
+}
+
+ns_p14::CT_GlitterTransition* CT_SlideTransition::mutable_p14_glitter()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = true;
+    if (!m_p14_glitter)
+    {
+        m_p14_glitter = new ns_p14::CT_GlitterTransition();
+    }
+    return m_p14_glitter;
+}
+
+const ns_p14::CT_GlitterTransition& CT_SlideTransition::get_p14_glitter() const
+{
+    if (m_p14_glitter)
+    {
+        return *m_p14_glitter;
+    }
+    return ns_p14::CT_GlitterTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_honeycomb() const
+{
+    return m_has_p14_honeycomb;
+}
+
+ns_p::CT_Empty* CT_SlideTransition::mutable_p14_honeycomb()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = true;
+    if (!m_p14_honeycomb)
+    {
+        m_p14_honeycomb = new ns_p::CT_Empty();
+    }
+    return m_p14_honeycomb;
+}
+
+const ns_p::CT_Empty& CT_SlideTransition::get_p14_honeycomb() const
+{
+    if (m_p14_honeycomb)
+    {
+        return *m_p14_honeycomb;
+    }
+    return ns_p::CT_Empty::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_pan() const
+{
+    return m_has_p14_pan;
+}
+
+ns_p::CT_SideDirectionTransition* CT_SlideTransition::mutable_p14_pan()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_pan = true;
+    if (!m_p14_pan)
+    {
+        m_p14_pan = new ns_p::CT_SideDirectionTransition();
+    }
+    return m_p14_pan;
+}
+
+const ns_p::CT_SideDirectionTransition& CT_SlideTransition::get_p14_pan() const
+{
+    if (m_p14_pan)
+    {
+        return *m_p14_pan;
+    }
+    return ns_p::CT_SideDirectionTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_prism() const
+{
+    return m_has_p14_prism;
+}
+
+ns_p14::CT_PrismTransition* CT_SlideTransition::mutable_p14_prism()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_prism = true;
+    if (!m_p14_prism)
+    {
+        m_p14_prism = new ns_p14::CT_PrismTransition();
+    }
+    return m_p14_prism;
+}
+
+const ns_p14::CT_PrismTransition& CT_SlideTransition::get_p14_prism() const
+{
+    if (m_p14_prism)
+    {
+        return *m_p14_prism;
+    }
+    return ns_p14::CT_PrismTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_reveal() const
+{
+    return m_has_p14_reveal;
+}
+
+ns_p14::CT_RevealTransition* CT_SlideTransition::mutable_p14_reveal()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = true;
+    if (!m_p14_reveal)
+    {
+        m_p14_reveal = new ns_p14::CT_RevealTransition();
+    }
+    return m_p14_reveal;
+}
+
+const ns_p14::CT_RevealTransition& CT_SlideTransition::get_p14_reveal() const
+{
+    if (m_p14_reveal)
+    {
+        return *m_p14_reveal;
+    }
+    return ns_p14::CT_RevealTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_ripple() const
+{
+    return m_has_p14_ripple;
+}
+
+ns_p14::CT_RippleTransition* CT_SlideTransition::mutable_p14_ripple()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = true;
+    if (!m_p14_ripple)
+    {
+        m_p14_ripple = new ns_p14::CT_RippleTransition();
+    }
+    return m_p14_ripple;
+}
+
+const ns_p14::CT_RippleTransition& CT_SlideTransition::get_p14_ripple() const
+{
+    if (m_p14_ripple)
+    {
+        return *m_p14_ripple;
+    }
+    return ns_p14::CT_RippleTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_shred() const
+{
+    return m_has_p14_shred;
+}
+
+ns_p14::CT_ShredTransition* CT_SlideTransition::mutable_p14_shred()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_shred = true;
+    if (!m_p14_shred)
+    {
+        m_p14_shred = new ns_p14::CT_ShredTransition();
+    }
+    return m_p14_shred;
+}
+
+const ns_p14::CT_ShredTransition& CT_SlideTransition::get_p14_shred() const
+{
+    if (m_p14_shred)
+    {
+        return *m_p14_shred;
+    }
+    return ns_p14::CT_ShredTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_switch() const
+{
+    return m_has_p14_switch;
+}
+
+ns_p14::CT_LeftRightDirectionTransition* CT_SlideTransition::mutable_p14_switch()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_switch = true;
+    if (!m_p14_switch)
+    {
+        m_p14_switch = new ns_p14::CT_LeftRightDirectionTransition();
+    }
+    return m_p14_switch;
+}
+
+const ns_p14::CT_LeftRightDirectionTransition& CT_SlideTransition::get_p14_switch() const
+{
+    if (m_p14_switch)
+    {
+        return *m_p14_switch;
+    }
+    return ns_p14::CT_LeftRightDirectionTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_vortex() const
+{
+    return m_has_p14_vortex;
+}
+
+ns_p::CT_SideDirectionTransition* CT_SlideTransition::mutable_p14_vortex()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = true;
+    if (!m_p14_vortex)
+    {
+        m_p14_vortex = new ns_p::CT_SideDirectionTransition();
+    }
+    return m_p14_vortex;
+}
+
+const ns_p::CT_SideDirectionTransition& CT_SlideTransition::get_p14_vortex() const
+{
+    if (m_p14_vortex)
+    {
+        return *m_p14_vortex;
+    }
+    return ns_p::CT_SideDirectionTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_warp() const
+{
+    return m_has_p14_warp;
+}
+
+ns_p::CT_InOutTransition* CT_SlideTransition::mutable_p14_warp()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_warp = true;
+    if (!m_p14_warp)
+    {
+        m_p14_warp = new ns_p::CT_InOutTransition();
+    }
+    return m_p14_warp;
+}
+
+const ns_p::CT_InOutTransition& CT_SlideTransition::get_p14_warp() const
+{
+    if (m_p14_warp)
+    {
+        return *m_p14_warp;
+    }
+    return ns_p::CT_InOutTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_wheelReverse() const
+{
+    return m_has_p14_wheelReverse;
+}
+
+ns_p::CT_WheelTransition* CT_SlideTransition::mutable_p14_wheelReverse()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = true;
+    if (!m_p14_wheelReverse)
+    {
+        m_p14_wheelReverse = new ns_p::CT_WheelTransition();
+    }
+    return m_p14_wheelReverse;
+}
+
+const ns_p::CT_WheelTransition& CT_SlideTransition::get_p14_wheelReverse() const
+{
+    if (m_p14_wheelReverse)
+    {
+        return *m_p14_wheelReverse;
+    }
+    return ns_p::CT_WheelTransition::default_instance();
+}
+
+bool CT_SlideTransition::has_p14_window() const
+{
+    return m_has_p14_window;
+}
+
+ns_p::CT_OrientationTransition* CT_SlideTransition::mutable_p14_window()
+{
+
+    m_has_blinds = false;
+
+    if (m_blinds)
+    {
+        delete m_blinds;
+        m_blinds = NULL;
+    }
+    ;
+
+    m_has_checker = false;
+
+    if (m_checker)
+    {
+        delete m_checker;
+        m_checker = NULL;
+    }
+    ;
+
+    m_has_circle = false;
+
+    if (m_circle)
+    {
+        delete m_circle;
+        m_circle = NULL;
+    }
+    ;
+
+    m_has_dissolve = false;
+
+    if (m_dissolve)
+    {
+        delete m_dissolve;
+        m_dissolve = NULL;
+    }
+    ;
+
+    m_has_comb = false;
+
+    if (m_comb)
+    {
+        delete m_comb;
+        m_comb = NULL;
+    }
+    ;
+
+    m_has_cover = false;
+
+    if (m_cover)
+    {
+        delete m_cover;
+        m_cover = NULL;
+    }
+    ;
+
+    m_has_cut = false;
+
+    if (m_cut)
+    {
+        delete m_cut;
+        m_cut = NULL;
+    }
+    ;
+
+    m_has_diamond = false;
+
+    if (m_diamond)
+    {
+        delete m_diamond;
+        m_diamond = NULL;
+    }
+    ;
+
+    m_has_fade = false;
+
+    if (m_fade)
+    {
+        delete m_fade;
+        m_fade = NULL;
+    }
+    ;
+
+    m_has_newsflash = false;
+
+    if (m_newsflash)
+    {
+        delete m_newsflash;
+        m_newsflash = NULL;
+    }
+    ;
+
+    m_has_plus = false;
+
+    if (m_plus)
+    {
+        delete m_plus;
+        m_plus = NULL;
+    }
+    ;
+
+    m_has_pull = false;
+
+    if (m_pull)
+    {
+        delete m_pull;
+        m_pull = NULL;
+    }
+    ;
+
+    m_has_push = false;
+
+    if (m_push)
+    {
+        delete m_push;
+        m_push = NULL;
+    }
+    ;
+
+    m_has_random = false;
+
+    if (m_random)
+    {
+        delete m_random;
+        m_random = NULL;
+    }
+    ;
+
+    m_has_randomBar = false;
+
+    if (m_randomBar)
+    {
+        delete m_randomBar;
+        m_randomBar = NULL;
+    }
+    ;
+
+    m_has_split = false;
+
+    if (m_split)
+    {
+        delete m_split;
+        m_split = NULL;
+    }
+    ;
+
+    m_has_strips = false;
+
+    if (m_strips)
+    {
+        delete m_strips;
+        m_strips = NULL;
+    }
+    ;
+
+    m_has_wedge = false;
+
+    if (m_wedge)
+    {
+        delete m_wedge;
+        m_wedge = NULL;
+    }
+    ;
+
+    m_has_wheel = false;
+
+    if (m_wheel)
+    {
+        delete m_wheel;
+        m_wheel = NULL;
+    }
+    ;
+
+    m_has_wipe = false;
+
+    if (m_wipe)
+    {
+        delete m_wipe;
+        m_wipe = NULL;
+    }
+    ;
+
+    m_has_zoom = false;
+
+    if (m_zoom)
+    {
+        delete m_zoom;
+        m_zoom = NULL;
+    }
+    ;
+
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+    ;
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+    ;
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+    ;
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+    ;
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+    ;
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+    ;
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+    ;
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+    ;
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+    ;
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+    ;
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+    ;
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+    ;
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+    ;
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+    ;
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+    ;
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+    ;
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+    ;
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+    ;
+
+    m_has_p14_window = true;
+    if (!m_p14_window)
+    {
+        m_p14_window = new ns_p::CT_OrientationTransition();
+    }
+    return m_p14_window;
+}
+
+const ns_p::CT_OrientationTransition& CT_SlideTransition::get_p14_window() const
+{
+    if (m_p14_window)
+    {
+        return *m_p14_window;
+    }
+    return ns_p::CT_OrientationTransition::default_instance();
 }
 
 bool CT_SlideTransition::has_sndAc() const
@@ -9563,6 +20336,177 @@ void CT_SlideTransition::clear()
     }
 
 
+    m_has_p14_conveyor = false;
+
+    if (m_p14_conveyor)
+    {
+        delete m_p14_conveyor;
+        m_p14_conveyor = NULL;
+    }
+
+
+    m_has_p14_doors = false;
+
+    if (m_p14_doors)
+    {
+        delete m_p14_doors;
+        m_p14_doors = NULL;
+    }
+
+
+    m_has_p14_ferris = false;
+
+    if (m_p14_ferris)
+    {
+        delete m_p14_ferris;
+        m_p14_ferris = NULL;
+    }
+
+
+    m_has_p14_flash = false;
+
+    if (m_p14_flash)
+    {
+        delete m_p14_flash;
+        m_p14_flash = NULL;
+    }
+
+
+    m_has_p14_flip = false;
+
+    if (m_p14_flip)
+    {
+        delete m_p14_flip;
+        m_p14_flip = NULL;
+    }
+
+
+    m_has_p14_flythrough = false;
+
+    if (m_p14_flythrough)
+    {
+        delete m_p14_flythrough;
+        m_p14_flythrough = NULL;
+    }
+
+
+    m_has_p14_gallery = false;
+
+    if (m_p14_gallery)
+    {
+        delete m_p14_gallery;
+        m_p14_gallery = NULL;
+    }
+
+
+    m_has_p14_glitter = false;
+
+    if (m_p14_glitter)
+    {
+        delete m_p14_glitter;
+        m_p14_glitter = NULL;
+    }
+
+
+    m_has_p14_honeycomb = false;
+
+    if (m_p14_honeycomb)
+    {
+        delete m_p14_honeycomb;
+        m_p14_honeycomb = NULL;
+    }
+
+
+    m_has_p14_pan = false;
+
+    if (m_p14_pan)
+    {
+        delete m_p14_pan;
+        m_p14_pan = NULL;
+    }
+
+
+    m_has_p14_prism = false;
+
+    if (m_p14_prism)
+    {
+        delete m_p14_prism;
+        m_p14_prism = NULL;
+    }
+
+
+    m_has_p14_reveal = false;
+
+    if (m_p14_reveal)
+    {
+        delete m_p14_reveal;
+        m_p14_reveal = NULL;
+    }
+
+
+    m_has_p14_ripple = false;
+
+    if (m_p14_ripple)
+    {
+        delete m_p14_ripple;
+        m_p14_ripple = NULL;
+    }
+
+
+    m_has_p14_shred = false;
+
+    if (m_p14_shred)
+    {
+        delete m_p14_shred;
+        m_p14_shred = NULL;
+    }
+
+
+    m_has_p14_switch = false;
+
+    if (m_p14_switch)
+    {
+        delete m_p14_switch;
+        m_p14_switch = NULL;
+    }
+
+
+    m_has_p14_vortex = false;
+
+    if (m_p14_vortex)
+    {
+        delete m_p14_vortex;
+        m_p14_vortex = NULL;
+    }
+
+
+    m_has_p14_warp = false;
+
+    if (m_p14_warp)
+    {
+        delete m_p14_warp;
+        m_p14_warp = NULL;
+    }
+
+
+    m_has_p14_wheelReverse = false;
+
+    if (m_p14_wheelReverse)
+    {
+        delete m_p14_wheelReverse;
+        m_p14_wheelReverse = NULL;
+    }
+
+
+    m_has_p14_window = false;
+
+    if (m_p14_window)
+    {
+        delete m_p14_window;
+        m_p14_window = NULL;
+    }
+
+
     m_has_sndAc = false;
 
     if (m_sndAc)
@@ -9614,8 +20558,8 @@ void CT_SlideTransition::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
-        bool elemHasValueList[21] = {m_has_blinds, m_has_checker, m_has_circle, m_has_dissolve, m_has_comb, m_has_cover, m_has_cut, m_has_diamond, m_has_fade, m_has_newsflash, m_has_plus, m_has_pull, m_has_push, m_has_random, m_has_randomBar, m_has_split, m_has_strips, m_has_wedge, m_has_wheel, m_has_wipe, m_has_zoom};
-        int cnt = count(elemHasValueList, elemHasValueList + 21, true);
+        bool elemHasValueList[40] = {m_has_blinds, m_has_checker, m_has_circle, m_has_dissolve, m_has_comb, m_has_cover, m_has_cut, m_has_diamond, m_has_fade, m_has_newsflash, m_has_plus, m_has_pull, m_has_push, m_has_random, m_has_randomBar, m_has_split, m_has_strips, m_has_wedge, m_has_wheel, m_has_wipe, m_has_zoom, m_has_p14_conveyor, m_has_p14_doors, m_has_p14_ferris, m_has_p14_flash, m_has_p14_flip, m_has_p14_flythrough, m_has_p14_gallery, m_has_p14_glitter, m_has_p14_honeycomb, m_has_p14_pan, m_has_p14_prism, m_has_p14_reveal, m_has_p14_ripple, m_has_p14_shred, m_has_p14_switch, m_has_p14_vortex, m_has_p14_warp, m_has_p14_wheelReverse, m_has_p14_window};
+        int cnt = count(elemHasValueList, elemHasValueList + 40, true);
         assert(cnt == 0 || cnt == 1);
     }
 
@@ -9743,6 +20687,120 @@ void CT_SlideTransition::toXmlElem(const std::string& _elemName, const std::stri
     if (m_has_zoom)
     {
         m_zoom->toXmlElem("p:zoom", "", _outStream);
+    }
+
+
+    if (m_has_p14_conveyor)
+    {
+        m_p14_conveyor->toXmlElem("p14:conveyor", "", _outStream);
+    }
+
+
+    if (m_has_p14_doors)
+    {
+        m_p14_doors->toXmlElem("p14:doors", "", _outStream);
+    }
+
+
+    if (m_has_p14_ferris)
+    {
+        m_p14_ferris->toXmlElem("p14:ferris", "", _outStream);
+    }
+
+
+    if (m_has_p14_flash)
+    {
+        m_p14_flash->toXmlElem("p14:flash", "", _outStream);
+    }
+
+
+    if (m_has_p14_flip)
+    {
+        m_p14_flip->toXmlElem("p14:flip", "", _outStream);
+    }
+
+
+    if (m_has_p14_flythrough)
+    {
+        m_p14_flythrough->toXmlElem("p14:flythrough", "", _outStream);
+    }
+
+
+    if (m_has_p14_gallery)
+    {
+        m_p14_gallery->toXmlElem("p14:gallery", "", _outStream);
+    }
+
+
+    if (m_has_p14_glitter)
+    {
+        m_p14_glitter->toXmlElem("p14:glitter", "", _outStream);
+    }
+
+
+    if (m_has_p14_honeycomb)
+    {
+        m_p14_honeycomb->toXmlElem("p14:honeycomb", "", _outStream);
+    }
+
+
+    if (m_has_p14_pan)
+    {
+        m_p14_pan->toXmlElem("p14:pan", "", _outStream);
+    }
+
+
+    if (m_has_p14_prism)
+    {
+        m_p14_prism->toXmlElem("p14:prism", "", _outStream);
+    }
+
+
+    if (m_has_p14_reveal)
+    {
+        m_p14_reveal->toXmlElem("p14:reveal", "", _outStream);
+    }
+
+
+    if (m_has_p14_ripple)
+    {
+        m_p14_ripple->toXmlElem("p14:ripple", "", _outStream);
+    }
+
+
+    if (m_has_p14_shred)
+    {
+        m_p14_shred->toXmlElem("p14:shred", "", _outStream);
+    }
+
+
+    if (m_has_p14_switch)
+    {
+        m_p14_switch->toXmlElem("p14:switch", "", _outStream);
+    }
+
+
+    if (m_has_p14_vortex)
+    {
+        m_p14_vortex->toXmlElem("p14:vortex", "", _outStream);
+    }
+
+
+    if (m_has_p14_warp)
+    {
+        m_p14_warp->toXmlElem("p14:warp", "", _outStream);
+    }
+
+
+    if (m_has_p14_wheelReverse)
+    {
+        m_p14_wheelReverse->toXmlElem("p14:wheelReverse", "", _outStream);
+    }
+
+
+    if (m_has_p14_window)
+    {
+        m_p14_window->toXmlElem("p14:window", "", _outStream);
     }
 
 
@@ -39440,9 +50498,10 @@ void cmAuthorLst_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:cmAuthorLst";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
@@ -39539,9 +50598,10 @@ void cmLst_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:cmLst";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
@@ -39804,9 +50864,10 @@ void oleObj_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:oleObj";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
@@ -40643,9 +51704,10 @@ void presentation_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:presentation";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
@@ -41268,9 +52330,10 @@ void presentationPr_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:presentationPr";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
@@ -41530,9 +52593,10 @@ void sld_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:sld";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
@@ -41912,9 +52976,10 @@ void sldLayout_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:sldLayout";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
@@ -42412,9 +53477,10 @@ void sldMaster_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:sldMaster";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
@@ -42663,9 +53729,10 @@ void handoutMaster_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:handoutMaster";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
@@ -42903,9 +53970,10 @@ void notesMaster_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:notesMaster";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
@@ -43089,9 +54157,10 @@ void notes_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:notes";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
@@ -43240,9 +54309,10 @@ void sldSyncPr_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:sldSyncPr";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     assert(m_has_serverSldId_attr);
@@ -43368,9 +54438,10 @@ void tagLst_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:tagLst";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
     _outStream << ">";
@@ -43745,9 +54816,10 @@ void viewPr_element::toXml(std::ostream& _outStream) const
 {
     _outStream << "<p:viewPr";
 
-    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
+    _outStream << " " << "xmlns:p14=\"http://schemas.microsoft.com/office/powerpoint/2010/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
+    _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
 
 
