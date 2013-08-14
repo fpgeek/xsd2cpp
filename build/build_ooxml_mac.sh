@@ -1,0 +1,5 @@
+# !/bin/sh
+python ../src/xsd/main.py ../files/xsd/ooxml ../files/build_test/include ../files/build_test/src
+astyle ../files/build_test/src/*.cpp ../files/build_test/include/*.h
+rm -rf ../files/build_test/src/*.cpp.orig
+rm -rf ../files/build_test/include/*.h.orig

@@ -17,5 +17,5 @@ include_directories(${INCLUDE_DIR}/xsdtype)
 
 add_library(${PROJECT_NAME} ${SRC_FILES} ${HEADER_FILES})
 
-add_executable(${PROJECT_NAME}_exe ${SRC_DIR}/main.cpp)
+add_executable(${PROJECT_NAME}_exe ${SRC_DIR}/main/main.cpp)
 target_link_libraries(${PROJECT_NAME}_exe ${PROJECT_NAME})

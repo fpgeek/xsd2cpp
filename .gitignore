@@ -1,8 +1,10 @@
-files/pb_text/*
 src/xsd/*.pyc
 .idea
-files/cpp/*
-files/header/*
 files/build_test/build/
 files/build_test/include/*.orig
+files/build_test/include/*.h
+files/build_test/include/pb_text/
 files/build_test/src/*.orig
+files/build_test/src/*.cpp
+files/build_test/src/pb_text/
+files/build_test/src/main/
