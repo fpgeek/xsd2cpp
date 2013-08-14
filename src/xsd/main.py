@@ -38,7 +38,7 @@ def readUserSetNsPrefixMap():
 def writePbFile(filePath, pbMsg):
     dirPath = os.path.dirname(filePath)
     if not os.path.exists(dirPath):
-        os.mkdir(dirPath)
+        os.makedirs(dirPath)
 
     f = open(filePath, "wb")
     PT.PrintMessage(pbMsg, f)
@@ -79,7 +79,7 @@ def copyFile(srcFile, destFile):
 
     dirPath = os.path.dirname(destFile)
     if not os.path.exists(dirPath):
-        os.mkdir(dirPath)
+        os.makedirs(dirPath)
 
     df = open(destFile, 'wb')
     df.write(sf.read())

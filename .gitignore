@@ -1,10 +1,5 @@
 src/xsd/*.pyc
 .idea
 files/build_test/build/
-files/build_test/include/*.orig
-files/build_test/include/*.h
-files/build_test/include/pb_text/
-files/build_test/src/*.orig
-files/build_test/src/*.cpp
-files/build_test/src/pb_text/
-files/build_test/src/main/
+files/build_test/include/
+files/build_test/src/

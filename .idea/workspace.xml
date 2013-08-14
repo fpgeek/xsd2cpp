@@ -2,133 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6651581d-8f63-42fd-bdbc-22e2c035dc44" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/include/gen.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/include/xsddata.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/src/gen.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/src/main.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/src/xsddata.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dc_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dcmitype_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dcterms_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-chartDrawing_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-chart_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-diagram_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-lockedCanvas_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-mainExt_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-main_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-picture_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-spreadsheetDrawing_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-wordprocessingDrawing_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/hml_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/mc_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/opc-coreproperties_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/pml-2010_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/pml-2012_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/pml_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-additionalCharacteristics_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-bibliography_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-commonSimpleTypes_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-contentTypes_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-customXmlDataProperties_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-customXmlSchemaProperties_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesCustom_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesExtended_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-math_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-relationshipReference_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-relationships_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/sml_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-main_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-officeDrawing_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-presentationDrawing_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-spreadsheetDrawing_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-wordprocessingDrawing_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/wml_xsd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/include/xsdtype/xsdtype.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dc_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dcmitype_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dcterms_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-chartDrawing_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-diagram_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-lockedCanvas_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-mainExt_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-main_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-picture_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/hml_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/main.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/mc_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/opc-coreproperties_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/pml-2010_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/pml-2012_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/pml_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-additionalCharacteristics_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-bibliography_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-commonSimpleTypes_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-contentTypes_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-customXmlDataProperties_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-math_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-relationshipReference_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-relationships_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/vml-main_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/vml-officeDrawing_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/vml-presentationDrawing_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/src/xsdtype/xsdtype.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/complie_protobuf.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/protobuf/cpp.proto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/protobuf/message.proto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/protobuf/xsd.proto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dc.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dcmitype.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dcterms.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-chart.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-chartDrawing.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-diagram.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-lockedCanvas.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-main.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-mainExt.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-picture.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-spreadsheetDrawing.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/dml-wordprocessingDrawing.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/hml.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/mc.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/opc-coreproperties.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/pml-2010.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/pml-2012.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/pml.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-additionalCharacteristics.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-bibliography.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-commonSimpleTypes.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-contentTypes.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-customXmlDataProperties.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-customXmlSchemaProperties.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-documentPropertiesCustom.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-documentPropertiesExtended.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-documentPropertiesVariantTypes.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-math.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-relationshipReference.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/shared-relationships.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/sml.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/vml-main.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/vml-officeDrawing.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/vml-presentationDrawing.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/vml-spreadsheetDrawing.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/vml-wordprocessingDrawing.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd/wml.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/xsd2/hml.xsd" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/build/build_mac.sh" afterPath="$PROJECT_DIR$/build/build_ooxml_mac.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/CMakeLists.txt" afterPath="$PROJECT_DIR$/files/build_test/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/main.py" afterPath="$PROJECT_DIR$/src/xsd/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -144,7 +18,7 @@
     <file path="/shared-commonSimpleTypes.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1365552178411" ignored="false" />
     <file path="$PROJECT_DIR$/../../Synapsoft/xsd2cpp/trunk/src/python/xsd2cpp/src/xsd2cpp/xsd/Xsd2Cpp2.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362751822256" ignored="false" />
     <file path="/test.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362807324874" ignored="false" />
-    <file path="/main.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1376448380333" ignored="false" />
+    <file path="/main.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1376448898186" ignored="false" />
     <file path="/.gitignore" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1376448295701" ignored="false" />
     <file path="/wml.xsd.txt" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366098392585" ignored="false" />
     <file path="/proto_file_writer.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1363609916797" ignored="false" />
@@ -220,13 +94,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="19" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.362">
+            <state line="139" column="26" selection-start="5317" selection-end="5317" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#49#79#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_hml_windows.bat" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/build_hml_windows.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="21" selection-start="91" selection-end="91" vertical-scroll-proportion="0.116959065">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -259,13 +151,13 @@
         <option value="$PROJECT_DIR$/build/build_windows.bat" />
         <option value="$PROJECT_DIR$/build/build_mac.sh" />
         <option value="$PROJECT_DIR$/src/complie_protobuf.sh" />
-        <option value="$PROJECT_DIR$/build/build_hml_windows.bat" />
         <option value="$PROJECT_DIR$/build/build_ooxml_windows.bat" />
         <option value="$PROJECT_DIR$/build/build_ooxml_mac.sh" />
         <option value="$PROJECT_DIR$/build/build_hml_mac.sh" />
         <option value="$PROJECT_DIR$/files/build_test/src/main/main.cpp" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/xsd/main.py" />
+        <option value="$PROJECT_DIR$/build/build_hml_windows.bat" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -398,6 +290,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="build_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xsd2cpp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xsd2cpp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -694,14 +600,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32711443" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.81218904" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17360115" sideWeight="0.6728856" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17360115" sideWeight="0.6728856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31840795" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.7798507" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -831,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/build_hml_windows.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="41" selection-start="136" selection-end="136" vertical-scroll-proportion="0.029239766">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/build_hml_mac.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="260" vertical-scroll-proportion="0.0">
@@ -852,19 +751,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="250" selection-end="250" vertical-scroll-proportion="0.2631579">
+        <state line="139" column="26" selection-start="5317" selection-end="5317" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#49#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/build_hml_windows.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="19" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.362">
-          <folding>
-            <element signature="e#49#79#0" expanded="true" />
-          </folding>
+        <state line="4" column="21" selection-start="91" selection-end="91" vertical-scroll-proportion="0.116959065">
+          <folding />
         </state>
       </provider>
     </entry>
