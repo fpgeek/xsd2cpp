@@ -13,6 +13,12 @@
   <xsd:import 
     namespace="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"
     schemaLocation="dml-spreadsheetDrawing.xsd"/>
+
+  <xsd:complexType name="CT_Formula">
+    <xsd:simpleContent>
+        <xsd:extension base="s:CT_Xstring"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
   <xsd:complexType name="CT_AutoFilter">
     <xsd:sequence>
       <xsd:element name="filterColumn" minOccurs="0" maxOccurs="unbounded" type="CT_FilterColumn"/>
@@ -2037,8 +2043,8 @@
   </xsd:complexType>
   <xsd:complexType name="CT_RevisionDefinedName">
     <xsd:sequence>
-      <xsd:element name="formula" type="ST_Formula" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="oldFormula" type="ST_Formula" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="formula" type="CT_Formula" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="oldFormula" type="CT_Formula" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="extLst" minOccurs="0" type="CT_ExtensionList"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="AG_RevData"/>
@@ -2580,8 +2586,8 @@
   </xsd:complexType>
   <xsd:complexType name="CT_DataValidation">
     <xsd:sequence>
-      <xsd:element name="formula1" type="ST_Formula" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="formula2" type="ST_Formula" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="formula1" type="CT_Formula" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="formula2" type="CT_Formula" minOccurs="0" maxOccurs="1"/>
     </xsd:sequence>
     <xsd:attribute name="type" type="ST_DataValidationType" use="optional" default="none"/>
     <xsd:attribute name="errorStyle" type="ST_DataValidationErrorStyle" use="optional"
@@ -2716,7 +2722,7 @@
   </xsd:complexType>
   <xsd:complexType name="CT_CfRule">
     <xsd:sequence>
-      <xsd:element name="formula" type="ST_Formula" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="formula" type="CT_Formula" minOccurs="0" maxOccurs="3"/>
       <xsd:element name="colorScale" type="CT_ColorScale" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="dataBar" type="CT_DataBar" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="iconSet" type="CT_IconSet" minOccurs="0" maxOccurs="1"/>
