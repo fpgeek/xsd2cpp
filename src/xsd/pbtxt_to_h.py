@@ -14,6 +14,7 @@ def hParse(cppSchema, filePath):
     hBuf += '#ifndef __%s_\n' % cppSchema.name.replace('-', '_')
     hBuf += '#define __%s_ 0\n\n' % cppSchema.name.replace('-', '_')
     hBuf += '#include "xsdtype.h"\n'
+    hBuf += '#include "xsdelement.h"\n'
     hBuf += '#include <vector>\n' 
     hBuf += '#include <string>\n'
     hBuf += '#include <iostream>\n'

@@ -107,13 +107,13 @@ _outStream << "</%s>";
 # cpp class 만들기
 def _makeCppClasses(cppFile, pbSchema, allPbSchemas):
     # 기본 Element 생성
-    cppClass = cppFile.class_.add()
-    cppClass.name = 'Element'
-    cppClass.parent_class.append('XSD::Element')
-
-    cppClass = cppFile.class_.add()
-    cppClass.name = 'Attribute'
-    cppClass.parent_class.append('XSD::Attribute')
+    # cppClass = cppFile.class_.add()
+    # cppClass.name = 'Element'
+    # cppClass.parent_class.append('XSD::Element')
+    #
+    # cppClass = cppFile.class_.add()
+    # cppClass.name = 'Attribute'
+    # cppClass.parent_class.append('XSD::Attribute')
 
     for pbSimpleType in pbSchema.simple_type:
         cppClass = cppFile.class_.add()

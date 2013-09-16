@@ -6,6 +6,7 @@ import xsd_parser as xsdParser
 import xsd_to_cpp as xsd2cpp
 import pbtxt_to_cpp as txt2cpp
 import pbtxt_to_h as txt2h
+import cpp_pb2 as CPB
 import os, sys
 import google.protobuf.text_format as PT
 
@@ -109,6 +110,7 @@ def run(xsdFileDirPath, outputHeaderDirPath, outputCppDirPath):
             return
         pbSchema.xml_ns_prefix = fileNsName
 
+    cppNamespaceList = []
     for pbSchema in pbSchemas:
         for schemaLocation in fileNsMap:
             xmlNs = pbSchema.xml_namespace.add()
@@ -124,6 +126,7 @@ def run(xsdFileDirPath, outputHeaderDirPath, outputCppDirPath):
 
         cppProtoFile = xsd2cpp.parseToCpp(pbSchema, pbSchemas)
         cppProtoFile.namespace = 'ns_%s' % pbSchema.xml_ns_prefix
+        cppNamespaceList.append(cppProtoFile.namespace)
 
         writePbFile(os.path.join(outputCppDirPath,'pb_text/%s.cpp.txt') % pbSchema.file_name, cppProtoFile)
 
@@ -133,6 +136,26 @@ def run(xsdFileDirPath, outputHeaderDirPath, outputCppDirPath):
         copyFile(os.path.join(pythonFileAbsPath, 'cpp_files', 'xsdtype', 'xsdtype.h'), os.path.join(outputHeaderDirPath, 'xsdtype.h'))
         copyFile(os.path.join(pythonFileAbsPath, 'cpp_files', 'xsdtype', 'xsdtype.cpp'), os.path.join(outputCppDirPath, 'xsdtype.cpp'))
         copyFile(os.path.join(pythonFileAbsPath, 'cpp_files', 'main', 'main.cpp'), os.path.join(outputCppDirPath, 'main', 'main.cpp'))
+
+    headerCodeList = []
+    cppNamespaceList = list(set(cppNamespaceList))
+
+    for cppNs in cppNamespaceList:
+        headerCodeList.append(
+"""
+namespace %s {
+    class Element : public XSD::Element {};
+    class Attribute : public XSD::Attribute {};
+}
+""" % cppNs)
+
+    headerF = open(os.path.join(outputHeaderDirPath, 'xsdelement.h'), 'wb')
+    headerF.write('#ifndef __XSD_ELEMENT__\n')
+    headerF.write('#define __XSD_ELEMENT__ 0\n')
+    headerF.write('\n'.join(headerCodeList))
+    headerF.write('#endif')
+    headerF.close()
+
 
 if __name__ == '__main__':
     # os.chdir(pythonFileAbsPath)
