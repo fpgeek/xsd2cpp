@@ -601,9 +601,7 @@ def _simpleType_base_builtIn(pbBuiltIn, cppClass, makeSetMethodAssertCode=None):
     const2Init1 = const2.const_init.add()
     const2Init1.name = hasVarName
     const2Init1.value = 'true'
-    # const2Init2 = const2.const_init.add()
-    # const2Init2.name = varName
-    # const2Init2.value = const2Arg1.name
+
     const2.body = \
 """
 %(setMethodName)s(%(varName)s);
@@ -684,6 +682,20 @@ std::stringstream strStream;
 strStream << %s();
 return strStream.str();
 """ % getMethod.name
+
+
+    # if pbBuiltIn == PB.BuiltIn.string:
+    #     xmlHasVarName = 'm_has_xml_space'
+    #     xmlVarName = 'm_xml_space'
+    #
+    #
+    #     constInit3 = const1.const_init.add()
+    #     constInit3.name = xmlVarName
+    #     constInit3.value = '""'
+    #
+    #     const2Init3 = const2.const_init.add()
+    #     const2Init3.name = xmlVarName
+    #     const2Init3.value = '""'
 
 
 def simpleType_restriction_builtIn(pbRestriction, cppClass):

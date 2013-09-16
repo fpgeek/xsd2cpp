@@ -3,6 +3,13 @@
   xmlns="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
   targetNamespace="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
   elementFormDefault="qualified">
+  <xsd:complexType name="CT_Xstring">
+    <xsd:simpleContent>
+      <xsd:extension base="ST_Xstring">
+        <xsd:attribute ref="xml:space" use="optional"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
   <xsd:simpleType name="ST_Lang">
     <xsd:restriction base="xsd:string"/>
   </xsd:simpleType>

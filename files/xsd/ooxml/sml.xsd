@@ -279,7 +279,7 @@
   </xsd:complexType>
   <xsd:complexType name="CT_Authors">
     <xsd:sequence>
-      <xsd:element name="author" type="s:ST_Xstring" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="author" type="s:CT_Xstring" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="CT_CommentList">
@@ -1812,7 +1812,7 @@
   </xsd:simpleType>
   <xsd:complexType name="CT_PhoneticRun">
     <xsd:sequence>
-      <xsd:element name="t" type="s:ST_Xstring" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="t" type="s:CT_Xstring" minOccurs="1" maxOccurs="1"/>
     </xsd:sequence>
     <xsd:attribute name="sb" type="xsd:unsignedInt" use="required"/>
     <xsd:attribute name="eb" type="xsd:unsignedInt" use="required"/>
@@ -1820,7 +1820,7 @@
   <xsd:complexType name="CT_RElt">
     <xsd:sequence>
       <xsd:element name="rPr" type="CT_RPrElt" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="t" type="s:ST_Xstring" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="t" type="s:CT_Xstring" minOccurs="1" maxOccurs="1"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="CT_RPrElt">
@@ -1844,7 +1844,7 @@
   </xsd:complexType>
   <xsd:complexType name="CT_Rst">
     <xsd:sequence>
-      <xsd:element name="t" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="t" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="r" type="CT_RElt" minOccurs="0" maxOccurs="unbounded"/>
       <xsd:element name="rPh" type="CT_PhoneticRun" minOccurs="0" maxOccurs="unbounded"/>
       <xsd:element name="phoneticPr" minOccurs="0" maxOccurs="1" type="CT_PhoneticPr"/>
@@ -2274,7 +2274,7 @@
   <xsd:complexType name="CT_Cell">
     <xsd:sequence>
       <xsd:element name="f" type="CT_CellFormula" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="v" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="v" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="is" type="CT_Rst" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="extLst" minOccurs="0" type="CT_ExtensionList"/>
     </xsd:sequence>
@@ -2856,12 +2856,12 @@
   </xsd:simpleType>
   <xsd:complexType name="CT_HeaderFooter">
     <xsd:sequence>
-      <xsd:element name="oddHeader" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="oddFooter" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="evenHeader" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="evenFooter" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="firstHeader" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="firstFooter" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="oddHeader" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="oddFooter" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="evenHeader" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="evenFooter" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="firstHeader" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="firstFooter" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
     </xsd:sequence>
     <xsd:attribute name="differentOddEven" type="xsd:boolean" default="false"/>
     <xsd:attribute name="differentFirst" type="xsd:boolean" default="false"/>
@@ -3861,7 +3861,7 @@
   </xsd:complexType>
   <xsd:complexType name="CT_ExternalCell">
     <xsd:sequence>
-      <xsd:element name="v" type="s:ST_Xstring" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="v" type="s:CT_Xstring" minOccurs="0" maxOccurs="1"/>
     </xsd:sequence>
     <xsd:attribute name="r" type="ST_CellRef" use="optional"/>
     <xsd:attribute name="t" type="ST_CellType" use="optional" default="n"/>
@@ -3897,7 +3897,7 @@
   </xsd:complexType>
   <xsd:complexType name="CT_DdeValue">
     <xsd:sequence>
-      <xsd:element name="val" type="s:ST_Xstring" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="val" type="s:CT_Xstring" minOccurs="1" maxOccurs="1"/>
     </xsd:sequence>
     <xsd:attribute name="t" type="ST_DdeValueType" use="optional" default="n"/>
   </xsd:complexType>
@@ -4055,8 +4055,8 @@
   </xsd:complexType>
   <xsd:complexType name="CT_VolTopic">
     <xsd:sequence>
-      <xsd:element name="v" type="s:ST_Xstring" minOccurs="1" maxOccurs="1"/>
-      <xsd:element name="stp" type="s:ST_Xstring" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="v" type="s:CT_Xstring" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="stp" type="s:CT_Xstring" minOccurs="0" maxOccurs="unbounded"/>
       <xsd:element name="tr" type="CT_VolTopicRef" minOccurs="1" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attribute name="t" type="ST_VolValueType" use="optional" default="n"/>
