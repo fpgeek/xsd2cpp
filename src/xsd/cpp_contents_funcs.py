@@ -148,6 +148,17 @@ if (%(var)s)
 """ % {'var':varName}
 
 
+def _makeClearMethodStrFromAny(varName):
+    return \
+"""
+if (%(var)s)
+{
+    delete %(var)s;
+    %(var)s = NULL;
+}
+""" % {'var':varName}
+
+
 # cpp 변수 타입 가져오기
 def _getCppVarType(pbSTName):
     cppVarName = pbSTName
@@ -1324,7 +1335,7 @@ def _getClearMethodBodyListFromElemList(pbElemList):
         elif pbElem.type.kind == PB.Element.Type.ComplexType:
             pass # TODO - 현재는 여기로 오는 것이 없음, 추후 구현 예정
         elif pbElem.type.kind == PB.Element.Type.Any:
-            pass # TODO
+            clearMethodBodyList.append((hasVarName, _makeClearMethodStrFromAny(varName)))
 
     return clearMethodBodyList
 
@@ -1935,6 +1946,61 @@ def _addAnyMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppCla
         varConstInit = cppConst.const_init.add()
         varConstInit.name = cppObjVar.name
         varConstInit.value = 'NULL'
+
+
+    hasMethod = cppClass.method.add()
+    hasMethod.return_type = 'bool'
+    hasMethod.name = 'has_%s' % cppVarName
+    hasMethod.const = True
+    hasMethod.body = \
+"""
+return %s;
+""" % cppHasVar.name
+
+    setMethod = cppClass.method.add()
+    setMethod.return_type = 'void'
+    setMethodArg1 = setMethod.argument.add()
+    setMethodArg1.type = '%s*' % cppVarType
+    setMethodArg1.name = 'element'
+    setMethod.name = 'set_%s' % cppVarName
+    if xsdContainerType == SEQUENCE:
+        setMethod.body = \
+"""
+%(has_var)s = true;
+if (%(var)s)
+{
+    delete %(var)s;
+    %(var)s = NULL;
+}
+%(var)s = %(arg1_name)s;
+""" % {'has_var':cppHasVar.name, 'var':cppObjVar.name, 'arg1_name':setMethodArg1.name}
+    elif xsdContainerType == CHOICE:
+        clearMethodBodyList = filter(lambda x:x[0] != cppHasVar.name, _getClearMethodBodyListFromElemList(pbElemList)) # 자신을 초기화 하는 부분은 제거
+        clearMethodBody = _toClearMethodBodyStr(clearMethodBodyList)
+        setMethod.body = \
+"""
+%(clearMethodCodes)s
+%(has_var)s = true;
+if (%(var)s)
+{
+    delete %(var)s;
+    %(var)s = NULL;
+}
+%(var)s = %(arg1_name)s;
+""" % {'clearMethodCodes': clearMethodBody, 'has_var':cppHasVar.name, 'var':cppObjVar.name, 'arg1_name':setMethodArg1.name}
+
+    getMethod = cppClass.method.add()
+    getMethod.return_type = 'const %s*' % cppVarType
+    getMethod.name = 'get_%s' % cppVarName
+    getMethod.const = True
+    getMethod.body = \
+"""
+if (%(var)s)
+{
+    return %(var)s;
+}
+return NULL;
+""" % {'var':cppObjVar.name, 'type':cppVarType}
 
 
 def _addSTMethodAndMemberVarInAttr(pbAttr, cppClass):

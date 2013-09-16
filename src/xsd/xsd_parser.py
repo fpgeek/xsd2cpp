@@ -764,7 +764,7 @@ class ALL_SCHEMA:
             self._parseAttributeGroup(otherSchema, otherAttrGroupElem, pbComplexType, nsPrefix)
 
         for childElem in attributeGroupElem:
-            if childElem.tag == '{%s}attibuteGroup' % XSD_URI:
+            if childElem.tag == '{%s}attributeGroup' % XSD_URI:
                 self._parseAttributeGroup(xmlSchema, childElem, pbComplexType, nsPrefix)
             elif childElem.tag == '{%s}attribute' % XSD_URI:
                 pbAttribute = pbComplexType.attribute.add()
