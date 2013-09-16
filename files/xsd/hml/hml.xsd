@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema id="NewDataSet" xmlns="http://www.haansoft.com/HWPML" 
            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-           xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
            elementFormDefault="unqualified"
            attributeFormDefault="unqualified"
            blockDefault="#all"
@@ -115,11 +114,17 @@
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
+  <xsd:simpleType name="ST_ID">
+    <xsd:restriction base="ST_UnsignedDecimalNumber"/>
+  </xsd:simpleType>
+  <xsd:complexType name="CT_ID">
+    <xsd:attribute name="ID" type="ST_ID"/>
+  </xsd:complexType>  
   <xsd:simpleType name="ST_StepType">
     <xsd:annotation>
       <xsd:documentation>Offset Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="percent">
       </xsd:enumeration>
       <xsd:enumeration value="hwpunit">
@@ -167,7 +172,7 @@
       <xsd:enumeration value="BlackWhite" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="ST_LINETYPE1">
+  <xsd:simpleType name="ST_LineType1">
     <xsd:annotation>
       <xsd:documentation>Border Styles</xsd:documentation>
     </xsd:annotation>
@@ -232,14 +237,24 @@
             <xsd:documentation>SlimThickSlim Line Border</xsd:documentation>
           </xsd:annotation>
         </xsd:enumeration>
-      </xsd:restriction>
+      <xsd:enumeration value="Wave">
+        <xsd:annotation>
+          <xsd:documentation>Wave Line Border</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DoubleWave">
+        <xsd:annotation>
+          <xsd:documentation>DoubleWave Line Border</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="ST_LineType2">
     <xsd:annotation>
       <xsd:documentation>Border Styles</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
-      <xsd:enumeration value="nil">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="None">
         <xsd:annotation>
           <xsd:documentation>No Border</xsd:documentation>
         </xsd:annotation>
@@ -305,8 +320,8 @@
     <xsd:annotation>
       <xsd:documentation>Border Styles</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
-      <xsd:enumeration value="nil">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="None">
         <xsd:annotation>
           <xsd:documentation>No Border</xsd:documentation>
         </xsd:annotation>
@@ -455,89 +470,7 @@
     <xsd:annotation>
       <xsd:documentation>Numbering Format</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
-      <xsd:enumeration value="Digit">
-        <xsd:annotation>
-          <xsd:documentation>Decimal Numbers</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="CircledDigit">
-        <xsd:annotation>
-          <xsd:documentation>Decimal Numbers in a Circle</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="RomanCapital">
-        <xsd:annotation>
-          <xsd:documentation>Uppercase Roman Numerals</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="RomanSmall">
-        <xsd:annotation>
-          <xsd:documentation>Lowercase Roman Numerals</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="LatinCapital">
-        <xsd:annotation>
-          <xsd:documentation>Uppercase Latin Alphabet</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="LatinSmall">
-        <xsd:annotation>
-          <xsd:documentation>Lowercase Latin Alphabet</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="CircledLatinCapital">
-        <xsd:annotation>
-          <xsd:documentation>Uppercase Latin Alphabet in a Circle</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="CircledLatinSmall">
-        <xsd:annotation>
-          <xsd:documentation>Lowercase Latin Alphabet in a Circle</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="HangulSyllable">
-        <xsd:annotation>
-          <xsd:documentation>Hangul</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="CircledHangulSyllable">
-        <xsd:annotation>
-          <xsd:documentation>Hangul in a Circle</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="HangulJamo">
-        <xsd:annotation>
-          <xsd:documentation>HangulJamo</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="CircledHangulJamo">
-        <xsd:annotation>
-          <xsd:documentation>HangulJamo in a Circle</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="HangulPhonetic">
-        <xsd:annotation>
-          <xsd:documentation>Hangul Phonetic</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Ideograph">
-        <xsd:annotation>
-          <xsd:documentation>Ideograph</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="CircledIdeograph">
-        <xsd:annotation>
-          <xsd:documentation>Ideograph in a Circle</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:simpleType name="ST_NumberType2">
-    <xsd:annotation>
-      <xsd:documentation>Numbering Format</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Digit">
         <xsd:annotation>
           <xsd:documentation>Decimal Numbers</xsd:documentation>
@@ -639,7 +572,7 @@
     <xsd:annotation>
       <xsd:documentation>Horizontal Alignment Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Left">
         <xsd:annotation>
           <xsd:documentation>Align Left</xsd:documentation>
@@ -676,7 +609,7 @@
     <xsd:annotation>
       <xsd:documentation>Horizontal Alignment Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Left">
         <xsd:annotation>
           <xsd:documentation>Align Left</xsd:documentation>
@@ -698,7 +631,7 @@
     <xsd:annotation>
       <xsd:documentation>Arrow</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Normal">
         <xsd:annotation>
           <xsd:documentation>Normal</xsd:documentation>
@@ -755,7 +688,7 @@
     <xsd:annotation>
       <xsd:documentation>Arrow Size</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="SmallSmall">
         <xsd:annotation>
           <xsd:documentation>SmallSmall</xsd:documentation>
@@ -807,7 +740,7 @@
     <xsd:annotation>
       <xsd:documentation>Language Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Hangul">
         <xsd:annotation>
           <xsd:documentation>Hangul</xsd:documentation>
@@ -849,7 +782,7 @@
     <xsd:annotation>
       <xsd:documentation>Hatch Style</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Horizontal">
         <xsd:annotation>
           <xsd:documentation>Horizontal</xsd:documentation>
@@ -886,7 +819,7 @@
     <xsd:annotation>
       <xsd:documentation>Fill Mode</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Tile">
         <xsd:annotation>
           <xsd:documentation>Tile</xsd:documentation>
@@ -970,14 +903,14 @@
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="ST_VertAlignType1">
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Top" />
       <xsd:enumeration value="Center" />
       <xsd:enumeration value="Bottom" />
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="ST_VertAlignType2">
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Baseline" />
       <xsd:enumeration value="Top" />
       <xsd:enumeration value="Center" />
@@ -988,7 +921,7 @@
     <xsd:annotation>
       <xsd:documentation>Line Wrap Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Break">
         <xsd:annotation>
           <xsd:documentation>Break</xsd:documentation>
@@ -1010,7 +943,7 @@
     <xsd:annotation>
       <xsd:documentation>Text Wrap Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Square">
         <xsd:annotation>
           <xsd:documentation>Square</xsd:documentation>
@@ -1047,7 +980,7 @@
     <xsd:annotation>
       <xsd:documentation>Field Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Clickhere">
         <xsd:annotation>
           <xsd:documentation>Clickhere</xsd:documentation>
@@ -1204,7 +1137,7 @@
     <xsd:annotation>
       <xsd:documentation>Font Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="rep">
         <xsd:annotation>
           <xsd:documentation>REP</xsd:documentation>
@@ -1222,7 +1155,7 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="ST_OFFSET">
+  <xsd:simpleType name="ST_Offset">
     <xsd:restriction base="ST_DecimalNumber">
       <xsd:minInclusive value="-100"/>
       <xsd:maxInclusive value="100"/>
@@ -1232,7 +1165,7 @@
     <xsd:annotation>
       <xsd:documentation>Gradation Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Linear">
       </xsd:enumeration>
       <xsd:enumeration value="Radial">
@@ -1244,22 +1177,18 @@
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="ST_HeadingType">
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="None" />
       <xsd:enumeration value="Outline" />
       <xsd:enumeration value="Number" />
       <xsd:enumeration value="Bullet" />
     </xsd:restriction>
   </xsd:simpleType>
-  
-  
-  
-  
-  <xsd:complexType name="CT_SUBSTFONT">
+  <xsd:complexType name="CT_SubstFont">
     <xsd:attribute name="Type" type="ST_FontType" />
     <xsd:attribute name="Name" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_TYPEINFO">
+  <xsd:complexType name="CT_TypeInfo">
     <xsd:attribute name="FamilyType" type="ST_String" />
     <xsd:attribute name="SerifStyle" type="ST_String" />
     <xsd:attribute name="Weight" type="ST_String" />
@@ -1271,73 +1200,70 @@
     <xsd:attribute name="Midline" type="ST_String" />
     <xsd:attribute name="XHeight" type="ST_String" />
   </xsd:complexType>
-
-  <xsd:complexType name="CT_FONT">
+  <xsd:complexType name="CT_Font">
     <xsd:sequence>
-      <xsd:element name="SUBSTFONT" type="CT_SUBSTFONT" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="TYPEINFO" type="CT_TYPEINFO" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="SUBSTFONT" type="CT_SubstFont" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="TYPEINFO" type="CT_TypeInfo" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
-    <xsd:attribute name="Id" type="ST_UnsignedDecimalNumber" default="0" />
+    <xsd:attribute name="Id" type="ST_ID" default="0" />
     <xsd:attribute name="Type" type="ST_FontType" />
     <xsd:attribute name="Name" type="ST_String" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_PARAHEAD">
-    <xsd:attribute name="Alignment" type="ST_AlignmentType2" default="Left" />
-    <xsd:attribute name="AutoIndent" type="ST_OnOff" default="true" />
-    <xsd:attribute name="Level" type="ST_NumberLevelType1" />
-    <xsd:attribute name="NumFormat" type="ST_NumberType1" default="Digit"/>
-    <xsd:attribute name="TextOffset" type="ST_Step" default="50" />
-    <xsd:attribute name="TextOffsetType" type="ST_StepType" default="percent" />
-    <xsd:attribute name="UseInstWidth" type="ST_OnOff" default="true"/>
-    <xsd:attribute name="WidthAdjust" type="ST_HunitMeasure" default="0"/>
-    <xsd:attribute name="CharShape" type="ST_ID" />
+  <xsd:complexType name="CT_ParaHead">
+    <xsd:simpleContent>
+      <xsd:extension base="ST_String">
+        <xsd:attribute name="Alignment" type="ST_AlignmentType2" default="Left" />
+        <xsd:attribute name="AutoIndent" type="ST_OnOff" default="true" />
+        <xsd:attribute name="Level" type="ST_NumberLevelType1" />
+        <xsd:attribute name="NumFormat" type="ST_NumberType1" default="Digit"/>
+        <xsd:attribute name="TextOffset" type="ST_DecimalNumber" default="50" />
+        <xsd:attribute name="TextOffsetType" type="ST_StepType" default="percent" />
+        <xsd:attribute name="UseInstWidth" type="ST_OnOff" default="true"/>
+        <xsd:attribute name="WidthAdjust" type="ST_HunitMeasure" default="0"/>
+        <xsd:attribute name="CharShape" type="ST_ID" />
+      </xsd:extension>
+    </xsd:simpleContent>
   </xsd:complexType>
 
-  <xsd:complexType name="CT_AUTONUMFORMAT">
-    <xsd:attribute name="SuffixChar" type="ST_String" />
-    <xsd:attribute name="Superscript" type="ST_String" />
-    <xsd:attribute name="Type" type="ST_String" />
+  <xsd:complexType name="CT_AutoNumFormat">
+    <xsd:attribute name="Type" type="ST_NumberType1" default="Digit" />
+    <xsd:attribute name="SuffixChar" type="ST_String" default=")" />
+    <xsd:attribute name="Superscript" type="ST_OnOff" default="false" />
+    <xsd:attribute name="UserChar" type="ST_String" />
+    <xsd:attribute name="PrefixChar" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_NOTELINE">
-    <xsd:attribute name="Color" type="ST_String" />
+  <xsd:complexType name="CT_NoteLine">
+    <xsd:attribute name="Color" type="ST_IntColorRGB" />
     <xsd:attribute name="Length" type="ST_String" />
-    <xsd:attribute name="Type" type="ST_String" />
-    <xsd:attribute name="Width" type="ST_String" />
+    <xsd:attribute name="Type" type="ST_LineType1" default="Solid" />
+    <xsd:attribute name="Width" type="ST_LineWidth1" default="0.12mm" />
   </xsd:complexType>
-  <xsd:complexType name="CT_NOTESPACING">
-    <xsd:attribute name="AboveLine" type="ST_String" />
-    <xsd:attribute name="BelowLine" type="ST_String" />
-    <xsd:attribute name="BetweenNotes" type="ST_String" />
+  <xsd:complexType name="CT_NoteSpacing">
+    <xsd:attribute name="AboveLine" type="ST_HunitMeasure" default="567" />
+    <xsd:attribute name="BelowLine" type="ST_HunitMeasure" default="597"/>
+    <xsd:attribute name="BetweenNotes" type="ST_HunitMeasure" default="850" />
   </xsd:complexType>
-  <xsd:complexType name="CT_NOTENUMBERING">
-    <xsd:attribute name="NewNumber" type="ST_String" />
-    <xsd:attribute name="Type" type="ST_String" />
+  <xsd:complexType name="CT_NoteNumbering">
+    <xsd:attribute name="NewNumber" type="ST_UnsignedDecimalNumber" default="1" />
+    <xsd:attribute name="Type" type="ST_NoteNumberingType" default="Continuous" />
   </xsd:complexType>
-  <xsd:complexType name="CT_NOTEPLACEMENT">
-    <xsd:attribute name="BeneathText" type="ST_String" />
-    <xsd:attribute name="Place" type="ST_String" />
+  <xsd:complexType name="CT_NotePlacement">
+    <xsd:attribute name="BeneathText" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Place" type="ST_NotePlacementType" />
   </xsd:complexType>
-  <xsd:complexType name="CT_FONTTYPE">
-    <xsd:sequence>
-      <xsd:element name="TYPEINFO" type="CT_TYPEINFO" minOccurs="0" maxOccurs="unbounded" />
-    </xsd:sequence>
-    <xsd:attribute name="Id" type="ST_String" />
-    <xsd:attribute name="Name" type="ST_String" />
-    <xsd:attribute name="Type" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_BORDER">
-    <xsd:attribute name="Type" type="ST_LINETYPE1" default="Solid"/>
+  <xsd:complexType name="CT_Border">
+    <xsd:attribute name="Type" type="ST_LineType1" default="Solid"/>
     <xsd:attribute name="Width" type="ST_LineWidth1" default="0.12mm"/>
     <xsd:attribute name="Color" type="ST_IntColorRGB" use="optional" />
   </xsd:complexType>
-  <xsd:complexType name="CT_WINDOWBRUSH">
+  <xsd:complexType name="CT_WindowBrush">
     <xsd:attribute name="Alpha" type="ST_Percent" />
     <xsd:attribute name="FaceColor" type="ST_IntColorRGB" />
     <xsd:attribute name="HatchColor" type="ST_IntColorRGB" />
     <xsd:attribute name="HatchStyle" type="ST_HatchStyle" />
   </xsd:complexType>
-  <xsd:complexType name="CT_GRADATION">
+  <xsd:complexType name="CT_Gradation">
     <xsd:sequence>
       <xsd:element name="COLOR" type="CT_Color" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
@@ -1350,34 +1276,33 @@
     <xsd:attribute name="StepCenter" type="ST_Step" default="50" />
     <xsd:attribute name="Alpha" type="ST_Percent" />
   </xsd:complexType>
-  <xsd:complexType name="CT_IMAGEBRUSH">
+  <xsd:complexType name="CT_ImageBrush">
     <xsd:sequence>
       <xsd:element name="IMAGE" type="CT_Image" />
     </xsd:sequence>
     <xsd:attribute name="Mode" type="ST_InFillMode" default="Tile" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_FILLBRUSH">
+  <xsd:complexType name="CT_FillBrush">
     <xsd:sequence>
-      <xsd:element name="WINDOWBRUSH" type="CT_WINDOWBRUSH" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="GRADATION" type="CT_GRADATION" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="IMAGEBRUSH" type="CT_IMAGEBRUSH" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="WINDOWBRUSH" type="CT_WindowBrush" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="GRADATION" type="CT_Gradation" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="IMAGEBRUSH" type="CT_ImageBrush" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
   </xsd:complexType>
-  
-  <xsd:complexType name="CT_BORDERFILL">
+  <xsd:complexType name="CT_BorderFill">
     <xsd:sequence>
-      <xsd:element name="LEFTBORDER" type="CT_BORDER" minOccurs="0" maxOccurs="1">
+      <xsd:element name="LEFTBORDER" type="CT_Border" minOccurs="0" maxOccurs="1">
       </xsd:element>
-      <xsd:element name="RIGHTBORDER" type="CT_BORDER" minOccurs="0" maxOccurs="1">
+      <xsd:element name="RIGHTBORDER" type="CT_Border" minOccurs="0" maxOccurs="1">
       </xsd:element>
-      <xsd:element name="TOPBORDER" type="CT_BORDER" minOccurs="0" maxOccurs="1">
+      <xsd:element name="TOPBORDER" type="CT_Border" minOccurs="0" maxOccurs="1">
       </xsd:element>
-      <xsd:element name="BOTTOMBORDER" type="CT_BORDER" minOccurs="0" maxOccurs="1">
+      <xsd:element name="BOTTOMBORDER" type="CT_Border" minOccurs="0" maxOccurs="1">
       </xsd:element>
-      <xsd:element name="DIAGONAL" type="CT_BORDER" minOccurs="0" maxOccurs="1">
+      <xsd:element name="DIAGONAL" type="CT_Border" minOccurs="0" maxOccurs="1">
       </xsd:element>
-      <xsd:element name="FILLBRUSH" type="CT_FILLBRUSH" minOccurs="0" maxOccurs="1">
+      <xsd:element name="FILLBRUSH" type="CT_FillBrush" minOccurs="0" maxOccurs="1">
       </xsd:element>
     </xsd:sequence>
     <xsd:attribute name="BackSlash" type="ST_String" />
@@ -1386,13 +1311,13 @@
     <xsd:attribute name="CounterBackSlash" type="ST_String" />
     <xsd:attribute name="CounterSlash" type="ST_String" />
     <xsd:attribute name="CrookedSlash" type="ST_String" />
-    <xsd:attribute name="Id" type="ST_String" />
+    <xsd:attribute name="Id" type="ST_ID" />
     <xsd:attribute name="Shadow" type="ST_String" />
     <xsd:attribute name="Slash" type="ST_String" />
     <xsd:attribute name="ThreeD" type="ST_String" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_FONTID">
+  <xsd:complexType name="CT_FontID">
     <xsd:attribute name="Hangul" type="ST_ID" />
     <xsd:attribute name="Hanja" type="ST_ID" />
     <xsd:attribute name="Japanese" type="ST_ID" />
@@ -1401,62 +1326,62 @@
     <xsd:attribute name="Symbol" type="ST_ID" />
     <xsd:attribute name="User" type="ST_ID" />
   </xsd:complexType>
-  <xsd:simpleType name="ST_RATIO">
+  <xsd:simpleType name="ST_Ratio">
     <xsd:restriction base="ST_UnsignedDecimalNumber">
       <xsd:minInclusive value="50"/>
       <xsd:maxInclusive value="200"/>
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:complexType name="CT_RATIO">
-    <xsd:attribute name="Hangul" type="ST_RATIO" default="100" />
-    <xsd:attribute name="Hanja" type="ST_RATIO" />
-    <xsd:attribute name="Japanese" type="ST_RATIO" />
-    <xsd:attribute name="Latin" type="ST_RATIO" />
-    <xsd:attribute name="Other" type="ST_RATIO" />
-    <xsd:attribute name="Symbol" type="ST_RATIO" />
-    <xsd:attribute name="User" type="ST_RATIO" />
+  <xsd:complexType name="CT_Ratio">
+    <xsd:attribute name="Hangul" type="ST_Ratio" default="100" />
+    <xsd:attribute name="Hanja" type="ST_Ratio" default="100" />
+    <xsd:attribute name="Japanese" type="ST_Ratio" default="100" />
+    <xsd:attribute name="Latin" type="ST_Ratio" default="100" />
+    <xsd:attribute name="Other" type="ST_Ratio" default="100" />
+    <xsd:attribute name="Symbol" type="ST_Ratio" default="100" />
+    <xsd:attribute name="User" type="ST_Ratio" default="100" />
   </xsd:complexType>
-  <xsd:simpleType name="ST_CHARSPACING">
+  <xsd:simpleType name="ST_CharSpacing">
     <xsd:restriction base="ST_DecimalNumber">
       <xsd:minInclusive value="-50"/>
       <xsd:maxInclusive value="50"/>
     </xsd:restriction>
   </xsd:simpleType>  
   <xsd:complexType name="CT_CHARSPACING">
-    <xsd:attribute name="Hangul" type="ST_CHARSPACING" default="0" />
-    <xsd:attribute name="Hanja" type="ST_CHARSPACING" default="0" />
-    <xsd:attribute name="Japanese" type="ST_CHARSPACING" default="0" />
-    <xsd:attribute name="Latin" type="ST_CHARSPACING" default="0" />
-    <xsd:attribute name="Other" type="ST_CHARSPACING" default="0" />
-    <xsd:attribute name="Symbol" type="ST_CHARSPACING" default="0" />
-    <xsd:attribute name="User" type="ST_CHARSPACING" default="0" />
+    <xsd:attribute name="Hangul" type="ST_CharSpacing" default="0" />
+    <xsd:attribute name="Hanja" type="ST_CharSpacing" default="0" />
+    <xsd:attribute name="Japanese" type="ST_CharSpacing" default="0" />
+    <xsd:attribute name="Latin" type="ST_CharSpacing" default="0" />
+    <xsd:attribute name="Other" type="ST_CharSpacing" default="0" />
+    <xsd:attribute name="Symbol" type="ST_CharSpacing" default="0" />
+    <xsd:attribute name="User" type="ST_CharSpacing" default="0" />
   </xsd:complexType>
-  <xsd:simpleType name="ST_RELSIZE">
+  <xsd:simpleType name="ST_RelSize">
     <xsd:restriction base="ST_UnsignedDecimalNumber">
       <xsd:minInclusive value="10"/>
       <xsd:maxInclusive value="250"/>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:complexType name="CT_RELSIZE">
-    <xsd:attribute name="Hangul" type="ST_RELSIZE" default="100"/>
-    <xsd:attribute name="Hanja" type="ST_RELSIZE" default="100" />
-    <xsd:attribute name="Japanese" type="ST_RELSIZE" default="100" />
-    <xsd:attribute name="Latin" type="ST_RELSIZE" default="100" />
-    <xsd:attribute name="Other" type="ST_RELSIZE" default="100" />
-    <xsd:attribute name="Symbol" type="ST_RELSIZE" default="100" />
-    <xsd:attribute name="User" type="ST_RELSIZE" default="100" />
+    <xsd:attribute name="Hangul" type="ST_RelSize" default="100"/>
+    <xsd:attribute name="Hanja" type="ST_RelSize" default="100" />
+    <xsd:attribute name="Japanese" type="ST_RelSize" default="100" />
+    <xsd:attribute name="Latin" type="ST_RelSize" default="100" />
+    <xsd:attribute name="Other" type="ST_RelSize" default="100" />
+    <xsd:attribute name="Symbol" type="ST_RelSize" default="100" />
+    <xsd:attribute name="User" type="ST_RelSize" default="100" />
   </xsd:complexType>
  
-  <xsd:complexType name="CT_CHAROFFSET">
-    <xsd:attribute name="Hangul" type="ST_OFFSET" default="0" />
-    <xsd:attribute name="Hanja" type="ST_OFFSET" default="0" />
-    <xsd:attribute name="Japanese" type="ST_OFFSET" default="0" />
-    <xsd:attribute name="Latin" type="ST_OFFSET" default="0" />
-    <xsd:attribute name="Other" type="ST_OFFSET" default="0" />
-    <xsd:attribute name="Symbol" type="ST_OFFSET" default="0" />
-    <xsd:attribute name="User" type="ST_OFFSET" default="0" />
+  <xsd:complexType name="CT_CharOffset">
+    <xsd:attribute name="Hangul" type="ST_Offset" default="0" />
+    <xsd:attribute name="Hanja" type="ST_Offset" default="0" />
+    <xsd:attribute name="Japanese" type="ST_Offset" default="0" />
+    <xsd:attribute name="Latin" type="ST_Offset" default="0" />
+    <xsd:attribute name="Other" type="ST_Offset" default="0" />
+    <xsd:attribute name="Symbol" type="ST_Offset" default="0" />
+    <xsd:attribute name="User" type="ST_Offset" default="0" />
   </xsd:complexType>
-  <xsd:complexType name="CT_UNDERLINE">
+  <xsd:complexType name="CT_Underline">
     <xsd:attribute name="Color" type="ST_IntColorRGB" default="0" />
     <xsd:attribute name="Shape" type="ST_LineType2" default="Solid" />
     <xsd:attribute name="Type" type="ST_VertAlignType1" default="Bottom"/>
@@ -1465,41 +1390,41 @@
     <xsd:annotation>
       <xsd:documentation>Strike Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="None">
       </xsd:enumeration>
       <xsd:enumeration value="Continuous">
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>  
-  <xsd:complexType name="CT_STRIKEOUT">
+  <xsd:complexType name="CT_Strikeout">
     <xsd:attribute name="Color" type="ST_IntColorRGB" default="0" />
     <xsd:attribute name="Shape" type="ST_LineType2" default="Solid" />
     <xsd:attribute name="Type" type="ST_StrikeType" default="Continuous"/>
   </xsd:complexType>
-  <xsd:complexType name="CT_OUTLINE">
+  <xsd:complexType name="CT_Outline">
     <xsd:attribute name="Type" type="ST_LineType3" default="Solid" />
   </xsd:complexType>
   <xsd:simpleType name="ST_ShadowType">
     <xsd:annotation>
       <xsd:documentation>Shadow Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Drop">
       </xsd:enumeration>
       <xsd:enumeration value="Cont">
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:complexType name="CT_SHADOW">
+  <xsd:complexType name="CT_Shadow">
     <xsd:attribute name="Alpha" type="ST_Percent" />
     <xsd:attribute name="Color" type="ST_IntColorRGB" />
-    <xsd:attribute name="OffsetX" type="ST_OFFSET" default="10" />
-    <xsd:attribute name="OffsetY" type="ST_OFFSET" default="10" />
+    <xsd:attribute name="OffsetX" type="ST_Offset" default="10" />
+    <xsd:attribute name="OffsetY" type="ST_Offset" default="10" />
     <xsd:attribute name="Type" type="ST_ShadowType" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_CHARSHAPE">
+  <xsd:complexType name="CT_CharShape">
     <xsd:sequence>
       <xsd:element name="BOLD" type="ST_String" minOccurs="0" />
       <xsd:element name="ITALIC" type="ST_String" minOccurs="0" />
@@ -1508,19 +1433,19 @@
       <xsd:element name="SUPERSCRIPT" type="ST_String" minOccurs="0" />
       <xsd:element name="SUBSCRIPT" type="ST_String" minOccurs="0" />
 
-      <xsd:element name="FONTID" type="CT_FONTID" minOccurs="0" />
-      <xsd:element name="RATIO" type="CT_RATIO" minOccurs="0" />
+      <xsd:element name="FONTID" type="CT_FontID" minOccurs="0" />
+      <xsd:element name="RATIO" type="CT_Ratio" minOccurs="0" />
       <xsd:element name="CHARSPACING" type="CT_CHARSPACING" minOccurs="0" />
       <xsd:element name="RELSIZE" type="CT_RELSIZE" minOccurs="0" />
-      <xsd:element name="CHAROFFSET" type="CT_CHAROFFSET" minOccurs="0" />
-      <xsd:element name="UNDERLINE" type="CT_UNDERLINE" minOccurs="0" />
-      <xsd:element name="STRIKEOUT" type="CT_STRIKEOUT" minOccurs="0" />
-      <xsd:element name="OUTLINE" type="CT_OUTLINE" minOccurs="0" />
-      <xsd:element name="SHADOW" type="CT_SHADOW" minOccurs="0" />
+      <xsd:element name="CHAROFFSET" type="CT_CharOffset" minOccurs="0" />
+      <xsd:element name="UNDERLINE" type="CT_Underline" minOccurs="0" />
+      <xsd:element name="STRIKEOUT" type="CT_Strikeout" minOccurs="0" />
+      <xsd:element name="OUTLINE" type="CT_Outline" minOccurs="0" />
+      <xsd:element name="SHADOW" type="CT_Shadow" minOccurs="0" />
     </xsd:sequence>
     <xsd:attribute name="BorderFillId" type="ST_ID" />
     <xsd:attribute name="Height" type="ST_HunitMeasure" default="1000"/>
-    <xsd:attribute name="Id" type="ST_UnsignedDecimalNumber" />
+    <xsd:attribute name="Id" type="ST_ID" />
     <xsd:attribute name="ShadeColor" type="ST_IntColorRGB" default="4294967295" />
     <xsd:attribute name="SymMark" type="ST_String" default="0" />
     <xsd:attribute name="TextColor" type="ST_IntColorRGB" default="0" />
@@ -1531,7 +1456,7 @@
     <xsd:annotation>
       <xsd:documentation>Tab Type</xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Left">
       </xsd:enumeration>
       <xsd:enumeration value="Right">
@@ -1561,36 +1486,36 @@
       <xsd:maxInclusive value="6" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:complexType name="CT_TABITEM">
+  <xsd:complexType name="CT_TabItem">
     <xsd:attribute name="Leader" type="ST_LineType2" default="Solid" />
     <xsd:attribute name="Pos" type="ST_HunitMeasure" />
     <xsd:attribute name="Type" type="ST_TabType" default="Left" />
   </xsd:complexType>
-  <xsd:complexType name="CT_TABDEF">
+  <xsd:complexType name="CT_TabDef">
     <xsd:sequence>
-      <xsd:element name="TABITEM" type="CT_TABITEM" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="TABITEM" type="CT_TabItem" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="AutoTabLeft" type="ST_OnOff" default="false" />
     <xsd:attribute name="AutoTabRight" type="ST_OnOff" default="false"/>
     <xsd:attribute name="Id" type="ST_ID" />
   </xsd:complexType>
-  <xsd:complexType name="CT_NUMBERING">
+  <xsd:complexType name="CT_Numbering">
     <xsd:sequence>
-      <xsd:element name="PARAHEAD" type="CT_PARAHEAD" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PARAHEAD" type="CT_ParaHead" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Id" type="ST_ID" />
     <xsd:attribute name="Start" type="ST_UnsignedDecimalNumber" default="1"/>
   </xsd:complexType>
-  <xsd:complexType name="CT_BULLET">
+  <xsd:complexType name="CT_Bullet">
     <xsd:sequence>
-      <xsd:element name="PARAHEAD" type="CT_PARAHEAD" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PARAHEAD" type="CT_ParaHead" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Char" type="ST_String" />
     <xsd:attribute name="Id" type="ST_ID" />
     <xsd:attribute name="Image" type="ST_OnOff" default="false" />
   </xsd:complexType>
   <xsd:simpleType name="ST_BreakLatinWord">
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="KeepWord" />
       <xsd:enumeration value="Hyphenation" />
       <xsd:enumeration value="BreakWord" />
@@ -1603,23 +1528,23 @@
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="ST_LineSpacing">
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Percent" />
       <xsd:enumeration value="Fixed" />
       <xsd:enumeration value="BetweenLines" />
       <xsd:enumeration value="AtLeast" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:complexType name="CT_PARAMARGIN">
-    <xsd:attribute name="Indent" type="ST_DecimalNumber" default="0" />
-    <xsd:attribute name="Left" type="ST_DecimalNumber" default="0" />
-    <xsd:attribute name="LineSpacing" type="ST_DecimalNumber" default="160" />
+  <xsd:complexType name="CT_ParaMargin">
+    <xsd:attribute name="Indent" type="ST_String" default="0" />
+    <xsd:attribute name="Left" type="ST_String" default="0" />
+    <xsd:attribute name="LineSpacing" type="ST_String" default="160" />
     <xsd:attribute name="LineSpacingType" type="ST_LineSpacing" default="Percent" />
-    <xsd:attribute name="Next" type="ST_DecimalNumber" default="0"/>
-    <xsd:attribute name="Prev" type="ST_DecimalNumber" default="0" />
-    <xsd:attribute name="Right" type="ST_DecimalNumber" default="0" />
+    <xsd:attribute name="Next" type="ST_String" default="0"/>
+    <xsd:attribute name="Prev" type="ST_String" default="0" />
+    <xsd:attribute name="Right" type="ST_String" default="0" />
   </xsd:complexType>
-  <xsd:complexType name="CT_PARABORDER">
+  <xsd:complexType name="CT_ParaBorder">
     <xsd:attribute name="BorderFill" type="ST_ID" />
     <xsd:attribute name="Connect" type="ST_OnOff" default="false" />
     <xsd:attribute name="IgnoreMargin" type="ST_OnOff" default="false" />
@@ -1628,10 +1553,10 @@
     <xsd:attribute name="OffsetRight" type="ST_HunitMeasure" />
     <xsd:attribute name="OffsetTop" type="ST_HunitMeasure" />
   </xsd:complexType>
-  <xsd:complexType name="CT_PARASHAPE">
+  <xsd:complexType name="CT_ParaShape">
     <xsd:sequence>
-      <xsd:element name="PARAMARGIN" type="CT_PARAMARGIN" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="PARABORDER" type="CT_PARABORDER" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PARAMARGIN" type="CT_ParaMargin" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PARABORDER" type="CT_ParaBorder" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="Align" type="ST_AlignmentType1" default="Justify" />
     <xsd:attribute name="AutoSpaceEAsianEng" type="ST_OnOff" default="true" />
@@ -1654,12 +1579,12 @@
     <xsd:attribute name="Heading" type="ST_ID" />
   </xsd:complexType>
   <xsd:simpleType name="ST_StyleType">
-    <xsd:restriction base="ST_String">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Para" />
       <xsd:enumeration value="Char" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:complexType name="CT_STYLE">
+  <xsd:complexType name="CT_Style">
     <xsd:attribute name="CharShape" type="ST_ID" />
     <xsd:attribute name="EngName" type="ST_String" />
     <xsd:attribute name="Id" type="ST_ID" />
@@ -1670,7 +1595,7 @@
     <xsd:attribute name="ParaShape" type="ST_ID" />
     <xsd:attribute name="Type" type="ST_StyleType" default="Para" />
   </xsd:complexType>
-  <xsd:complexType name="CT_MEMO">
+  <xsd:complexType name="CT_Memo">
     <xsd:attribute name="Id" type="ST_ID" />
     <xsd:attribute name="Width" type="ST_LineWidth2" default="0" />
     <xsd:attribute name="LineType" type="ST_LineType4" default="0"/>
@@ -1679,92 +1604,258 @@
     <xsd:attribute name="ActiveColor" type="ST_IntColorRGB" />
     <xsd:attribute name="MemoType" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_NOTESHAPE">
+  <xsd:complexType name="CT_NoteShape">
     <xsd:sequence>
-      <xsd:element name="AUTONUMFORMAT" type="CT_AUTONUMFORMAT" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="NOTELINE" type="CT_NOTELINE" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="NOTESPACING" type="CT_NOTESPACING" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="NOTENUMBERING" type="CT_NOTENUMBERING" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="NOTEPLACEMENT" type="CT_NOTEPLACEMENT" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="AUTONUMFORMAT" type="CT_AutoNumFormat" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="NOTELINE" type="CT_NoteLine" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="NOTESPACING" type="CT_NoteSpacing" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="NOTENUMBERING" type="CT_NoteNumbering" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="NOTEPLACEMENT" type="CT_NotePlacement" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="CT_STARTNUMBER">
-    <xsd:attribute name="Equation" type="ST_String" />
-    <xsd:attribute name="Figure" type="ST_String" />
-    <xsd:attribute name="Page" type="ST_String" />
-    <xsd:attribute name="PageStartsOn" type="ST_String" />
-    <xsd:attribute name="Table" type="ST_String" />
+  <xsd:simpleType name="ST_FillAreaType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Paper" />
+      <xsd:enumeration value="Page" />
+      <xsd:enumeration value="Border" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_NotePlacementType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="EachColumn" />
+      <xsd:enumeration value="MergedColumn" />
+      <xsd:enumeration value="RightMostColumn" />
+      <xsd:enumeration value="EndOfDocument" />
+      <xsd:enumeration value="EndOfSection" />      
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_NoteNumberingType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Continuous" />
+      <xsd:enumeration value="OnSection" />
+      <xsd:enumeration value="OnPage" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_PageType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Both" />
+      <xsd:enumeration value="Even" />
+      <xsd:enumeration value="Odd" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_ExtMasterPageType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="LastPage" />
+      <xsd:enumeration value="OptionalPage" />
+    </xsd:restriction>
+  </xsd:simpleType>  
+  <xsd:complexType name="CT_StartNumber">
+    <xsd:attribute name="PageStartsOn" type="ST_PageType" default="Both"/>
+    <xsd:attribute name="Equation" type="ST_UnsignedDecimalNumber" default="0" />
+    <xsd:attribute name="Figure" type="ST_UnsignedDecimalNumber" default="0" />
+    <xsd:attribute name="Page" type="ST_UnsignedDecimalNumber" default="0" />
+    <xsd:attribute name="Table" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
-  <xsd:complexType name="CT_HIDE">
-    <xsd:attribute name="Border" type="ST_String" />
-    <xsd:attribute name="EmptyLine" type="ST_String" />
-    <xsd:attribute name="Fill" type="ST_String" />
-    <xsd:attribute name="Footer" type="ST_String" />
-    <xsd:attribute name="Header" type="ST_String" />
-    <xsd:attribute name="MasterPage" type="ST_String" />
-    <xsd:attribute name="PageNumPos" type="ST_String" />
+  <xsd:complexType name="CT_Hide">
+    <xsd:attribute name="Border" type="ST_OnOff" default="false" />
+    <xsd:attribute name="EmptyLine" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Fill" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Footer" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Header" type="ST_OnOff" default="false" />
+    <xsd:attribute name="MasterPage" type="ST_OnOff" default="false" />
+    <xsd:attribute name="PageNumPos" type="ST_OnOff" default="false" />
   </xsd:complexType>
-  <xsd:complexType name="CT_PAGEMARGIN">
-    <xsd:attribute name="Bottom" type="ST_String" />
-    <xsd:attribute name="Footer" type="ST_String" />
-    <xsd:attribute name="Gutter" type="ST_String" />
-    <xsd:attribute name="Header" type="ST_String" />
-    <xsd:attribute name="Left" type="ST_String" />
-    <xsd:attribute name="Right" type="ST_String" />
-    <xsd:attribute name="Top" type="ST_String" />
+  <xsd:complexType name="CT_PageMargin">
+    <xsd:attribute name="Bottom" type="ST_HunitMeasure" default="4252"/>
+    <xsd:attribute name="Footer" type="ST_HunitMeasure" default="4252" />
+    <xsd:attribute name="Gutter" type="ST_HunitMeasure" default="0" />
+    <xsd:attribute name="Header" type="ST_HunitMeasure" default="4252" />
+    <xsd:attribute name="Left" type="ST_HunitMeasure" default="8504" />
+    <xsd:attribute name="Right" type="ST_HunitMeasure" default="8504" />
+    <xsd:attribute name="Top" type="ST_HunitMeasure" default="5668" />
   </xsd:complexType>
-  <xsd:complexType name="CT_PAGEDEF">
+  <xsd:simpleType name="ST_GutterType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="LeftOnly" />
+      <xsd:enumeration value="LeftRight" />
+      <xsd:enumeration value="TopBottom" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CT_PageDef">
     <xsd:sequence>
-      <xsd:element name="PAGEMARGIN" type="CT_PAGEMARGIN" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PAGEMARGIN" type="CT_PageMargin" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
-    <xsd:attribute name="GutterType" type="ST_String" />
-    <xsd:attribute name="Height" type="ST_String" />
-    <xsd:attribute name="Landscape" type="ST_String" />
-    <xsd:attribute name="Width" type="ST_String" />
+    <xsd:attribute name="GutterType" type="ST_GutterType" default="LeftOnly" />
+    <xsd:attribute name="Height" type="ST_HunitMeasure" default="84188" />
+    <xsd:attribute name="Landscape" type="ST_OnOff" default="0"/>
+    <xsd:attribute name="Width" type="ST_HunitMeasure" default="59528" />
   </xsd:complexType>
-  <xsd:complexType name="CT_PAGEOFFSET">
-    <xsd:attribute name="Bottom" type="ST_String" />
-    <xsd:attribute name="Left" type="ST_String" />
-    <xsd:attribute name="Right" type="ST_String" />
-    <xsd:attribute name="Top" type="ST_String" />
+  <xsd:complexType name="CT_PageOffset">
+    <xsd:attribute name="Bottom" type="ST_HunitMeasure" default="1417" />
+    <xsd:attribute name="Left" type="ST_HunitMeasure" default="1417" />
+    <xsd:attribute name="Right" type="ST_HunitMeasure" default="1417" />
+    <xsd:attribute name="Top" type="ST_HunitMeasure" default="1417" />
   </xsd:complexType>
-  <xsd:complexType name="CT_PAGEBORDERFILL">
+  <xsd:complexType name="CT_PageBorderFill">
     <xsd:sequence>
-      <xsd:element name="PAGEOFFSET" type="CT_PAGEOFFSET" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PAGEOFFSET" type="CT_PageOffset" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
-    <xsd:attribute name="FillArea" type="ST_String" />
-    <xsd:attribute name="FooterInside" type="ST_String" />
-    <xsd:attribute name="HeaderInside" type="ST_String" />
-    <xsd:attribute name="TextBorder" type="ST_String" />
-    <xsd:attribute name="Type" type="ST_String" />
+    <xsd:attribute name="BorderFill" type="ST_ID" />
+    <xsd:attribute name="FillArea" type="ST_FillAreaType" default="Paper" />
+    <xsd:attribute name="FooterInside" type="ST_OnOff" default="false" />
+    <xsd:attribute name="HeaderInside" type="ST_OnOff" default="false" />
+    <xsd:attribute name="TextBorder" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Type" type="ST_PageType" default="Both" />
   </xsd:complexType>
-  <xsd:complexType name="CT_SECDEF">
+  <xsd:complexType name="CT_MasterPage">
     <xsd:sequence>
-      <xsd:element name="STARTNUMBER" type="CT_STARTNUMBER" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="HIDE" type="CT_HIDE" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="PAGEDEF" type="CT_PAGEDEF" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="FOOTNOTESHAPE" type="CT_NOTESHAPE" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="ENDNOTESHAPE" type="CT_NOTESHAPE" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="PAGEBORDERFILL" type="CT_PAGEBORDERFILL" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PARALIST" type="CT_ParaList" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
-    <xsd:attribute name="CharGrid" type="ST_String" />
-    <xsd:attribute name="FirstBorder" type="ST_String" />
-    <xsd:attribute name="FirstFill" type="ST_String" />
-    <xsd:attribute name="LineGrid" type="ST_String" />
-    <xsd:attribute name="OutlineShape" type="ST_String" />
-    <xsd:attribute name="SpaceColumns" type="ST_String" />
-    <xsd:attribute name="TabStop" type="ST_String" />
-    <xsd:attribute name="TextDirection" type="ST_String" />
+    <xsd:attribute name="Type" type="ST_PageType" default="Both" />
+    <xsd:attribute name="TextWidth" type="ST_HunitMeasure" />
+    <xsd:attribute name="TextHeight" type="ST_HunitMeasure" default="0"/>
+    <xsd:attribute name="HasTextRef" type="ST_OnOff" default="false" />
+    <xsd:attribute name="HasNumRef" type="ST_OnOff" default="false" />
+  </xsd:complexType>
+  <xsd:complexType name="CT_ExtMasterPage">
+    <xsd:sequence>
+      <xsd:element name="PARALIST" type="CT_ParaList" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="Type" type="ST_ExtMasterPageType" />
+    <xsd:attribute name="PageNumber" type="ST_UnsignedDecimalNumber" />
+    <xsd:attribute name="PageDuplicate" type="ST_OnOff" />
+    <xsd:attribute name="PageFront" type="ST_OnOff" />
+  </xsd:complexType>
+  <xsd:simpleType name="ST_ItemType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Bstr" />
+      <xsd:enumeration value="Integer" />
+      <xsd:enumeration value="Set" />
+      <xsd:enumeration value="Array" />
+      <xsd:enumeration value="BinBata" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CT_Item">
+    <xsd:sequence>
+      <xsd:element name="PARAMETERSET" type="CT_ParameterSet" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PARAMETERARRAY" type="CT_ParameterArray" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="ItemId" type="ST_ID" />
+    <xsd:attribute name="Type" type="ST_ItemType" />
+  </xsd:complexType>
+  <xsd:complexType name="CT_ParameterArray">
+    <xsd:sequence>
+      <xsd:element name="ITEM" type="CT_Item" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" />
+  </xsd:complexType>
+  <xsd:complexType name="CT_ParameterSet">
+    <xsd:sequence>
+      <xsd:element name="ITEM" type="CT_Item" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="SetId" type="ST_ID" />
+    <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" />
+  </xsd:complexType>
+  <xsd:simpleType name="ST_TextDirection">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="0" />
+      <xsd:enumeration value="1" />
+      <xsd:enumeration value="2" />
+    </xsd:restriction>
+  </xsd:simpleType>  
+  <xsd:complexType name="CT_SecDef">
+    <xsd:sequence>
+      <xsd:element name="STARTNUMBER" type="CT_StartNumber" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="HIDE" type="CT_Hide" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PAGEDEF" type="CT_PageDef" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="FOOTNOTESHAPE" type="CT_NoteShape" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ENDNOTESHAPE" type="CT_NoteShape" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PAGEBORDERFILL" type="CT_PageBorderFill" minOccurs="0" maxOccurs="3" />
+      <xsd:element name="MASTERPAGE" type="CT_MasterPage" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="EXT_MASTERPAGE" type="CT_ExtMasterPage" minOccurs="0" maxOccurs="unbounded" />      
+      <xsd:element name="PARAMETERSET" type="CT_ParameterSet" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="CharGrid" type="ST_DecimalNumber" default="0" />
+    <xsd:attribute name="FirstBorder" type="ST_OnOff" default="false" />
+    <xsd:attribute name="FirstFill" type="ST_OnOff" default="false" />
+    <xsd:attribute name="LineGrid" type="ST_DecimalNumber" default="0"/>
+    <xsd:attribute name="OutlineShape" type="ST_ID" default="1" />
+    <xsd:attribute name="SpaceColumns" type="ST_HunitMeasure" />
+    <xsd:attribute name="TabStop" type="ST_DecimalNumber" default="8000" />
+    <xsd:attribute name="TextDirection" type="ST_TextDirection" default="0" />
+    <xsd:attribute name="ExtMasterpageCount" type="ST_DecimalNumber" default="0" />
+    <xsd:attribute name="MemoShapeId" type="ST_String" />
     <xsd:attribute name="TextVerticalWidthHead" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_COLDEF">
-    <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
-    <xsd:attribute name="Layout" type="ST_String" />
-    <xsd:attribute name="SameGap" type="ST_String" />
-    <xsd:attribute name="SameSize" type="ST_String" />
-    <xsd:attribute name="Type" type="ST_String" />
+  <xsd:simpleType name="ST_ColDefType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Newspaper" />
+      <xsd:enumeration value="BalancedNewspaper" />
+      <xsd:enumeration value="Parallel" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_ColLayoutType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Left" />
+      <xsd:enumeration value="Right" />
+      <xsd:enumeration value="Mirror" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CT_Column">
+    <xsd:attribute name="Width" type="ST_HunitMeasure" />
+    <xsd:attribute name="Gap" type="ST_HunitMeasure" />
+  </xsd:complexType>  
+  <xsd:complexType name="CT_ColumnTable">
+    <xsd:sequence>
+      <xsd:element name="COLUMN" type="CT_Column" minOccurs="0" />
+    </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="CT_FIELDBEGIN">
+  <xsd:complexType name="CT_ColDef">
+    <xsd:sequence>
+      <xsd:element name="PARAMETERSET" type="CT_ParameterSet" minOccurs="0" />
+      <xsd:element name="COLUMNLINE" type="CT_Border" minOccurs="0" />
+      <xsd:element name="COLUMNTABLE" type="CT_ColumnTable" minOccurs="0" />
+    </xsd:sequence>      
+    <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="1" />
+    <xsd:attribute name="Layout" type="ST_ColLayoutType" default="Left" />
+    <xsd:attribute name="SameGap" type="ST_HunitMeasure" />
+    <xsd:attribute name="SameSize" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Type" type="ST_ColDefType" default="Newspaper" />
+  </xsd:complexType>
+  <xsd:complexType name="CT_TitleMarkType">
+    <xsd:attribute name="Ignore" type="ST_OnOff" />
+  </xsd:complexType>
+  <xsd:complexType name="CT_MarkpenBeginType">
+    <xsd:attribute name="Color" type="ST_IntColorRGB" />
+  </xsd:complexType>
+  <xsd:group name="EG_CharContent">
+    <xsd:choice>
+      <xsd:element name="TAB" type="ST_String" minOccurs="0" />
+      <xsd:element name="LINEBREAK" type="ST_String" minOccurs="0" />
+      <xsd:element name="HYPEN" type="ST_String" minOccurs="0" />
+      <xsd:element name="NBSPACE" type="ST_String" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Ctrl-Alt-Space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FWSPACE" type="ST_String" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Alt-Space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TITLEMARK" type="CT_TitleMarkType" minOccurs="0" />
+      <xsd:element name="MARKPENBEGIN" type="CT_MarkpenBeginType" minOccurs="0" />
+      <xsd:element name="MARKPENEND" type="ST_String" minOccurs="0" />
+    </xsd:choice>
+  </xsd:group>
+  <xsd:complexType name="CT_Char" mixed="true">
+    <xsd:simpleContent>
+      <xsd:extension base="ST_String">
+        <xsd:attribute name="Style" type="ST_ID" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="CT_FieldBegin">
     <xsd:attribute name="Command" type="ST_String" />
     <xsd:attribute name="Dirty" type="ST_String" />
     <xsd:attribute name="Editable" type="ST_String" />
@@ -1773,68 +1864,104 @@
     <xsd:attribute name="Type" type="ST_String" />
     <xsd:attribute name="Fixed" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_FIELDEND">
+  <xsd:complexType name="CT_FieldEnd">
     <xsd:attribute name="Editable" type="ST_String" />
     <xsd:attribute name="Property" type="ST_String" />
     <xsd:attribute name="Type" type="ST_String" />
     <xsd:attribute name="Zorder" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_AUTONUM">
+  <xsd:complexType name="CT_AutoNum">
     <xsd:sequence>
-      <xsd:element name="AUTONUMFORMAT" type="CT_AUTONUMFORMAT" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="AUTONUMFORMAT" type="CT_AutoNumFormat" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="Number" type="ST_String" />
     <xsd:attribute name="NumberType" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_DUTMAL">
+  <xsd:complexType name="CT_Dutmal">
     <xsd:sequence>
-      <xsd:element name="MAINTEXT" type="ST_String" minOccurs="0" msdata:Ordinal="0" />
-      <xsd:element name="SUBTEXT" type="ST_String" minOccurs="0" msdata:Ordinal="1" />
+      <xsd:element name="MAINTEXT" type="ST_String" minOccurs="0" />
+      <xsd:element name="SUBTEXT" type="ST_String" minOccurs="0" />
     </xsd:sequence>
     <xsd:attribute name="Align" type="ST_String" />
     <xsd:attribute name="PosType" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_NAME">
+  <xsd:complexType name="CT_Name">
     <xsd:attribute name="Name" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_CHAR">
+  <xsd:simpleType name="ST_TablePageBreak">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Table" />
+      <xsd:enumeration value="Cell" />
+      <xsd:enumeration value="None" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CT_Table">
+    <xsd:sequence>
+      <xsd:element name="SHAPEOBJECT" type="CT_ShapeObject" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="INSIDEMARGIN" type="CT_InsideMargin" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CELLZONELIST" type="CT_CellZoneList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ROW" type="CT_Row" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="PageBreak" type="ST_TablePageBreak" default="Cell"/>
+    <xsd:attribute name="RepeatHeader" type="ST_OnOff" default="true"/>
+    <xsd:attribute name="RowCount" type="ST_UnsignedDecimalNumber"/>
+    <xsd:attribute name="ColCount" type="ST_UnsignedDecimalNumber"/>
+    <xsd:attribute name="CellSpacing" type="ST_HunitMeasure" default="0"/>
+    <xsd:attribute name="BorderFill" type="ST_ID"/>
+  </xsd:complexType>
+  <xsd:complexType name="CT_Picture">
     <xsd:sequence>
       <xsd:element name="TAB" type="ST_String" minOccurs="0" />
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="CT_TABLE">
+  <xsd:complexType name="CT_Text">
     <xsd:sequence>
-      <xsd:element name="SHAPEOBJECT" type="CT_SHAPEOBJECT" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="INSIDEMARGIN" type="CT_INSIDEMARGIN" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="CELLZONELIST" type="CT_CELLZONELIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="ROW" type="CT_ROW" minOccurs="0" maxOccurs="unbounded" />
-    </xsd:sequence>
-  </xsd:complexType>
-  <xsd:complexType name="CT_PICTURE">
-    <xsd:sequence>
-      <xsd:element name="TAB" type="ST_String" minOccurs="0" />
-    </xsd:sequence>
-  </xsd:complexType>
-  <xsd:complexType name="CT_TEXT">
-    <xsd:sequence>
-      <xsd:element name="SECDEF" type="CT_SECDEF" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="COLDEF" type="CT_COLDEF" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="TABLE" type="CT_TABLE" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="PICTURE" type="CT_PICTURE" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="CHAR" type="CT_CHAR" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="FIELDBEGIN" type="CT_FIELDBEGIN" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="FIELDEND" type="CT_FIELDEND" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="AUTONUM" type="CT_AUTONUM" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="DUTMAL" type="CT_DUTMAL" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="EQUATION" type="CT_EQUATION" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="BOOKMARK" type="CT_NAME" minOccurs="0" maxOccurs="unbounded">
-      </xsd:element>
+      <xsd:element name="SECDEF" type="CT_SecDef" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="COLDEF" type="CT_ColDef" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CHAR" type="CT_Char" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="TABLE" type="CT_Table" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PICTURE" type="CT_Picture" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CONTAINER" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OLE" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="EQUATION" type="CT_Equation" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="TEXTART" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="LINE" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="RECTANGLE" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="ELLIPSE" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="ARC" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="POLYGON" type="CT_Equation" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CURVE" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CONNECTLINE" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="UNKNOWNOBJECT" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="FIELDBEGIN" type="CT_FieldBegin" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="FIELDEND" type="CT_FieldEnd" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="BOOKMARK" type="CT_Name" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="HEADER" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="FOOTER" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="FOOTNOTE" type="CT_Name" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="ENDNOTE" type="CT_Name" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="AUTONUM" type="CT_AutoNum" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="NEWNUM" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PAGENUMCTRL" type="CT_Equation" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PAGEHIDING" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PAGENUM" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="INDEXMARK" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="COMPOSE" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="DUTMAL" type="CT_Dutmal" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="HIDDENCOMMENT" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="BUTTON" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="RADIOBUTTON" type="CT_Equation" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CHECKBUTTON" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="COMBOBOX" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="EDIT" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="LISTBOX" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="SCROLLBAR" type="ST_String" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="CharShape" type="ST_ID" />
   </xsd:complexType>
   <xsd:complexType name="CT_P">
     <xsd:sequence>
-      <xsd:element name="TEXT" type="CT_TEXT" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="TEXT" type="CT_Text" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="ColumnBreak" type="ST_OnOff" default="false" />
     <xsd:attribute name="PageBreak" type="ST_OnOff" default="false" />
@@ -1842,109 +1969,194 @@
     <xsd:attribute name="Style" type="ST_ID" />
     <xsd:attribute name="InstId" type="ST_ID" />
   </xsd:complexType>
-
-  <xsd:complexType name="CT_SIZE">
-    <xsd:attribute name="Height" type="ST_String" />
-    <xsd:attribute name="HeightRelTo" type="ST_String" />
-    <xsd:attribute name="Protect" type="ST_String" />
-    <xsd:attribute name="Width" type="ST_String" />
-    <xsd:attribute name="WidthRelTo" type="ST_String" />
+  <xsd:simpleType name="ST_SizeHeightRelTo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Paper" />
+      <xsd:enumeration value="Page" />
+      <xsd:enumeration value="Absolute" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_SizeWidthRelTo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Paper" />
+      <xsd:enumeration value="Page" />
+      <xsd:enumeration value="Column" />
+      <xsd:enumeration value="Para" />
+      <xsd:enumeration value="Absolute" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_VertRelTo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Paper" />
+      <xsd:enumeration value="Page" />
+      <xsd:enumeration value="Para" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_HorzRelTo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Paper" />
+      <xsd:enumeration value="Page" />
+      <xsd:enumeration value="Column" />
+      <xsd:enumeration value="Para" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_VertAlign">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Top" />
+      <xsd:enumeration value="Center" />
+      <xsd:enumeration value="Bottom" />
+      <xsd:enumeration value="Inside" />
+      <xsd:enumeration value="Outside" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_HorzAlign">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Left" />
+      <xsd:enumeration value="Center" />
+      <xsd:enumeration value="Right" />
+      <xsd:enumeration value="Inside" />
+      <xsd:enumeration value="Outside" />
+    </xsd:restriction>
+  </xsd:simpleType>  
+  <xsd:complexType name="CT_Size">
+    <xsd:attribute name="Height" type="ST_HunitMeasure" />
+    <xsd:attribute name="HeightRelTo" type="ST_SizeHeightRelTo" default="Absolute"/>
+    <xsd:attribute name="Protect" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Width" type="ST_HunitMeasure" />
+    <xsd:attribute name="WidthRelTo" type="ST_SizeWidthRelTo" default="Absolute"/>
+  </xsd:complexType>  
+  <xsd:complexType name="CT_Position">
+    <xsd:attribute name="AffectLSpacing" type="ST_OnOff" default="false"/>
+    <xsd:attribute name="AllowOverlap" type="ST_OnOff" default="false" />
+    <xsd:attribute name="FlowWithText" type="ST_OnOff" default="false" />
+    <xsd:attribute name="HoldAnchorAndSO" type="ST_OnOff" default="false" />
+    <xsd:attribute name="HorzAlign" type="ST_HorzAlign" />
+    <xsd:attribute name="HorzOffset" type="ST_HunitMeasure" />
+    <xsd:attribute name="HorzRelTo" type="ST_HorzRelTo" />
+    <xsd:attribute name="TreatAsChar" type="ST_OnOff" />
+    <xsd:attribute name="VertAlign" type="ST_VertAlign" />
+    <xsd:attribute name="VertOffset" type="ST_HunitMeasure" />
+    <xsd:attribute name="VertRelTo" type="ST_VertRelTo" />
   </xsd:complexType>
-  <xsd:complexType name="CT_POSITION">
-    <xsd:attribute name="AffectLSpacing" type="ST_String" />
-    <xsd:attribute name="AllowOverlap" type="ST_String" />
-    <xsd:attribute name="FlowWithText" type="ST_String" />
-    <xsd:attribute name="HoldAnchorAndSO" type="ST_String" />
-    <xsd:attribute name="HorzAlign" type="ST_String" />
-    <xsd:attribute name="HorzOffset" type="ST_String" />
-    <xsd:attribute name="HorzRelTo" type="ST_String" />
-    <xsd:attribute name="TreatAsChar" type="ST_String" />
-    <xsd:attribute name="VertAlign" type="ST_String" />
-    <xsd:attribute name="VertOffset" type="ST_String" />
-    <xsd:attribute name="VertRelTo" type="ST_String" />
+  <xsd:complexType name="CT_OutsideMargin">
+    <xsd:attribute name="Bottom" type="ST_HunitMeasure" />
+    <xsd:attribute name="Left" type="ST_HunitMeasure" />
+    <xsd:attribute name="Right" type="ST_HunitMeasure" />
+    <xsd:attribute name="Top" type="ST_HunitMeasure" />
   </xsd:complexType>
-  <xsd:complexType name="CT_OUTSIDEMARGIN">
-    <xsd:attribute name="Bottom" type="ST_String" />
-    <xsd:attribute name="Left" type="ST_String" />
-    <xsd:attribute name="Right" type="ST_String" />
-    <xsd:attribute name="Top" type="ST_String" />
-  </xsd:complexType>
-
-  <xsd:complexType name="CT_SHAPEOBJECT">
+  <xsd:simpleType name="ST_ShapeNumberingType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="None" />
+      <xsd:enumeration value="Figure" />
+      <xsd:enumeration value="Table" />
+      <xsd:enumeration value="Equation" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_ShapeTextFlow">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BothSides" />
+      <xsd:enumeration value="LeftOnly" />
+      <xsd:enumeration value="RightOnly" />
+      <xsd:enumeration value="LargestOnly" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_CaptionSide">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Left" />
+      <xsd:enumeration value="Right" />
+      <xsd:enumeration value="Top" />
+      <xsd:enumeration value="Bottom" />
+    </xsd:restriction>
+  </xsd:simpleType>  
+  <xsd:complexType name="CT_Caption">
     <xsd:sequence>
-      <xsd:element name="SIZE" type="CT_SIZE" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="POSITION" type="CT_POSITION" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="OUTSIDEMARGIN" type="CT_OUTSIDEMARGIN" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PARALIST" type="CT_ParaList" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
-    <xsd:attribute name="InstId" type="ST_String" />
-    <xsd:attribute name="Lock" type="ST_String" />
-    <xsd:attribute name="NumberingType" type="ST_String" />
-    <xsd:attribute name="ZOrder" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_INSIDEMARGIN">
-    <xsd:attribute name="Left" type="ST_String" />
-    <xsd:attribute name="Right" type="ST_String" />
-    <xsd:attribute name="Top" type="ST_String" />
-    <xsd:attribute name="Bottom" type="ST_String" />
+    <xsd:attribute name="Side" type="ST_CaptionSide" default="Left" />
+    <xsd:attribute name="FullSize" type="ST_OnOff" default="false" />
+    <xsd:attribute name="Width" type="ST_HunitMeasure" />
+    <xsd:attribute name="Gap" type="ST_HunitMeasure" />
+    <xsd:attribute name="LastWidth" type="ST_HunitMeasure" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_CELLZONE">
-    <xsd:attribute name="StartRowAddr" type="ST_String" />
-    <xsd:attribute name="StartColAddr" type="ST_String" />
-    <xsd:attribute name="EndRowAddr" type="ST_String" />
-    <xsd:attribute name="EndColAddr" type="ST_String" />
-    <xsd:attribute name="BorderFill" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_CELLZONELIST">
+  <xsd:complexType name="CT_ShapeObject">
     <xsd:sequence>
-      <xsd:element name="CELLZONE" type="CT_CELLZONE" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="SIZE" type="CT_Size" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="POSITION" type="CT_Position" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="OUTSIDEMARGIN" type="CT_OutsideMargin" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CAPTION" type="CT_Caption" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="SHAPECOMMENT" type="CT_String" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="InstId" type="ST_ID" />
+    <xsd:attribute name="ZOrder" type="ST_DecimalNumber" default="0" />
+    <xsd:attribute name="NumberingType" type="ST_ShapeNumberingType" default="None"/>
+    <xsd:attribute name="TextWrap" type="ST_TextWrapType" />
+    <xsd:attribute name="TextFlow" type="ST_ShapeTextFlow" default="BothSides" />
+    <xsd:attribute name="Lock" type="ST_OnOff" default="false"/>
+  </xsd:complexType>
+  <xsd:complexType name="CT_InsideMargin">
+    <xsd:attribute name="Left" type="ST_HunitMeasure" />
+    <xsd:attribute name="Right" type="ST_HunitMeasure" />
+    <xsd:attribute name="Top" type="ST_HunitMeasure" />
+    <xsd:attribute name="Bottom" type="ST_HunitMeasure" />
+  </xsd:complexType>
+  <xsd:complexType name="CT_CellZone">
+    <xsd:attribute name="StartRowAddr" type="ST_UnsignedDecimalNumber" />
+    <xsd:attribute name="StartColAddr" type="ST_UnsignedDecimalNumber" />
+    <xsd:attribute name="EndRowAddr" type="ST_UnsignedDecimalNumber" />
+    <xsd:attribute name="EndColAddr" type="ST_UnsignedDecimalNumber" />
+    <xsd:attribute name="BorderFill" type="ST_ID" />
+  </xsd:complexType>
+  <xsd:complexType name="CT_CellZoneList">
+    <xsd:sequence>
+      <xsd:element name="CELLZONE" type="CT_CellZone" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
-  <xsd:complexType name="CT_ROW">
+  <xsd:complexType name="CT_Row">
     <xsd:sequence>
-      <xsd:element name="CELL" type="CT_CELL" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CELL" type="CT_Cell" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="CT_CELL">
+  <xsd:complexType name="CT_Cell">
     <xsd:sequence>
-      <xsd:element name="CELLMARGIN" type="CT_CELLMARGIN" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="PARALIST" type="CT_PARALIST" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CELLMARGIN" type="CT_CellMargin" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PARALIST" type="CT_ParaList" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Name" type="ST_String" />
     <xsd:attribute name="ColAddr" type="ST_UnsignedDecimalNumber" default="0" />
     <xsd:attribute name="RowAddr" type="ST_UnsignedDecimalNumber" default="0" />
     <xsd:attribute name="ColSpan" type="ST_UnsignedDecimalNumber" default="0" />
     <xsd:attribute name="RowSpan" type="ST_UnsignedDecimalNumber" default="0" />
-    <xsd:attribute name="Width" type="ST_UnsignedDecimalNumber" default="0" />
-    <xsd:attribute name="Height" type="ST_UnsignedDecimalNumber" default="0" />
+    <xsd:attribute name="Width" type="ST_HunitMeasure" default="0" />
+    <xsd:attribute name="Height" type="ST_HunitMeasure" default="0" />
     <xsd:attribute name="Header" type="ST_OnOff" default="false" />
     <xsd:attribute name="HasMargin" type="ST_OnOff" default="false" />
     <xsd:attribute name="Protect" type="ST_OnOff" default="false" />
     <xsd:attribute name="Editable" type="ST_OnOff" default="false" />
     <xsd:attribute name="Dirty" type="ST_OnOff" default="false" />
-    <xsd:attribute name="BorderFill" type="ST_String" />
+    <xsd:attribute name="BorderFill" type="ST_ID" />
   </xsd:complexType>
-  <xsd:complexType name="CT_CELLMARGIN">
-    <xsd:attribute name="Left" type="ST_UnsignedDecimalNumber" default="0" />
-    <xsd:attribute name="Right" type="ST_UnsignedDecimalNumber" default="0" />
-    <xsd:attribute name="Top" type="ST_UnsignedDecimalNumber" default="0" />
-    <xsd:attribute name="Bottom" type="ST_UnsignedDecimalNumber" default="0" />
+  <xsd:complexType name="CT_CellMargin">
+    <xsd:attribute name="Left" type="ST_HunitMeasure" default="0" />
+    <xsd:attribute name="Right" type="ST_HunitMeasure" default="0" />
+    <xsd:attribute name="Top" type="ST_HunitMeasure" default="0" />
+    <xsd:attribute name="Bottom" type="ST_HunitMeasure" default="0" />
   </xsd:complexType>
-  <xsd:complexType name="CT_PARALIST">
+  <xsd:complexType name="CT_ParaList">
     <xsd:sequence>
       <xsd:element name="P" type="CT_P" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
-    <xsd:attribute name="TextDirection" type="ST_OnOff" default="0" />
+    <xsd:attribute name="TextDirection" type="ST_TextDirection" default="0" />
     <xsd:attribute name="LineWrap" type="ST_LineWrapType" default="Break" />
     <xsd:attribute name="VertAlign" type="ST_VertAlignType1" default="Top" />
     <xsd:attribute name="LinkListID" type="ST_String" />
     <xsd:attribute name="LinkListIDNext" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_EQUATION">
+  <xsd:complexType name="CT_Equation">
     <xsd:sequence>
-      <xsd:element name="SCRIPT" type="ST_String" minOccurs="0" msdata:Ordinal="1" />
-      <xsd:element name="SHAPEOBJECT" type="CT_SHAPEOBJECT" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="SCRIPT" type="ST_String" minOccurs="0" />
+      <xsd:element name="SHAPEOBJECT" type="CT_ShapeObject" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="BaseLine" type="ST_String" />
     <xsd:attribute name="BaseUnit" type="ST_String" />
@@ -1952,13 +2164,7 @@
     <xsd:attribute name="TextColor" type="ST_String" />
     <xsd:attribute name="Version" type="ST_String" />
   </xsd:complexType>
-  <xsd:simpleType name="ST_ID">
-    <xsd:restriction base="ST_String"/>
-  </xsd:simpleType>
-  <xsd:complexType name="CT_ID">
-    <xsd:attribute name="ID" type="ST_ID"/>
-  </xsd:complexType>
-  <xsd:simpleType name="ST_HWPML_STYLE">
+  <xsd:simpleType name="ST_HwpmlStyle">
     <xsd:restriction base="ST_String">
       <xsd:enumeration value="embed">
       </xsd:enumeration>
@@ -1966,64 +2172,49 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="ST_BINITEM_TYPE">
-    <xsd:restriction base="ST_String">
+  <xsd:simpleType name="ST_BinItemType">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Link" />
       <xsd:enumeration value="Embedding" />
       <xsd:enumeration value="Storage" />      
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="ST_BINITEM_FORMAT">
-    <xsd:restriction base="ST_String">
+  <xsd:simpleType name="ST_BinItemFormat">
+    <xsd:restriction base="xsd:string">
       <xsd:enumeration value="jpg" />
       <xsd:enumeration value="bmp" />
       <xsd:enumeration value="gif" />
       <xsd:enumeration value="ole" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:complexType name="CT_BINITEM">
-    <xsd:attribute name="Type" type="ST_BINITEM_TYPE" />
+  <xsd:complexType name="CT_BinItem">
+    <xsd:attribute name="Type" type="ST_BinItemType" />
     <xsd:attribute name="APath" type="ST_String" />
     <xsd:attribute name="RPath" type="ST_String" />
     <xsd:attribute name="BinData" type="ST_String" />
-    <xsd:attribute name="Format" type="ST_BINITEM_FORMAT" />
+    <xsd:attribute name="Format" type="ST_BinItemFormat" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_TITLE">
+  <xsd:complexType name="CT_DocSummaryType">
     <xsd:attribute name="Type" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_SUBJECT">
-    <xsd:attribute name="Type" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_AUTHOR">
-    <xsd:attribute name="Type" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_DATE">
-    <xsd:attribute name="Type" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_KEYWORDS">
-    <xsd:attribute name="Type" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_COMMENTS">
-    <xsd:attribute name="Type" type="ST_String" />
-  </xsd:complexType>
-  <xsd:complexType name="CT_FORBIDDENSTRING">
+  <xsd:complexType name="CT_ForbiddenString">
     <xsd:sequence>
       <xsd:element name="FORBIDDEN" type="ST_String" minOccurs="0" />
     </xsd:sequence>      
   </xsd:complexType>
-  <xsd:complexType name="CT_DOCSUMMARY">
+  <xsd:complexType name="CT_DocSummary">
     <xsd:sequence>
-      <xsd:element name="TITLE" type="CT_TITLE" minOccurs="0" />
-      <xsd:element name="SUBJECT" type="CT_SUBJECT" minOccurs="0" />
-      <xsd:element name="AUTHOR" type="CT_AUTHOR" minOccurs="0" />
-      <xsd:element name="DATE" type="CT_DATE" minOccurs="0" />
-      <xsd:element name="KEYWORDS" type="CT_KEYWORDS" minOccurs="0" />
-      <xsd:element name="COMMENTS" type="CT_COMMENTS" minOccurs="0" />
-      <xsd:element name="FORBIDDENSTRING" type="CT_FORBIDDENSTRING" minOccurs="0" />
+      <xsd:element name="TITLE" type="CT_DocSummaryType" minOccurs="0" />
+      <xsd:element name="SUBJECT" type="CT_DocSummaryType" minOccurs="0" />
+      <xsd:element name="AUTHOR" type="CT_DocSummaryType" minOccurs="0" />
+      <xsd:element name="DATE" type="CT_DocSummaryType" minOccurs="0" />
+      <xsd:element name="KEYWORDS" type="CT_DocSummaryType" minOccurs="0" />
+      <xsd:element name="COMMENTS" type="CT_DocSummaryType" minOccurs="0" />
+      <xsd:element name="FORBIDDENSTRING" type="CT_ForbiddenString" minOccurs="0" />
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="CT_BEGINNUMBER">
+  <xsd:complexType name="CT_BeginNumber">
     <xsd:attribute name="Endnote" type="ST_UnsignedDecimalNumber" default="1" />
     <xsd:attribute name="Equation" type="ST_UnsignedDecimalNumber" default="1" />
     <xsd:attribute name="Footnote" type="ST_UnsignedDecimalNumber" default="1" />
@@ -2032,160 +2223,155 @@
     <xsd:attribute name="Table" type="ST_UnsignedDecimalNumber" default="1" />
     <xsd:attribute name="TotalPage" type="ST_UnsignedDecimalNumber" default="1" />
   </xsd:complexType>
-  <xsd:complexType name="CT_CARETPOS">
+  <xsd:complexType name="CT_CaretPos">
     <xsd:attribute name="List" type="ST_String" />
     <xsd:attribute name="Para" type="ST_String" />
     <xsd:attribute name="Pos" type="ST_String" />
   </xsd:complexType>
-  <xsd:complexType name="CT_DOCSETTING">
+  <xsd:complexType name="CT_DocSetting">
     <xsd:sequence>
-      <xsd:element name="BEGINNUMBER" type="CT_BEGINNUMBER" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="CARETPOS" type="CT_CARETPOS" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="BEGINNUMBER" type="CT_BeginNumber" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CARETPOS" type="CT_CaretPos" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
   </xsd:complexType>
 
-  <xsd:complexType name="CT_BINDATALIST">
+  <xsd:complexType name="CT_BinDataList">
     <xsd:sequence>
-      <xsd:element name="BINITEM" type="CT_BINITEM" minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="BINITEM" type="CT_BinItem" minOccurs="0" maxOccurs="unbounded">
       </xsd:element>
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0">
     </xsd:attribute>
   </xsd:complexType>
 
-  <xsd:complexType name="CT_FONTFACE">
+  <xsd:complexType name="CT_Fontface">
     <xsd:sequence>
-      <xsd:element name="FONT" type="CT_FONT" />
+      <xsd:element name="FONT" type="CT_Font" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Lang" type="ST_String" />
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_FACENAMELIST">
+  <xsd:complexType name="CT_FacenameList">
     <xsd:sequence>
-      <xsd:element name="FONTFACE" type="CT_FONTFACE" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="FONTFACE" type="CT_Fontface" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
   </xsd:complexType>
 
-  <xsd:complexType name="CT_BORDERFILLLIST">
+  <xsd:complexType name="CT_BorderFillList">
     <xsd:sequence>
-      <xsd:element name="BORDERFILL" type="CT_BORDERFILL" minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="BORDERFILL" type="CT_BorderFill" minOccurs="0" maxOccurs="unbounded">
       </xsd:element>
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_CHARSHAPELIST">
+  <xsd:complexType name="CT_CharShapeList">
     <xsd:sequence>
-      <xsd:element name="CHARSHAPE" type="CT_CHARSHAPE" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CHARSHAPE" type="CT_CharShape" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_TABDEFLIST">
+  <xsd:complexType name="CT_TabDefList">
     <xsd:sequence>
-      <xsd:element name="TABDEF" type="CT_TABDEF" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="TABDEF" type="CT_TabDef" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_NUMBERINGLIST">
+  <xsd:complexType name="CT_NumberingList">
     <xsd:sequence>
-      <xsd:element name="NUMBERING" type="CT_NUMBERING" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="NUMBERING" type="CT_Numbering" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_BULLETLIST">
+  <xsd:complexType name="CT_BulletList">
     <xsd:sequence>
-      <xsd:element name="BULLET" type="CT_BULLET" minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="BULLET" type="CT_Bullet" minOccurs="0" maxOccurs="unbounded">
       </xsd:element>
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_PARASHAPELIST">
+  <xsd:complexType name="CT_ParaShapeList">
     <xsd:sequence>
-      <xsd:element name="PARASHAPE" type="CT_PARASHAPE" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="PARASHAPE" type="CT_ParaShape" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_STYLELIST">
+  <xsd:complexType name="CT_StyleList">
     <xsd:sequence>
-      <xsd:element name="STYLE" type="CT_STYLE" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="STYLE" type="CT_Style" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_MEMOSHAPELIST">
+  <xsd:complexType name="CT_MemoShapeList">
     <xsd:sequence>
-      <xsd:element name="MEMO" type="CT_MEMO" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="MEMO" type="CT_Memo" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Count" type="ST_UnsignedDecimalNumber" default="0" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_MAPPINGTABLE">
+  <xsd:complexType name="CT_MappingTable">
     <xsd:sequence>
-      <xsd:element name="BINDATALIST" type="CT_BINDATALIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="FACENAMELIST" type="CT_FACENAMELIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="BORDERFILLLIST" type="CT_BORDERFILLLIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="CHARSHAPELIST" type="CT_CHARSHAPELIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="TABDEFLIST" type="CT_TABDEFLIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="NUMBERINGLIST" type="CT_NUMBERINGLIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="BULLETLIST" type="CT_BULLETLIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="PARASHAPELIST" type="CT_PARASHAPELIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="STYLELIST" type="CT_STYLELIST" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="MEMOSHAPELIST" type="CT_MEMOSHAPELIST" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="BINDATALIST" type="CT_BinDataList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="FACENAMELIST" type="CT_FacenameList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="BORDERFILLLIST" type="CT_BorderFillList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CHARSHAPELIST" type="CT_CharShapeList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="TABDEFLIST" type="CT_TabDefList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="NUMBERINGLIST" type="CT_NumberingList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="BULLETLIST" type="CT_BulletList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PARASHAPELIST" type="CT_ParaShapeList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="STYLELIST" type="CT_StyleList" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="MEMOSHAPELIST" type="CT_MemoShapeList" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="CT_HEAD">
+  <xsd:complexType name="CT_Head">
     <xsd:sequence>
-      <xsd:element name="DOCSUMMARY" type="CT_DOCSUMMARY" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="DOCSETTING" type="CT_DOCSETTING" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="MAPPINGTABLE" type="CT_MAPPINGTABLE" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DOCSUMMARY" type="CT_DocSummary" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DOCSETTING" type="CT_DocSetting" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="MAPPINGTABLE" type="CT_MappingTable" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="SecCnt" type="ST_UnsignedDecimalNumber" />
   </xsd:complexType>
 
-  <xsd:complexType name="CT_SECTION">
+  <xsd:complexType name="CT_Section">
     <xsd:sequence>
       <xsd:element name="P" type="CT_P" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Id" type="ST_ID" />
   </xsd:complexType>
-
-  <xsd:complexType name="CT_BODY">
+  <xsd:complexType name="CT_Body">
     <xsd:sequence>
-      <xsd:element name="SECTION" type="CT_SECTION" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="SECTION" type="CT_Section" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
   </xsd:complexType>
-
-  <xsd:complexType name="CT_SCRIPTCODE">
+  <xsd:complexType name="CT_ScriptCode">
     <xsd:sequence>
-      <xsd:element name="SCRIPTHEADER" type="ST_String" minOccurs="0" msdata:Ordinal="0" />
-      <xsd:element name="SCRIPTSOURCE" type="ST_String" minOccurs="0" msdata:Ordinal="1" />
+      <xsd:element name="SCRIPTHEADER" type="ST_String" minOccurs="0" />
+      <xsd:element name="SCRIPTSOURCE" type="ST_String" minOccurs="0" />
     </xsd:sequence>
     <xsd:attribute name="Type" type="ST_String" />
     <xsd:attribute name="Version" type="ST_String" />
   </xsd:complexType>
-
-  <xsd:complexType name="CT_TAIL">
+  <xsd:complexType name="CT_Tail">
     <xsd:sequence>
-      <xsd:element name="SCRIPTCODE" type="CT_SCRIPTCODE" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="SCRIPTCODE" type="CT_ScriptCode" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
   </xsd:complexType>
-
   <xsd:complexType name="CT_HWPML">
     <xsd:sequence>
-      <xsd:element name="HEAD" type="CT_HEAD" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="BODY" type="CT_BODY" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="TAIL" type="CT_TAIL" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="HEAD" type="CT_Head" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="BODY" type="CT_Body" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="TAIL" type="CT_Tail" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
-    <xsd:attribute name="Style" type="ST_HWPML_STYLE" />
+    <xsd:attribute name="Style" type="ST_HwpmlStyle" />
     <xsd:attribute name="SubVersion" type="ST_String" />
     <xsd:attribute name="Version" type="ST_String" />
   </xsd:complexType>
-
   <xsd:element name="HWPML" type="CT_HWPML" />
  </xsd:schema>
