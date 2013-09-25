@@ -262,15 +262,32 @@ class ALL_SCHEMA:
             pbAttr = pbSchema.attribute.add()
             self._parseAttribute(xmlSchema, attribute, pbAttr)
 
+    def _getHasFirstElementParent(self, xmlSchema, xsdElement):
+        parentElem = xsdElement.find('.//{%s}element/..' % XSD_URI)
+        if parentElem is None:
+            groupElem = xsdElement.find('.//{%s}group' % XSD_URI)
+            if groupElem is not None:
+                ref = groupElem.attrib.get('ref')
+                if ref is not None:
+                    otherGroupElem, otherSchema = self._findGroup(xmlSchema, ref)
+                    return self._getHasFirstElementParent(otherSchema, otherGroupElem)
+        return parentElem
+
+
     def _parseComplexType(self, xmlSchema, complexTypeElem, pbComplexType, pbContType, pbElemCont=None):
         name = complexTypeElem.attrib.get('name')
         if name:
             pbComplexType.name = name
 
+        mixed = complexTypeElem.attrib.get('mixed')
+        if mixed and mixed == 'true':
+            pbContType = PB.ElementContainer.RepeatedChoice
+            textXmlElem = ET.Element('{%s}element' % XSD_URI, {'name':'text', 'type':'xsdtype:XML_Text'})
+            parentElem = self._getHasFirstElementParent(xmlSchema, complexTypeElem)
+            if parentElem is not None:
+                parentElem.append(textXmlElem)
+
         for childElem in complexTypeElem:
-            # minOccurs = parseMinOccurs(childElem)
-            # if (pbElemCont is not None) and (pbElemCont.min_occurs < minOccurs):
-            #     pbElemCont.min_occurs = minOccurs
 
             if childElem.tag == '{%s}sequence' % XSD_URI:
                 self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont)
@@ -292,6 +309,13 @@ class ALL_SCHEMA:
                 self._parseAnyAttribute(xmlSchema, childElem, pbAttribute, pbElemCont)
             elif childElem.tag == '{%s}simpleContent' % XSD_URI:
                 self._parseSimpleContent(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont)
+
+
+        # if mixed and mixed == 'true':
+        #     pbElem = pbElemCont.repeated_choice.add()
+        #     pbElem.name = 'text'
+        #     pbElem.type.kind = PB.Element.Type.ComplexTypeName
+        #     pbElem.type.complex_type_name = 'xsd:XML_Text'
 
     def _parseComplexContent(self, xmlSchema, complexContentElem, pbComplexType, pbContType, pbElemCont):
         for childElem in complexContentElem:
@@ -896,7 +920,7 @@ class ALL_SCHEMA:
         return self._isXsdTypeName(typeName, xmlSchema, xmlSchema.simpleTypeElems, self._isSimpleTypeName)
 
     def _isComplexTypeName(self, typeName, xmlSchema):
-        return self._isXsdTypeName(typeName, xmlSchema, xmlSchema.complexTypeElems, self._isComplexTypeName)
+        return (self._isXsdTypeName(typeName, xmlSchema, xmlSchema.complexTypeElems, self._isComplexTypeName) or typeName.startswith('xsdtype'))
 
 
 def applyBaseToComplexType(pbSource, pbDest):

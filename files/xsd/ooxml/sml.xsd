@@ -15,9 +15,9 @@
     schemaLocation="dml-spreadsheetDrawing.xsd"/>
 
   <xsd:complexType name="CT_Formula">
-    <xsd:simpleContent>
+    <xsd:complexContent>
         <xsd:extension base="s:CT_Xstring"/>
-    </xsd:simpleContent>
+    </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType name="CT_AutoFilter">
     <xsd:sequence>

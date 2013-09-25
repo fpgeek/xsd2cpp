@@ -177,3 +177,55 @@ namespace ns_xml
     };
     space* space::default_instance_ = NULL;
 }
+
+namespace ns_xsdtype
+{
+    XML_Text::XML_Text()
+    :m_has_value(false),
+    m_value()
+    {
+
+    }
+
+    XML_Text::~XML_Text()
+    {
+
+    }
+
+    void XML_Text::clear()
+    {
+
+    }
+
+    void XML_Text::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
+    {
+        _outStream << m_value;
+    }
+
+    const XML_Text& XML_Text::default_instance()
+    {
+        if (!XML_Text::default_instance_)
+        {
+            XML_Text::default_instance_ = new XML_Text();
+        }
+        return *XML_Text::default_instance_;
+    }
+
+    bool XML_Text::has_value() const
+    {
+        return m_has_value;
+    }
+
+    void XML_Text::set_value(const std::string& _value)
+    {
+        m_has_value = true;
+        m_value = _value;
+    }
+
+    const std::string& XML_Text::get_value() const
+    {
+        return m_value;
+    }
+
+    XML_Text* XML_Text::default_instance_ = NULL;
+}

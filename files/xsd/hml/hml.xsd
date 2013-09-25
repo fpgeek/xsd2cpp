@@ -1849,11 +1849,10 @@
     </xsd:choice>
   </xsd:group>
   <xsd:complexType name="CT_Char" mixed="true">
-    <xsd:simpleContent>
-      <xsd:extension base="ST_String">
-        <xsd:attribute name="Style" type="ST_ID" />
-      </xsd:extension>
-    </xsd:simpleContent>
+    <xsd:sequence maxOccurs="unbounded">
+        <xsd:group ref="EG_CharContent" />
+    </xsd:sequence>
+    <xsd:attribute name="Style" type="ST_ID" />
   </xsd:complexType>
   <xsd:complexType name="CT_FieldBegin">
     <xsd:attribute name="Command" type="ST_String" />

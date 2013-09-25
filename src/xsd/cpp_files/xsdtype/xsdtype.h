@@ -141,4 +141,24 @@ namespace ns_xml {
     };
 }
 
+namespace ns_xsdtype {
+    class XML_Text: public XSD::ComplexType
+    {
+    public:
+        XML_Text();
+        ~XML_Text();
+        void clear();
+        void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
+        static const XML_Text& default_instance();
+        bool has_value() const;
+        void set_value(const std::string& _value);
+        const std::string& get_value() const;
+    protected:
+    private:
+        static XML_Text* default_instance_;
+        bool m_has_value;
+        std::string m_value;
+    };
+}
+
 #endif
