@@ -1547,6 +1547,12 @@ def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx, makeAssertCode
                 'elemName': getXmlElementName(pbSchema, pbElem),
                 'getMethod': 'get_%s()' % _getCppVarNameFromElem(pbElem)
             }
+        elif pbElem.type.kind == PB.Element.Type.Any:
+            return \
+"""
+(*iter)->%(getMethod)s->toXml(_outStream);
+
+""" % {'getMethod': 'get__any()'}
         else:
             return \
 """if (%(hasVarCode)s)
@@ -1697,7 +1703,31 @@ return pNewChild;
         }
 
 
-def _addMethodFromAny(pbElem, cppClass):
+def _addMethodFromAny(pbElem, cppClass, innerClass, choiceMember):
+
+    cppVarType = _getCppVarTypeFromElem(pbElem)
+    cppVarName = _getCppVarNameFromElem(pbElem)
+
+    addMethod = cppClass.method.add()
+    addMethod.return_type = 'void'
+    addMethod.name = 'append_%s' % cppVarName
+    addMethodArg1 = addMethod.argument.add()
+    addMethodArg1.type = '%s*' % cppVarType
+    addMethodArg1.name = '_%s' % cppVarName
+    addMethod.body = \
+"""
+%(inner_class_type)s *pChildGroup = new %(inner_class_type)s();
+pChildGroup->%(setter_method)s(%(arg1Name)s);
+%(vector_name)s.push_back(pChildGroup);
+""" % {
+            'vector_name':choiceMember.name,
+            'inner_class_type': innerClass.name,
+            'setter_method': 'set_%s' % cppVarName,
+            'arg1Name':addMethodArg1.name
+        }
+
+
+def _addMethodFromOnlyAny(pbElem, cppClass):
 
     cppVarType = _getCppVarTypeFromElem(pbElem)
     cppVarName = _getCppVarNameFromElem(pbElem)
@@ -1724,7 +1754,7 @@ def complexType_repeated(pbElemList, cppClass, idx):
     anyElemList = filter(lambda pbElem:pbElem.type.kind == PB.Element.Type.Any, pbElemList)
     if len(pbElemList) == len(anyElemList):
         for pbElem in pbElemList:
-            _addMethodFromAny(pbElem, cppClass)
+            _addMethodFromOnlyAny(pbElem, cppClass)
         return
 
     innerClass = cppClass.inner_class.add()
@@ -1748,7 +1778,7 @@ def complexType_repeated(pbElemList, cppClass, idx):
         elif pbElem.type.kind == PB.Element.Type.ComplexType:
             _addMethodFromCTName(pbElem, cppClass, innerClass, choiceMember)
         elif pbElem.type.kind == PB.Element.Type.Any:
-            _addMethodFromAny(pbElem, cppClass)
+            _addMethodFromAny(pbElem, cppClass, innerClass, choiceMember)
 
 def _addBuiltInMethodAndMemberVarInElem(pbElemList, pbElem, xsdContainerType, cppClass):
 

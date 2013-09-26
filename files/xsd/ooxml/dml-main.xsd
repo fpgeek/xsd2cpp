@@ -2,7 +2,6 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:s="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
-  xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main"
   xmlns="http://schemas.openxmlformats.org/drawingml/2006/main"
   targetNamespace="http://schemas.openxmlformats.org/drawingml/2006/main"
   elementFormDefault="qualified">
@@ -18,8 +17,6 @@
     schemaLocation="dml-picture.xsd"/>
   <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas"
     schemaLocation="dml-lockedCanvas.xsd"/>
-  <xsd:import namespace="http://schemas.microsoft.com/office/drawing/2010/main"
-    schemaLocation="dml-mainExt.xsd"/>
   <xsd:complexType name="CT_AudioFile">
     <xsd:sequence>
       <xsd:element name="extLst" type="CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>
@@ -3073,7 +3070,7 @@
       <xsd:element name="r" type="CT_RegularTextRun"/>
       <xsd:element name="br" type="CT_TextLineBreak"/>
       <xsd:element name="fld" type="CT_TextField"/>
-      <xsd:element ref="a14:m"/>
+      <xsd:any processContents="lax" />
     </xsd:choice>
   </xsd:group>
   <xsd:complexType name="CT_RegularTextRun">
